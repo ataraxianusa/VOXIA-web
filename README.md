@@ -1,12 +1,12 @@
 # VOXIA-web
 
-VOXIA-web adalah platform AI Customer Service & CRM untuk UKM. Platform ini menyediakan otomasi customer service dan CRM berbasis AI yang dirancang khusus untuk membantu UKM meningkatkan efisiensi operasional dan pelayanan pelanggan melalui WhatsApp.
+VOXIA-web adalah platform AI Customer Service & (Manajemen Pelanggan) untuk UKM. Platform ini menyediakan otomasi customer service dan manajemen pelanggan berbasis AI yang dirancang khusus untuk membantu UKM meningkatkan efisiensi operasional dan pelayanan pelanggan melalui WhatsApp.
 
 ## Fitur Utama
 
 - **AI Chatbot 24/7**: AI yang merespon pertanyaan umum pelanggan secara instan
 - **Integrasi WhatsApp**: Konektivitas langsung dengan WhatsApp Business API
-- **CRM Terpadu**: Manajemen pelanggan terintegrasi dalam satu dashboard
+- **Manajemen Pelanggan Terpadu**: Manajemen pelanggan terintegrasi dalam satu dashboard
 - **Otomasi Follow-up**: Pengingat dan komunikasi otomatis untuk pelanggan
 - **Multi-channel Support**: Dukungan berbagai saluran komunikasi dalam satu platform
 - **Booking Otomatis**: Sistem reservasi dan pengingat jadwal otomatis
