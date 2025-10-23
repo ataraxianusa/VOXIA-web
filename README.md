@@ -1,6 +1,6 @@
 # VOXIA-web
 
-VOXIA-web adalah platform AI Customer Service & CRM untuk UKM Indonesia. Platform ini menyediakan otomasi customer service dan CRM berbasis AI yang dirancang khusus untuk membantu UKM meningkatkan efisiensi operasional dan pelayanan pelanggan melalui WhatsApp.
+VOXIA-web adalah platform AI Customer Service & CRM untuk UKM. Platform ini menyediakan otomasi customer service dan CRM berbasis AI yang dirancang khusus untuk membantu UKM meningkatkan efisiensi operasional dan pelayanan pelanggan melalui WhatsApp.
 
 ## Fitur Utama
 
