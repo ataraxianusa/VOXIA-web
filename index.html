@@ -18,6 +18,10 @@
             background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #334155 100%);
             position: relative;
             overflow: hidden;
+            min-height: 100vh; /* Make hero full screen */
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
         .aurora-effect {
@@ -27,8 +31,8 @@
             right: 0;
             bottom: 0;
             background: 
-                radial-gradient(ellipse at 30% 20%, rgba(14, 165, 233, 0.15) 0%, transparent 50%),
-                radial-gradient(ellipse at 70% 80%, rgba(34, 211, 238, 0.15) 0%, transparent 50%);
+                radial-gradient(ellipse at 30% 20%, rgba(14, 165, 233, 0.25) 0%, transparent 50%),
+                radial-gradient(ellipse at 70% 80%, rgba(34, 211, 238, 0.25) 0%, transparent 50%);
             animation: moveAurora 20s infinite alternate ease-in-out;
             z-index: 1;
         }
@@ -49,9 +53,10 @@
             position: relative;
             z-index: 2;
         }
-
-        .glow-text {
-             text-shadow: 0 0 8px rgba(14, 165, 233, 0.5), 0 0 20px rgba(34, 211, 238, 0.3);
+        
+        .title-voxia {
+            font-size: clamp(4rem, 20vw, 15rem); /* Massive, responsive font size */
+            text-shadow: 0 0 15px rgba(14, 165, 233, 0.6), 0 0 35px rgba(34, 211, 238, 0.4);
         }
 
         .cta-glow {
@@ -60,18 +65,24 @@
         }
         .cta-glow:hover {
             box-shadow: 0 0 25px 5px rgba(14, 165, 233, 0.7);
+            transform: scale(1.05);
         }
         
         .wave-separator {
             z-index: 5;
+            position: absolute;
+            bottom: -1px;
+            left: 0;
+            width: 100%;
+            height: auto;
         }
 
         @keyframes moveAurora {
             from {
-                transform: translate(0, 0) rotate(0deg);
+                transform: translate(0, 0) rotate(0deg) scale(1);
             }
             to {
-                transform: translate(50px, 30px) rotate(10deg);
+                transform: translate(50px, 30px) rotate(10deg) scale(1.2);
             }
         }
         
@@ -134,16 +145,16 @@
         <section id="hero-section" class="relative">
             <div class="aurora-effect"></div>
             <div class="particles"></div>
-            <div class="hero-content container mx-auto px-6 text-center pt-40 pb-20 lg:pt-48 lg:pb-32">
-                <h1 class="text-4xl md:text-6xl lg:text-7xl font-black text-white leading-tight glow-text">
-                    <span class="block text-5xl md:text-7xl lg:text-8xl font-black tracking-tighter text-cyan-400">VOXIA</span>
-                    <span class="block mt-2 md:mt-4 text-2xl md:text-3xl lg:text-4xl font-semibold text-slate-200">Platform AI Customer Service & CRM untuk UMKM Indonesia</span>
+            <div class="hero-content container mx-auto px-6 text-center">
+                <h1 class="font-black text-white leading-none">
+                    <span class="title-voxia block font-black tracking-tighter bg-clip-text text-transparent bg-gradient-to-r from-cyan-300 to-sky-500">VOXIA</span>
+                    <span class="block mt-2 md:mt-4 text-2xl md:text-3xl lg:text-4xl font-semibold text-slate-200 tracking-wide">Platform AI Customer Service & CRM untuk UMKM Indonesia</span>
                 </h1>
                 <p class="mt-8 max-w-3xl mx-auto text-lg md:text-xl text-slate-300">
                     Otomasi customer service dan CRM berbasis AI yang dirancang khusus untuk UMKM Indonesia. Tingkatkan efisiensi operasional dan pelayanan pelanggan dengan mudah melalui WhatsApp.
                 </p>
                 <div class="mt-10 flex flex-col sm:flex-row justify-center items-center gap-4">
-                    <a href="#kontak" class="cta-glow w-full sm:w-auto bg-cyan-600 text-white font-bold py-4 px-10 rounded-lg shadow-lg hover:bg-cyan-500 transition-all transform hover:scale-105">
+                    <a href="#kontak" class="cta-glow w-full sm:w-auto bg-cyan-600 text-white font-bold py-4 px-10 rounded-lg shadow-lg hover:bg-cyan-500 transition-all">
                         Jadwalkan Demo Gratis
                     </a>
                     <a href="#harga" class="w-full sm:w-auto bg-slate-700/50 text-slate-200 font-semibold py-4 px-10 rounded-lg hover:bg-slate-600/50 backdrop-blur-sm transition-all">
@@ -151,7 +162,7 @@
                     </a>
                 </div>
             </div>
-            <div class="wave-separator absolute bottom-0 left-0 w-full h-auto">
+            <div class="wave-separator">
                 <svg viewBox="0 0 1440 120" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M1440 120H0V0C196.444 68.3282 531.815 119.542 720 120C908.185 120.458 1243.56 68.3282 1440 0V120Z" class="fill-slate-50 dark:fill-slate-900"/>
                 </svg>
