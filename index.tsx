@@ -21,7 +21,7 @@ const VoxiaChatbot = () => {
             const newChat = ai.chats.create({
                 model: 'gemini-2.5-flash',
                 config: {
-                    systemInstruction: "You are a helpful and friendly AI assistant for VOXIA, a Customer Service & (Customer Relationship Management) Platform for Indonesian SMEs. Your role is to answer user questions about VOXIA's features, solutions, pricing, and benefits. Keep your answers concise, informative, and maintain a positive tone. The landing page content is your primary source of information.",
+                    systemInstruction: "You are a helpful and friendly AI assistant for VOXIA, a smart system that turns every WhatsApp conversation into business opportunities for Indonesian SMEs. Your role is to answer user questions about VOXIA's features, solutions, pricing, and benefits. Keep your answers concise, informative, and maintain a positive tone. The landing page content is your primary source of information.",
                 },
             });
             setChat(newChat);
