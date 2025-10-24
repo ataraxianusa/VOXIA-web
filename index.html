@@ -681,59 +681,114 @@
                     <h2 class="text-3xl lg:text-4xl font-bold text-slate-900 dark:text-white">Kisah Sukses Pelanggan Kami</h2>
                     <p class="mt-4 text-lg text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">Jangan hanya percaya kata kami. Lihat apa yang dikatakan para pemilik bisnis seperti Anda.</p>
                 </div>
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    <!-- Testimonial 1 -->
-                    <div class="bg-white dark:bg-slate-800 p-8 rounded-xl shadow-lg flex flex-col">
-                        <div class="flex-grow">
-                            <svg class="w-10 h-10 text-cyan-500 dark:text-cyan-400 mb-4" fill="currentColor" viewBox="0 0 32 32" aria-hidden="true">
-                                <path d="M9.333 8h-4.666v16h4.666v-16zM27.333 8h-4.666v16h4.666v-16z"></path>
-                                <path d="M22.667 8h-4.667c-1.333 0-2.667 1.333-2.667 2.667v10.667c0 1.333 1.333 2.667 2.667 2.667h4.667v-16zM4.667 8h-4.667c-1.333 0-2.667 1.333-2.667 2.667v10.667c0 1.333 1.333 2.667 2.667 2.667h4.667v-16z"></path>
-                              </svg>
-                            <p class="text-slate-600 dark:text-slate-400 italic">"Sejak pakai VOXIA, orderan kopi susu kami jadi lebih teratur. Nggak ada lagi pesanan yang kelewat karena chatbot-nya handle semua pertanyaan dasar. Tim kami jadi bisa fokus meracik kopi terbaik."</p>
-                        </div>
-                        <div class="flex items-center mt-6">
-                            <img class="w-14 h-14 rounded-full object-cover" src="https://i.pravatar.cc/150?u=budi" alt="Foto Budi Santoso">
-                            <div class="ml-4">
-                                <p class="font-bold text-slate-800 dark:text-white">Budi Santoso</p>
-                                <p class="text-sm text-slate-500 dark:text-slate-400">Owner, Kopi Senja</p>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Testimonial 2 -->
-                    <div class="bg-white dark:bg-slate-800 p-8 rounded-xl shadow-lg flex flex-col">
-                        <div class="flex-grow">
-                           <svg class="w-10 h-10 text-cyan-500 dark:text-cyan-400 mb-4" fill="currentColor" viewBox="0 0 32 32" aria-hidden="true">
-                                <path d="M9.333 8h-4.666v16h4.666v-16zM27.333 8h-4.666v16h4.666v-16z"></path>
-                                <path d="M22.667 8h-4.667c-1.333 0-2.667 1.333-2.667 2.667v10.667c0 1.333 1.333 2.667 2.667 2.667h4.667v-16zM4.667 8h-4.667c-1.333 0-2.667 1.333-2.667 2.667v10.667c0 1.333 1.333 2.667 2.667 2.667h4.667v-16z"></path>
-                            </svg>
-                            <p class="text-slate-600 dark:text-slate-400 italic">"VOXIA benar-benar mengubah cara kami mengelola pelanggan. Fitur manajemen pelanggannya membantu kami mengingat preferensi customer, dan broadcast promo jadi sangat efektif. Penjualan naik 30% bulan lalu!"</p>
-                        </div>
-                        <div class="flex items-center mt-6">
-                            <img class="w-14 h-14 rounded-full object-cover" src="https://i.pravatar.cc/150?u=siti" alt="Foto Siti Aminah">
-                            <div class="ml-4">
-                                <p class="font-bold text-slate-800 dark:text-white">Siti Aminah</p>
-                                <p class="text-sm text-slate-500 dark:text-slate-400">Founder, Gaya Hijab</p>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Testimonial 3 -->
-                    <div class="bg-white dark:bg-slate-800 p-8 rounded-xl shadow-lg flex flex-col">
-                        <div class="flex-grow">
-                            <svg class="w-10 h-10 text-cyan-500 dark:text-cyan-400 mb-4" fill="currentColor" viewBox="0 0 32 32" aria-hidden="true">
-                                <path d="M9.333 8h-4.666v16h4.666v-16zM27.333 8h-4.666v16h4.666v-16z"></path>
-                                <path d="M22.667 8h-4.667c-1.333 0-2.667 1.333-2.667 2.667v10.667c0 1.333 1.333 2.667 2.667 2.667h4.667v-16zM4.667 8h-4.667c-1.333 0-2.667 1.333-2.667 2.667v10.667c0 1.333 1.333 2.667 2.667 2.667h4.667v-16z"></path>
-                            </svg>
-                            <p class="text-slate-600 dark:text-slate-400 italic">"Sistem booking otomatisnya adalah penyelamat. Dulu sering double-booking, sekarang semua jadwal rapi. Pelanggan juga suka karena dapat reminder H-1. Angka no-show turun drastis."</p>
-                        </div>
-                        <div class="flex items-center mt-6">
-                            <img class="w-14 h-14 rounded-full object-cover" src="https://i.pravatar.cc/150?u=agus" alt="Foto Agus Wijaya">
-                            <div class="ml-4">
-                                <p class="font-bold text-slate-800 dark:text-white">Agus Wijaya</p>
-                                <p class="text-sm text-slate-500 dark:text-slate-400">Manager, Glow Salon</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                 <div class="relative overflow-hidden">
+                     <div id="testimonial-slider" class="flex transition-transform duration-500 ease-in-out">
+                         <!-- Testimonial 1 -->
+                         <div class="flex-shrink-0 w-full md:w-1/2 lg:w-1/3 px-4">
+                             <div class="bg-white dark:bg-slate-800 p-8 rounded-xl shadow-lg hover:shadow-xl hover:shadow-cyan-500/20 dark:shadow-slate-950/50 transition-all duration-300 transform hover:scale-105 hover:bg-cyan-50/50 dark:hover:bg-cyan-900/20 flex flex-col h-full">
+                                 <div class="flex-grow">
+                                     <svg class="w-10 h-10 text-cyan-500 dark:text-cyan-400 mb-4" fill="currentColor" viewBox="0 0 32 32" aria-hidden="true">
+                                         <path d="M9.333 8h-4.666v16h4.666v-16zM27.333 8h-4.666v16h4.666v-16z"></path>
+                                         <path d="M22.667 8h-4.667c-1.333 0-2.667 1.333-2.667 2.667v10.667c0 1.333 1.333 2.667 2.667 2.667h4.667v-16zM4.667 8h-4.667c-1.333 0-2.667 1.333-2.667 2.667v10.667c0 1.333 1.333 2.667 2.667 2.667h4.667v-16z"></path>
+                                       </svg>
+                                     <p class="text-slate-600 dark:text-slate-400 italic text-lg leading-relaxed">"Sejak pakai VOXIA, orderan kopi susu kami jadi lebih teratur. Nggak ada lagi pesanan yang kelewat karena chatbot-nya handle semua pertanyaan dasar. Tim kami jadi bisa fokus meracik kopi terbaik."</p>
+                                 </div>
+                                 <div class="flex items-center mt-6">
+                                     <img class="w-14 h-14 rounded-full object-cover" src="https://i.pravatar.cc/150?u=budi" alt="Foto Budi Santoso">
+                                     <div class="ml-4">
+                                         <p class="font-bold text-slate-800 dark:text-white">Budi Santoso</p>
+                                         <p class="text-sm text-slate-500 dark:text-slate-400">Owner, Kopi Senja</p>
+                                     </div>
+                                 </div>
+                             </div>
+                         </div>
+                         <!-- Testimonial 2 -->
+                         <div class="flex-shrink-0 w-full md:w-1/2 lg:w-1/3 px-4">
+                             <div class="bg-white dark:bg-slate-800 p-8 rounded-xl shadow-lg hover:shadow-xl hover:shadow-cyan-500/20 dark:shadow-slate-950/50 transition-all duration-300 transform hover:scale-105 hover:bg-cyan-50/50 dark:hover:bg-cyan-900/20 flex flex-col h-full">
+                                 <div class="flex-grow">
+                                    <svg class="w-10 h-10 text-cyan-500 dark:text-cyan-400 mb-4" fill="currentColor" viewBox="0 0 32 32" aria-hidden="true">
+                                         <path d="M9.333 8h-4.666v16h4.666v-16zM27.333 8h-4.666v16h4.666v-16z"></path>
+                                         <path d="M22.667 8h-4.667c-1.333 0-2.667 1.333-2.667 2.667v10.667c0 1.333 1.333 2.667 2.667 2.667h4.667v-16zM4.667 8h-4.667c-1.333 0-2.667 1.333-2.667 2.667v10.667c0 1.333 1.333 2.667 2.667 2.667h4.667v-16z"></path>
+                                     </svg>
+                                     <p class="text-slate-600 dark:text-slate-400 italic text-lg leading-relaxed">"VOXIA benar-benar mengubah cara kami mengelola pelanggan. Fitur manajemen pelanggannya membantu kami mengingat preferensi customer, dan broadcast promo jadi sangat efektif. Penjualan naik 30% bulan lalu!"</p>
+                                 </div>
+                                 <div class="flex items-center mt-6">
+                                     <img class="w-14 h-14 rounded-full object-cover" src="https://i.pravatar.cc/150?u=siti" alt="Foto Siti Aminah">
+                                     <div class="ml-4">
+                                         <p class="font-bold text-slate-800 dark:text-white">Siti Aminah</p>
+                                         <p class="text-sm text-slate-500 dark:text-slate-400">Founder, Gaya Hijab</p>
+                                     </div>
+                                 </div>
+                             </div>
+                         </div>
+                         <!-- Testimonial 3 -->
+                         <div class="flex-shrink-0 w-full md:w-1/2 lg:w-1/3 px-4">
+                             <div class="bg-white dark:bg-slate-800 p-8 rounded-xl shadow-lg hover:shadow-xl hover:shadow-cyan-500/20 dark:shadow-slate-950/50 transition-all duration-300 transform hover:scale-105 hover:bg-cyan-50/50 dark:hover:bg-cyan-900/20 flex flex-col h-full">
+                                 <div class="flex-grow">
+                                     <svg class="w-10 h-10 text-cyan-500 dark:text-cyan-400 mb-4" fill="currentColor" viewBox="0 0 32 32" aria-hidden="true">
+                                         <path d="M9.333 8h-4.666v16h4.666v-16zM27.333 8h-4.666v16h4.666v-16z"></path>
+                                         <path d="M22.667 8h-4.667c-1.333 0-2.667 1.333-2.667 2.667v10.667c0 1.333 1.333 2.667 2.667 2.667h4.667v-16zM4.667 8h-4.667c-1.333 0-2.667 1.333-2.667 2.667v10.667c0 1.333 1.333 2.667 2.667 2.667h4.667v-16z"></path>
+                                     </svg>
+                                     <p class="text-slate-600 dark:text-slate-400 italic text-lg leading-relaxed">"Sistem booking otomatisnya adalah penyelamat. Dulu sering double-booking, sekarang semua jadwal rapi. Pelanggan juga suka karena dapat reminder H-1. Angka no-show turun drastis."</p>
+                                 </div>
+                                 <div class="flex items-center mt-6">
+                                     <img class="w-14 h-14 rounded-full object-cover" src="https://i.pravatar.cc/150?u=agus" alt="Foto Agus Wijaya">
+                                     <div class="ml-4">
+                                         <p class="font-bold text-slate-800 dark:text-white">Agus Wijaya</p>
+                                         <p class="text-sm text-slate-500 dark:text-slate-400">Manager, Glow Salon</p>
+                                     </div>
+                                 </div>
+                             </div>
+                         </div>
+                         <!-- Testimonial 4 -->
+                         <div class="flex-shrink-0 w-full md:w-1/2 lg:w-1/3 px-4">
+                             <div class="bg-white dark:bg-slate-800 p-8 rounded-xl shadow-lg hover:shadow-xl hover:shadow-cyan-500/20 dark:shadow-slate-950/50 transition-all duration-300 transform hover:scale-105 hover:bg-cyan-50/50 dark:hover:bg-cyan-900/20 flex flex-col h-full">
+                                 <div class="flex-grow">
+                                     <svg class="w-10 h-10 text-cyan-500 dark:text-cyan-400 mb-4" fill="currentColor" viewBox="0 0 32 32" aria-hidden="true">
+                                         <path d="M9.333 8h-4.666v16h4.666v-16zM27.333 8h-4.666v16h4.666v-16z"></path>
+                                         <path d="M22.667 8h-4.667c-1.333 0-2.667 1.333-2.667 2.667v10.667c0 1.333 1.333 2.667 2.667 2.667h4.667v-16zM4.667 8h-4.667c-1.333 0-2.667 1.333-2.667 2.667v10.667c0 1.333 1.333 2.667 2.667 2.667h4.667v-16z"></path>
+                                     </svg>
+                                     <p class="text-slate-600 dark:text-slate-400 italic text-lg leading-relaxed">"Dengan VOXIA, bisnis laundry kami jadi lebih efisien. Chatbot handle semua inquiry tentang layanan dan harga, sementara sistem booking otomatis mengatur jadwal pickup dan delivery. Kepuasan pelanggan meningkat signifikan!"</p>
+                                 </div>
+                                 <div class="flex items-center mt-6">
+                                     <img class="w-14 h-14 rounded-full object-cover" src="https://i.pravatar.cc/150?u=rina" alt="Foto Rina Sari">
+                                     <div class="ml-4">
+                                         <p class="font-bold text-slate-800 dark:text-white">Rina Sari</p>
+                                         <p class="text-sm text-slate-500 dark:text-slate-400">Owner, Laundry Cepat</p>
+                                     </div>
+                                 </div>
+                             </div>
+                         </div>
+                         <!-- Testimonial 5 -->
+                         <div class="flex-shrink-0 w-full md:w-1/2 lg:w-1/3 px-4">
+                             <div class="bg-white dark:bg-slate-800 p-8 rounded-xl shadow-lg hover:shadow-xl hover:shadow-cyan-500/20 dark:shadow-slate-950/50 transition-all duration-300 transform hover:scale-105 hover:bg-cyan-50/50 dark:hover:bg-cyan-900/20 flex flex-col h-full">
+                                 <div class="flex-grow">
+                                     <svg class="w-10 h-10 text-cyan-500 dark:text-cyan-400 mb-4" fill="currentColor" viewBox="0 0 32 32" aria-hidden="true">
+                                         <path d="M9.333 8h-4.666v16h4.666v-16zM27.333 8h-4.666v16h4.666v-16z"></path>
+                                         <path d="M22.667 8h-4.667c-1.333 0-2.667 1.333-2.667 2.667v10.667c0 1.333 1.333 2.667 2.667 2.667h4.667v-16zM4.667 8h-4.667c-1.333 0-2.667 1.333-2.667 2.667v10.667c0 1.333 1.333 2.667 2.667 2.667h4.667v-16z"></path>
+                                     </svg>
+                                     <p class="text-slate-600 dark:text-slate-400 italic text-lg leading-relaxed">"VOXIA membantu toko elektronik saya mengatasi tantangan manajemen inventori. AI chatbot menjawab pertanyaan produk real-time, dan fitur retargeting otomatis membuat pelanggan kembali. Omzet naik 25% dalam 3 bulan!"</p>
+                                 </div>
+                                 <div class="flex items-center mt-6">
+                                     <img class="w-14 h-14 rounded-full object-cover" src="https://i.pravatar.cc/150?u=doni" alt="Foto Doni Pratama">
+                                     <div class="ml-4">
+                                         <p class="font-bold text-slate-800 dark:text-white">Doni Pratama</p>
+                                         <p class="text-sm text-slate-500 dark:text-slate-400">Owner, Elektronik Murah</p>
+                                     </div>
+                                 </div>
+                             </div>
+                         </div>
+                     </div>
+                     <!-- Slider Controls -->
+                     <div class="flex justify-center mt-8 space-x-2">
+                         <button id="prev-testimonial" class="bg-cyan-500 hover:bg-cyan-600 text-white p-2 rounded-full transition-colors duration-300">
+                             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>
+                         </button>
+                         <button id="next-testimonial" class="bg-cyan-500 hover:bg-cyan-600 text-white p-2 rounded-full transition-colors duration-300">
+                             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                         </button>
+                     </div>
+                 </div>
             </div>
         </section>
 
@@ -960,7 +1015,7 @@
                         otherItem.querySelector('.faq-chevron').classList.remove('rotate-180');
                     }
                 });
-                
+
                 // Toggle the clicked item
                 if (isOpen) {
                     item.classList.remove('open');
@@ -974,6 +1029,44 @@
                     chevron.classList.add('rotate-180');
                 }
             });
+        });
+
+        // 6. Testimonial Slider
+        const testimonialSlider = document.getElementById('testimonial-slider');
+        const prevBtn = document.getElementById('prev-testimonial');
+        const nextBtn = document.getElementById('next-testimonial');
+        let currentIndex = 0;
+        const totalSlides = testimonialSlider.children.length;
+        const slidesToShow = window.innerWidth >= 1024 ? 3 : window.innerWidth >= 768 ? 2 : 1;
+        const maxIndex = totalSlides - slidesToShow;
+
+        function updateSlider() {
+            const translateX = -currentIndex * (100 / slidesToShow);
+            testimonialSlider.style.transform = `translateX(${translateX}%)`;
+        }
+
+        function nextSlide() {
+            currentIndex = (currentIndex + 1) > maxIndex ? 0 : currentIndex + 1;
+            updateSlider();
+        }
+
+        function prevSlide() {
+            currentIndex = (currentIndex - 1) < 0 ? maxIndex : currentIndex - 1;
+            updateSlider();
+        }
+
+        nextBtn.addEventListener('click', nextSlide);
+        prevBtn.addEventListener('click', prevSlide);
+
+        // Auto-slide every 5 seconds
+        setInterval(nextSlide, 5000);
+
+        // Update on window resize
+        window.addEventListener('resize', () => {
+            const newSlidesToShow = window.innerWidth >= 1024 ? 3 : window.innerWidth >= 768 ? 2 : 1;
+            if (newSlidesToShow !== slidesToShow) {
+                location.reload(); // Simple reload for demo, in production use proper resize handling
+            }
         });
 
     </script>
