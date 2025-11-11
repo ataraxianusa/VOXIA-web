@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panduan Solusi SSL GitHub Pages</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        .container {
+            background-color: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        h1, h2, h3 {
+            color: #2c3e50;
+        }
+        h1 {
+            border-bottom: 3px solid #3498db;
+            padding-bottom: 10px;
+        }
+        h2 {
+            border-bottom: 1px solid #eee;
+            padding-bottom: 5px;
+            margin-top: 25px;
+        }
+        ul, ol {
+            padding-left: 20px;
+        }
+        li {
+            margin-bottom: 8px;
+        }
+        .note {
+            background-color: #e3f2fd;
+            border-left: 4px solid #2196f3;
+            padding: 10px;
+            margin: 15px 0;
+        }
+        .warning {
+            background-color: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 10px;
+            margin: 15px 0;
+        }
+        code {
+            background-color: #f4f4f4;
+            padding: 2px 4px;
+            border-radius: 3px;
+            font-family: monospace;
+        }
+        pre {
+            background-color: #f4f4f4;
+            padding: 10px;
+            border-radius: 4px;
+            overflow-x: auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Panduan Solusi SSL GitHub Pages (Error 526)</h1>
+        
+        <div class="note">
+            <strong>Catatan:</strong> Dokumen ini menyediakan panduan komprehensif untuk memperbaiki error SSL certificate (error code 526) pada domain kustom GitHub Pages.
+        </div>
+        
+        <h2>Deskripsi Masalah</h2>
+        <p>Anda menerima error "Invalid SSL certificate Error code 526" ketika mengakses domain <code>https://voxia.id/</code> yang ditujukan ke GitHub Pages. Ini adalah error dari Cloudflare (jika Anda menggunakan layanan mereka) yang menunjukkan bahwa sertifikat SSL tidak dapat divalidasi.</p>
+        
+        <h2>Penyebab Umum Error 526</h2>
+        <ul>
+            <li>Sertifikat SSL di GitHub Pages tidak valid atau telah kedaluwarsa</li>
+            <li>Konfigurasi DNS tidak benar</li>
+            <li>Domain tidak terdaftar dengan benar di GitHub Pages</li>
+            <li>Konflik dengan Cloudflare atau CDN lainnya</li>
+        </ul>
+        
+        <h2>Solusi Langkah demi Langkah</h2>
+        
+        <h3>1. Verifikasi Konfigurasi GitHub Pages</h3>
+        <ol>
+            <li>Buka repositori GitHub Anda</li>
+            <li>Klik "Settings" di tab atas</li>
+            <li>Gulir ke bawah ke bagian "Pages"</li>
+            <li>Pastikan "Source" diatur ke branch yang benar (misalnya <code>main</code>)</li>
+            <li>Pada bagian "Custom domain", pastikan <code>voxia.id</code> terdaftar</li>
+            <li>Pastikan kotak "Enforce HTTPS" dicentang</li>
+        </ol>
+        
+        <h3>2. Periksa File CNAME di Repository</h3>
+        <p>File CNAME di root repository harus berisi hanya domain yang digunakan. Dalam kasus Anda, file ini harus hanya berisi:</p>
+        <pre>voxia.id</pre>
+        
+        <h3>3. Verifikasi Konfigurasi DNS</h3>
+        <p>Pastikan record DNS Anda diatur dengan benar di penyedia domain Anda (misalnya Namecheap, Cloudflare, dll.):</p>
+        
+        <p>Untuk domain root (<code>voxia.id</code>), gunakan:</p>
+        <ul>
+            <li>Type: <code>A</code></li>
+            <li>Name/Host: <code>@</code></li>
+            <li>Value/Points to: 
+                <ul>
+                    <li><code>185.199.108.153</code></li>
+                    <li><code>185.199.109.153</code></li>
+                    <li><code>185.199.110.153</code></li>
+                    <li><code>185.199.111.153</code></li>
+                </ul>
+            </li>
+        </ul>
+        
+        <p>Untuk subdomain <code>www</code> (jika Anda menggunakannya), gunakan:</p>
+        <ul>
+            <li>Type: <code>CNAME</code></li>
+            <li>Name/Host: <code>www</code></li>
+            <li>Value/Points to: <code>nama-user.github.io</code> (gantilah dengan username GitHub Anda)</li>
+        </ul>
+        
+        <h3>4. Tunggu Propagasi DNS</h3>
+        <p>Setelah mengubah pengaturan DNS, propagasi bisa memakan waktu hingga 48 jam, meskipun biasanya hanya memakan waktu 4-24 jam. Anda bisa memeriksa status propagasi DNS menggunakan alat seperti:</p>
+        <ul>
+            <li><a href="https://dnschecker.org/" target="_blank">https://dnschecker.org/</a></li>
+            <li><code>nslookup voxia.id</code> di terminal Anda</li>
+        </ul>
+        
+        <h3>5. Bersihkan Cache Browser dan CDN</h3>
+        <p>Setelah perubahan DNS selesai:</p>
+        <ol>
+            <li>Bersihkan cache browser Anda</li>
+            <li>Jika menggunakan Cloudflare, lakukan cache purge di panel Cloudflare Anda</li>
+            <li>Coba akses kembali halaman</li>
+        </ol>
+        
+        <h3>6. Verifikasi SSL Certificate</h3>
+        <p>Setelah konfigurasi selesai, GitHub Pages akan secara otomatis menerbitkan sertifikat SSL Let's Encrypt untuk domain kustom. Anda dapat memverifikasi ini dengan:</p>
+        <ol>
+            <li>Mengunjungi https://voxia.id</li>
+            <li>Klik ikon gembok di bilah alamat</li>
+            <li>Periksa bahwa sertifikat valid dan diterbitkan oleh Let's Encrypt</li>
+        </ol>
+        
+        <h3>7. Solusi Tambahan</h3>
+        <p>Jika masalah masih berlanjut:</p>
+        <ol>
+            <li><strong>Nonaktifkan Cloudflare sementara</strong>:
+                <ul>
+                    <li>Jika Anda menggunakan Cloudflare sebagai DNS resolver, coba nonaktifkan sementara dan gunakan DNS bawaan dari penyedia domain Anda</li>
+                    <li>GitHub Pages sudah menyediakan SSL gratis untuk domain kustom</li>
+                </ul>
+            </li>
+            <li><strong>Periksa domain di GitHub Pages status</strong>:
+                <ul>
+                    <li>Kunjungi <a href="https://github.status.io/" target="_blank">https://github.status.io/</a> untuk memastikan tidak ada gangguan pada layanan GitHub Pages</li>
+                </ul>
+            </li>
+            <li><strong>Validasi domain Anda</strong>:
+                <ul>
+                    <li>Pastikan domain <code>voxia.id</code> tidak melanggar kebijakan GitHub</li>
+                    <li>Pastikan tidak ada karakter spesial yang tidak diizinkan dalam nama domain</li>
+                </ul>
+            </li>
+        </ol>
+        
+        <h3>8. Jika Semua Langkah di Atas Gagal</h3>
+        <ul>
+            <li>Coba gunakan subdomain (seperti <code>app.voxia.id</code>) sebagai alternatif sementara</li>
+            <li>Hubungi dukungan GitHub jika domain Anda memang sudah diatur dengan benar tapi tetap tidak berfungsi</li>
+            <li>Pastikan domain Anda tidak digunakan untuk tujuan yang melanggar kebijakan GitHub</li>
+        </ul>
+        
+        <h2>Pengetesan Setelah Implementasi</h2>
+        <p>Setelah mengikuti semua langkah di atas:</p>
+        <ol>
+            <li>Akses https://voxia.id (jangan lupa tambahkan "https://")</li>
+            <li>Periksa bahwa tidak ada peringatan keamanan SSL</li>
+            <li>Pastikan halaman dimuat dengan benar</li>
+            <li>Uji semua fungsi situs untuk memastikan semuanya berfungsi</li>
+            <li>Periksa juga pengalihan dari http ke https bekerja dengan baik</li>
+        </ol>
+        
+        <h2>Catatan Tambahan</h2>
+        <ul>
+            <li>GitHub Pages akan secara otomatis mengalihkan semua permintaan HTTP ke HTTPS saat fitur "Enforce HTTPS" diaktifkan</li>
+            <li>Jika Anda sebelumnya menggunakan Cloudflare, pastikan SSL mode diatur ke "Full" atau "Full (strict)" bukan "Flexible" untuk GitHub Pages</li>
+            <li>Pastikan seluruh aset situs Anda (CSS, JS, gambar) juga dimuat melalui HTTPS untuk menghindari mixed content warnings</li>
+        </ul>
+        
+        <div class="warning">
+            <strong>Peringatan:</strong> Jika setelah mengikuti semua langkah ini masih mengalami masalah, harap periksa kembali: apakah file CNAME hanya berisi <code>voxia.id</code>, apakah record DNS Anda mengarah ke alamat IP GitHub yang benar, dan apakah telah berlalu cukup lama sejak perubahan DNS Anda.
+        </div>
+        
+        <h2>Kesimpulan</h2>
+        <p>Dengan mengikuti panduan ini secara menyeluruh, Anda seharusnya dapat menyelesaikan error SSL certificate (error code 526) untuk domain GitHub Pages Anda. Pastikan untuk menunggu waktu propagasi DNS yang cukup sebelum menguji kembali situs Anda.</p>
+    </div>
+</body>
+</html>

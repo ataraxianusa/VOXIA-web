@@ -2,6 +2,24 @@
 
 VOXIA-web adalah platform AI Customer Service & (Manajemen Pelanggan) untuk UKM. Platform ini menyediakan otomasi customer service dan manajemen pelanggan berbasis AI yang dirancang khusus untuk membantu UKM meningkatkan efisiensi operasional dan pelayanan pelanggan melalui WhatsApp.
 
+## Solusi untuk Error SSL Certificate (Error Code 526)
+
+Jika Anda mengalami error "Invalid SSL certificate Error code 526" saat mengakses domain https://voxia.id/, silakan ikuti panduan berikut:
+
+### Dokumentasi Tersedia:
+- `SOLUTION.md` - Solusi lengkap untuk error SSL certificate (error code 526)
+- `SSL_CHECKLIST.md` - Checklist langkah-langkah untuk memperbaiki masalah
+- `SSL_VALIDATION.md` - Panduan untuk memvalidasi bahwa SSL berfungsi dengan benar
+
+### Ringkasan Solusi:
+1. **Verifikasi Konfigurasi GitHub Pages**: Pastikan domain `voxia.id` terdaftar dengan benar dan opsi "Enforce HTTPS" diaktifkan
+2. **Periksa File CNAME**: Pastikan hanya berisi `voxia.id`
+3. **Verifikasi Konfigurasi DNS**: Pastikan record A mengarah ke alamat IP GitHub yang benar
+4. **Tunggu Propagasi DNS**: Proses bisa memakan waktu hingga 24-48 jam
+5. **Bersihkan Cache**: Bersihkan cache browser dan CDN jika menggunakan layanan seperti Cloudflare
+
+Untuk langkah-langkah detail, silakan baca file `SOLUTION.md`.
+
 ## Fitur Utama
 
 - **AI Chatbot 24/7**: AI yang merespon pertanyaan umum pelanggan secara instan
