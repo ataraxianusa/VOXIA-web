@@ -1115,21 +1115,13 @@
     <div id="chat-widget-container"></div>
     <script type="module" src="/index.tsx"></script>
 
-    <!-- Chatwoot Widget -->
-    <script>
-      (function(d,t) {
-        var BASE_URL="https://chat.voxia.id";
-        var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
-        g.src=BASE_URL+"/packs/js/sdk.js";
-        g.async = true;
-        s.parentNode.insertBefore(g,s);
-        g.onload=function(){
-          window.chatwootSDK.run({
-            websiteToken: 'h9i1FKJsaT3QmruPG5V1cjop',
-            baseUrl: BASE_URL
-          })
-        }
-      })(document,"script");
+    <!-- Flowise Chatbot -->
+    <script type="module">
+        import Chatbot from "https://cdn.jsdelivr.net/npm/flowise-embed/dist/web.js"
+        Chatbot.init({
+            chatflowid: "e148d6b6-2d4c-4a29-a78e-f2981d187be6",
+            apiHost: "https://ai.voxia.id",
+        })
     </script>
 
 </body>
