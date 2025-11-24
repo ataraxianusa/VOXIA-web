@@ -1110,13 +1110,10 @@
         });
 
         // 7. Promo Pop-up Modal
-        const promoModal = document.getElementById('promo-modal');
-        const closeModalBtn = document.getElementById('close-modal-btn');
-        const promoModalContent = promoModal.querySelector('div:first-child'); // Targeting the inner content div
-
         // Function to show the modal
         function showPromoModal() {
-            if (!sessionStorage.getItem('promoModalShown')) {
+            const promoModal = document.getElementById('promo-modal');
+            if (promoModal && !sessionStorage.getItem('promoModalShown')) {
                 promoModal.classList.remove('hidden');
                 promoModal.classList.add('flex'); // Use flex to center the content
                 sessionStorage.setItem('promoModalShown', 'true');
@@ -1125,22 +1122,33 @@
 
         // Function to hide the modal
         function hidePromoModal() {
-            promoModal.classList.add('hidden');
-            promoModal.classList.remove('flex');
+            const promoModal = document.getElementById('promo-modal');
+            if (promoModal) {
+                promoModal.classList.add('hidden');
+                promoModal.classList.remove('flex');
+            }
         }
 
         // Show modal on page load (after a short delay for better UX)
         window.addEventListener('load', () => {
             setTimeout(showPromoModal, 1000); // Show after 1 second
-        });
+            
+            // Setup event listeners after DOM is definitely ready
+            const closeModalBtn = document.getElementById('close-modal-btn');
+            const promoModal = document.getElementById('promo-modal');
+            const promoModalContent = promoModal ? promoModal.querySelector('div:first-child') : null;
 
-        // Close modal when close button is clicked
-        closeModalBtn.addEventListener('click', hidePromoModal);
+            if (closeModalBtn) {
+                closeModalBtn.addEventListener('click', hidePromoModal);
+            }
 
-        // Close modal when clicking outside the content
-        promoModal.addEventListener('click', (event) => {
-            if (!promoModalContent.contains(event.target)) {
-                hidePromoModal();
+            if (promoModal && promoModalContent) {
+                // Close modal when clicking outside the content
+                promoModal.addEventListener('click', (event) => {
+                    if (!promoModalContent.contains(event.target)) {
+                        hidePromoModal();
+                    }
+                });
             }
         });
 
