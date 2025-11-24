@@ -1109,8 +1109,63 @@
             }
         });
 
+        // 7. Promo Pop-up Modal
+        const promoModal = document.getElementById('promo-modal');
+        const closeModalBtn = document.getElementById('close-modal-btn');
+        const promoModalContent = promoModal.querySelector('div:first-child'); // Targeting the inner content div
+
+        // Function to show the modal
+        function showPromoModal() {
+            if (!sessionStorage.getItem('promoModalShown')) {
+                promoModal.classList.remove('hidden');
+                promoModal.classList.add('flex'); // Use flex to center the content
+                sessionStorage.setItem('promoModalShown', 'true');
+            }
+        }
+
+        // Function to hide the modal
+        function hidePromoModal() {
+            promoModal.classList.add('hidden');
+            promoModal.classList.remove('flex');
+        }
+
+        // Show modal on page load (after a short delay for better UX)
+        window.addEventListener('load', () => {
+            setTimeout(showPromoModal, 1000); // Show after 1 second
+        });
+
+        // Close modal when close button is clicked
+        closeModalBtn.addEventListener('click', hidePromoModal);
+
+        // Close modal when clicking outside the content
+        promoModal.addEventListener('click', (event) => {
+            if (!promoModalContent.contains(event.target)) {
+                hidePromoModal();
+            }
+        });
+
     </script>
     
+    <!-- Promo Pop-up Modal -->
+    <div id="promo-modal" class="fixed inset-0 z-[1001] hidden items-center justify-center bg-black bg-opacity-75 p-4">
+        <div class="relative w-full max-w-md rounded-lg bg-white p-8 text-center shadow-xl dark:bg-slate-800">
+            <button id="close-modal-btn" class="absolute right-3 top-3 text-slate-500 hover:text-slate-700 dark:text-slate-400 dark:hover:text-slate-200">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+            </button>
+            <h3 class="mb-4 text-2xl font-bold text-slate-900 dark:text-white">Dapatkan VOXIA GRATIS!</h3>
+            <p class="mb-6 text-lg text-slate-600 dark:text-slate-400">Ikuti program seleksi kami dan dapatkan akses penuh VOXIA tanpa biaya.</p>
+            <a href="https://forms.gle/PffzCGogPbfdUA9S8" target="_blank" rel="noopener noreferrer" class="cta-glow inline-flex items-center justify-center rounded-lg bg-cyan-600 px-8 py-3 font-bold text-white shadow-lg transition-all hover:bg-cyan-500">
+                Daftar Sekarang
+                <svg xmlns="http://www.w3.org/2000/svg" class="ml-2 h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+                </svg>
+            </a>
+        </div>
+    </div>
+    <!-- End Promo Pop-up Modal -->
+
     <!-- Chatbot Container -->
     <div id="chat-widget-container"></div>
     <script type="module" src="/index.tsx"></script>
