@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="id" class="scroll-smooth">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,18 +11,20 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
     <style>
         body {
             font-family: 'Inter', sans-serif;
         }
-        
+
         /* --- Hero Section Styles --- */
         #hero-section {
             background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #334155 100%);
             position: relative;
             overflow: hidden;
-            min-height: 100vh; /* Make hero full screen */
+            min-height: 100vh;
+            /* Make hero full screen */
             display: flex;
             align-items: center;
             justify-content: center;
@@ -33,7 +36,7 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: 
+            background:
                 radial-gradient(ellipse at 30% 20%, rgba(14, 165, 233, 0.25) 0%, transparent 50%),
                 radial-gradient(ellipse at 70% 80%, rgba(34, 211, 238, 0.25) 0%, transparent 50%);
             animation: moveAurora 20s infinite alternate ease-in-out;
@@ -56,9 +59,10 @@
             position: relative;
             z-index: 2;
         }
-        
+
         .title-voxia {
-            font-size: clamp(4rem, 20vw, 15rem); /* Massive, responsive font size */
+            font-size: clamp(4rem, 20vw, 15rem);
+            /* Massive, responsive font size */
             text-shadow: 0 0 15px rgba(14, 165, 233, 0.6), 0 0 35px rgba(34, 211, 238, 0.4);
             animation: fadeInUp 1.5s ease-out forwards, glowPulse 3s ease-in-out infinite alternate;
             opacity: 0;
@@ -88,6 +92,7 @@
             from {
                 text-shadow: 0 0 15px rgba(14, 165, 233, 0.6), 0 0 35px rgba(34, 211, 238, 0.4);
             }
+
             to {
                 text-shadow: 0 0 20px rgba(14, 165, 233, 0.8), 0 0 50px rgba(34, 211, 238, 0.6);
             }
@@ -97,11 +102,12 @@
             box-shadow: 0 0 15px 0 rgba(14, 165, 233, 0.6);
             transition: all 0.3s ease-in-out;
         }
+
         .cta-glow:hover {
             box-shadow: 0 0 25px 5px rgba(14, 165, 233, 0.7);
             transform: scale(1.05);
         }
-        
+
         .wave-separator {
             z-index: 5;
             position: absolute;
@@ -115,14 +121,20 @@
             from {
                 transform: translate(0, 0) rotate(0deg) scale(1);
             }
+
             to {
                 transform: translate(50px, 30px) rotate(10deg) scale(1.2);
             }
         }
-        
+
         @keyframes moveParticles {
-          from { background-position: 0 0; }
-          to { background-position: -1000px 500px; }
+            from {
+                background-position: 0 0;
+            }
+
+            to {
+                background-position: -1000px 500px;
+            }
         }
 
         /* --- Chatbot Styles --- */
@@ -132,20 +144,24 @@
             right: 2rem;
             width: 60px;
             height: 60px;
-            background-color: #0891b2; /* cyan-600 */
+            background-color: #0891b2;
+            /* cyan-600 */
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
             cursor: pointer;
             transition: all 0.3s ease;
             z-index: 1000;
         }
+
         .chat-bubble:hover {
             transform: scale(1.1);
-            background-color: #06b6d4; /* cyan-500 */
+            background-color: #06b6d4;
+            /* cyan-500 */
         }
+
         .chat-window {
             position: fixed;
             bottom: 6.5rem;
@@ -156,7 +172,7 @@
             max-height: 600px;
             background-color: white;
             border-radius: 1rem;
-            box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
             display: flex;
             flex-direction: column;
             overflow: hidden;
@@ -164,16 +180,21 @@
             transition: transform 0.3s ease-out, opacity 0.3s ease-out;
             z-index: 1000;
         }
+
         .dark .chat-window {
-            background-color: #1e293b; /* slate-800 */
+            background-color: #1e293b;
+            /* slate-800 */
         }
+
         .chat-window.hidden {
             transform: scale(0.5);
             opacity: 0;
             pointer-events: none;
         }
+
         .chat-header {
-            background-color: #0e7490; /* cyan-700 */
+            background-color: #0e7490;
+            /* cyan-700 */
             color: white;
             padding: 1rem;
             display: flex;
@@ -181,6 +202,7 @@
             align-items: center;
             flex-shrink: 0;
         }
+
         .chat-body {
             flex-grow: 1;
             padding: 1rem;
@@ -189,6 +211,7 @@
             flex-direction: column;
             gap: 0.75rem;
         }
+
         .chat-message {
             padding: 0.75rem 1rem;
             border-radius: 0.75rem;
@@ -196,53 +219,75 @@
             line-height: 1.5;
             word-wrap: break-word;
         }
+
         .chat-message.user {
-            background-color: #0891b2; /* cyan-600 */
+            background-color: #0891b2;
+            /* cyan-600 */
             color: white;
             align-self: flex-end;
             border-bottom-right-radius: 0.25rem;
         }
+
         .chat-message.model {
-            background-color: #f1f5f9; /* slate-100 */
-            color: #1e293b; /* slate-800 */
+            background-color: #f1f5f9;
+            /* slate-100 */
+            color: #1e293b;
+            /* slate-800 */
             align-self: flex-start;
             border-bottom-left-radius: 0.25rem;
         }
+
         .dark .chat-message.model {
-            background-color: #334155; /* slate-700 */
-            color: #e2e8f0; /* slate-200 */
+            background-color: #334155;
+            /* slate-700 */
+            color: #e2e8f0;
+            /* slate-200 */
         }
+
         .chat-input-form {
             padding: 1rem;
-            border-top: 1px solid #e2e8f0; /* slate-200 */
+            border-top: 1px solid #e2e8f0;
+            /* slate-200 */
             display: flex;
             gap: 0.5rem;
             flex-shrink: 0;
         }
+
         .dark .chat-input-form {
-            border-top-color: #334155; /* slate-700 */
+            border-top-color: #334155;
+            /* slate-700 */
         }
+
         .chat-input {
             flex-grow: 1;
-            border: 1px solid #cbd5e1; /* slate-300 */
+            border: 1px solid #cbd5e1;
+            /* slate-300 */
             border-radius: 0.5rem;
             padding: 0.75rem;
             font-size: 1rem;
             background-color: white;
             color: #1e293b;
         }
+
         .dark .chat-input {
-            background-color: #475569; /* slate-600 */
-            border-color: #64748b; /* slate-500 */
-            color: #f1f5f9; /* slate-100 */
+            background-color: #475569;
+            /* slate-600 */
+            border-color: #64748b;
+            /* slate-500 */
+            color: #f1f5f9;
+            /* slate-100 */
         }
+
         .chat-input:focus {
             outline: none;
-            border-color: #06b6d4; /* cyan-500 */
+            border-color: #06b6d4;
+            /* cyan-500 */
             box-shadow: 0 0 0 2px rgba(14, 165, 233, 0.3);
         }
+
         .chat-send-btn {
-            background-color: #0891b2; /* cyan-600 */
+            background-color: #0891b2;
+            /* cyan-600 */
             color: white;
             border-radius: 0.5rem;
             padding: 0 1rem;
@@ -253,13 +298,18 @@
             transition: background-color 0.2s;
             flex-shrink: 0;
         }
+
         .chat-send-btn:hover:not(:disabled) {
-            background-color: #06b6d4; /* cyan-500 */
+            background-color: #06b6d4;
+            /* cyan-500 */
         }
+
         .chat-send-btn:disabled {
-            background-color: #64748b; /* slate-500 */
+            background-color: #64748b;
+            /* slate-500 */
             cursor: not-allowed;
         }
+
         .loading-dots span {
             display: inline-block;
             width: 8px;
@@ -269,11 +319,26 @@
             margin: 0 2px;
             animation: bounce 1.4s infinite ease-in-out both;
         }
-        .loading-dots span:nth-child(1) { animation-delay: -0.32s; }
-        .loading-dots span:nth-child(2) { animation-delay: -0.16s; }
+
+        .loading-dots span:nth-child(1) {
+            animation-delay: -0.32s;
+        }
+
+        .loading-dots span:nth-child(2) {
+            animation-delay: -0.16s;
+        }
+
         @keyframes bounce {
-            0%, 80%, 100% { transform: scale(0); }
-            40% { transform: scale(1.0); }
+
+            0%,
+            80%,
+            100% {
+                transform: scale(0);
+            }
+
+            40% {
+                transform: scale(1.0);
+            }
         }
 
         @media (max-width: 768px) {
@@ -285,14 +350,14 @@
                 height: calc(100vh - 7rem);
                 max-height: none;
             }
+
             .chat-bubble {
                 right: 1rem;
                 bottom: 1rem;
             }
         }
-        
     </style>
-<script type="importmap">
+    <script type="importmap">
 {
   "imports": {
     "react/": "https://aistudiocdn.com/react@^19.2.0/"
@@ -300,36 +365,49 @@
 }
 </script>
 </head>
+
 <body class="bg-slate-50 text-slate-800 dark:bg-slate-900 dark:text-slate-300 transition-colors duration-300">
 
     <!-- Header / Navigasi -->
     <header id="header" class="bg-transparent fixed top-0 left-0 right-0 z-50 transition-all duration-300">
         <div class="container mx-auto px-6 py-3 flex justify-between items-center">
-              <a href="#" class="flex items-center gap-2 text-2xl font-bold text-white">
-                 <span class="inline-block bg-cyan-400 text-white font-black text-3xl px-2 py-1 rounded border-2 border-cyan-300">V</span>
-                 <span class="font-extrabold tracking-tight">OXIA</span>
-             </a>
+            <a href="#" class="flex items-center gap-2 text-2xl font-bold text-white">
+                <span
+                    class="inline-block bg-cyan-400 text-white font-black text-3xl px-2 py-1 rounded border-2 border-cyan-300">V</span>
+                <span class="font-extrabold tracking-tight">OXIA</span>
+            </a>
             <div class="flex items-center">
                 <nav class="hidden md:flex space-x-8 items-center mr-4">
-                    <a href="#fitur" class="text-slate-300 hover:text-white transition-colors duration-200 hover:scale-105 transform transition-transform duration-500 ease-in-out">Fitur</a>
-                    <a href="#solusi" class="text-slate-300 hover:text-white transition-colors duration-200 hover:scale-105 transform transition-transform duration-500 ease-in-out">Solusi</a>
-                    <a href="#harga" class="text-slate-300 hover:text-white transition-colors duration-200 hover:scale-105 transform transition-transform duration-500 ease-in-out">Paket</a>
-                    <a href="#kontak" class="text-slate-300 hover:text-white transition-colors duration-200 hover:scale-105 transform transition-transform duration-500 ease-in-out">Kontak</a>
+                    <a href="#fitur"
+                        class="text-slate-300 hover:text-white transition-colors duration-200 hover:scale-105 transform transition-transform duration-500 ease-in-out">Fitur</a>
+                    <a href="#solusi"
+                        class="text-slate-300 hover:text-white transition-colors duration-200 hover:scale-105 transform transition-transform duration-500 ease-in-out">Solusi</a>
+                    <a href="#harga"
+                        class="text-slate-300 hover:text-white transition-colors duration-200 hover:scale-105 transform transition-transform duration-500 ease-in-out">Paket</a>
+                    <a href="#kontak"
+                        class="text-slate-300 hover:text-white transition-colors duration-200 hover:scale-105 transform transition-transform duration-500 ease-in-out">Kontak</a>
                 </nav>
 
-                <button id="mobile-menu-button" class="md:hidden p-2 rounded-md text-slate-300 hover:bg-slate-800/50 focus:outline-none focus:ring-2 focus:ring-cyan-500">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+                <button id="mobile-menu-button"
+                    class="md:hidden p-2 rounded-md text-slate-300 hover:bg-slate-800/50 focus:outline-none focus:ring-2 focus:ring-cyan-500">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M4 6h16M4 12h16m-7 6h7" />
                     </svg>
                 </button>
             </div>
         </div>
         <!-- Mobile Menu -->
         <div id="mobile-menu" class="hidden md:hidden bg-slate-800/80 backdrop-blur-lg border-t border-slate-700">
-            <a href="#fitur" class="block py-3 px-6 text-slate-300 hover:bg-slate-700 transition-colors duration-200">Fitur</a>
-            <a href="#solusi" class="block py-3 px-6 text-slate-300 hover:bg-slate-700 transition-colors duration-200">Solusi</a>
-            <a href="#harga" class="block py-3 px-6 text-slate-300 hover:bg-slate-700 transition-colors duration-200">Paket</a>
-            <a href="#kontak" class="block py-3 px-6 text-slate-300 hover:bg-slate-700 transition-colors duration-200">Kontak</a>
+            <a href="#fitur"
+                class="block py-3 px-6 text-slate-300 hover:bg-slate-700 transition-colors duration-200">Fitur</a>
+            <a href="#solusi"
+                class="block py-3 px-6 text-slate-300 hover:bg-slate-700 transition-colors duration-200">Solusi</a>
+            <a href="#harga"
+                class="block py-3 px-6 text-slate-300 hover:bg-slate-700 transition-colors duration-200">Paket</a>
+            <a href="#kontak"
+                class="block py-3 px-6 text-slate-300 hover:bg-slate-700 transition-colors duration-200">Kontak</a>
 
         </div>
     </header>
@@ -341,25 +419,39 @@
             <div class="particles"></div>
             <div class="hero-content container mx-auto px-6 text-center">
                 <h1 class="font-black text-white leading-none">
-                    <span class="title-voxia block font-black tracking-tighter bg-clip-text text-transparent bg-gradient-to-r from-cyan-300 to-sky-500">VOXIA</span>
-                    <span class="hero-subtitle block mt-2 md:mt-4 text-2xl md:text-3xl lg:text-4xl font-semibold text-slate-200 tracking-wide">Ubah Setiap Percakapan di WhatsApp Menjadi Peluang</span>
+                    <span
+                        class="title-voxia block font-black tracking-tighter bg-clip-text text-transparent bg-gradient-to-r from-cyan-300 to-sky-500">VOXIA</span>
+                    <span
+                        class="hero-subtitle block mt-2 md:mt-4 text-2xl md:text-3xl lg:text-4xl font-semibold text-slate-200 tracking-wide">Ubah
+                        Setiap Percakapan di WhatsApp Menjadi Peluang</span>
                 </h1>
                 <p class="mt-8 max-w-4xl mx-auto text-lg md:text-xl text-slate-300 leading-relaxed">
-                    Kami bukan sekadar software. Voxia adalah sistem cerdas yang bekerja di balik layar untuk memastikan setiap interaksi pelanggan di WhatsApp berjalan lancar, terorganisir, dan menghasilkan. Biarkan kami yang mengurus kompleksitas, Anda yang menikmati pertumbuhannya.
+                    Kami bukan sekadar software. Voxia adalah sistem cerdas yang bekerja di balik layar untuk memastikan
+                    setiap interaksi pelanggan di WhatsApp berjalan lancar, terorganisir, dan menghasilkan. Biarkan kami
+                    yang mengurus kompleksitas, Anda yang menikmati pertumbuhannya.
                 </p>
                 <div class="hero-cta mt-10 flex flex-col sm:flex-row justify-center items-center gap-4">
-                    <a href="https://wa.me/6285183079558?text=Halo%20Tim%20VOXIA%2C%20bagaimana%20cara%20menjadwalkan%20demo%3F" target="_blank" rel="noopener noreferrer" class="cta-glow w-full sm:w-auto bg-cyan-600 text-white font-bold py-4 px-10 rounded-lg shadow-lg hover:bg-cyan-500 transition-all flex items-center justify-center">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-3" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01s-.521.074-.792.372c-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.626.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.289.173-1.413z"/></svg>
+                    <a href="https://wa.me/6285183079558?text=Halo%20Tim%20VOXIA%2C%20bagaimana%20cara%20menjadwalkan%20demo%3F"
+                        target="_blank" rel="noopener noreferrer"
+                        class="cta-glow w-full sm:w-auto bg-cyan-600 text-white font-bold py-4 px-10 rounded-lg shadow-lg hover:bg-cyan-500 transition-all flex items-center justify-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-3" viewBox="0 0 24 24"
+                            fill="currentColor">
+                            <path
+                                d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01s-.521.074-.792.372c-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.626.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.289.173-1.413z" />
+                        </svg>
                         Jadwalkan Demo Gratis
                     </a>
-                    <a href="#harga" class="w-full sm:w-auto bg-slate-700/50 text-slate-200 font-semibold py-4 px-10 rounded-lg hover:bg-slate-600/50 backdrop-blur-sm transition-all">
+                    <a href="#harga"
+                        class="w-full sm:w-auto bg-slate-700/50 text-slate-200 font-semibold py-4 px-10 rounded-lg hover:bg-slate-600/50 backdrop-blur-sm transition-all">
                         Lihat Paket
                     </a>
                 </div>
             </div>
             <div class="wave-separator">
                 <svg viewBox="0 0 1440 120" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M1440 120H0V0C196.444 68.3282 531.815 119.542 720 120C908.185 120.458 1243.56 68.3282 1440 0V120Z" class="fill-slate-50 dark:fill-slate-900"/>
+                    <path
+                        d="M1440 120H0V0C196.444 68.3282 531.815 119.542 720 120C908.185 120.458 1243.56 68.3282 1440 0V120Z"
+                        class="fill-slate-50 dark:fill-slate-900" />
                 </svg>
             </div>
         </section>
@@ -369,64 +461,115 @@
             <div class="container mx-auto px-6">
                 <div class="text-center mb-16">
                     <h2 class="text-3xl lg:text-4xl font-bold text-slate-900 dark:text-white">Fitur Utama VOXIA</h2>
-                    <p class="mt-4 text-lg text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">Semua yang Anda butuhkan untuk mengotomatiskan layanan pelanggan dan bertumbuh lebih cepat.</p>
+                    <p class="mt-4 text-lg text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">Semua yang Anda
+                        butuhkan untuk mengotomatiskan layanan pelanggan dan bertumbuh lebih cepat.</p>
                 </div>
                 <div class="space-y-8">
                     <!-- Main Feature -->
-                     <div class="bg-white dark:bg-slate-800 p-8 rounded-xl shadow-lg hover:shadow-2xl hover:shadow-cyan-500/30 dark:shadow-slate-950/50 transition-all duration-300 transform hover:scale-105 flex flex-col md:flex-row items-center gap-8 border-b-4 border-cyan-500">
-                        <div class="bg-cyan-100 text-cyan-600 dark:bg-cyan-900/50 dark:text-cyan-400 rounded-lg w-16 h-16 flex-shrink-0 flex items-center justify-center">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" /></svg>
+                    <div
+                        class="bg-white dark:bg-slate-800 p-8 rounded-xl shadow-lg hover:shadow-2xl hover:shadow-cyan-500/30 dark:shadow-slate-950/50 transition-all duration-300 transform hover:scale-105 flex flex-col md:flex-row items-center gap-8 border-b-4 border-cyan-500">
+                        <div
+                            class="bg-cyan-100 text-cyan-600 dark:bg-cyan-900/50 dark:text-cyan-400 rounded-lg w-16 h-16 flex-shrink-0 flex items-center justify-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
+                            </svg>
                         </div>
                         <div>
                             <h3 class="font-bold text-2xl mb-2 dark:text-white">AI Chatbot 24/7</h3>
-                            <p class="text-slate-600 dark:text-slate-400 text-lg">Jantung dari VOXIA. Biarkan AI kami bekerja merespon pertanyaan umum pelanggan secara instan, kapan saja, sehingga Anda tidak akan pernah kehilangan calon pembeli.</p>
+                            <p class="text-slate-600 dark:text-slate-400 text-lg">Jantung dari VOXIA. Biarkan AI kami
+                                bekerja merespon pertanyaan umum pelanggan secara instan, kapan saja, sehingga Anda
+                                tidak akan pernah kehilangan calon pembeli.</p>
                         </div>
                     </div>
 
                     <!-- Other Features Grid -->
                     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 pt-8">
-                         <div class="bg-white dark:bg-slate-800 p-6 rounded-xl shadow-md hover:shadow-xl hover:shadow-cyan-500/20 dark:shadow-slate-950/50 transition-all duration-300 transform hover:scale-105 hover:bg-cyan-50/50 dark:hover:bg-cyan-900/20">
-                             <div class="bg-cyan-100 text-cyan-600 dark:bg-cyan-900/50 dark:text-cyan-400 rounded-lg w-12 h-12 flex items-center justify-center mb-4 transition-all duration-300 hover:scale-110">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" /></svg>
-                             </div>
-                             <h3 class="font-bold text-xl mb-2 dark:text-white">Integrasi WhatsApp</h3>
-                             <p class="text-slate-600 dark:text-slate-400">Konektivitas langsung dengan WhatsApp Business API.</p>
-                         </div>
-                         <div class="bg-white dark:bg-slate-800 p-6 rounded-xl shadow-md hover:shadow-xl hover:shadow-cyan-500/20 dark:shadow-slate-950/50 transition-all duration-300 transform hover:scale-105 hover:bg-cyan-50/50 dark:hover:bg-cyan-900/20">
-                             <div class="bg-cyan-100 text-cyan-600 dark:bg-cyan-900/50 dark:text-cyan-400 rounded-lg w-12 h-12 flex items-center justify-center mb-4 transition-all duration-300 hover:scale-110">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" /></svg>
-                             </div>
-                             <h3 class="font-bold text-xl mb-2 dark:text-white">Manajemen Pelanggan Terpadu</h3>
-                             <p class="text-slate-600 dark:text-slate-400">Manajemen pelanggan terintegrasi dalam satu dashboard.</p>
-                         </div>
-                         <div class="bg-white dark:bg-slate-800 p-6 rounded-xl shadow-md hover:shadow-xl hover:shadow-cyan-500/20 dark:shadow-slate-950/50 transition-all duration-300 transform hover:scale-105 hover:bg-cyan-50/50 dark:hover:bg-cyan-900/20">
-                             <div class="bg-cyan-100 text-cyan-600 dark:bg-cyan-900/50 dark:text-cyan-400 rounded-lg w-12 h-12 flex items-center justify-center mb-4 transition-all duration-300 hover:scale-110">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 4v5h5M20 20v-5h-5M4 20h5v-5M20 4h-5v5" /></svg>
-                             </div>
-                             <h3 class="font-bold text-xl mb-2 dark:text-white">Otomasi Follow-up</h3>
-                             <p class="text-slate-600 dark:text-slate-400">Pengingat dan komunikasi otomatis untuk pelanggan.</p>
-                         </div>
-                         <div class="bg-white dark:bg-slate-800 p-6 rounded-xl shadow-md hover:shadow-xl hover:shadow-cyan-500/20 dark:shadow-slate-950/50 transition-all duration-300 transform hover:scale-105 hover:bg-cyan-50/50 dark:hover:bg-cyan-900/20">
-                             <div class="bg-cyan-100 text-cyan-600 dark:bg-cyan-900/50 dark:text-cyan-400 rounded-lg w-12 h-12 flex items-center justify-center mb-4 transition-all duration-300 hover:scale-110">
-                                 <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4" /></svg>
-                             </div>
-                             <h3 class="font-bold text-xl mb-2 dark:text-white">Multi-channel Support</h3>
-                             <p class="text-slate-600 dark:text-slate-400">Dukungan berbagai saluran komunikasi dalam satu platform.</p>
-                         </div>
-                         <div class="bg-white dark:bg-slate-800 p-6 rounded-xl shadow-md hover:shadow-xl hover:shadow-cyan-500/20 dark:shadow-slate-950/50 transition-all duration-300 transform hover:scale-105 hover:bg-cyan-50/50 dark:hover:bg-cyan-900/20">
-                             <div class="bg-cyan-100 text-cyan-600 dark:bg-cyan-900/50 dark:text-cyan-400 rounded-lg w-12 h-12 flex items-center justify-center mb-4 transition-all duration-300 hover:scale-110">
-                                 <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" /></svg>
-                             </div>
-                             <h3 class="font-bold text-xl mb-2 dark:text-white">Booking Otomatis</h3>
-                             <p class="text-slate-600 dark:text-slate-400">Sistem reservasi dan pengingat jadwal otomatis.</p>
-                         </div>
-                         <div class="bg-white dark:bg-slate-800 p-6 rounded-xl shadow-md hover:shadow-xl hover:shadow-cyan-500/20 dark:shadow-slate-950/50 transition-all duration-300 transform hover:scale-105 hover:bg-cyan-50/50 dark:hover:bg-cyan-900/20">
-                              <div class="bg-cyan-100 text-cyan-600 dark:bg-cyan-900/50 dark:text-cyan-400 rounded-lg w-12 h-12 flex items-center justify-center mb-4 transition-all duration-300 hover:scale-110">
-                                 <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" /></svg>
-                             </div>
-                             <h3 class="font-bold text-xl mb-2 dark:text-white">AI Kustom</h3>
-                             <p class="text-slate-600 dark:text-slate-400">AI yang dilatih khusus untuk kebutuhan unik bisnis Anda.</p>
-                         </div>
+                        <div
+                            class="bg-white dark:bg-slate-800 p-6 rounded-xl shadow-md hover:shadow-xl hover:shadow-cyan-500/20 dark:shadow-slate-950/50 transition-all duration-300 transform hover:scale-105 hover:bg-cyan-50/50 dark:hover:bg-cyan-900/20">
+                            <div
+                                class="bg-cyan-100 text-cyan-600 dark:bg-cyan-900/50 dark:text-cyan-400 rounded-lg w-12 h-12 flex items-center justify-center mb-4 transition-all duration-300 hover:scale-110">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                                    stroke="currentColor" stroke-width="2">
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                        d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" />
+                                </svg>
+                            </div>
+                            <h3 class="font-bold text-xl mb-2 dark:text-white">Integrasi WhatsApp</h3>
+                            <p class="text-slate-600 dark:text-slate-400">Konektivitas langsung dengan WhatsApp Business
+                                API.</p>
+                        </div>
+                        <div
+                            class="bg-white dark:bg-slate-800 p-6 rounded-xl shadow-md hover:shadow-xl hover:shadow-cyan-500/20 dark:shadow-slate-950/50 transition-all duration-300 transform hover:scale-105 hover:bg-cyan-50/50 dark:hover:bg-cyan-900/20">
+                            <div
+                                class="bg-cyan-100 text-cyan-600 dark:bg-cyan-900/50 dark:text-cyan-400 rounded-lg w-12 h-12 flex items-center justify-center mb-4 transition-all duration-300 hover:scale-110">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                                    stroke="currentColor" stroke-width="2">
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                        d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+                                </svg>
+                            </div>
+                            <h3 class="font-bold text-xl mb-2 dark:text-white">Manajemen Pelanggan Terpadu</h3>
+                            <p class="text-slate-600 dark:text-slate-400">Manajemen pelanggan terintegrasi dalam satu
+                                dashboard.</p>
+                        </div>
+                        <div
+                            class="bg-white dark:bg-slate-800 p-6 rounded-xl shadow-md hover:shadow-xl hover:shadow-cyan-500/20 dark:shadow-slate-950/50 transition-all duration-300 transform hover:scale-105 hover:bg-cyan-50/50 dark:hover:bg-cyan-900/20">
+                            <div
+                                class="bg-cyan-100 text-cyan-600 dark:bg-cyan-900/50 dark:text-cyan-400 rounded-lg w-12 h-12 flex items-center justify-center mb-4 transition-all duration-300 hover:scale-110">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                                    stroke="currentColor" stroke-width="2">
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                        d="M4 4v5h5M20 20v-5h-5M4 20h5v-5M20 4h-5v5" />
+                                </svg>
+                            </div>
+                            <h3 class="font-bold text-xl mb-2 dark:text-white">Otomasi Follow-up</h3>
+                            <p class="text-slate-600 dark:text-slate-400">Pengingat dan komunikasi otomatis untuk
+                                pelanggan.</p>
+                        </div>
+                        <div
+                            class="bg-white dark:bg-slate-800 p-6 rounded-xl shadow-md hover:shadow-xl hover:shadow-cyan-500/20 dark:shadow-slate-950/50 transition-all duration-300 transform hover:scale-105 hover:bg-cyan-50/50 dark:hover:bg-cyan-900/20">
+                            <div
+                                class="bg-cyan-100 text-cyan-600 dark:bg-cyan-900/50 dark:text-cyan-400 rounded-lg w-12 h-12 flex items-center justify-center mb-4 transition-all duration-300 hover:scale-110">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                                    stroke="currentColor" stroke-width="2">
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                        d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4" />
+                                </svg>
+                            </div>
+                            <h3 class="font-bold text-xl mb-2 dark:text-white">Multi-channel Support</h3>
+                            <p class="text-slate-600 dark:text-slate-400">Dukungan berbagai saluran komunikasi dalam
+                                satu platform.</p>
+                        </div>
+                        <div
+                            class="bg-white dark:bg-slate-800 p-6 rounded-xl shadow-md hover:shadow-xl hover:shadow-cyan-500/20 dark:shadow-slate-950/50 transition-all duration-300 transform hover:scale-105 hover:bg-cyan-50/50 dark:hover:bg-cyan-900/20">
+                            <div
+                                class="bg-cyan-100 text-cyan-600 dark:bg-cyan-900/50 dark:text-cyan-400 rounded-lg w-12 h-12 flex items-center justify-center mb-4 transition-all duration-300 hover:scale-110">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                                    stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                                </svg>
+                            </div>
+                            <h3 class="font-bold text-xl mb-2 dark:text-white">Booking Otomatis</h3>
+                            <p class="text-slate-600 dark:text-slate-400">Sistem reservasi dan pengingat jadwal
+                                otomatis.</p>
+                        </div>
+                        <div
+                            class="bg-white dark:bg-slate-800 p-6 rounded-xl shadow-md hover:shadow-xl hover:shadow-cyan-500/20 dark:shadow-slate-950/50 transition-all duration-300 transform hover:scale-105 hover:bg-cyan-50/50 dark:hover:bg-cyan-900/20">
+                            <div
+                                class="bg-cyan-100 text-cyan-600 dark:bg-cyan-900/50 dark:text-cyan-400 rounded-lg w-12 h-12 flex items-center justify-center mb-4 transition-all duration-300 hover:scale-110">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                                    stroke="currentColor" stroke-width="2">
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                        d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+                                </svg>
+                            </div>
+                            <h3 class="font-bold text-xl mb-2 dark:text-white">AI Kustom</h3>
+                            <p class="text-slate-600 dark:text-slate-400">AI yang dilatih khusus untuk kebutuhan unik
+                                bisnis Anda.</p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -436,210 +579,339 @@
         <section id="solusi" class="py-20 lg:py-24 bg-slate-100 dark:bg-slate-950">
             <div class="container mx-auto px-6">
                 <div class="text-center mb-16">
-                    <h2 class="text-3xl lg:text-4xl font-bold text-slate-900 dark:text-white">Dari Masalah Menjadi Peluang</h2>
-                    <p class="mt-4 text-lg text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">Lihat bagaimana VOXIA mengubah tantangan harian UKM menjadi kesempatan untuk bertumbuh.</p>
+                    <h2 class="text-3xl lg:text-4xl font-bold text-slate-900 dark:text-white">Dari Masalah Menjadi
+                        Peluang</h2>
+                    <p class="mt-4 text-lg text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">Lihat bagaimana VOXIA
+                        mengubah tantangan harian UKM menjadi kesempatan untuk bertumbuh.</p>
                 </div>
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                     <!-- Card 1 -->
-                    <div class="bg-white dark:bg-slate-800 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 flex flex-col p-6 border border-slate-200 dark:border-slate-700">
+                    <div
+                        class="bg-white dark:bg-slate-800 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 flex flex-col p-6 border border-slate-200 dark:border-slate-700">
                         <div class="flex-1">
                             <div class="flex items-start gap-4">
-                                <div class="flex-shrink-0 w-12 h-12 rounded-lg bg-red-100 dark:bg-red-900/50 text-red-600 dark:text-red-400 flex items-center justify-center">
-                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-6 w-6"><path stroke-linecap="round" stroke-linejoin="round" d="M15.182 16.318A4.486 4.486 0 0012.016 15a4.486 4.486 0 00-3.198 1.318M21 12a9 9 0 11-18 0 9 9 0 0118 0zM9.75 9.75c0 .414-.168.75-.375.75S9 10.164 9 9.75s.168-.75.375-.75S9.75 9.336 9.75 9.75zm4.5 0c0 .414-.168.75-.375.75s-.375-.336-.375-.75.168-.75.375-.75.375.336.375.75z" /></svg>
+                                <div
+                                    class="flex-shrink-0 w-12 h-12 rounded-lg bg-red-100 dark:bg-red-900/50 text-red-600 dark:text-red-400 flex items-center justify-center">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                        stroke-width="1.5" stroke="currentColor" class="h-6 w-6">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="M15.182 16.318A4.486 4.486 0 0012.016 15a4.486 4.486 0 00-3.198 1.318M21 12a9 9 0 11-18 0 9 9 0 0118 0zM9.75 9.75c0 .414-.168.75-.375.75S9 10.164 9 9.75s.168-.75.375-.75S9.75 9.336 9.75 9.75zm4.5 0c0 .414-.168.75-.375.75s-.375-.336-.375-.75.168-.75.375-.75.375.336.375.75z" />
+                                    </svg>
                                 </div>
                                 <div>
                                     <p class="text-sm font-semibold text-red-600 dark:text-red-400">MASALAH</p>
-                                    <h3 class="text-lg font-bold text-slate-800 dark:text-white mt-1">Staff Kewalahan</h3>
-                                    <p class="text-sm text-slate-600 dark:text-slate-400 mt-2">Volume chat tinggi dan pertanyaan berulang membuat staff kewalahan.</p>
+                                    <h3 class="text-lg font-bold text-slate-800 dark:text-white mt-1">Staff Kewalahan
+                                    </h3>
+                                    <p class="text-sm text-slate-600 dark:text-slate-400 mt-2">Volume chat tinggi dan
+                                        pertanyaan berulang membuat staff kewalahan.</p>
                                 </div>
                             </div>
                         </div>
                         <div class="flex justify-center items-center my-4">
                             <div class="w-full border-t border-dashed border-slate-300 dark:border-slate-600 relative">
-                                <div class="absolute left-1/2 -translate-x-1/2 -top-4 bg-white dark:bg-slate-800 p-1 rounded-full">
-                                    <svg class="h-6 w-6 text-cyan-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 13.5 12 21m0 0-7.5-7.5M12 21V3" /></svg>
+                                <div
+                                    class="absolute left-1/2 -translate-x-1/2 -top-4 bg-white dark:bg-slate-800 p-1 rounded-full">
+                                    <svg class="h-6 w-6 text-cyan-500" xmlns="http://www.w3.org/2000/svg" fill="none"
+                                        viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="M19.5 13.5 12 21m0 0-7.5-7.5M12 21V3" />
+                                    </svg>
                                 </div>
                             </div>
                         </div>
                         <div class="flex-1">
                             <div class="flex items-start gap-4">
-                                <div class="flex-shrink-0 w-12 h-12 rounded-lg bg-cyan-100 dark:bg-cyan-900/50 text-cyan-600 dark:text-cyan-400 flex items-center justify-center">
-                                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-6 w-6"><path stroke-linecap="round" stroke-linejoin="round" d="M8.25 3v1.5M4.5 8.25H3m18 0h-1.5M4.5 12H3m18 0h-1.5m-15 3.75H3m18 0h-1.5M8.25 19.5V21M12 3v1.5m0 15V21m3.75-18v1.5m0 15V21m-9-1.5h10.5a2.25 2.25 0 002.25-2.25V6.75a2.25 2.25 0 00-2.25-2.25H6.75A2.25 2.25 0 004.5 6.75v10.5a2.25 2.25 0 002.25 2.25zm.75-12h9v9h-9v-9z" /></svg>
+                                <div
+                                    class="flex-shrink-0 w-12 h-12 rounded-lg bg-cyan-100 dark:bg-cyan-900/50 text-cyan-600 dark:text-cyan-400 flex items-center justify-center">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                        stroke-width="1.5" stroke="currentColor" class="h-6 w-6">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="M8.25 3v1.5M4.5 8.25H3m18 0h-1.5M4.5 12H3m18 0h-1.5m-15 3.75H3m18 0h-1.5M8.25 19.5V21M12 3v1.5m0 15V21m3.75-18v1.5m0 15V21m-9-1.5h10.5a2.25 2.25 0 002.25-2.25V6.75a2.25 2.25 0 00-2.25-2.25H6.75A2.25 2.25 0 004.5 6.75v10.5a2.25 2.25 0 002.25 2.25zm.75-12h9v9h-9v-9z" />
+                                    </svg>
                                 </div>
                                 <div>
                                     <p class="text-sm font-semibold text-cyan-600 dark:text-cyan-500">SOLUSI VOXIA</p>
-                                    <h3 class="text-lg font-bold text-slate-800 dark:text-white mt-1">AI Chatbot 24/7</h3>
-                                    <p class="text-sm text-slate-600 dark:text-slate-400 mt-2">Otomatisasi balasan untuk pertanyaan umum, membebaskan waktu tim Anda.</p>
+                                    <h3 class="text-lg font-bold text-slate-800 dark:text-white mt-1">AI Chatbot 24/7
+                                    </h3>
+                                    <p class="text-sm text-slate-600 dark:text-slate-400 mt-2">Otomatisasi balasan untuk
+                                        pertanyaan umum, membebaskan waktu tim Anda.</p>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <!-- Card 2 -->
-                    <div class="bg-white dark:bg-slate-800 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 flex flex-col p-6 border border-slate-200 dark:border-slate-700">
+                    <div
+                        class="bg-white dark:bg-slate-800 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 flex flex-col p-6 border border-slate-200 dark:border-slate-700">
                         <div class="flex-1">
                             <div class="flex items-start gap-4">
-                                <div class="flex-shrink-0 w-12 h-12 rounded-lg bg-red-100 dark:bg-red-900/50 text-red-600 dark:text-red-400 flex items-center justify-center">
-                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-6 w-6"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m-1.5 0H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 00-9-9zM3.75 15.75h6" /></svg>
+                                <div
+                                    class="flex-shrink-0 w-12 h-12 rounded-lg bg-red-100 dark:bg-red-900/50 text-red-600 dark:text-red-400 flex items-center justify-center">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                        stroke-width="1.5" stroke="currentColor" class="h-6 w-6">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m-1.5 0H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 00-9-9zM3.75 15.75h6" />
+                                    </svg>
                                 </div>
                                 <div>
                                     <p class="text-sm font-semibold text-red-600 dark:text-red-400">MASALAH</p>
-                                    <h3 class="text-lg font-bold text-slate-800 dark:text-white mt-1">Data Pelanggan Tercecer</h3>
-                                    <p class="text-sm text-slate-600 dark:text-slate-400 mt-2">Kontak dan riwayat interaksi pelanggan tersimpan di banyak tempat.</p>
+                                    <h3 class="text-lg font-bold text-slate-800 dark:text-white mt-1">Data Pelanggan
+                                        Tercecer</h3>
+                                    <p class="text-sm text-slate-600 dark:text-slate-400 mt-2">Kontak dan riwayat
+                                        interaksi pelanggan tersimpan di banyak tempat.</p>
                                 </div>
                             </div>
                         </div>
                         <div class="flex justify-center items-center my-4">
                             <div class="w-full border-t border-dashed border-slate-300 dark:border-slate-600 relative">
-                                <div class="absolute left-1/2 -translate-x-1/2 -top-4 bg-white dark:bg-slate-800 p-1 rounded-full">
-                                    <svg class="h-6 w-6 text-cyan-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 13.5 12 21m0 0-7.5-7.5M12 21V3" /></svg>
+                                <div
+                                    class="absolute left-1/2 -translate-x-1/2 -top-4 bg-white dark:bg-slate-800 p-1 rounded-full">
+                                    <svg class="h-6 w-6 text-cyan-500" xmlns="http://www.w3.org/2000/svg" fill="none"
+                                        viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="M19.5 13.5 12 21m0 0-7.5-7.5M12 21V3" />
+                                    </svg>
                                 </div>
                             </div>
                         </div>
                         <div class="flex-1">
                             <div class="flex items-start gap-4">
-                                <div class="flex-shrink-0 w-12 h-12 rounded-lg bg-cyan-100 dark:bg-cyan-900/50 text-cyan-600 dark:text-cyan-400 flex items-center justify-center">
-                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-6 w-6"><path stroke-linecap="round" stroke-linejoin="round" d="M20.25 6.375c0 2.278-3.694 4.125-8.25 4.125S3.75 8.653 3.75 6.375m16.5 0c0-2.278-3.694-4.125-8.25-4.125S3.75 4.097 3.75 6.375m16.5 0v11.25c0 2.278-3.694 4.125-8.25 4.125s-8.25-1.847-8.25-4.125V6.375m16.5 0v3.75m-16.5-3.75v3.75m16.5 0v3.75C20.25 16.153 16.556 18 12 18s-8.25-1.847-8.25-4.125v-3.75m16.5 0c0 2.278-3.694 4.125-8.25 4.125s-8.25-1.847-8.25-4.125" /></svg>
+                                <div
+                                    class="flex-shrink-0 w-12 h-12 rounded-lg bg-cyan-100 dark:bg-cyan-900/50 text-cyan-600 dark:text-cyan-400 flex items-center justify-center">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                        stroke-width="1.5" stroke="currentColor" class="h-6 w-6">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="M20.25 6.375c0 2.278-3.694 4.125-8.25 4.125S3.75 8.653 3.75 6.375m16.5 0c0-2.278-3.694-4.125-8.25-4.125S3.75 4.097 3.75 6.375m16.5 0v11.25c0 2.278-3.694 4.125-8.25 4.125s-8.25-1.847-8.25-4.125V6.375m16.5 0v3.75m-16.5-3.75v3.75m16.5 0v3.75C20.25 16.153 16.556 18 12 18s-8.25-1.847-8.25-4.125v-3.75m16.5 0c0 2.278-3.694 4.125-8.25 4.125s-8.25-1.847-8.25-4.125" />
+                                    </svg>
                                 </div>
                                 <div>
                                     <p class="text-sm font-semibold text-cyan-600 dark:text-cyan-500">SOLUSI VOXIA</p>
-                                    <h3 class="text-lg font-bold text-slate-800 dark:text-white mt-1">Manajemen Pelanggan Terpusat</h3>
-                                    <p class="text-sm text-slate-600 dark:text-slate-400 mt-2">Semua data pelanggan terintegrasi dalam satu dashboard yang mudah diakses.</p>
+                                    <h3 class="text-lg font-bold text-slate-800 dark:text-white mt-1">Manajemen
+                                        Pelanggan Terpusat</h3>
+                                    <p class="text-sm text-slate-600 dark:text-slate-400 mt-2">Semua data pelanggan
+                                        terintegrasi dalam satu dashboard yang mudah diakses.</p>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <!-- Card 3 -->
-                    <div class="bg-white dark:bg-slate-800 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 flex flex-col p-6 border border-slate-200 dark:border-slate-700">
+                    <div
+                        class="bg-white dark:bg-slate-800 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 flex flex-col p-6 border border-slate-200 dark:border-slate-700">
                         <div class="flex-1">
                             <div class="flex items-start gap-4">
-                                <div class="flex-shrink-0 w-12 h-12 rounded-lg bg-red-100 dark:bg-red-900/50 text-red-600 dark:text-red-400 flex items-center justify-center">
-                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-6 w-6"><path stroke-linecap="round" stroke-linejoin="round" d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 012.25-2.25h13.5A2.25 2.25 0 0121 7.5v11.25m-18 0A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75m-18 0h18" /></svg>
+                                <div
+                                    class="flex-shrink-0 w-12 h-12 rounded-lg bg-red-100 dark:bg-red-900/50 text-red-600 dark:text-red-400 flex items-center justify-center">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                        stroke-width="1.5" stroke="currentColor" class="h-6 w-6">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 012.25-2.25h13.5A2.25 2.25 0 0121 7.5v11.25m-18 0A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75m-18 0h18" />
+                                    </svg>
                                 </div>
                                 <div>
                                     <p class="text-sm font-semibold text-red-600 dark:text-red-400">MASALAH</p>
-                                    <h3 class="text-lg font-bold text-slate-800 dark:text-white mt-1">Booking Manual</h3>
-                                    <p class="text-sm text-slate-600 dark:text-slate-400 mt-2">Penjadwalan manual rawan kesalahan dan sering terjadi 'no-show'.</p>
+                                    <h3 class="text-lg font-bold text-slate-800 dark:text-white mt-1">Booking Manual
+                                    </h3>
+                                    <p class="text-sm text-slate-600 dark:text-slate-400 mt-2">Penjadwalan manual rawan
+                                        kesalahan dan sering terjadi 'no-show'.</p>
                                 </div>
                             </div>
                         </div>
                         <div class="flex justify-center items-center my-4">
                             <div class="w-full border-t border-dashed border-slate-300 dark:border-slate-600 relative">
-                                <div class="absolute left-1/2 -translate-x-1/2 -top-4 bg-white dark:bg-slate-800 p-1 rounded-full">
-                                    <svg class="h-6 w-6 text-cyan-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 13.5 12 21m0 0-7.5-7.5M12 21V3" /></svg>
+                                <div
+                                    class="absolute left-1/2 -translate-x-1/2 -top-4 bg-white dark:bg-slate-800 p-1 rounded-full">
+                                    <svg class="h-6 w-6 text-cyan-500" xmlns="http://www.w3.org/2000/svg" fill="none"
+                                        viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="M19.5 13.5 12 21m0 0-7.5-7.5M12 21V3" />
+                                    </svg>
                                 </div>
                             </div>
                         </div>
                         <div class="flex-1">
                             <div class="flex items-start gap-4">
-                                <div class="flex-shrink-0 w-12 h-12 rounded-lg bg-cyan-100 dark:bg-cyan-900/50 text-cyan-600 dark:text-cyan-400 flex items-center justify-center">
-                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6"><path stroke-linecap="round" stroke-linejoin="round" d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 012.25-2.25h13.5A2.25 2.25 0 0121 7.5v11.25m-18 0A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75m-18 0h18M9.75 14.25l1.5 1.5 3.75-3.75" /></svg>
+                                <div
+                                    class="flex-shrink-0 w-12 h-12 rounded-lg bg-cyan-100 dark:bg-cyan-900/50 text-cyan-600 dark:text-cyan-400 flex items-center justify-center">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                        stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 012.25-2.25h13.5A2.25 2.25 0 0121 7.5v11.25m-18 0A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75m-18 0h18M9.75 14.25l1.5 1.5 3.75-3.75" />
+                                    </svg>
                                 </div>
                                 <div>
                                     <p class="text-sm font-semibold text-cyan-600 dark:text-cyan-500">SOLUSI VOXIA</p>
-                                    <h3 class="text-lg font-bold text-slate-800 dark:text-white mt-1">Sistem Booking Otomatis</h3>
-                                    <p class="text-sm text-slate-600 dark:text-slate-400 mt-2">Integrasi booking & reminder otomatis via WhatsApp untuk kurangi 'no-show'.</p>
+                                    <h3 class="text-lg font-bold text-slate-800 dark:text-white mt-1">Sistem Booking
+                                        Otomatis</h3>
+                                    <p class="text-sm text-slate-600 dark:text-slate-400 mt-2">Integrasi booking &
+                                        reminder otomatis via WhatsApp untuk kurangi 'no-show'.</p>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <!-- Card 4 -->
-                    <div class="bg-white dark:bg-slate-800 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 flex flex-col p-6 border border-slate-200 dark:border-slate-700">
+                    <div
+                        class="bg-white dark:bg-slate-800 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 flex flex-col p-6 border border-slate-200 dark:border-slate-700">
                         <div class="flex-1">
                             <div class="flex items-start gap-4">
-                                <div class="flex-shrink-0 w-12 h-12 rounded-lg bg-red-100 dark:bg-red-900/50 text-red-600 dark:text-red-400 flex items-center justify-center">
-                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-6 w-6"><path stroke-linecap="round" stroke-linejoin="round" d="M9 15L3 9m0 0l6-6M3 9h12a6 6 0 010 12h-3" /></svg>
+                                <div
+                                    class="flex-shrink-0 w-12 h-12 rounded-lg bg-red-100 dark:bg-red-900/50 text-red-600 dark:text-red-400 flex items-center justify-center">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                        stroke-width="1.5" stroke="currentColor" class="h-6 w-6">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="M9 15L3 9m0 0l6-6M3 9h12a6 6 0 010 12h-3" />
+                                    </svg>
                                 </div>
                                 <div>
                                     <p class="text-sm font-semibold text-red-600 dark:text-red-400">MASALAH</p>
-                                    <h3 class="text-lg font-bold text-slate-800 dark:text-white mt-1">Sulit Follow-up</h3>
-                                    <p class="text-sm text-slate-600 dark:text-slate-400 mt-2">Kehilangan pelanggan lama karena tidak ada strategi follow-up yang efektif.</p>
+                                    <h3 class="text-lg font-bold text-slate-800 dark:text-white mt-1">Sulit Follow-up
+                                    </h3>
+                                    <p class="text-sm text-slate-600 dark:text-slate-400 mt-2">Kehilangan pelanggan lama
+                                        karena tidak ada strategi follow-up yang efektif.</p>
                                 </div>
                             </div>
                         </div>
                         <div class="flex justify-center items-center my-4">
                             <div class="w-full border-t border-dashed border-slate-300 dark:border-slate-600 relative">
-                                <div class="absolute left-1/2 -translate-x-1/2 -top-4 bg-white dark:bg-slate-800 p-1 rounded-full">
-                                    <svg class="h-6 w-6 text-cyan-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 13.5 12 21m0 0-7.5-7.5M12 21V3" /></svg>
+                                <div
+                                    class="absolute left-1/2 -translate-x-1/2 -top-4 bg-white dark:bg-slate-800 p-1 rounded-full">
+                                    <svg class="h-6 w-6 text-cyan-500" xmlns="http://www.w3.org/2000/svg" fill="none"
+                                        viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="M19.5 13.5 12 21m0 0-7.5-7.5M12 21V3" />
+                                    </svg>
                                 </div>
                             </div>
                         </div>
                         <div class="flex-1">
                             <div class="flex items-start gap-4">
-                                <div class="flex-shrink-0 w-12 h-12 rounded-lg bg-cyan-100 dark:bg-cyan-900/50 text-cyan-600 dark:text-cyan-400 flex items-center justify-center">
-                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-6 w-6"><path stroke-linecap="round" stroke-linejoin="round" d="M16.023 9.348h4.992v-.001M2.985 19.644v-4.992m0 0h4.992m-4.993 0l3.181 3.183a8.25 8.25 0 0011.667 0l3.181-3.183m-11.667-11.667l3.181 3.183a8.25 8.25 0 0111.667 0l3.181-3.183" /></svg>
+                                <div
+                                    class="flex-shrink-0 w-12 h-12 rounded-lg bg-cyan-100 dark:bg-cyan-900/50 text-cyan-600 dark:text-cyan-400 flex items-center justify-center">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                        stroke-width="1.5" stroke="currentColor" class="h-6 w-6">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="M16.023 9.348h4.992v-.001M2.985 19.644v-4.992m0 0h4.992m-4.993 0l3.181 3.183a8.25 8.25 0 0011.667 0l3.181-3.183m-11.667-11.667l3.181 3.183a8.25 8.25 0 0111.667 0l3.181-3.183" />
+                                    </svg>
                                 </div>
                                 <div>
                                     <p class="text-sm font-semibold text-cyan-600 dark:text-cyan-500">SOLUSI VOXIA</p>
-                                    <h3 class="text-lg font-bold text-slate-800 dark:text-white mt-1">Retargeting Otomatis</h3>
-                                    <p class="text-sm text-slate-600 dark:text-slate-400 mt-2">Jangkau kembali pelanggan lama dengan promo spesial secara otomatis.</p>
+                                    <h3 class="text-lg font-bold text-slate-800 dark:text-white mt-1">Retargeting
+                                        Otomatis</h3>
+                                    <p class="text-sm text-slate-600 dark:text-slate-400 mt-2">Jangkau kembali pelanggan
+                                        lama dengan promo spesial secara otomatis.</p>
                                 </div>
                             </div>
                         </div>
                     </div>
-                     <!-- Card 5 -->
-                    <div class="bg-white dark:bg-slate-800 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 flex flex-col p-6 border border-slate-200 dark:border-slate-700">
+                    <!-- Card 5 -->
+                    <div
+                        class="bg-white dark:bg-slate-800 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 flex flex-col p-6 border border-slate-200 dark:border-slate-700">
                         <div class="flex-1">
                             <div class="flex items-start gap-4">
-                                <div class="flex-shrink-0 w-12 h-12 rounded-lg bg-red-100 dark:bg-red-900/50 text-red-600 dark:text-red-400 flex items-center justify-center">
-                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-6 w-6"><path stroke-linecap="round" stroke-linejoin="round" d="M14.25 6.75a.75.75 0 01.75-.75h.75a.75.75 0 01.75.75v.75c0 .414.336.75.75.75h.75a.75.75 0 01.75.75v.75c0 .414.336.75.75.75h.75a.75.75 0 01.75.75v.75c0 .414.336.75.75.75h.75a.75.75 0 01.75.75v.75a.75.75 0 01-.75.75h-.75a.75.75 0 01-.75-.75v-.75c0-.414-.336-.75-.75-.75h-.75a.75.75 0 01-.75-.75v-.75c0-.414-.336-.75-.75-.75h-.75a.75.75 0 01-.75-.75v-.75a.75.75 0 01.75-.75z" /><path stroke-linecap="round" stroke-linejoin="round" d="M3 8.25a.75.75 0 01.75-.75h.75a.75.75 0 01.75.75v.75c0 .414.336.75.75.75h.75a.75.75 0 01.75.75v.75a.75.75 0 01-.75.75h-.75a.75.75 0 01-.75-.75v-.75c0-.414-.336-.75-.75-.75H4.5a.75.75 0 01-.75-.75V8.25z" /><path stroke-linecap="round" stroke-linejoin="round" d="M9 3.75a.75.75 0 01.75-.75h.75a.75.75 0 01.75.75v.75c0 .414.336.75.75.75h.75a.75.75 0 01.75.75v.75a.75.75 0 01-.75.75h-.75a.75.75 0 01-.75-.75V9a.75.75 0 01-.75-.75V7.5a.75.75 0 01.75-.75h.75a.75.75 0 01.75.75V9" /><path stroke-linecap="round" stroke-linejoin="round" d="M15 15.75a.75.75 0 01.75-.75h.75a.75.75 0 01.75.75v.75c0 .414.336.75.75.75h.75a.75.75 0 01.75.75v.75a.75.75 0 01-.75.75h-.75a.75.75 0 01-.75-.75v-.75c0-.414-.336-.75-.75-.75h-.75a.75.75 0 01-.75-.75v-.75z" /><path stroke-linecap="round" stroke-linejoin="round" d="M9 15.75a.75.75 0 01.75-.75h.75a.75.75 0 01.75.75v.75c0 .414.336.75.75.75h.75a.75.75 0 01.75.75v.75a.75.75 0 01-.75.75h-.75a.75.75 0 01-.75-.75v-.75a.75.75 0 01-.75-.75V15a.75.75 0 01.75-.75h.75a.75.75 0 01.75.75v.75" /></svg>
+                                <div
+                                    class="flex-shrink-0 w-12 h-12 rounded-lg bg-red-100 dark:bg-red-900/50 text-red-600 dark:text-red-400 flex items-center justify-center">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                        stroke-width="1.5" stroke="currentColor" class="h-6 w-6">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="M14.25 6.75a.75.75 0 01.75-.75h.75a.75.75 0 01.75.75v.75c0 .414.336.75.75.75h.75a.75.75 0 01.75.75v.75c0 .414.336.75.75.75h.75a.75.75 0 01.75.75v.75c0 .414.336.75.75.75h.75a.75.75 0 01.75.75v.75a.75.75 0 01-.75.75h-.75a.75.75 0 01-.75-.75v-.75c0-.414-.336-.75-.75-.75h-.75a.75.75 0 01-.75-.75v-.75c0-.414-.336-.75-.75-.75h-.75a.75.75 0 01-.75-.75v-.75a.75.75 0 01.75-.75z" />
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="M3 8.25a.75.75 0 01.75-.75h.75a.75.75 0 01.75.75v.75c0 .414.336.75.75.75h.75a.75.75 0 01.75.75v.75a.75.75 0 01-.75.75h-.75a.75.75 0 01-.75-.75v-.75c0-.414-.336-.75-.75-.75H4.5a.75.75 0 01-.75-.75V8.25z" />
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="M9 3.75a.75.75 0 01.75-.75h.75a.75.75 0 01.75.75v.75c0 .414.336.75.75.75h.75a.75.75 0 01.75.75v.75a.75.75 0 01-.75.75h-.75a.75.75 0 01-.75-.75V9a.75.75 0 01-.75-.75V7.5a.75.75 0 01.75-.75h.75a.75.75 0 01.75.75V9" />
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="M15 15.75a.75.75 0 01.75-.75h.75a.75.75 0 01.75.75v.75c0 .414.336.75.75.75h.75a.75.75 0 01.75.75v.75a.75.75 0 01-.75.75h-.75a.75.75 0 01-.75-.75v-.75c0-.414-.336-.75-.75-.75h-.75a.75.75 0 01-.75-.75v-.75z" />
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="M9 15.75a.75.75 0 01.75-.75h.75a.75.75 0 01.75.75v.75c0 .414.336.75.75.75h.75a.75.75 0 01.75.75v.75a.75.75 0 01-.75.75h-.75a.75.75 0 01-.75-.75v-.75a.75.75 0 01-.75-.75V15a.75.75 0 01.75-.75h.75a.75.75 0 01.75.75v.75" />
+                                    </svg>
                                 </div>
                                 <div>
                                     <p class="text-sm font-semibold text-red-600 dark:text-red-400">MASALAH</p>
                                     <h3 class="text-lg font-bold text-slate-800 dark:text-white mt-1">Fokus Terbagi</h3>
-                                    <p class="text-sm text-slate-600 dark:text-slate-400 mt-2">Waktu pemilik bisnis habis untuk membalas chat, bukan untuk strategi.</p>
+                                    <p class="text-sm text-slate-600 dark:text-slate-400 mt-2">Waktu pemilik bisnis
+                                        habis untuk membalas chat, bukan untuk strategi.</p>
                                 </div>
                             </div>
                         </div>
                         <div class="flex justify-center items-center my-4">
                             <div class="w-full border-t border-dashed border-slate-300 dark:border-slate-600 relative">
-                                <div class="absolute left-1/2 -translate-x-1/2 -top-4 bg-white dark:bg-slate-800 p-1 rounded-full">
-                                    <svg class="h-6 w-6 text-cyan-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 13.5 12 21m0 0-7.5-7.5M12 21V3" /></svg>
+                                <div
+                                    class="absolute left-1/2 -translate-x-1/2 -top-4 bg-white dark:bg-slate-800 p-1 rounded-full">
+                                    <svg class="h-6 w-6 text-cyan-500" xmlns="http://www.w3.org/2000/svg" fill="none"
+                                        viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="M19.5 13.5 12 21m0 0-7.5-7.5M12 21V3" />
+                                    </svg>
                                 </div>
                             </div>
                         </div>
                         <div class="flex-1">
                             <div class="flex items-start gap-4">
-                                <div class="flex-shrink-0 w-12 h-12 rounded-lg bg-cyan-100 dark:bg-cyan-900/50 text-cyan-600 dark:text-cyan-400 flex items-center justify-center">
-                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-6 w-6"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z" /></svg>
+                                <div
+                                    class="flex-shrink-0 w-12 h-12 rounded-lg bg-cyan-100 dark:bg-cyan-900/50 text-cyan-600 dark:text-cyan-400 flex items-center justify-center">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                        stroke-width="1.5" stroke="currentColor" class="h-6 w-6">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z" />
+                                    </svg>
                                 </div>
                                 <div>
                                     <p class="text-sm font-semibold text-cyan-600 dark:text-cyan-500">SOLUSI VOXIA</p>
-                                    <h3 class="text-lg font-bold text-slate-800 dark:text-white mt-1">Efisiensi Operasional</h3>
-                                    <p class="text-sm text-slate-600 dark:text-slate-400 mt-2">Otomasi interaksi agar pemilik bisa fokus pada pengembangan bisnis.</p>
+                                    <h3 class="text-lg font-bold text-slate-800 dark:text-white mt-1">Efisiensi
+                                        Operasional</h3>
+                                    <p class="text-sm text-slate-600 dark:text-slate-400 mt-2">Otomasi interaksi agar
+                                        pemilik bisa fokus pada pengembangan bisnis.</p>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <!-- Card 6 -->
-                    <div class="bg-white dark:bg-slate-800 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 flex flex-col p-6 border border-slate-200 dark:border-slate-700">
+                    <div
+                        class="bg-white dark:bg-slate-800 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 flex flex-col p-6 border border-slate-200 dark:border-slate-700">
                         <div class="flex-1">
                             <div class="flex items-start gap-4">
-                                <div class="flex-shrink-0 w-12 h-12 rounded-lg bg-red-100 dark:bg-red-900/50 text-red-600 dark:text-red-400 flex items-center justify-center">
-                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-6 w-6"><path stroke-linecap="round" stroke-linejoin="round" d="M18.364 18.364A9 9 0 005.636 5.636m12.728 12.728A9 9 0 015.636 5.636m12.728 12.728L5.636 5.636" /></svg>
+                                <div
+                                    class="flex-shrink-0 w-12 h-12 rounded-lg bg-red-100 dark:bg-red-900/50 text-red-600 dark:text-red-400 flex items-center justify-center">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                        stroke-width="1.5" stroke="currentColor" class="h-6 w-6">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="M18.364 18.364A9 9 0 005.636 5.636m12.728 12.728A9 9 0 015.636 5.636m12.728 12.728L5.636 5.636" />
+                                    </svg>
                                 </div>
                                 <div>
                                     <p class="text-sm font-semibold text-red-600 dark:text-red-400">MASALAH</p>
-                                    <h3 class="text-lg font-bold text-slate-800 dark:text-white mt-1">Promosi Kurang Efektif</h3>
-                                    <p class="text-sm text-slate-600 dark:text-slate-400 mt-2">Sulit menjangkau semua pelanggan dengan promo yang relevan dan personal.</p>
+                                    <h3 class="text-lg font-bold text-slate-800 dark:text-white mt-1">Promosi Kurang
+                                        Efektif</h3>
+                                    <p class="text-sm text-slate-600 dark:text-slate-400 mt-2">Sulit menjangkau semua
+                                        pelanggan dengan promo yang relevan dan personal.</p>
                                 </div>
                             </div>
                         </div>
                         <div class="flex justify-center items-center my-4">
                             <div class="w-full border-t border-dashed border-slate-300 dark:border-slate-600 relative">
-                                <div class="absolute left-1/2 -translate-x-1/2 -top-4 bg-white dark:bg-slate-800 p-1 rounded-full">
-                                    <svg class="h-6 w-6 text-cyan-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 13.5 12 21m0 0-7.5-7.5M12 21V3" /></svg>
+                                <div
+                                    class="absolute left-1/2 -translate-x-1/2 -top-4 bg-white dark:bg-slate-800 p-1 rounded-full">
+                                    <svg class="h-6 w-6 text-cyan-500" xmlns="http://www.w3.org/2000/svg" fill="none"
+                                        viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="M19.5 13.5 12 21m0 0-7.5-7.5M12 21V3" />
+                                    </svg>
                                 </div>
                             </div>
                         </div>
                         <div class="flex-1">
                             <div class="flex items-start gap-4">
-                                <div class="flex-shrink-0 w-12 h-12 rounded-lg bg-cyan-100 dark:bg-cyan-900/50 text-cyan-600 dark:text-cyan-400 flex items-center justify-center">
-                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-6 w-6"><path stroke-linecap="round" stroke-linejoin="round" d="M15 19.128a9.38 9.38 0 002.625.372 9.337 9.337 0 004.121-.952 4.125 4.125 0 00-7.533-2.493M15 19.128v-.003c0-1.113-.285-2.16-.786-3.07M15 19.128v.106A12.318 12.318 0 018.624 21c-2.331 0-4.512-.645-6.374-1.766l-.001-.109a6.375 6.375 0 0111.964-4.663M12 12a4.5 4.5 0 00-4.5 4.5V18h9v-1.5a4.5 4.5 0 00-4.5-4.5z" /></svg>
+                                <div
+                                    class="flex-shrink-0 w-12 h-12 rounded-lg bg-cyan-100 dark:bg-cyan-900/50 text-cyan-600 dark:text-cyan-400 flex items-center justify-center">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                        stroke-width="1.5" stroke="currentColor" class="h-6 w-6">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="M15 19.128a9.38 9.38 0 002.625.372 9.337 9.337 0 004.121-.952 4.125 4.125 0 00-7.533-2.493M15 19.128v-.003c0-1.113-.285-2.16-.786-3.07M15 19.128v.106A12.318 12.318 0 018.624 21c-2.331 0-4.512-.645-6.374-1.766l-.001-.109a6.375 6.375 0 0111.964-4.663M12 12a4.5 4.5 0 00-4.5 4.5V18h9v-1.5a4.5 4.5 0 00-4.5-4.5z" />
+                                    </svg>
                                 </div>
                                 <div>
                                     <p class="text-sm font-semibold text-cyan-600 dark:text-cyan-500">SOLUSI VOXIA</p>
-                                    <h3 class="text-lg font-bold text-slate-800 dark:text-white mt-1">Broadcast Promo Tertarget</h3>
-                                    <p class="text-sm text-slate-600 dark:text-slate-400 mt-2">Kirim pesan promosi massal yang tersegmentasi untuk meningkatkan penjualan.</p>
+                                    <h3 class="text-lg font-bold text-slate-800 dark:text-white mt-1">Broadcast Promo
+                                        Tertarget</h3>
+                                    <p class="text-sm text-slate-600 dark:text-slate-400 mt-2">Kirim pesan promosi
+                                        massal yang tersegmentasi untuk meningkatkan penjualan.</p>
                                 </div>
                             </div>
                         </div>
@@ -652,52 +924,110 @@
         <section id="icp" class="py-20 lg:py-24">
             <div class="container mx-auto px-6">
                 <div class="text-center mb-16">
-                    <h2 class="text-3xl lg:text-4xl font-bold text-slate-900 dark:text-white">Siapa yang Kami Layani</h2>
-                    <p class="mt-4 text-lg text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">Kami fokus membantu UKM di berbagai sektor untuk bertumbuh.</p>
+                    <h2 class="text-3xl lg:text-4xl font-bold text-slate-900 dark:text-white">Siapa yang Kami Layani
+                    </h2>
+                    <p class="mt-4 text-lg text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">Kami fokus membantu UKM
+                        di berbagai sektor untuk bertumbuh.</p>
                 </div>
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                     <div class="bg-white dark:bg-slate-800 p-8 rounded-xl shadow-lg hover:shadow-xl hover:shadow-cyan-500/30 dark:shadow-slate-950/50 border-t-4 border-cyan-500 transition-all duration-300 transform hover:scale-105 hover:bg-cyan-50/30 dark:hover:bg-cyan-900/20">
-                         <div class="flex items-center gap-3 mb-4">
-                             <div class="bg-cyan-100 text-cyan-600 dark:bg-cyan-900/50 dark:text-cyan-400 rounded-lg w-12 h-12 flex items-center justify-center transition-all duration-300 hover:scale-110">
-                                 <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6m0 0v6m0-6h6m-6 0H6" /></svg>
-                             </div>
-                             <h3 class="text-2xl font-bold dark:text-white">Kuliner</h3>
-                         </div>
-                         <p class="text-slate-600 dark:text-slate-400 font-semibold mb-3 text-lg">Permasalahan Umum:</p>
-                         <ul class="space-y-3 text-slate-600 dark:text-slate-400">
-                             <li class="flex items-start gap-2"><svg class="w-5 h-5 text-cyan-500 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg><span>Volume chat order tinggi</span></li>
-                             <li class="flex items-start gap-2"><svg class="w-5 h-5 text-cyan-500 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg><span>Info menu/stok sering ditanyakan</span></li>
-                             <li class="flex items-start gap-2"><svg class="w-5 h-5 text-cyan-500 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg><span>Reservasi manual rawan error</span></li>
-                         </ul>
-                     </div>
-                      <div class="bg-white dark:bg-slate-800 p-8 rounded-xl shadow-lg hover:shadow-xl hover:shadow-cyan-500/30 dark:shadow-slate-950/50 border-t-4 border-cyan-500 transition-all duration-300 transform hover:scale-105 hover:bg-cyan-50/30 dark:hover:bg-cyan-900/20">
-                         <div class="flex items-center gap-3 mb-4">
-                             <div class="bg-cyan-100 text-cyan-600 dark:bg-cyan-900/50 dark:text-cyan-400 rounded-lg w-12 h-12 flex items-center justify-center transition-all duration-300 hover:scale-110">
-                                 <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" /></svg>
-                             </div>
-                             <h3 class="text-2xl font-bold dark:text-white">Fashion</h3>
-                         </div>
-                         <p class="text-slate-600 dark:text-slate-400 font-semibold mb-3 text-lg">Permasalahan Umum:</p>
-                         <ul class="space-y-3 text-slate-600 dark:text-slate-400">
-                             <li class="flex items-start gap-2"><svg class="w-5 h-5 text-cyan-500 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg><span>Pertanyaan produk & status order membanjiri</span></li>
-                             <li class="flex items-start gap-2"><svg class="w-5 h-5 text-cyan-500 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg><span>Data pelanggan tercerai-berai</span></li>
-                             <li class="flex items-start gap-2"><svg class="w-5 h-5 text-cyan-500 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg><span>Kesulitan follow-up pelanggan lama</span></li>
-                         </ul>
-                     </div>
-                      <div class="bg-white dark:bg-slate-800 p-8 rounded-xl shadow-lg hover:shadow-xl hover:shadow-cyan-500/30 dark:shadow-slate-950/50 border-t-4 border-cyan-500 transition-all duration-300 transform hover:scale-105 hover:bg-cyan-50/30 dark:hover:bg-cyan-900/20">
-                         <div class="flex items-center gap-3 mb-4">
-                             <div class="bg-cyan-100 text-cyan-600 dark:bg-cyan-900/50 dark:text-cyan-400 rounded-lg w-12 h-12 flex items-center justify-center transition-all duration-300 hover:scale-110">
-                                 <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" /><path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" /></svg>
-                             </div>
-                             <h3 class="text-2xl font-bold dark:text-white">Jasa</h3>
-                         </div>
-                         <p class="text-slate-600 dark:text-slate-400 font-semibold mb-3 text-lg">Permasalahan Umum:</p>
-                         <ul class="space-y-3 text-slate-600 dark:text-slate-400">
-                             <li class="flex items-start gap-2"><svg class="w-5 h-5 text-cyan-500 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg><span>Manajemen booking tumpang tindih</span></li>
-                             <li class="flex items-start gap-2"><svg class="w-5 h-5 text-cyan-500 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg><span>Data pelanggan tidak terintegrasi</span></li>
-                             <li class="flex items-start gap-2"><svg class="w-5 h-5 text-cyan-500 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg><span>Pengingat manual memakan waktu</span></li>
-                         </ul>
-                     </div>
+                    <div
+                        class="bg-white dark:bg-slate-800 p-8 rounded-xl shadow-lg hover:shadow-xl hover:shadow-cyan-500/30 dark:shadow-slate-950/50 border-t-4 border-cyan-500 transition-all duration-300 transform hover:scale-105 hover:bg-cyan-50/30 dark:hover:bg-cyan-900/20">
+                        <div class="flex items-center gap-3 mb-4">
+                            <div
+                                class="bg-cyan-100 text-cyan-600 dark:bg-cyan-900/50 dark:text-cyan-400 rounded-lg w-12 h-12 flex items-center justify-center transition-all duration-300 hover:scale-110">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                                    stroke="currentColor" stroke-width="2">
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                        d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
+                                </svg>
+                            </div>
+                            <h3 class="text-2xl font-bold dark:text-white">Kuliner</h3>
+                        </div>
+                        <p class="text-slate-600 dark:text-slate-400 font-semibold mb-3 text-lg">Permasalahan Umum:</p>
+                        <ul class="space-y-3 text-slate-600 dark:text-slate-400">
+                            <li class="flex items-start gap-2"><svg class="w-5 h-5 text-cyan-500 mt-0.5 flex-shrink-0"
+                                    fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M5 13l4 4L19 7"></path>
+                                </svg><span>Volume chat order tinggi</span></li>
+                            <li class="flex items-start gap-2"><svg class="w-5 h-5 text-cyan-500 mt-0.5 flex-shrink-0"
+                                    fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M5 13l4 4L19 7"></path>
+                                </svg><span>Info menu/stok sering ditanyakan</span></li>
+                            <li class="flex items-start gap-2"><svg class="w-5 h-5 text-cyan-500 mt-0.5 flex-shrink-0"
+                                    fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M5 13l4 4L19 7"></path>
+                                </svg><span>Reservasi manual rawan error</span></li>
+                        </ul>
+                    </div>
+                    <div
+                        class="bg-white dark:bg-slate-800 p-8 rounded-xl shadow-lg hover:shadow-xl hover:shadow-cyan-500/30 dark:shadow-slate-950/50 border-t-4 border-cyan-500 transition-all duration-300 transform hover:scale-105 hover:bg-cyan-50/30 dark:hover:bg-cyan-900/20">
+                        <div class="flex items-center gap-3 mb-4">
+                            <div
+                                class="bg-cyan-100 text-cyan-600 dark:bg-cyan-900/50 dark:text-cyan-400 rounded-lg w-12 h-12 flex items-center justify-center transition-all duration-300 hover:scale-110">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                                    stroke="currentColor" stroke-width="2">
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                        d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
+                                </svg>
+                            </div>
+                            <h3 class="text-2xl font-bold dark:text-white">Fashion</h3>
+                        </div>
+                        <p class="text-slate-600 dark:text-slate-400 font-semibold mb-3 text-lg">Permasalahan Umum:</p>
+                        <ul class="space-y-3 text-slate-600 dark:text-slate-400">
+                            <li class="flex items-start gap-2"><svg class="w-5 h-5 text-cyan-500 mt-0.5 flex-shrink-0"
+                                    fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M5 13l4 4L19 7"></path>
+                                </svg><span>Pertanyaan produk & status order membanjiri</span></li>
+                            <li class="flex items-start gap-2"><svg class="w-5 h-5 text-cyan-500 mt-0.5 flex-shrink-0"
+                                    fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M5 13l4 4L19 7"></path>
+                                </svg><span>Data pelanggan tercerai-berai</span></li>
+                            <li class="flex items-start gap-2"><svg class="w-5 h-5 text-cyan-500 mt-0.5 flex-shrink-0"
+                                    fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M5 13l4 4L19 7"></path>
+                                </svg><span>Kesulitan follow-up pelanggan lama</span></li>
+                        </ul>
+                    </div>
+                    <div
+                        class="bg-white dark:bg-slate-800 p-8 rounded-xl shadow-lg hover:shadow-xl hover:shadow-cyan-500/30 dark:shadow-slate-950/50 border-t-4 border-cyan-500 transition-all duration-300 transform hover:scale-105 hover:bg-cyan-50/30 dark:hover:bg-cyan-900/20">
+                        <div class="flex items-center gap-3 mb-4">
+                            <div
+                                class="bg-cyan-100 text-cyan-600 dark:bg-cyan-900/50 dark:text-cyan-400 rounded-lg w-12 h-12 flex items-center justify-center transition-all duration-300 hover:scale-110">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                                    stroke="currentColor" stroke-width="2">
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                        d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                        d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                                </svg>
+                            </div>
+                            <h3 class="text-2xl font-bold dark:text-white">Jasa</h3>
+                        </div>
+                        <p class="text-slate-600 dark:text-slate-400 font-semibold mb-3 text-lg">Permasalahan Umum:</p>
+                        <ul class="space-y-3 text-slate-600 dark:text-slate-400">
+                            <li class="flex items-start gap-2"><svg class="w-5 h-5 text-cyan-500 mt-0.5 flex-shrink-0"
+                                    fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M5 13l4 4L19 7"></path>
+                                </svg><span>Manajemen booking tumpang tindih</span></li>
+                            <li class="flex items-start gap-2"><svg class="w-5 h-5 text-cyan-500 mt-0.5 flex-shrink-0"
+                                    fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M5 13l4 4L19 7"></path>
+                                </svg><span>Data pelanggan tidak terintegrasi</span></li>
+                            <li class="flex items-start gap-2"><svg class="w-5 h-5 text-cyan-500 mt-0.5 flex-shrink-0"
+                                    fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M5 13l4 4L19 7"></path>
+                                </svg><span>Pengingat manual memakan waktu</span></li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </section>
@@ -706,117 +1036,168 @@
         <section id="testimonials" class="py-20 lg:py-24 bg-slate-100 dark:bg-slate-950">
             <div class="container mx-auto px-6">
                 <div class="text-center mb-16">
-                    <h2 class="text-3xl lg:text-4xl font-bold text-slate-900 dark:text-white">Kisah Sukses Pelanggan Kami</h2>
-                    <p class="mt-4 text-lg text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">Jangan hanya percaya kata kami. Lihat apa yang dikatakan para pemilik bisnis seperti Anda.</p>
+                    <h2 class="text-3xl lg:text-4xl font-bold text-slate-900 dark:text-white">Kisah Sukses Pelanggan
+                        Kami</h2>
+                    <p class="mt-4 text-lg text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">Jangan hanya percaya
+                        kata kami. Lihat apa yang dikatakan para pemilik bisnis seperti Anda.</p>
                 </div>
-                 <div class="relative overflow-hidden">
-                     <div id="testimonial-slider" class="flex transition-transform duration-500 ease-in-out">
-                         <!-- Testimonial 1 -->
-                         <div class="flex-shrink-0 w-full md:w-1/2 lg:w-1/3 px-4">
-                             <div class="bg-white dark:bg-slate-800 p-8 rounded-xl shadow-lg hover:shadow-xl hover:shadow-cyan-500/20 dark:shadow-slate-950/50 transition-all duration-300 transform hover:scale-105 hover:bg-cyan-50/50 dark:hover:bg-cyan-900/20 flex flex-col h-full">
-                                 <div class="flex-grow">
-                                     <svg class="w-10 h-10 text-cyan-500 dark:text-cyan-400 mb-4" fill="currentColor" viewBox="0 0 32 32" aria-hidden="true">
-                                         <path d="M9.333 8h-4.666v16h4.666v-16zM27.333 8h-4.666v16h4.666v-16z"></path>
-                                         <path d="M22.667 8h-4.667c-1.333 0-2.667 1.333-2.667 2.667v10.667c0 1.333 1.333 2.667 2.667 2.667h4.667v-16zM4.667 8h-4.667c-1.333 0-2.667 1.333-2.667 2.667v10.667c0 1.333 1.333 2.667 2.667 2.667h4.667v-16z"></path>
-                                       </svg>
-                                     <p class="text-slate-600 dark:text-slate-400 italic text-lg leading-relaxed">"Sejak pakai VOXIA, orderan kopi susu kami jadi lebih teratur. Nggak ada lagi pesanan yang kelewat karena chatbot-nya handle semua pertanyaan dasar. Tim kami jadi bisa fokus meracik kopi terbaik."</p>
-                                 </div>
-                                 <div class="flex items-center mt-6">
-                                     <img class="w-14 h-14 rounded-full object-cover" src="https://i.pravatar.cc/150?u=budi" alt="Foto Budi Santoso">
-                                     <div class="ml-4">
-                                         <p class="font-bold text-slate-800 dark:text-white">Budi Santoso</p>
-                                         <p class="text-sm text-slate-500 dark:text-slate-400">Owner, Kopi Senja</p>
-                                     </div>
-                                 </div>
-                             </div>
-                         </div>
-                         <!-- Testimonial 2 -->
-                         <div class="flex-shrink-0 w-full md:w-1/2 lg:w-1/3 px-4">
-                             <div class="bg-white dark:bg-slate-800 p-8 rounded-xl shadow-lg hover:shadow-xl hover:shadow-cyan-500/20 dark:shadow-slate-950/50 transition-all duration-300 transform hover:scale-105 hover:bg-cyan-50/50 dark:hover:bg-cyan-900/20 flex flex-col h-full">
-                                 <div class="flex-grow">
-                                    <svg class="w-10 h-10 text-cyan-500 dark:text-cyan-400 mb-4" fill="currentColor" viewBox="0 0 32 32" aria-hidden="true">
-                                         <path d="M9.333 8h-4.666v16h4.666v-16zM27.333 8h-4.666v16h4.666v-16z"></path>
-                                         <path d="M22.667 8h-4.667c-1.333 0-2.667 1.333-2.667 2.667v10.667c0 1.333 1.333 2.667 2.667 2.667h4.667v-16zM4.667 8h-4.667c-1.333 0-2.667 1.333-2.667 2.667v10.667c0 1.333 1.333 2.667 2.667 2.667h4.667v-16z"></path>
-                                     </svg>
-                                     <p class="text-slate-600 dark:text-slate-400 italic text-lg leading-relaxed">"VOXIA benar-benar mengubah cara kami mengelola pelanggan. Fitur manajemen pelanggannya membantu kami mengingat preferensi customer, dan broadcast promo jadi sangat efektif. Penjualan naik 30% bulan lalu!"</p>
-                                 </div>
-                                 <div class="flex items-center mt-6">
-                                     <img class="w-14 h-14 rounded-full object-cover" src="https://i.pravatar.cc/150?u=siti" alt="Foto Siti Aminah">
-                                     <div class="ml-4">
-                                         <p class="font-bold text-slate-800 dark:text-white">Siti Aminah</p>
-                                         <p class="text-sm text-slate-500 dark:text-slate-400">Founder, Gaya Hijab</p>
-                                     </div>
-                                 </div>
-                             </div>
-                         </div>
-                         <!-- Testimonial 3 -->
-                         <div class="flex-shrink-0 w-full md:w-1/2 lg:w-1/3 px-4">
-                             <div class="bg-white dark:bg-slate-800 p-8 rounded-xl shadow-lg hover:shadow-xl hover:shadow-cyan-500/20 dark:shadow-slate-950/50 transition-all duration-300 transform hover:scale-105 hover:bg-cyan-50/50 dark:hover:bg-cyan-900/20 flex flex-col h-full">
-                                 <div class="flex-grow">
-                                     <svg class="w-10 h-10 text-cyan-500 dark:text-cyan-400 mb-4" fill="currentColor" viewBox="0 0 32 32" aria-hidden="true">
-                                         <path d="M9.333 8h-4.666v16h4.666v-16zM27.333 8h-4.666v16h4.666v-16z"></path>
-                                         <path d="M22.667 8h-4.667c-1.333 0-2.667 1.333-2.667 2.667v10.667c0 1.333 1.333 2.667 2.667 2.667h4.667v-16zM4.667 8h-4.667c-1.333 0-2.667 1.333-2.667 2.667v10.667c0 1.333 1.333 2.667 2.667 2.667h4.667v-16z"></path>
-                                     </svg>
-                                     <p class="text-slate-600 dark:text-slate-400 italic text-lg leading-relaxed">"Sistem booking otomatisnya adalah penyelamat. Dulu sering double-booking, sekarang semua jadwal rapi. Pelanggan juga suka karena dapat reminder H-1. Angka no-show turun drastis."</p>
-                                 </div>
-                                 <div class="flex items-center mt-6">
-                                     <img class="w-14 h-14 rounded-full object-cover" src="https://i.pravatar.cc/150?u=agus" alt="Foto Agus Wijaya">
-                                     <div class="ml-4">
-                                         <p class="font-bold text-slate-800 dark:text-white">Agus Wijaya</p>
-                                         <p class="text-sm text-slate-500 dark:text-slate-400">Manager, Glow Salon</p>
-                                     </div>
-                                 </div>
-                             </div>
-                         </div>
-                         <!-- Testimonial 4 -->
-                         <div class="flex-shrink-0 w-full md:w-1/2 lg:w-1/3 px-4">
-                             <div class="bg-white dark:bg-slate-800 p-8 rounded-xl shadow-lg hover:shadow-xl hover:shadow-cyan-500/20 dark:shadow-slate-950/50 transition-all duration-300 transform hover:scale-105 hover:bg-cyan-50/50 dark:hover:bg-cyan-900/20 flex flex-col h-full">
-                                 <div class="flex-grow">
-                                     <svg class="w-10 h-10 text-cyan-500 dark:text-cyan-400 mb-4" fill="currentColor" viewBox="0 0 32 32" aria-hidden="true">
-                                         <path d="M9.333 8h-4.666v16h4.666v-16zM27.333 8h-4.666v16h4.666v-16z"></path>
-                                         <path d="M22.667 8h-4.667c-1.333 0-2.667 1.333-2.667 2.667v10.667c0 1.333 1.333 2.667 2.667 2.667h4.667v-16zM4.667 8h-4.667c-1.333 0-2.667 1.333-2.667 2.667v10.667c0 1.333 1.333 2.667 2.667 2.667h4.667v-16z"></path>
-                                     </svg>
-                                     <p class="text-slate-600 dark:text-slate-400 italic text-lg leading-relaxed">"Dengan VOXIA, bisnis laundry kami jadi lebih efisien. Chatbot handle semua inquiry tentang layanan dan harga, sementara sistem booking otomatis mengatur jadwal pickup dan delivery. Kepuasan pelanggan meningkat signifikan!"</p>
-                                 </div>
-                                 <div class="flex items-center mt-6">
-                                     <img class="w-14 h-14 rounded-full object-cover" src="https://i.pravatar.cc/150?u=rina" alt="Foto Rina Sari">
-                                     <div class="ml-4">
-                                         <p class="font-bold text-slate-800 dark:text-white">Rina Sari</p>
-                                         <p class="text-sm text-slate-500 dark:text-slate-400">Owner, Laundry Cepat</p>
-                                     </div>
-                                 </div>
-                             </div>
-                         </div>
-                         <!-- Testimonial 5 -->
-                         <div class="flex-shrink-0 w-full md:w-1/2 lg:w-1/3 px-4">
-                             <div class="bg-white dark:bg-slate-800 p-8 rounded-xl shadow-lg hover:shadow-xl hover:shadow-cyan-500/20 dark:shadow-slate-950/50 transition-all duration-300 transform hover:scale-105 hover:bg-cyan-50/50 dark:hover:bg-cyan-900/20 flex flex-col h-full">
-                                 <div class="flex-grow">
-                                     <svg class="w-10 h-10 text-cyan-500 dark:text-cyan-400 mb-4" fill="currentColor" viewBox="0 0 32 32" aria-hidden="true">
-                                         <path d="M9.333 8h-4.666v16h4.666v-16zM27.333 8h-4.666v16h4.666v-16z"></path>
-                                         <path d="M22.667 8h-4.667c-1.333 0-2.667 1.333-2.667 2.667v10.667c0 1.333 1.333 2.667 2.667 2.667h4.667v-16zM4.667 8h-4.667c-1.333 0-2.667 1.333-2.667 2.667v10.667c0 1.333 1.333 2.667 2.667 2.667h4.667v-16z"></path>
-                                     </svg>
-                                     <p class="text-slate-600 dark:text-slate-400 italic text-lg leading-relaxed">"VOXIA membantu toko elektronik saya mengatasi tantangan manajemen inventori. AI chatbot menjawab pertanyaan produk real-time, dan fitur retargeting otomatis membuat pelanggan kembali. Omzet naik 25% dalam 3 bulan!"</p>
-                                 </div>
-                                 <div class="flex items-center mt-6">
-                                     <img class="w-14 h-14 rounded-full object-cover" src="https://i.pravatar.cc/150?u=doni" alt="Foto Doni Pratama">
-                                     <div class="ml-4">
-                                         <p class="font-bold text-slate-800 dark:text-white">Doni Pratama</p>
-                                         <p class="text-sm text-slate-500 dark:text-slate-400">Owner, Elektronik Murah</p>
-                                     </div>
-                                 </div>
-                             </div>
-                         </div>
-                     </div>
-                     <!-- Slider Controls -->
-                     <div class="flex justify-center mt-8 space-x-2">
-                         <button id="prev-testimonial" class="bg-cyan-500 hover:bg-cyan-600 text-white p-2 rounded-full transition-colors duration-300">
-                             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>
-                         </button>
-                         <button id="next-testimonial" class="bg-cyan-500 hover:bg-cyan-600 text-white p-2 rounded-full transition-colors duration-300">
-                             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
-                         </button>
-                     </div>
-                 </div>
+                <div class="relative overflow-hidden">
+                    <div id="testimonial-slider" class="flex transition-transform duration-500 ease-in-out">
+                        <!-- Testimonial 1 -->
+                        <div class="flex-shrink-0 w-full md:w-1/2 lg:w-1/3 px-4">
+                            <div
+                                class="bg-white dark:bg-slate-800 p-8 rounded-xl shadow-lg hover:shadow-xl hover:shadow-cyan-500/20 dark:shadow-slate-950/50 transition-all duration-300 transform hover:scale-105 hover:bg-cyan-50/50 dark:hover:bg-cyan-900/20 flex flex-col h-full">
+                                <div class="flex-grow">
+                                    <svg class="w-10 h-10 text-cyan-500 dark:text-cyan-400 mb-4" fill="currentColor"
+                                        viewBox="0 0 32 32" aria-hidden="true">
+                                        <path d="M9.333 8h-4.666v16h4.666v-16zM27.333 8h-4.666v16h4.666v-16z"></path>
+                                        <path
+                                            d="M22.667 8h-4.667c-1.333 0-2.667 1.333-2.667 2.667v10.667c0 1.333 1.333 2.667 2.667 2.667h4.667v-16zM4.667 8h-4.667c-1.333 0-2.667 1.333-2.667 2.667v10.667c0 1.333 1.333 2.667 2.667 2.667h4.667v-16z">
+                                        </path>
+                                    </svg>
+                                    <p class="text-slate-600 dark:text-slate-400 italic text-lg leading-relaxed">"Sejak
+                                        pakai VOXIA, orderan kopi susu kami jadi lebih teratur. Nggak ada lagi pesanan
+                                        yang kelewat karena chatbot-nya handle semua pertanyaan dasar. Tim kami jadi
+                                        bisa fokus meracik kopi terbaik."</p>
+                                </div>
+                                <div class="flex items-center mt-6">
+                                    <img class="w-14 h-14 rounded-full object-cover"
+                                        src="https://i.pravatar.cc/150?u=budi" alt="Foto Budi Santoso">
+                                    <div class="ml-4">
+                                        <p class="font-bold text-slate-800 dark:text-white">Budi Santoso</p>
+                                        <p class="text-sm text-slate-500 dark:text-slate-400">Owner, Kopi Senja</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Testimonial 2 -->
+                        <div class="flex-shrink-0 w-full md:w-1/2 lg:w-1/3 px-4">
+                            <div
+                                class="bg-white dark:bg-slate-800 p-8 rounded-xl shadow-lg hover:shadow-xl hover:shadow-cyan-500/20 dark:shadow-slate-950/50 transition-all duration-300 transform hover:scale-105 hover:bg-cyan-50/50 dark:hover:bg-cyan-900/20 flex flex-col h-full">
+                                <div class="flex-grow">
+                                    <svg class="w-10 h-10 text-cyan-500 dark:text-cyan-400 mb-4" fill="currentColor"
+                                        viewBox="0 0 32 32" aria-hidden="true">
+                                        <path d="M9.333 8h-4.666v16h4.666v-16zM27.333 8h-4.666v16h4.666v-16z"></path>
+                                        <path
+                                            d="M22.667 8h-4.667c-1.333 0-2.667 1.333-2.667 2.667v10.667c0 1.333 1.333 2.667 2.667 2.667h4.667v-16zM4.667 8h-4.667c-1.333 0-2.667 1.333-2.667 2.667v10.667c0 1.333 1.333 2.667 2.667 2.667h4.667v-16z">
+                                        </path>
+                                    </svg>
+                                    <p class="text-slate-600 dark:text-slate-400 italic text-lg leading-relaxed">"VOXIA
+                                        benar-benar mengubah cara kami mengelola pelanggan. Fitur manajemen pelanggannya
+                                        membantu kami mengingat preferensi customer, dan broadcast promo jadi sangat
+                                        efektif. Penjualan naik 30% bulan lalu!"</p>
+                                </div>
+                                <div class="flex items-center mt-6">
+                                    <img class="w-14 h-14 rounded-full object-cover"
+                                        src="https://i.pravatar.cc/150?u=siti" alt="Foto Siti Aminah">
+                                    <div class="ml-4">
+                                        <p class="font-bold text-slate-800 dark:text-white">Siti Aminah</p>
+                                        <p class="text-sm text-slate-500 dark:text-slate-400">Founder, Gaya Hijab</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Testimonial 3 -->
+                        <div class="flex-shrink-0 w-full md:w-1/2 lg:w-1/3 px-4">
+                            <div
+                                class="bg-white dark:bg-slate-800 p-8 rounded-xl shadow-lg hover:shadow-xl hover:shadow-cyan-500/20 dark:shadow-slate-950/50 transition-all duration-300 transform hover:scale-105 hover:bg-cyan-50/50 dark:hover:bg-cyan-900/20 flex flex-col h-full">
+                                <div class="flex-grow">
+                                    <svg class="w-10 h-10 text-cyan-500 dark:text-cyan-400 mb-4" fill="currentColor"
+                                        viewBox="0 0 32 32" aria-hidden="true">
+                                        <path d="M9.333 8h-4.666v16h4.666v-16zM27.333 8h-4.666v16h4.666v-16z"></path>
+                                        <path
+                                            d="M22.667 8h-4.667c-1.333 0-2.667 1.333-2.667 2.667v10.667c0 1.333 1.333 2.667 2.667 2.667h4.667v-16zM4.667 8h-4.667c-1.333 0-2.667 1.333-2.667 2.667v10.667c0 1.333 1.333 2.667 2.667 2.667h4.667v-16z">
+                                        </path>
+                                    </svg>
+                                    <p class="text-slate-600 dark:text-slate-400 italic text-lg leading-relaxed">"Sistem
+                                        booking otomatisnya adalah penyelamat. Dulu sering double-booking, sekarang
+                                        semua jadwal rapi. Pelanggan juga suka karena dapat reminder H-1. Angka no-show
+                                        turun drastis."</p>
+                                </div>
+                                <div class="flex items-center mt-6">
+                                    <img class="w-14 h-14 rounded-full object-cover"
+                                        src="https://i.pravatar.cc/150?u=agus" alt="Foto Agus Wijaya">
+                                    <div class="ml-4">
+                                        <p class="font-bold text-slate-800 dark:text-white">Agus Wijaya</p>
+                                        <p class="text-sm text-slate-500 dark:text-slate-400">Manager, Glow Salon</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Testimonial 4 -->
+                        <div class="flex-shrink-0 w-full md:w-1/2 lg:w-1/3 px-4">
+                            <div
+                                class="bg-white dark:bg-slate-800 p-8 rounded-xl shadow-lg hover:shadow-xl hover:shadow-cyan-500/20 dark:shadow-slate-950/50 transition-all duration-300 transform hover:scale-105 hover:bg-cyan-50/50 dark:hover:bg-cyan-900/20 flex flex-col h-full">
+                                <div class="flex-grow">
+                                    <svg class="w-10 h-10 text-cyan-500 dark:text-cyan-400 mb-4" fill="currentColor"
+                                        viewBox="0 0 32 32" aria-hidden="true">
+                                        <path d="M9.333 8h-4.666v16h4.666v-16zM27.333 8h-4.666v16h4.666v-16z"></path>
+                                        <path
+                                            d="M22.667 8h-4.667c-1.333 0-2.667 1.333-2.667 2.667v10.667c0 1.333 1.333 2.667 2.667 2.667h4.667v-16zM4.667 8h-4.667c-1.333 0-2.667 1.333-2.667 2.667v10.667c0 1.333 1.333 2.667 2.667 2.667h4.667v-16z">
+                                        </path>
+                                    </svg>
+                                    <p class="text-slate-600 dark:text-slate-400 italic text-lg leading-relaxed">"Dengan
+                                        VOXIA, bisnis laundry kami jadi lebih efisien. Chatbot handle semua inquiry
+                                        tentang layanan dan harga, sementara sistem booking otomatis mengatur jadwal
+                                        pickup dan delivery. Kepuasan pelanggan meningkat signifikan!"</p>
+                                </div>
+                                <div class="flex items-center mt-6">
+                                    <img class="w-14 h-14 rounded-full object-cover"
+                                        src="https://i.pravatar.cc/150?u=rina" alt="Foto Rina Sari">
+                                    <div class="ml-4">
+                                        <p class="font-bold text-slate-800 dark:text-white">Rina Sari</p>
+                                        <p class="text-sm text-slate-500 dark:text-slate-400">Owner, Laundry Cepat</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Testimonial 5 -->
+                        <div class="flex-shrink-0 w-full md:w-1/2 lg:w-1/3 px-4">
+                            <div
+                                class="bg-white dark:bg-slate-800 p-8 rounded-xl shadow-lg hover:shadow-xl hover:shadow-cyan-500/20 dark:shadow-slate-950/50 transition-all duration-300 transform hover:scale-105 hover:bg-cyan-50/50 dark:hover:bg-cyan-900/20 flex flex-col h-full">
+                                <div class="flex-grow">
+                                    <svg class="w-10 h-10 text-cyan-500 dark:text-cyan-400 mb-4" fill="currentColor"
+                                        viewBox="0 0 32 32" aria-hidden="true">
+                                        <path d="M9.333 8h-4.666v16h4.666v-16zM27.333 8h-4.666v16h4.666v-16z"></path>
+                                        <path
+                                            d="M22.667 8h-4.667c-1.333 0-2.667 1.333-2.667 2.667v10.667c0 1.333 1.333 2.667 2.667 2.667h4.667v-16zM4.667 8h-4.667c-1.333 0-2.667 1.333-2.667 2.667v10.667c0 1.333 1.333 2.667 2.667 2.667h4.667v-16z">
+                                        </path>
+                                    </svg>
+                                    <p class="text-slate-600 dark:text-slate-400 italic text-lg leading-relaxed">"VOXIA
+                                        membantu toko elektronik saya mengatasi tantangan manajemen inventori. AI
+                                        chatbot menjawab pertanyaan produk real-time, dan fitur retargeting otomatis
+                                        membuat pelanggan kembali. Omzet naik 25% dalam 3 bulan!"</p>
+                                </div>
+                                <div class="flex items-center mt-6">
+                                    <img class="w-14 h-14 rounded-full object-cover"
+                                        src="https://i.pravatar.cc/150?u=doni" alt="Foto Doni Pratama">
+                                    <div class="ml-4">
+                                        <p class="font-bold text-slate-800 dark:text-white">Doni Pratama</p>
+                                        <p class="text-sm text-slate-500 dark:text-slate-400">Owner, Elektronik Murah
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Slider Controls -->
+                    <div class="flex justify-center mt-8 space-x-2">
+                        <button id="prev-testimonial"
+                            class="bg-cyan-500 hover:bg-cyan-600 text-white p-2 rounded-full transition-colors duration-300">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M15 19l-7-7 7-7"></path>
+                            </svg>
+                        </button>
+                        <button id="next-testimonial"
+                            class="bg-cyan-500 hover:bg-cyan-600 text-white p-2 rounded-full transition-colors duration-300">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7">
+                                </path>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
             </div>
         </section>
 
@@ -824,147 +1205,294 @@
         <section id="faq" class="py-20 lg:py-24">
             <div class="container mx-auto px-6">
                 <div class="text-center mb-16 max-w-3xl mx-auto">
-                    <h2 class="text-3xl lg:text-4xl font-bold text-slate-900 dark:text-white">Pertanyaan yang Sering Diajukan</h2>
-                    <p class="mt-4 text-lg text-slate-600 dark:text-slate-400">Menemukan jawaban cepat untuk pertanyaan umum tentang VOXIA.</p>
+                    <h2 class="text-3xl lg:text-4xl font-bold text-slate-900 dark:text-white">Pertanyaan yang Sering
+                        Diajukan</h2>
+                    <p class="mt-4 text-lg text-slate-600 dark:text-slate-400">Menemukan jawaban cepat untuk pertanyaan
+                        umum tentang VOXIA.</p>
                 </div>
                 <div class="max-w-4xl mx-auto space-y-4">
                     <!-- FAQ Item 1 -->
-                    <div class="faq-item bg-white dark:bg-slate-800 rounded-xl shadow-md overflow-hidden transition-all duration-300 border border-slate-200 dark:border-slate-700">
-                        <button class="faq-question w-full flex justify-between items-center text-left p-6 hover:bg-slate-50 dark:hover:bg-slate-700/50" aria-expanded="false">
+                    <div
+                        class="faq-item bg-white dark:bg-slate-800 rounded-xl shadow-md overflow-hidden transition-all duration-300 border border-slate-200 dark:border-slate-700">
+                        <button
+                            class="faq-question w-full flex justify-between items-center text-left p-6 hover:bg-slate-50 dark:hover:bg-slate-700/50"
+                            aria-expanded="false">
                             <span class="flex items-center gap-4">
-                                <span class="flex-shrink-0 w-10 h-10 rounded-lg bg-cyan-100 dark:bg-cyan-900/50 text-cyan-600 dark:text-cyan-400 flex items-center justify-center">
-                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M8.25 3v1.5M4.5 8.25H21M18.75 3v1.5M16.5 21V8.25a2.25 2.25 0 00-2.25-2.25H9.75A2.25 2.25 0 007.5 8.25v12.75m9 0V8.25a2.25 2.25 0 00-2.25-2.25H9.75a2.25 2.25 0 00-2.25 2.25v12.75m9 0h1.5a2.25 2.25 0 002.25-2.25V6.75a2.25 2.25 0 00-2.25-2.25H3.75A2.25 2.25 0 001.5 6.75v12a2.25 2.25 0 002.25 2.25h1.5m9 0h-9"></path></svg>
+                                <span
+                                    class="flex-shrink-0 w-10 h-10 rounded-lg bg-cyan-100 dark:bg-cyan-900/50 text-cyan-600 dark:text-cyan-400 flex items-center justify-center">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none"
+                                        viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="M8.25 3v1.5M4.5 8.25H21M18.75 3v1.5M16.5 21V8.25a2.25 2.25 0 00-2.25-2.25H9.75A2.25 2.25 0 007.5 8.25v12.75m9 0V8.25a2.25 2.25 0 00-2.25-2.25H9.75a2.25 2.25 0 00-2.25 2.25v12.75m9 0h1.5a2.25 2.25 0 002.25-2.25V6.75a2.25 2.25 0 00-2.25-2.25H3.75A2.25 2.25 0 001.5 6.75v12a2.25 2.25 0 002.25 2.25h1.5m9 0h-9">
+                                        </path>
+                                    </svg>
                                 </span>
-                                <span class="text-lg font-semibold text-slate-800 dark:text-white">Apa itu VOXIA dan bagaimana cara kerjanya?</span>
+                                <span class="text-lg font-semibold text-slate-800 dark:text-white">Apa itu VOXIA dan
+                                    bagaimana cara kerjanya?</span>
                             </span>
                             <span class="faq-chevron transition-transform duration-300">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-slate-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"></path></svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-slate-500" fill="none"
+                                    viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"></path>
+                                </svg>
                             </span>
                         </button>
-                        <div class="faq-answer" style="max-height: 0px; overflow: hidden; transition: max-height 0.5s ease-in-out;">
+                        <div class="faq-answer"
+                            style="max-height: 0px; overflow: hidden; transition: max-height 0.5s ease-in-out;">
                             <div class="p-6 pt-0 text-slate-600 dark:text-slate-400">
-                                VOXIA adalah sistem cerdas yang mengubah setiap percakapan di WhatsApp menjadi peluang bisnis yang terorganisir dan menghasilkan. AI kami secara otomatis menjawab pertanyaan umum pelanggan, mengelola data kontak, dan menangani penjadwalan, sehingga Anda bisa fokus mengembangkan bisnis.
+                                VOXIA adalah sistem cerdas yang mengubah setiap percakapan di WhatsApp menjadi peluang
+                                bisnis yang terorganisir dan menghasilkan. AI kami secara otomatis menjawab pertanyaan
+                                umum pelanggan, mengelola data kontak, dan menangani penjadwalan, sehingga Anda bisa
+                                fokus mengembangkan bisnis.
                             </div>
                         </div>
                     </div>
 
                     <!-- FAQ Item 2 -->
-                    <div class="faq-item bg-white dark:bg-slate-800 rounded-xl shadow-md overflow-hidden transition-all duration-300 border border-slate-200 dark:border-slate-700">
-                        <button class="faq-question w-full flex justify-between items-center text-left p-6 hover:bg-slate-50 dark:hover:bg-slate-700/50" aria-expanded="false">
+                    <div
+                        class="faq-item bg-white dark:bg-slate-800 rounded-xl shadow-md overflow-hidden transition-all duration-300 border border-slate-200 dark:border-slate-700">
+                        <button
+                            class="faq-question w-full flex justify-between items-center text-left p-6 hover:bg-slate-50 dark:hover:bg-slate-700/50"
+                            aria-expanded="false">
                             <span class="flex items-center gap-4">
-                                <span class="flex-shrink-0 w-10 h-10 rounded-lg bg-cyan-100 dark:bg-cyan-900/50 text-cyan-600 dark:text-cyan-400 flex items-center justify-center">
-                                     <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M9.53 16.122a3 3 0 00-5.78 1.128 2.25 2.25 0 01-2.4 2.245 4.5 4.5 0 008.4-2.245c0-.399-.078-.78-.22-1.128zm0 0a15.998 15.998 0 003.388-1.62m-5.043-.025a15.998 15.998 0 011.622-3.385m5.043.025a15.998 15.998 0 001.622-3.385m3.388 1.62a15.998 15.998 0 00-1.622-3.385m-5.043-.025a15.998 15.998 0 01-3.388-1.621m7.704 4.242a3 3 0 00-5.78 1.128 2.25 2.25 0 01-2.4 2.245 4.5 4.5 0 008.4-2.245c0-.399-.078-.78-.22-1.128zm0 0a15.998 15.998 0 003.388-1.62m-5.043-.025a15.998 15.998 0 011.622-3.385m5.043.025a15.998 15.998 0 001.622-3.385m3.388 1.62a15.998 15.998 0 00-1.622-3.385m-5.043-.025a15.998 15.998 0 01-3.388-1.621" /></svg>
+                                <span
+                                    class="flex-shrink-0 w-10 h-10 rounded-lg bg-cyan-100 dark:bg-cyan-900/50 text-cyan-600 dark:text-cyan-400 flex items-center justify-center">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none"
+                                        viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="M9.53 16.122a3 3 0 00-5.78 1.128 2.25 2.25 0 01-2.4 2.245 4.5 4.5 0 008.4-2.245c0-.399-.078-.78-.22-1.128zm0 0a15.998 15.998 0 003.388-1.62m-5.043-.025a15.998 15.998 0 011.622-3.385m5.043.025a15.998 15.998 0 001.622-3.385m3.388 1.62a15.998 15.998 0 00-1.622-3.385m-5.043-.025a15.998 15.998 0 01-3.388-1.621m7.704 4.242a3 3 0 00-5.78 1.128 2.25 2.25 0 01-2.4 2.245 4.5 4.5 0 008.4-2.245c0-.399-.078-.78-.22-1.128zm0 0a15.998 15.998 0 003.388-1.62m-5.043-.025a15.998 15.998 0 011.622-3.385m5.043.025a15.998 15.998 0 001.622-3.385m3.388 1.62a15.998 15.998 0 00-1.622-3.385m-5.043-.025a15.998 15.998 0 01-3.388-1.621" />
+                                    </svg>
                                 </span>
-                                <span class="text-lg font-semibold text-slate-800 dark:text-white">Apakah saya perlu keahlian teknis untuk menggunakan VOXIA?</span>
+                                <span class="text-lg font-semibold text-slate-800 dark:text-white">Apakah saya perlu
+                                    keahlian teknis untuk menggunakan VOXIA?</span>
                             </span>
                             <span class="faq-chevron transition-transform duration-300">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-slate-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"></path></svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-slate-500" fill="none"
+                                    viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"></path>
+                                </svg>
                             </span>
                         </button>
-                        <div class="faq-answer" style="max-height: 0px; overflow: hidden; transition: max-height 0.5s ease-in-out;">
+                        <div class="faq-answer"
+                            style="max-height: 0px; overflow: hidden; transition: max-height 0.5s ease-in-out;">
                             <div class="p-6 pt-0 text-slate-600 dark:text-slate-400">
-                                Sama sekali tidak. VOXIA dirancang agar sangat mudah digunakan oleh UKM. Kami menyediakan dashboard yang intuitif dan tim kami akan membantu proses penyiapan dari awal hingga akhir.
+                                Sama sekali tidak. VOXIA dirancang agar sangat mudah digunakan oleh UKM. Kami
+                                menyediakan dashboard yang intuitif dan tim kami akan membantu proses penyiapan dari
+                                awal hingga akhir.
                             </div>
                         </div>
                     </div>
 
                     <!-- FAQ Item 3 -->
-                    <div class="faq-item bg-white dark:bg-slate-800 rounded-xl shadow-md overflow-hidden transition-all duration-300 border border-slate-200 dark:border-slate-700">
-                        <button class="faq-question w-full flex justify-between items-center text-left p-6 hover:bg-slate-50 dark:hover:bg-slate-700/50" aria-expanded="false">
+                    <div
+                        class="faq-item bg-white dark:bg-slate-800 rounded-xl shadow-md overflow-hidden transition-all duration-300 border border-slate-200 dark:border-slate-700">
+                        <button
+                            class="faq-question w-full flex justify-between items-center text-left p-6 hover:bg-slate-50 dark:hover:bg-slate-700/50"
+                            aria-expanded="false">
                             <span class="flex items-center gap-4">
-                                <span class="flex-shrink-0 w-10 h-10 rounded-lg bg-cyan-100 dark:bg-cyan-900/50 text-cyan-600 dark:text-cyan-400 flex items-center justify-center">
-                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 21v-7.5a.75.75 0 01.75-.75h3a.75.75 0 01.75.75V21m-4.5 0H2.25a.75.75 0 01-.75-.75v-7.5c0-.414.336-.75.75-.75h11.25c.414 0 .75.336.75.75v7.5a.75.75 0 01-.75.75h-2.25m-4.5 0H9M7.5 12l3 3m0 0l3-3m-3 3V3" /></svg>
+                                <span
+                                    class="flex-shrink-0 w-10 h-10 rounded-lg bg-cyan-100 dark:bg-cyan-900/50 text-cyan-600 dark:text-cyan-400 flex items-center justify-center">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none"
+                                        viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="M13.5 21v-7.5a.75.75 0 01.75-.75h3a.75.75 0 01.75.75V21m-4.5 0H2.25a.75.75 0 01-.75-.75v-7.5c0-.414.336-.75.75-.75h11.25c.414 0 .75.336.75.75v7.5a.75.75 0 01-.75.75h-2.25m-4.5 0H9M7.5 12l3 3m0 0l3-3m-3 3V3" />
+                                    </svg>
                                 </span>
-                                <span class="text-lg font-semibold text-slate-800 dark:text-white">Bisnis saya sangat kecil, apakah VOXIA cocok untuk saya?</span>
+                                <span class="text-lg font-semibold text-slate-800 dark:text-white">Bisnis saya sangat
+                                    kecil, apakah VOXIA cocok untuk saya?</span>
                             </span>
                             <span class="faq-chevron transition-transform duration-300">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-slate-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"></path></svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-slate-500" fill="none"
+                                    viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"></path>
+                                </svg>
                             </span>
                         </button>
-                        <div class="faq-answer" style="max-height: 0px; overflow: hidden; transition: max-height 0.5s ease-in-out;">
+                        <div class="faq-answer"
+                            style="max-height: 0px; overflow: hidden; transition: max-height 0.5s ease-in-out;">
                             <div class="p-6 pt-0 text-slate-600 dark:text-slate-400">
-                                Tentu saja. VOXIA dibuat khusus untuk UKM. Dengan paket solusi yang fleksibel, platform kami dapat tumbuh bersama bisnis Anda. Ini adalah cara sempurna untuk memprofesionalkan layanan pelanggan, berapapun skala bisnis Anda.
+                                Tentu saja. VOXIA dibuat khusus untuk UKM. Dengan paket solusi yang fleksibel, platform
+                                kami dapat tumbuh bersama bisnis Anda. Ini adalah cara sempurna untuk memprofesionalkan
+                                layanan pelanggan, berapapun skala bisnis Anda.
                             </div>
                         </div>
                     </div>
 
-                     <!-- FAQ Item 4 -->
-                    <div class="faq-item bg-white dark:bg-slate-800 rounded-xl shadow-md overflow-hidden transition-all duration-300 border border-slate-200 dark:border-slate-700">
-                        <button class="faq-question w-full flex justify-between items-center text-left p-6 hover:bg-slate-50 dark:hover:bg-slate-700/50" aria-expanded="false">
+                    <!-- FAQ Item 4 -->
+                    <div
+                        class="faq-item bg-white dark:bg-slate-800 rounded-xl shadow-md overflow-hidden transition-all duration-300 border border-slate-200 dark:border-slate-700">
+                        <button
+                            class="faq-question w-full flex justify-between items-center text-left p-6 hover:bg-slate-50 dark:hover:bg-slate-700/50"
+                            aria-expanded="false">
                             <span class="flex items-center gap-4">
-                                <span class="flex-shrink-0 w-10 h-10 rounded-lg bg-cyan-100 dark:bg-cyan-900/50 text-cyan-600 dark:text-cyan-400 flex items-center justify-center">
-                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.6-3.75M15 12a3 3 0 11-6 0 3 3 0 016 0z" /></svg>
+                                <span
+                                    class="flex-shrink-0 w-10 h-10 rounded-lg bg-cyan-100 dark:bg-cyan-900/50 text-cyan-600 dark:text-cyan-400 flex items-center justify-center">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none"
+                                        viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.6-3.75M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                                    </svg>
                                 </span>
-                                <span class="text-lg font-semibold text-slate-800 dark:text-white">Bagaimana dengan keamanan data pelanggan saya?</span>
+                                <span class="text-lg font-semibold text-slate-800 dark:text-white">Bagaimana dengan
+                                    keamanan data pelanggan saya?</span>
                             </span>
                             <span class="faq-chevron transition-transform duration-300">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-slate-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"></path></svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-slate-500" fill="none"
+                                    viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"></path>
+                                </svg>
                             </span>
                         </button>
-                        <div class="faq-answer" style="max-height: 0px; overflow: hidden; transition: max-height 0.5s ease-in-out;">
+                        <div class="faq-answer"
+                            style="max-height: 0px; overflow: hidden; transition: max-height 0.5s ease-in-out;">
                             <div class="p-6 pt-0 text-slate-600 dark:text-slate-400">
-                                Kami sangat memprioritaskan keamanan data. Semua informasi pelanggan Anda disimpan dengan aman dan dikelola sesuai dengan praktik terbaik untuk menjamin privasi dan perlindungan data.
+                                Kami sangat memprioritaskan keamanan data. Semua informasi pelanggan Anda disimpan
+                                dengan aman dan dikelola sesuai dengan praktik terbaik untuk menjamin privasi dan
+                                perlindungan data.
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
-        
+
         <!-- Pricing Section -->
         <section id="harga" class="py-20 lg:py-24 bg-white dark:bg-slate-950">
             <div class="container mx-auto px-6">
                 <div class="text-center mb-16">
-                    <h2 class="text-3xl lg:text-4xl font-bold text-slate-900 dark:text-white">Paket Solusi untuk Bisnis Anda</h2>
-                    <p class="mt-4 text-lg text-slate-600 dark:text-slate-400 max-w-3xl mx-auto">Kami menyediakan solusi yang dirancang khusus untuk memenuhi kompleksitas dan skala unik bisnis Anda. Hubungi kami untuk mendapatkan penawaran yang dipersonalisasi.</p>
+                    <h2 class="text-3xl lg:text-4xl font-bold text-slate-900 dark:text-white">Paket Solusi untuk Bisnis
+                        Anda</h2>
+                    <p class="mt-4 text-lg text-slate-600 dark:text-slate-400 max-w-3xl mx-auto">Kami menyediakan solusi
+                        yang dirancang khusus untuk memenuhi kompleksitas dan skala unik bisnis Anda. Hubungi kami untuk
+                        mendapatkan penawaran yang dipersonalisasi.</p>
                 </div>
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 items-start max-w-5xl mx-auto">
                     <!-- Starter Plan -->
-                    <div class="bg-slate-50 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700 rounded-xl p-8 h-full flex flex-col transition-all duration-300 transform hover:-translate-y-2 hover:shadow-lg">
+                    <div
+                        class="bg-slate-50 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700 rounded-xl p-8 h-full flex flex-col transition-all duration-300 transform hover:-translate-y-2 hover:shadow-lg">
                         <h3 class="text-2xl font-bold dark:text-white">Starter</h3>
-                        <p class="text-slate-500 dark:text-slate-400 my-4 flex-grow">Ideal untuk bisnis yang ingin memulai otomatisasi layanan pelanggan dan manajemen kontak dasar.</p>
+                        <p class="text-slate-500 dark:text-slate-400 my-4 flex-grow">Ideal untuk bisnis yang ingin
+                            memulai otomatisasi layanan pelanggan dan manajemen kontak dasar.</p>
                         <ul class="space-y-3 text-slate-600 dark:text-slate-400 flex-grow">
-                            <li class="flex items-start"><svg class="w-5 h-5 text-cyan-500 mr-2 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg><span>AI Chatbot untuk FAQ</span></li>
-                            <li class="flex items-start"><svg class="w-5 h-5 text-cyan-500 mr-2 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg><span>Manajemen Kontak Dasar</span></li>
-                            <li class="flex items-start"><svg class="w-5 h-5 text-cyan-500 mr-2 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg><span>Integrasi WhatsApp</span></li>
+                            <li class="flex items-start"><svg class="w-5 h-5 text-cyan-500 mr-2 mt-1 flex-shrink-0"
+                                    fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M5 13l4 4L19 7"></path>
+                                </svg><span>AI Chatbot untuk FAQ</span></li>
+                            <li class="flex items-start"><svg class="w-5 h-5 text-cyan-500 mr-2 mt-1 flex-shrink-0"
+                                    fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M5 13l4 4L19 7"></path>
+                                </svg><span>Manajemen Kontak Dasar</span></li>
+                            <li class="flex items-start"><svg class="w-5 h-5 text-cyan-500 mr-2 mt-1 flex-shrink-0"
+                                    fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M5 13l4 4L19 7"></path>
+                                </svg><span>Integrasi WhatsApp</span></li>
                         </ul>
-                        <a href="https://wa.me/6285183079558?text=Halo%20Tim%20VOXIA%2C%20bagaimana%20cara%20menjadwalkan%20demo%3F" target="_blank" rel="noopener noreferrer" class="mt-8 block w-full text-center bg-slate-200 text-slate-800 font-semibold py-3 px-6 rounded-lg hover:bg-slate-300 dark:bg-slate-700 dark:text-slate-200 dark:hover:bg-slate-600 transition-all flex items-center justify-center">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01s-.521.074-.792.372c-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.626.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.289.173-1.413z"/></svg>
+                        <a href="https://wa.me/6285183079558?text=Halo%20Tim%20VOXIA%2C%20bagaimana%20cara%20menjadwalkan%20demo%3F"
+                            target="_blank" rel="noopener noreferrer"
+                            class="mt-8 block w-full text-center bg-slate-200 text-slate-800 font-semibold py-3 px-6 rounded-lg hover:bg-slate-300 dark:bg-slate-700 dark:text-slate-200 dark:hover:bg-slate-600 transition-all flex items-center justify-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 24 24"
+                                fill="currentColor">
+                                <path
+                                    d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01s-.521.074-.792.372c-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.626.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.289.173-1.413z" />
+                            </svg>
                             Hubungi Sales
                         </a>
                     </div>
 
                     <!-- Growth Plan (Recommended) -->
-                    <div class="bg-white dark:bg-slate-800 border-2 border-cyan-500 dark:border-cyan-400 rounded-xl p-8 h-full flex flex-col shadow-2xl transform md:scale-105 relative transition-all duration-300 hover:shadow-cyan-500/30">
-                        <span class="absolute top-0 -translate-y-1/2 left-1/2 -translate-x-1/2 bg-cyan-500 text-white text-xs font-bold px-3 py-1 rounded-full uppercase">Paling Populer</span>
+                    <div
+                        class="bg-white dark:bg-slate-800 border-2 border-cyan-500 dark:border-cyan-400 rounded-xl p-8 h-full flex flex-col shadow-2xl transform md:scale-105 relative transition-all duration-300 hover:shadow-cyan-500/30">
+                        <span
+                            class="absolute top-0 -translate-y-1/2 left-1/2 -translate-x-1/2 bg-cyan-500 text-white text-xs font-bold px-3 py-1 rounded-full uppercase">Paling
+                            Populer</span>
                         <h3 class="text-2xl font-bold dark:text-white">Growth</h3>
-                        <p class="text-slate-500 dark:text-slate-400 my-4 flex-grow">Dirancang untuk bisnis yang siap bertumbuh dengan otomatisasi cerdas dan manajemen pelanggan yang lebih kuat.</p>
+                        <p class="text-slate-500 dark:text-slate-400 my-4 flex-grow">Dirancang untuk bisnis yang siap
+                            bertumbuh dengan otomatisasi cerdas dan manajemen pelanggan yang lebih kuat.</p>
                         <ul class="space-y-3 text-slate-600 dark:text-slate-400 flex-grow">
-                            <li class="flex items-start font-semibold"><svg class="w-5 h-5 text-cyan-500 mr-2 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg><span>Semua di Paket Starter, plus:</span></li>
-                            <li class="flex items-start"><svg class="w-5 h-5 text-cyan-500 mr-2 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg><span>AI yang Dipersonalisasi</span></li>
-                            <li class="flex items-start"><svg class="w-5 h-5 text-cyan-500 mr-2 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg><span>Otomasi Booking & Follow-up</span></li>
-                            <li class="flex items-start"><svg class="w-5 h-5 text-cyan-500 mr-2 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg><span>Broadcast Promo Tertarget</span></li>
-                            <li class="flex items-start"><svg class="w-5 h-5 text-cyan-500 mr-2 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg><span>Integrasi E-commerce</span></li>
+                            <li class="flex items-start font-semibold"><svg
+                                    class="w-5 h-5 text-cyan-500 mr-2 mt-1 flex-shrink-0" fill="none"
+                                    stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M5 13l4 4L19 7"></path>
+                                </svg><span>Semua di Paket Starter, plus:</span></li>
+                            <li class="flex items-start"><svg class="w-5 h-5 text-cyan-500 mr-2 mt-1 flex-shrink-0"
+                                    fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M5 13l4 4L19 7"></path>
+                                </svg><span>AI yang Dipersonalisasi</span></li>
+                            <li class="flex items-start"><svg class="w-5 h-5 text-cyan-500 mr-2 mt-1 flex-shrink-0"
+                                    fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M5 13l4 4L19 7"></path>
+                                </svg><span>Otomasi Booking & Follow-up</span></li>
+                            <li class="flex items-start"><svg class="w-5 h-5 text-cyan-500 mr-2 mt-1 flex-shrink-0"
+                                    fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M5 13l4 4L19 7"></path>
+                                </svg><span>Broadcast Promo Tertarget</span></li>
+                            <li class="flex items-start"><svg class="w-5 h-5 text-cyan-500 mr-2 mt-1 flex-shrink-0"
+                                    fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M5 13l4 4L19 7"></path>
+                                </svg><span>Integrasi E-commerce</span></li>
                         </ul>
-                        <a href="https://wa.me/6285183079558?text=Halo%20Tim%20VOXIA%2C%20bagaimana%20cara%20menjadwalkan%20demo%3F" target="_blank" rel="noopener noreferrer" class="mt-8 block w-full text-center bg-cyan-600 text-white font-semibold py-3 px-6 rounded-lg hover:bg-cyan-700 transition-all flex items-center justify-center">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01s-.521.074-.792.372c-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.626.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.289.173-1.413z"/></svg>
+                        <a href="https://wa.me/6285183079558?text=Halo%20Tim%20VOXIA%2C%20bagaimana%20cara%20menjadwalkan%20demo%3F"
+                            target="_blank" rel="noopener noreferrer"
+                            class="mt-8 block w-full text-center bg-cyan-600 text-white font-semibold py-3 px-6 rounded-lg hover:bg-cyan-700 transition-all flex items-center justify-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 24 24"
+                                fill="currentColor">
+                                <path
+                                    d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01s-.521.074-.792.372c-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.626.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.289.173-1.413z" />
+                            </svg>
                             Jadwalkan Demo
                         </a>
                     </div>
 
                     <!-- Pro Plan -->
-                    <div class="bg-slate-50 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700 rounded-xl p-8 h-full flex flex-col transition-all duration-300 transform hover:-translate-y-2 hover:shadow-lg">
+                    <div
+                        class="bg-slate-50 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700 rounded-xl p-8 h-full flex flex-col transition-all duration-300 transform hover:-translate-y-2 hover:shadow-lg">
                         <h3 class="text-2xl font-bold dark:text-white">Pro</h3>
-                        <p class="text-slate-500 dark:text-slate-400 my-4 flex-grow">Solusi komprehensif untuk bisnis skala besar dengan kebutuhan alur kerja dan integrasi yang kompleks.</p>
+                        <p class="text-slate-500 dark:text-slate-400 my-4 flex-grow">Solusi komprehensif untuk bisnis
+                            skala besar dengan kebutuhan alur kerja dan integrasi yang kompleks.</p>
                         <ul class="space-y-3 text-slate-600 dark:text-slate-400 flex-grow">
-                            <li class="flex items-start font-semibold"><svg class="w-5 h-5 text-cyan-500 mr-2 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg><span>Semua di Paket Growth, plus:</span></li>
-                            <li class="flex items-start"><svg class="w-5 h-5 text-cyan-500 mr-2 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg><span>Solusi AI Tingkat Lanjut</span></li>
-                            <li class="flex items-start"><svg class="w-5 h-5 text-cyan-500 mr-2 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg><span>Integrasi API Kustom</span></li>
-                            <li class="flex items-start"><svg class="w-5 h-5 text-cyan-500 mr-2 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg><span>Dukungan Prioritas</span></li>
-                             <li class="flex items-start"><svg class="w-5 h-5 text-cyan-500 mr-2 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg><span>Manajer Akun Khusus</span></li>
+                            <li class="flex items-start font-semibold"><svg
+                                    class="w-5 h-5 text-cyan-500 mr-2 mt-1 flex-shrink-0" fill="none"
+                                    stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M5 13l4 4L19 7"></path>
+                                </svg><span>Semua di Paket Growth, plus:</span></li>
+                            <li class="flex items-start"><svg class="w-5 h-5 text-cyan-500 mr-2 mt-1 flex-shrink-0"
+                                    fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M5 13l4 4L19 7"></path>
+                                </svg><span>Solusi AI Tingkat Lanjut</span></li>
+                            <li class="flex items-start"><svg class="w-5 h-5 text-cyan-500 mr-2 mt-1 flex-shrink-0"
+                                    fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M5 13l4 4L19 7"></path>
+                                </svg><span>Integrasi API Kustom</span></li>
+                            <li class="flex items-start"><svg class="w-5 h-5 text-cyan-500 mr-2 mt-1 flex-shrink-0"
+                                    fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M5 13l4 4L19 7"></path>
+                                </svg><span>Dukungan Prioritas</span></li>
+                            <li class="flex items-start"><svg class="w-5 h-5 text-cyan-500 mr-2 mt-1 flex-shrink-0"
+                                    fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M5 13l4 4L19 7"></path>
+                                </svg><span>Manajer Akun Khusus</span></li>
                         </ul>
-                        <a href="https://wa.me/6285183079558?text=Halo%20Tim%20VOXIA%2C%20bagaimana%20cara%20menjadwalkan%20demo%3F" target="_blank" rel="noopener noreferrer" class="mt-8 block w-full text-center bg-slate-200 text-slate-800 font-semibold py-3 px-6 rounded-lg hover:bg-slate-300 dark:bg-slate-700 dark:text-slate-200 dark:hover:bg-slate-600 transition-all flex items-center justify-center">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01s-.521.074-.792.372c-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.626.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.289.173-1.413z"/></svg>
+                        <a href="https://wa.me/6285183079558?text=Halo%20Tim%20VOXIA%2C%20bagaimana%20cara%20menjadwalkan%20demo%3F"
+                            target="_blank" rel="noopener noreferrer"
+                            class="mt-8 block w-full text-center bg-slate-200 text-slate-800 font-semibold py-3 px-6 rounded-lg hover:bg-slate-300 dark:bg-slate-700 dark:text-slate-200 dark:hover:bg-slate-600 transition-all flex items-center justify-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 24 24"
+                                fill="currentColor">
+                                <path
+                                    d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01s-.521.074-.792.372c-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.626.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.289.173-1.413z" />
+                            </svg>
                             Hubungi Sales
                         </a>
                     </div>
@@ -979,31 +1507,43 @@
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                 <div>
                     <h3 class="text-xl font-bold text-cyan-400">VOXIA</h3>
-                    <p class="mt-2 text-slate-400">Platform otomasi customer service dan manajemen pelanggan berbasis AI untuk UKM.</p>
+                    <p class="mt-2 text-slate-400">Platform otomasi customer service dan manajemen pelanggan berbasis AI
+                        untuk UKM.</p>
                 </div>
                 <div>
                     <h4 class="font-semibold text-lg text-white">Tautan</h4>
                     <ul class="mt-4 space-y-2">
-                        <li><a href="https://wa.me/6285183079558?text=Halo%20Tim%20VOXIA%2C%20bagaimana%20cara%20menjadwalkan%20demo%3F" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-white flex items-center">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-2" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01s-.521.074-.792.372c-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.626.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.289.173-1.413z"/></svg>
+                        <li><a href="https://wa.me/6285183079558?text=Halo%20Tim%20VOXIA%2C%20bagaimana%20cara%20menjadwalkan%20demo%3F"
+                                target="_blank" rel="noopener noreferrer"
+                                class="text-slate-400 hover:text-white flex items-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-2" viewBox="0 0 24 24"
+                                    fill="currentColor">
+                                    <path
+                                        d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01s-.521.074-.792.372c-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.626.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.289.173-1.413z" />
+                                </svg>
                                 +62 851-8307-9558
                             </a></li>
-                        <li><a href="https://apply.voxia.id/" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-white flex items-center">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 13.255A9.002 9.002 0 0112 21a9.002 9.002 0 01-9-9.745M21 13.255V21M12 21a9.002 9.002 0 01-9-9.745M12 21V3m0 0a9.002 9.002 0 019 9.255M12 3v9m9-9v9m0 0a9.002 9.002 0 01-9 9" />
+                        <li><a href="https://apply.voxia.id/" target="_blank" rel="noopener noreferrer"
+                                class="text-slate-400 hover:text-white flex items-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-2" fill="none"
+                                    viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M21 13.255A9.002 9.002 0 0112 21a9.002 9.002 0 01-9-9.745M21 13.255V21M12 21a9.002 9.002 0 01-9-9.745M12 21V3m0 0a9.002 9.002 0 019 9.255M12 3v9m9-9v9m0 0a9.002 9.002 0 01-9 9" />
                                 </svg>
                                 Karir
                             </a></li>
-                        <li><a href="#" class="text-slate-400 hover:text-white">Kebijakan Privasi</a></li>
+                        <li><a href="/privacy-policy.html" class="text-slate-400 hover:text-white">Kebijakan Privasi</a>
+                        </li>
                         <li><a href="#" class="text-slate-400 hover:text-white">voxia.id</a></li>
                     </ul>
                 </div>
                 <div>
-                     <h4 class="font-semibold text-lg text-white">Alamat</h4>
+                    <h4 class="font-semibold text-lg text-white">Alamat</h4>
                     <p class="mt-2 text-slate-400">PT. Ekuitas Media Investama<br>Jakarta, Indonesia</p>
                 </div>
             </div>
-            <div class="mt-12 border-t border-slate-800 dark:border-slate-700 pt-6 text-center text-slate-500 dark:text-slate-400 text-sm">
+            <div
+                class="mt-12 border-t border-slate-800 dark:border-slate-700 pt-6 text-center text-slate-500 dark:text-slate-400 text-sm">
                 &copy; <span id="current-year"></span> PT. Ekuitas Media Investama. All Rights Reserved.
             </div>
         </div>
@@ -1138,7 +1678,7 @@
         // Show modal on page load (after a short delay for better UX)
         window.addEventListener('load', () => {
             setTimeout(showPromoModal, 1000); // Show after 1 second
-            
+
             // Setup event listeners after DOM is definitely ready
             const closeModalBtn = document.getElementById('close-modal-btn');
             const promoModal = document.getElementById('promo-modal');
@@ -1159,21 +1699,27 @@
         });
 
     </script>
-    
+
     <!-- Promo Pop-up Modal -->
     <div id="promo-modal" class="fixed inset-0 z-[1001] hidden items-center justify-center bg-black bg-opacity-75 p-4">
         <div class="relative w-full max-w-md rounded-lg bg-white p-8 text-center shadow-xl dark:bg-slate-800">
-            <button id="close-modal-btn" class="absolute right-3 top-3 text-slate-500 hover:text-slate-700 dark:text-slate-400 dark:hover:text-slate-200">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <button id="close-modal-btn"
+                class="absolute right-3 top-3 text-slate-500 hover:text-slate-700 dark:text-slate-400 dark:hover:text-slate-200">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                    stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
                 </svg>
             </button>
             <h3 class="mb-4 text-2xl font-bold text-slate-900 dark:text-white">Dapatkan VOXIA GRATIS!</h3>
-            <p class="mb-6 text-lg text-slate-600 dark:text-slate-400">Ikuti program seleksi kami dan dapatkan akses penuh VOXIA tanpa biaya.</p>
-            <a href="https://forms.gle/PffzCGogPbfdUA9S8" target="_blank" rel="noopener noreferrer" class="cta-glow inline-flex items-center justify-center rounded-lg bg-cyan-600 px-8 py-3 font-bold text-white shadow-lg transition-all hover:bg-cyan-500">
+            <p class="mb-6 text-lg text-slate-600 dark:text-slate-400">Ikuti program seleksi kami dan dapatkan akses
+                penuh VOXIA tanpa biaya.</p>
+            <a href="https://forms.gle/PffzCGogPbfdUA9S8" target="_blank" rel="noopener noreferrer"
+                class="cta-glow inline-flex items-center justify-center rounded-lg bg-cyan-600 px-8 py-3 font-bold text-white shadow-lg transition-all hover:bg-cyan-500">
                 Daftar Sekarang
                 <svg xmlns="http://www.w3.org/2000/svg" class="ml-2 h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
-                    <path fill-rule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+                    <path fill-rule="evenodd"
+                        d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z"
+                        clip-rule="evenodd" />
                 </svg>
             </a>
         </div>
@@ -1193,4 +1739,5 @@
     </script>
 
 </body>
+
 </html>
