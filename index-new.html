@@ -211,8 +211,7 @@
             <div class="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
                 <!-- Starter Plan -->
                 <div class="card-hover bg-white p-8 rounded-xl border border-gray-200">
-                    <h3 class="starter-name text-2xl font-bold text-gray-800 mb-2">Starter</h3>
-                    <div class="starter-price text-3xl font-bold text-cyan-600 mb-4">Rp 499K<span class="text-lg text-gray-600">/bulan</span></div>
+                    <h3 class="starter-name text-2xl font-bold text-gray-800 mb-4">Starter</h3>
                     <p class="starter-desc text-gray-600 mb-6">Solusi dasar untuk UMKM yang ingin memulai otomatisasi WhatsApp</p>
                     <ul class="space-y-3 mb-8">
                         <li class="flex items-center"><i class="fas fa-check text-green-500 mr-3"></i><span class="starter-feature-1">Hingga 1.000 kontak</span></li>
@@ -230,8 +229,7 @@
                 <!-- Growth Plan -->
                 <div class="card-hover bg-cyan-600 text-white p-8 rounded-xl transform scale-105">
                     <div class="bg-yellow-400 text-gray-800 text-sm font-semibold px-3 py-1 rounded-full inline-block mb-4">POPULER</div>
-                    <h3 class="growth-name text-2xl font-bold mb-2">Growth</h3>
-                    <div class="growth-price text-3xl font-bold mb-4">Rp 1.299K<span class="text-lg opacity-80">/bulan</span></div>
+                    <h3 class="growth-name text-2xl font-bold mb-4">Growth</h3>
                     <p class="growth-desc opacity-90 mb-6">Solusi komprehensif untuk bisnis yang sedang berkembang pesat</p>
                     <ul class="space-y-3 mb-8">
                         <li class="flex items-center"><i class="fas fa-check text-white mr-3"></i><span class="growth-feature-1">Hingga 5.000 kontak</span></li>
@@ -249,8 +247,7 @@
                 
                 <!-- Pro Plan -->
                 <div class="card-hover bg-white p-8 rounded-xl border border-gray-200">
-                    <h3 class="pro-name text-2xl font-bold text-gray-800 mb-2">Pro</h3>
-                    <div class="pro-price text-3xl font-bold text-cyan-600 mb-4">Custom</div>
+                    <h3 class="pro-name text-2xl font-bold text-gray-800 mb-4">Pro</h3>
                     <p class="pro-desc text-gray-600 mb-6">Solusi enterprise untuk kebutuhan bisnis skala besar</p>
                     <ul class="space-y-3 mb-8">
                         <li class="flex items-center"><i class="fas fa-check text-green-500 mr-3"></i><span class="pro-feature-1">Kontak tak terbatas</span></li>
@@ -279,7 +276,7 @@
                     </div>
                     <span class="text-xl font-bold">VOXIA</span>
                 </div>
-                <p class="text-gray-400">© 2024 VOXIA. All rights reserved.</p>
+                <p class="footer-copyright text-gray-400">© 2024 VOXIA. All rights reserved.</p>
             </div>
         </div>
     </footer>
@@ -326,21 +323,18 @@
                     subtitle: 'Pilih solusi yang sesuai dengan kebutuhan bisnis Anda',
                     starter: {
                         name: 'Starter',
-                        price: 'Rp 499K<span class="text-lg text-gray-600">/bulan</span>',
                         desc: 'Solusi dasar untuk UMKM yang ingin memulai otomatisasi WhatsApp',
                         features: ['Hingga 1.000 kontak', '100 pesan/hari', 'Otomatisasi dasar', 'Support email'],
                         cta: 'Hubungi Sales'
                     },
                     growth: {
                         name: 'Growth',
-                        price: 'Rp 1.299K<span class="text-lg opacity-80">/bulan</span>',
                         desc: 'Solusi komprehensif untuk bisnis yang sedang berkembang pesat',
                         features: ['Hingga 5.000 kontak', '500 pesan/hari', 'Otomatisasi lanjutan', 'Multi-agent support', 'Integrasi CRM'],
                         cta: 'Jadwalkan Demo'
                     },
                     pro: {
                         name: 'Pro',
-                        price: 'Custom',
                         desc: 'Solusi enterprise untuk kebutuhan bisnis skala besar',
                         features: ['Kontak tak terbatas', 'Pesan tak terbatas', 'API akses penuh', 'Dedicated server', 'Account manager'],
                         cta: 'Hubungi Sales'
@@ -380,21 +374,18 @@
                     subtitle: 'Choose solution that fits your business needs',
                     starter: {
                         name: 'Starter',
-                        price: '$29<span class="text-lg text-gray-600">/month</span>',
                         desc: 'Basic solution for SMEs starting WhatsApp automation',
                         features: ['Up to 1,000 contacts', '100 messages/day', 'Basic automation', 'Email support'],
                         cta: 'Contact Sales'
                     },
                     growth: {
                         name: 'Growth',
-                        price: '$79<span class="text-lg opacity-80">/month</span>',
                         desc: 'Comprehensive solution for rapidly growing businesses',
                         features: ['Up to 5,000 contacts', '500 messages/day', 'Advanced automation', 'Multi-agent support', 'CRM integration'],
                         cta: 'Schedule Demo'
                     },
                     pro: {
                         name: 'Pro',
-                        price: 'Custom',
                         desc: 'Enterprise solution for large-scale business needs',
                         features: ['Unlimited contacts', 'Unlimited messages', 'Full API access', 'Dedicated server', 'Account manager'],
                         cta: 'Contact Sales'
@@ -445,17 +436,14 @@
             
             // Update pricing cards
             document.querySelector('.starter-name').textContent = t.pricing.starter.name;
-            document.querySelector('.starter-price').innerHTML = t.pricing.starter.price;
             document.querySelector('.starter-desc').textContent = t.pricing.starter.desc;
             document.querySelector('.starter-cta').textContent = t.pricing.starter.cta;
             
             document.querySelector('.growth-name').textContent = t.pricing.growth.name;
-            document.querySelector('.growth-price').innerHTML = t.pricing.growth.price;
             document.querySelector('.growth-desc').textContent = t.pricing.growth.desc;
             document.querySelector('.growth-cta').textContent = t.pricing.growth.cta;
             
             document.querySelector('.pro-name').textContent = t.pricing.pro.name;
-            document.querySelector('.pro-price').innerHTML = t.pricing.pro.price;
             document.querySelector('.pro-desc').textContent = t.pricing.pro.desc;
             document.querySelector('.pro-cta').textContent = t.pricing.pro.cta;
             
