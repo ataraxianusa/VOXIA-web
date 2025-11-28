@@ -485,7 +485,15 @@
 
                 <!-- Email Form untuk Apollo Form Enrichment -->
                 <div class="mt-8 max-w-md mx-auto">
-                    <form class="bg-white/10 backdrop-blur-sm rounded-lg p-6 border border-white/20">
+                    <style>
+                        /* Override Apollo form enrichment CSS untuk memungkinkan interaksi */
+                        .apollo-form-override * {
+                            opacity: 1 !important;
+                            user-select: auto !important;
+                            pointer-events: auto !important;
+                        }
+                    </style>
+                    <form class="apollo-form-override bg-white/10 backdrop-blur-sm rounded-lg p-6 border border-white/20">
                         <h3 class="text-white text-lg font-semibold mb-4">Dapatkan Demo Gratis</h3>
                         <div class="flex flex-col sm:flex-row gap-3">
                             <input type="email" 
