@@ -483,31 +483,11 @@
                     </a>
                 </div>
 
-                <!-- Email Form untuk Apollo Form Enrichment -->
-                <div class="mt-8 max-w-md mx-auto">
-                    <style>
-                        /* Override Apollo form enrichment CSS untuk memungkinkan interaksi */
-                        .apollo-form-override * {
-                            opacity: 1 !important;
-                            user-select: auto !important;
-                            pointer-events: auto !important;
-                        }
-                    </style>
-                    <form class="apollo-form-override bg-white/10 backdrop-blur-sm rounded-lg p-6 border border-white/20">
-                        <h3 class="text-white text-lg font-semibold mb-4">Dapatkan Demo Gratis</h3>
-                        <div class="flex flex-col sm:flex-row gap-3">
-                            <input type="email" 
-                                   name="email" 
-                                   placeholder="Masukkan email Anda" 
-                                   required
-                                   class="flex-1 px-4 py-3 rounded-lg bg-white/90 text-slate-800 placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-cyan-400">
-                            <button type="submit" 
-                                    class="px-6 py-3 bg-cyan-600 text-white font-semibold rounded-lg hover:bg-cyan-500 transition-colors">
-                                Kirim
-                            </button>
-                        </div>
-                    </form>
-                </div>
+                <!-- Hidden Form untuk Apollo Form Enrichment (tidak terlihat user) -->
+                <form style="display: none;">
+                    <input type="email" name="email" placeholder="Hidden email for Apollo">
+                </form>
+
             </div>
             <div class="wave-separator">
                 <svg viewBox="0 0 1440 120" fill="none" xmlns="http://www.w3.org/2000/svg">
