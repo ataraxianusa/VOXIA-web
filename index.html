@@ -1642,6 +1642,7 @@
         let currentLanguage = 'id';
 
         function setLanguage(lang) {
+            console.log('setLanguage called with:', lang);
             currentLanguage = lang;
             
             // Update button styles
@@ -1651,8 +1652,10 @@
             });
             
             const activeBtn = document.getElementById(`lang-${lang}`);
-            activeBtn.classList.remove('text-white', 'hover:bg-white/20');
-            activeBtn.classList.add('bg-white', 'text-slate-800');
+            if (activeBtn) {
+                activeBtn.classList.remove('text-white', 'hover:bg-white/20');
+                activeBtn.classList.add('bg-white', 'text-slate-800');
+            }
             
             // Update content
             updateContent();
@@ -1667,46 +1670,72 @@
         }
 
         function updateContent() {
+            console.log('updateContent called, currentLanguage:', currentLanguage);
             const t = translations[currentLanguage];
+            console.log('Translation data:', t);
             
             // Navigation
             const navFitur = document.querySelector('.nav-fitur');
-            if (navFitur) navFitur.textContent = t.nav.fitur;
+            console.log('navFitur element:', navFitur);
+            if (navFitur) {
+                navFitur.textContent = t.nav.fitur;
+                console.log('Updated navFitur to:', t.nav.fitur);
+            }
             
             const navSolusi = document.querySelector('.nav-solusi');
-            if (navSolusi) navSolusi.textContent = t.nav.solusi;
+            console.log('navSolusi element:', navSolusi);
+            if (navSolusi) {
+                navSolusi.textContent = t.nav.solusi;
+                console.log('Updated navSolusi to:', t.nav.solusi);
+            }
             
             const navPaket = document.querySelector('.nav-paket');
-            if (navPaket) navPaket.textContent = t.nav.paket;
+            console.log('navPaket element:', navPaket);
+            if (navPaket) {
+                navPaket.textContent = t.nav.paket;
+                console.log('Updated navPaket to:', t.nav.paket);
+            }
             
             const navKontak = document.querySelector('.nav-kontak');
-            if (navKontak) navKontak.textContent = t.nav.kontak;
+            console.log('navKontak element:', navKontak);
+            if (navKontak) {
+                navKontak.textContent = t.nav.kontak;
+                console.log('Updated navKontak to:', t.nav.kontak);
+            }
             
             // Hero section - update subtitle
             const heroSubtitle = document.querySelector('.hero-subtitle');
+            console.log('heroSubtitle element:', heroSubtitle);
             if (heroSubtitle) {
                 heroSubtitle.textContent = t.hero.subtitle;
+                console.log('Updated heroSubtitle to:', t.hero.subtitle);
             }
             
             // Hero description
             const heroDesc = document.querySelector('.hero-description');
+            console.log('heroDesc element:', heroDesc);
             if (heroDesc) {
                 heroDesc.textContent = t.hero.description;
+                console.log('Updated heroDesc to:', t.hero.description);
             }
             
             // CTA buttons
             const cta1 = document.querySelector('.hero-cta a:first-child');
+            console.log('cta1 element:', cta1);
             if (cta1) {
                 // Keep the SVG and update text
                 const svg = cta1.querySelector('svg');
                 cta1.innerHTML = '';
                 cta1.appendChild(svg);
                 cta1.insertAdjacentHTML('beforeend', t.hero.cta1);
+                console.log('Updated cta1 to:', t.hero.cta1);
             }
             
             const cta2 = document.querySelector('.hero-cta a:last-child');
+            console.log('cta2 element:', cta2);
             if (cta2) {
                 cta2.textContent = t.hero.cta2;
+                console.log('Updated cta2 to:', t.hero.cta2);
             }
         }
 
