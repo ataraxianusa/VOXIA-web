@@ -415,14 +415,26 @@
             <div class="flex items-center">
                 <nav class="hidden md:flex space-x-8 items-center mr-4">
                     <a href="#fitur"
-                        class="text-slate-300 hover:text-white transition-colors duration-200 hover:scale-105 transform transition-transform duration-500 ease-in-out">Fitur</a>
+                        class="nav-fitur text-slate-300 hover:text-white transition-colors duration-200 hover:scale-105 transform transition-transform duration-500 ease-in-out">Fitur</a>
                     <a href="#solusi"
-                        class="text-slate-300 hover:text-white transition-colors duration-200 hover:scale-105 transform transition-transform duration-500 ease-in-out">Solusi</a>
+                        class="nav-solusi text-slate-300 hover:text-white transition-colors duration-200 hover:scale-105 transform transition-transform duration-500 ease-in-out">Solusi</a>
                     <a href="#harga"
-                        class="text-slate-300 hover:text-white transition-colors duration-200 hover:scale-105 transform transition-transform duration-500 ease-in-out">Paket</a>
+                        class="nav-paket text-slate-300 hover:text-white transition-colors duration-200 hover:scale-105 transform transition-transform duration-500 ease-in-out">Paket</a>
                     <a href="#kontak"
-                        class="text-slate-300 hover:text-white transition-colors duration-200 hover:scale-105 transform transition-transform duration-500 ease-in-out">Kontak</a>
+                        class="nav-kontak text-slate-300 hover:text-white transition-colors duration-200 hover:scale-105 transform transition-transform duration-500 ease-in-out">Kontak</a>
                 </nav>
+
+                <!-- Language Toggle -->
+                <div class="flex items-center mr-4">
+                    <div class="bg-white/10 backdrop-blur-sm rounded-lg p-1 border border-white/20">
+                        <button onclick="setLanguage('id')" id="lang-id" class="lang-btn px-3 py-1 rounded-md text-sm font-medium transition-all duration-200 bg-white text-slate-800">
+                            🇮🇩 ID
+                        </button>
+                        <button onclick="setLanguage('en')" id="lang-en" class="lang-btn px-3 py-1 rounded-md text-sm font-medium transition-all duration-200 text-white hover:bg-white/20">
+                            🇬🇧 EN
+                        </button>
+                    </div>
+                </div>
 
                 <button id="mobile-menu-button"
                     class="md:hidden p-2 rounded-md text-slate-300 hover:bg-slate-800/50 focus:outline-none focus:ring-2 focus:ring-cyan-500">
@@ -454,7 +466,7 @@
             <div class="aurora-effect"></div>
             <div class="particles"></div>
             <div class="hero-content container mx-auto px-6 text-center">
-                <h1 class="font-black text-white leading-none">
+                <h1 class="hero-title font-black text-white leading-none">
                     <span
                         class="title-voxia block font-black tracking-tighter bg-clip-text text-transparent bg-gradient-to-r from-cyan-300 to-sky-500">VOXIA</span>
                     <span
@@ -1592,6 +1604,121 @@
     </footer>
 
     <script>
+        // --- Translation System ---
+        const translations = {
+            id: {
+                nav: {
+                    fitur: 'Fitur',
+                    solusi: 'Solusi',
+                    paket: 'Paket',
+                    kontak: 'Kontak'
+                },
+                hero: {
+                    title: 'Ubah',
+                    subtitle: 'Setiap Percakapan di WhatsApp Menjadi Peluang',
+                    description: 'Kami bukan sekadar software. Voxia adalah sistem cerdas yang bekerja di balik layar untuk memastikan setiap interaksi pelanggan di WhatsApp berjalan lancar, terorganisir, dan menghasilkan. Biarkan kami yang mengurus kompleksitas, Anda yang menikmati pertumbuhannya.',
+                    cta1: 'Jadwalkan Demo Gratis',
+                    cta2: 'Lihat Paket'
+                }
+            },
+            en: {
+                nav: {
+                    fitur: 'Features',
+                    solusi: 'Solutions',
+                    paket: 'Pricing',
+                    kontak: 'Contact'
+                },
+                hero: {
+                    title: 'Transform',
+                    subtitle: 'Every WhatsApp Conversation into Opportunity',
+                    description: 'We\\'re not just software. Voxia is an intelligent system working behind the scenes to ensure every customer interaction on WhatsApp runs smoothly, organized, and generates results. Let us handle the complexity while you enjoy the growth.',
+                    cta1: 'Schedule Free Demo',
+                    cta2: 'View Plans'
+                }
+            }
+        };
+
+        // Language Management
+        let currentLanguage = 'id';
+
+        function setLanguage(lang) {
+            currentLanguage = lang;
+            
+            // Update button styles
+            document.querySelectorAll('.lang-btn').forEach(btn => {
+                btn.classList.remove('bg-white', 'text-slate-800');
+                btn.classList.add('text-white', 'hover:bg-white/20');
+            });
+            
+            const activeBtn = document.getElementById(`lang-${lang}`);
+            activeBtn.classList.remove('text-white', 'hover:bg-white/20');
+            activeBtn.classList.add('bg-white', 'text-slate-800');
+            
+            // Update content
+            updateContent();
+            
+            // Save preference
+            localStorage.setItem('voxia-language', lang);
+            
+            // Update URL
+            const url = new URL(window.location);
+            url.searchParams.set('lang', lang);
+            window.history.replaceState({}, '', url);
+        }
+
+        function updateContent() {
+            const t = translations[currentLanguage];
+            
+            // Navigation
+            document.querySelector('.nav-fitur').textContent = t.nav.fitur;
+            document.querySelector('.nav-solusi').textContent = t.nav.solusi;
+            document.querySelector('.nav-paket').textContent = t.nav.paket;
+            document.querySelector('.nav-kontak').textContent = t.nav.kontak;
+            
+            // Hero section
+            const heroTitle = document.querySelector('.hero-title');
+            if (heroTitle) {
+                heroTitle.innerHTML = `${t.hero.title}<span class="block mt-2 md:mt-4 text-2xl md:text-3xl lg:text-4xl font-semibold text-slate-200 tracking-wide">${t.hero.subtitle}</span>`;
+            }
+            
+            const heroDesc = document.querySelector('.hero-subtitle');
+            if (heroDesc) {
+                heroDesc.textContent = t.hero.description;
+            }
+            
+            // CTA buttons
+            const cta1 = document.querySelector('.hero-cta a:first-child');
+            if (cta1) {
+                cta1.innerHTML = `
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-3" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                    </svg>
+                    ${t.hero.cta1}
+                `;
+            }
+            
+            const cta2 = document.querySelector('.hero-cta a:last-child');
+            if (cta2) {
+                cta2.textContent = t.hero.cta2;
+            }
+        }
+
+        // Initialize language on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            // Check URL parameter first
+            const urlParams = new URLSearchParams(window.location.search);
+            const urlLang = urlParams.get('lang');
+            
+            // Then check localStorage
+            const savedLang = localStorage.getItem('voxia-language');
+            
+            // Set language (URL > localStorage > default)
+            const lang = urlLang || savedLang || 'id';
+            setLanguage(lang);
+        });
+
         // --- App Scripts ---
 
         // 1. Mobile menu toggle
