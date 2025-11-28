@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VOXIA - Solusi WhatsApp Bisnis | WhatsApp Business Solution</title>
+    <meta name="description" content="VOXIA adalah sistem cerdas untuk mengotomatisasi WhatsApp bisnis Anda. Kelola pelanggan, kirim pesan massal, dan pantau performa dengan mudah.">
+    <meta name="keywords" content="WhatsApp bisnis, WhatsApp API, otomatisasi WhatsApp, chatbot WhatsApp, CRM WhatsApp">
+    <meta name="author" content="VOXIA">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="VOXIA - Solusi WhatsApp Bisnis">
+    <meta property="og:description" content="Sistem cerdas untuk mengotomatisasi WhatsApp bisnis Anda">
+    <meta property="og:image" content="https://voxia.id/og-image.jpg">
+    <meta property="og:url" content="https://voxia.id">
+    <meta property="og:type" content="website">
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="VOXIA - Solusi WhatsApp Bisnis">
+    <meta name="twitter:description" content="Sistem cerdas untuk mengotomatisasi WhatsApp bisnis Anda">
+    <meta name="twitter:image" content="https://voxia.id/og-image.jpg">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="apple-touch-icon" href="favicon.png">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Custom Styles -->
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+        
+        * {
+            font-family: 'Inter', sans-serif;
+        }
+        
+        .gradient-bg {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        
+        .hero-gradient {
+            background: linear-gradient(135deg, #06b6d4 0%, #0891b2 50%, #0e7490 100%);
+        }
+        
+        .text-gradient {
+            background: linear-gradient(135deg, #06b6d4 0%, #0891b2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+        
+        .lang-btn {
+            transition: all 0.3s ease;
+        }
+        
+        .lang-btn.active {
+            background-color: white;
+            color: #1e293b;
+        }
+        
+        .lang-btn:not(.active) {
+            background-color: transparent;
+            color: white;
+        }
+        
+        .lang-btn:not(.active):hover {
+            background-color: rgba(255,255,255,0.2);
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Header -->
+    <header class="fixed top-0 w-full bg-white/95 backdrop-blur-sm shadow-sm z-50">
+        <nav class="container mx-auto px-6 py-4">
+            <div class="flex justify-between items-center">
+                <!-- Logo -->
+                <div class="flex items-center space-x-2">
+                    <div class="w-10 h-10 bg-cyan-500 rounded-lg flex items-center justify-center">
+                        <span class="text-white font-bold text-xl">V</span>
+                    </div>
+                    <span class="text-2xl font-bold text-gray-800">VOXIA</span>
+                </div>
+                
+                <!-- Desktop Navigation -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#features" class="nav-link text-gray-600 hover:text-cyan-600 transition-colors">Fitur</a>
+                    <a href="#pricing" class="nav-link text-gray-600 hover:text-cyan-600 transition-colors">Harga</a>
+                    <a href="#contact" class="nav-link text-gray-600 hover:text-cyan-600 transition-colors">Kontak</a>
+                    
+                    <!-- Language Toggle -->
+                    <div class="flex items-center space-x-2 bg-gray-100 rounded-lg p-1">
+                        <button onclick="setLanguage('id')" id="lang-id" class="lang-btn active px-3 py-1 rounded-md text-sm font-medium">
+                            🇮🇩 ID
+                        </button>
+                        <button onclick="setLanguage('en')" id="lang-en" class="lang-btn px-3 py-1 rounded-md text-sm font-medium">
+                            🇬🇧 EN
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Mobile Menu Button -->
+                <button onclick="toggleMobileMenu()" class="md:hidden text-gray-600">
+                    <i class="fas fa-bars text-xl"></i>
+                </button>
+            </div>
+            
+            <!-- Mobile Menu -->
+            <div id="mobile-menu" class="hidden md:hidden mt-4 pb-4">
+                <div class="flex flex-col space-y-3">
+                    <a href="#features" class="nav-link text-gray-600 hover:text-cyan-600 transition-colors">Fitur</a>
+                    <a href="#pricing" class="nav-link text-gray-600 hover:text-cyan-600 transition-colors">Harga</a>
+                    <a href="#contact" class="nav-link text-gray-600 hover:text-cyan-600 transition-colors">Kontak</a>
+                    
+                    <!-- Mobile Language Toggle -->
+                    <div class="flex items-center space-x-2 bg-gray-100 rounded-lg p-1">
+                        <button onclick="setLanguage('id')" id="lang-id-mobile" class="lang-btn active px-3 py-1 rounded-md text-sm font-medium">
+                            🇮🇩 ID
+                        </button>
+                        <button onclick="setLanguage('en')" id="lang-en-mobile" class="lang-btn px-3 py-1 rounded-md text-sm font-medium">
+                            🇬🇧 EN
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-gradient pt-32 pb-20 text-white">
+        <div class="container mx-auto px-6 text-center">
+            <h1 class="text-4xl md:text-6xl font-bold mb-6">
+                <span class="hero-title">Ubah Setiap Percakapan WhatsApp Menjadi Peluang</span>
+            </h1>
+            <p class="hero-description text-xl md:text-2xl mb-8 max-w-3xl mx-auto opacity-90">
+                Solusi cerdas untuk mengotomatisasi WhatsApp bisnis Anda. Kelola pelanggan, kirim pesan massal, dan pantau performa dengan mudah.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="https://app.apollo.io/#/meet/voxia/15-min" 
+                   target="_blank" 
+                   class="cta-demo bg-white text-cyan-600 px-8 py-4 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
+                    <i class="fas fa-calendar-alt mr-2"></i>
+                    <span class="cta-demo-text">Jadwalkan Demo Gratis</span>
+                </a>
+                <a href="#pricing" class="cta-pricing border-2 border-white text-white px-8 py-4 rounded-lg font-semibold hover:bg-white hover:text-cyan-600 transition-colors">
+                    <i class="fas fa-tag mr-2"></i>
+                    <span class="cta-pricing-text">Lihat Harga</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="features-title text-3xl md:text-4xl font-bold text-gray-800 mb-4">Fitur Unggulan</h2>
+                <p class="features-subtitle text-xl text-gray-600 max-w-2xl mx-auto">Solusi lengkap untuk mengoptimalkan komunikasi WhatsApp bisnis Anda</p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="card-hover bg-gray-50 p-8 rounded-xl">
+                    <div class="w-12 h-12 bg-cyan-100 rounded-lg flex items-center justify-center mb-6">
+                        <i class="fas fa-robot text-cyan-600 text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-3">Otomatisasi Cerdas</h3>
+                    <p class="text-gray-600">Chatbot AI yang memahami bahasa Indonesia dan merespons pelanggan 24/7</p>
+                </div>
+                
+                <div class="card-hover bg-gray-50 p-8 rounded-xl">
+                    <div class="w-12 h-12 bg-cyan-100 rounded-lg flex items-center justify-center mb-6">
+                        <i class="fas fa-users text-cyan-600 text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-3">Manajemen Kontak</h3>
+                    <p class="text-gray-600">Kelola database pelanggan dengan segmentasi dan tagging otomatis</p>
+                </div>
+                
+                <div class="card-hover bg-gray-50 p-8 rounded-xl">
+                    <div class="w-12 h-12 bg-cyan-100 rounded-lg flex items-center justify-center mb-6">
+                        <i class="fas fa-chart-line text-cyan-600 text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-3">Analitik Performa</h3>
+                    <p class="text-gray-600">Dashboard real-time untuk memantau performa kampanye WhatsApp Anda</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="pricing-title text-3xl md:text-4xl font-bold text-gray-800 mb-4">Paket Harga</h2>
+                <p class="pricing-subtitle text-xl text-gray-600 max-w-2xl mx-auto">Pilih solusi yang sesuai dengan kebutuhan bisnis Anda</p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+                <!-- Starter Plan -->
+                <div class="card-hover bg-white p-8 rounded-xl border border-gray-200">
+                    <h3 class="text-2xl font-bold text-gray-800 mb-2">Starter</h3>
+                    <div class="text-3xl font-bold text-cyan-600 mb-4">Rp 499K<span class="text-lg text-gray-600">/bulan</span></div>
+                    <p class="text-gray-600 mb-6">Solusi dasar untuk UMKM yang ingin memulai otomatisasi WhatsApp</p>
+                    <ul class="space-y-3 mb-8">
+                        <li class="flex items-center"><i class="fas fa-check text-green-500 mr-3"></i>Hingga 1.000 kontak</li>
+                        <li class="flex items-center"><i class="fas fa-check text-green-500 mr-3"></i>100 pesan/hari</li>
+                        <li class="flex items-center"><i class="fas fa-check text-green-500 mr-3"></i>Otomatisasi dasar</li>
+                        <li class="flex items-center"><i class="fas fa-check text-green-500 mr-3"></i>Support email</li>
+                    </ul>
+                    <a href="https://app.apollo.io/#/meet/voxia/15-min" 
+                       target="_blank" 
+                       class="block w-full bg-cyan-600 text-white py-3 rounded-lg font-semibold hover:bg-cyan-700 transition-colors text-center">
+                        Hubungi Sales
+                    </a>
+                </div>
+                
+                <!-- Growth Plan -->
+                <div class="card-hover bg-cyan-600 text-white p-8 rounded-xl transform scale-105">
+                    <div class="bg-yellow-400 text-gray-800 text-sm font-semibold px-3 py-1 rounded-full inline-block mb-4">POPULER</div>
+                    <h3 class="text-2xl font-bold mb-2">Growth</h3>
+                    <div class="text-3xl font-bold mb-4">Rp 1.299K<span class="text-lg opacity-80">/bulan</span></div>
+                    <p class="opacity-90 mb-6">Solusi komprehensif untuk bisnis yang sedang berkembang pesat</p>
+                    <ul class="space-y-3 mb-8">
+                        <li class="flex items-center"><i class="fas fa-check text-white mr-3"></i>Hingga 5.000 kontak</li>
+                        <li class="flex items-center"><i class="fas fa-check text-white mr-3"></i>500 pesan/hari</li>
+                        <li class="flex items-center"><i class="fas fa-check text-white mr-3"></i>Otomatisasi lanjutan</li>
+                        <li class="flex items-center"><i class="fas fa-check text-white mr-3"></i>Multi-agent support</li>
+                        <li class="flex items-center"><i class="fas fa-check text-white mr-3"></i>Integrasi CRM</li>
+                    </ul>
+                    <a href="https://app.apollo.io/#/meet/voxia/15-min" 
+                       target="_blank" 
+                       class="block w-full bg-white text-cyan-600 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors text-center">
+                        Jadwalkan Demo
+                    </a>
+                </div>
+                
+                <!-- Pro Plan -->
+                <div class="card-hover bg-white p-8 rounded-xl border border-gray-200">
+                    <h3 class="text-2xl font-bold text-gray-800 mb-2">Pro</h3>
+                    <div class="text-3xl font-bold text-cyan-600 mb-4">Custom</div>
+                    <p class="text-gray-600 mb-6">Solusi enterprise untuk kebutuhan bisnis skala besar</p>
+                    <ul class="space-y-3 mb-8">
+                        <li class="flex items-center"><i class="fas fa-check text-green-500 mr-3"></i>Kontak tak terbatas</li>
+                        <li class="flex items-center"><i class="fas fa-check text-green-500 mr-3"></i>Pesan tak terbatas</li>
+                        <li class="flex items-center"><i class="fas fa-check text-green-500 mr-3"></i>API akses penuh</li>
+                        <li class="flex items-center"><i class="fas fa-check text-green-500 mr-3"></i>Dedicated server</li>
+                        <li class="flex items-center"><i class="fas fa-check text-green-500 mr-3"></i>Account manager</li>
+                    </ul>
+                    <a href="https://app.apollo.io/#/meet/voxia/15-min" 
+                       target="_blank" 
+                       class="block w-full bg-cyan-600 text-white py-3 rounded-lg font-semibold hover:bg-cyan-700 transition-colors text-center">
+                        Hubungi Sales
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="flex items-center space-x-2 mb-4 md:mb-0">
+                    <div class="w-8 h-8 bg-cyan-500 rounded-lg flex items-center justify-center">
+                        <span class="text-white font-bold">V</span>
+                    </div>
+                    <span class="text-xl font-bold">VOXIA</span>
+                </div>
+                <p class="text-gray-400">© 2024 VOXIA. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Hidden Form for Apollo -->
+    <form style="display: none;">
+        <input type="email" name="email" placeholder="Hidden email for Apollo">
+    </form>
+
+    <!-- JavaScript -->
+    <script>
+        // Translation Data
+        const translations = {
+            id: {
+                nav: {
+                    fitur: 'Fitur',
+                    harga: 'Harga',
+                    kontak: 'Kontak'
+                },
+                hero: {
+                    title: 'Ubah Setiap Percakapan WhatsApp Menjadi Peluang',
+                    description: 'Solusi cerdas untuk mengotomatisasi WhatsApp bisnis Anda. Kelola pelanggan, kirim pesan massal, dan pantau performa dengan mudah.',
+                    ctaDemo: 'Jadwalkan Demo Gratis',
+                    ctaPricing: 'Lihat Harga'
+                },
+                features: {
+                    title: 'Fitur Unggulan',
+                    subtitle: 'Solusi lengkap untuk mengoptimalkan komunikasi WhatsApp bisnis Anda'
+                },
+                pricing: {
+                    title: 'Paket Harga',
+                    subtitle: 'Pilih solusi yang sesuai dengan kebutuhan bisnis Anda'
+                }
+            },
+            en: {
+                nav: {
+                    fitur: 'Features',
+                    harga: 'Pricing',
+                    kontak: 'Contact'
+                },
+                hero: {
+                    title: 'Transform Every WhatsApp Conversation into Opportunity',
+                    description: 'Smart solution to automate your business WhatsApp. Manage customers, send bulk messages, and monitor performance easily.',
+                    ctaDemo: 'Schedule Free Demo',
+                    ctaPricing: 'View Pricing'
+                },
+                features: {
+                    title: 'Premium Features',
+                    subtitle: 'Complete solution to optimize your business WhatsApp communication'
+                },
+                pricing: {
+                    title: 'Pricing Plans',
+                    subtitle: 'Choose the solution that fits your business needs'
+                }
+            }
+        };
+
+        let currentLanguage = 'id';
+
+        function setLanguage(lang) {
+            currentLanguage = lang;
+            const t = translations[lang];
+            
+            // Update button states
+            document.querySelectorAll('.lang-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            document.getElementById(`lang-${lang}`).classList.add('active');
+            document.getElementById(`lang-${lang}-mobile`).classList.add('active');
+            
+            // Update navigation
+            document.querySelectorAll('.nav-link')[0].textContent = t.nav.fitur;
+            document.querySelectorAll('.nav-link')[1].textContent = t.nav.harga;
+            document.querySelectorAll('.nav-link')[2].textContent = t.nav.kontak;
+            
+            // Update hero section
+            document.querySelector('.hero-title').textContent = t.hero.title;
+            document.querySelector('.hero-description').textContent = t.hero.description;
+            document.querySelector('.cta-demo-text').textContent = t.hero.ctaDemo;
+            document.querySelector('.cta-pricing-text').textContent = t.hero.ctaPricing;
+            
+            // Update features section
+            document.querySelector('.features-title').textContent = t.features.title;
+            document.querySelector('.features-subtitle').textContent = t.features.subtitle;
+            
+            // Update pricing section
+            document.querySelector('.pricing-title').textContent = t.pricing.title;
+            document.querySelector('.pricing-subtitle').textContent = t.pricing.subtitle;
+            
+            // Update mobile menu
+            const mobileNavLinks = document.querySelectorAll('#mobile-menu .nav-link');
+            mobileNavLinks[0].textContent = t.nav.fitur;
+            mobileNavLinks[1].textContent = t.nav.harga;
+            mobileNavLinks[2].textContent = t.nav.kontak;
+            
+            // Save preference
+            localStorage.setItem('voxia-language', lang);
+        }
+
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        }
+
+        // Initialize language on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            const savedLang = localStorage.getItem('voxia-language') || 'id';
+            setLanguage(savedLang);
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+
+    <!-- Apollo Scripts -->
+    <script>
+        function initApollo(){var n=Math.random().toString(36).substring(7),o=document.createElement("script");
+        o.src="https://assets.apollo.io/micro/website-tracker/tracker.iife.js?nocache="+n,o.async=!0,o.defer=!0,
+        o.onload=function(){window.trackingFunctions.onLoad({appId:"6929458548d2fd001da468b1"})},
+        document.head.appendChild(o)}initApollo();
+    </script>
+    
+    <script>(function initApolloInbound(){var TIMEOUT_MS=15000;var timeoutId;var style=document.createElement('style');style.id='apollo-form-prehide-css';style.textContent='form:has(input[type="email" i]),form:has(input[name="email" i]),.hs-form-iframe{position:relative!important}form:has(input[type="email" i])::before,form:has(input[name="email" i])::before,.hs-form-iframe::before{content:\'\';position:absolute;inset:0;display:flex;align-items:center;justify-content:center;width:50px;height:50px;margin:auto;border:2.5px solid #e1e1e1;border-top:2.5px solid #9ea3a6;border-radius:50%;animation:spin 1s linear infinite;background-color:transparent;pointer-events:auto;z-index:999999;opacity:1}form:has(input[type="email" i]) *,form:has(input[name="email" i]) *,.hs-form-iframe *{opacity:0!important;user-select:none!important;pointer-events:none!important}@keyframes spin{0%{transform:rotate(0deg)}100%{transform:rotate(360deg)}}';(document.head || document.documentElement).appendChild(style);function cleanup(){var styleEl=document.getElementById('apollo-form-prehide-css');if(styleEl)styleEl.remove();if(timeoutId)clearTimeout(timeoutId);}timeoutId=setTimeout(function(){console.warn('[Apollo] Form enrichment timeout after 5s - revealing forms. Check network and console for errors.');cleanup();},TIMEOUT_MS);var nocache=Math.random().toString(36).substring(7);var script=document.createElement('script');script.src='https://assets.apollo.io/js/apollo-inbound.js?nocache=' + nocache;script.defer=true;script.onerror=function(){console.error('[Apollo] Failed to load form enrichment script');cleanup();};script.onload=function(){try{window.ApolloInbound.formEnrichment.init({appId: '692950e7591a8e001d6b8822',onReady: function(){cleanup();},onError: function(err){console.error('[Apollo] Form enrichment init error:',err);cleanup();}});}catch(err){console.error('[Apollo] Error initializing form enrichment:',err);cleanup();}};document.head.appendChild(script);})();</script>
+</body>
+</html>
