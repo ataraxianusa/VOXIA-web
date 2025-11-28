@@ -341,6 +341,37 @@
             }
         }
 
+        /* --- Promo Modal Styles --- */
+        #promo-modal {
+            backdrop-filter: blur(4px);
+            transition: all 0.3s ease-in-out;
+        }
+
+        #promo-modal.hidden {
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        #promo-modal.flex {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        #promo-modal > div {
+            animation: modalSlideIn 0.3s ease-out;
+        }
+
+        @keyframes modalSlideIn {
+            from {
+                transform: translateY(-50px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
         @media (max-width: 768px) {
             .chat-window {
                 right: 1rem;
@@ -1656,17 +1687,17 @@
         });
 
         // 7. Promo Pop-up Modal
-        // Function to show the modal
+        // Function to show modal
         function showPromoModal() {
             const promoModal = document.getElementById('promo-modal');
             if (promoModal && !sessionStorage.getItem('promoModalShown')) {
                 promoModal.classList.remove('hidden');
-                promoModal.classList.add('flex'); // Use flex to center the content
+                promoModal.classList.add('flex'); // Use flex to center content
                 sessionStorage.setItem('promoModalShown', 'true');
             }
         }
 
-        // Function to hide the modal
+        // Function to hide modal
         function hidePromoModal() {
             const promoModal = document.getElementById('promo-modal');
             if (promoModal) {
@@ -1675,11 +1706,8 @@
             }
         }
 
-        // Show modal on page load (after a short delay for better UX)
-        window.addEventListener('load', () => {
-            setTimeout(showPromoModal, 1000); // Show after 1 second
-
-            // Setup event listeners after DOM is definitely ready
+        // Setup event listeners immediately when DOM is ready
+        document.addEventListener('DOMContentLoaded', () => {
             const closeModalBtn = document.getElementById('close-modal-btn');
             const promoModal = document.getElementById('promo-modal');
             const promoModalContent = promoModal ? promoModal.querySelector('div:first-child') : null;
@@ -1689,12 +1717,21 @@
             }
 
             if (promoModal && promoModalContent) {
-                // Close modal when clicking outside the content
+                // Close modal when clicking outside content
                 promoModal.addEventListener('click', (event) => {
                     if (!promoModalContent.contains(event.target)) {
                         hidePromoModal();
                     }
                 });
+            }
+        });
+
+        // Show modal on page load (after a short delay for better UX)
+        window.addEventListener('load', () => {
+            setTimeout(showPromoModal, 2000); // Show after 2 seconds
+        });
+
+    </script>
 
     <!-- Footer -->
     <footer id="kontak" class="bg-slate-900 dark:bg-black">
@@ -1872,25 +1909,7 @@
 
         // Show modal on page load (after a short delay for better UX)
         window.addEventListener('load', () => {
-            setTimeout(showPromoModal, 1000); // Show after 1 second
-
-            // Setup event listeners after DOM is definitely ready
-            const closeModalBtn = document.getElementById('close-modal-btn');
-            const promoModal = document.getElementById('promo-modal');
-            const promoModalContent = promoModal ? promoModal.querySelector('div:first-child') : null;
-
-            if (closeModalBtn) {
-                closeModalBtn.addEventListener('click', hidePromoModal);
-            }
-
-            if (promoModal && promoModalContent) {
-                // Close modal when clicking outside the content
-                promoModal.addEventListener('click', (event) => {
-                    if (!promoModalContent.contains(event.target)) {
-                        hidePromoModal();
-                    }
-                });
-            }
+            setTimeout(showPromoModal, 2000); // Show after 2 seconds
         });
 
     </script>
