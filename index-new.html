@@ -558,8 +558,10 @@
         let currentLanguage = 'id';
 
         function setLanguage(lang) {
+            console.log('setLanguage called with:', lang);
             currentLanguage = lang;
             const t = translations[lang];
+            console.log('Translation data loaded:', t);
             
             // Update button states
             document.querySelectorAll('.lang-btn').forEach(btn => {
@@ -569,82 +571,136 @@
             document.getElementById(`lang-${lang}-mobile`).classList.add('active');
             
             // Update navigation
-            document.querySelectorAll('.nav-link')[0].textContent = t.nav.fitur;
-            document.querySelectorAll('.nav-link')[1].textContent = t.nav.harga;
-            document.querySelectorAll('.nav-link')[2].textContent = t.nav.kontak;
+            const navLinks = document.querySelectorAll('.nav-link');
+            if (navLinks.length >= 3) {
+                navLinks[0].textContent = t.nav.fitur;
+                navLinks[1].textContent = t.nav.harga;
+                navLinks[2].textContent = t.nav.kontak;
+                console.log('Navigation updated');
+            }
             
             // Update hero section
-            document.querySelector('.hero-title').textContent = t.hero.title;
-            document.querySelector('.hero-description').textContent = t.hero.description;
-            document.querySelector('.cta-demo-text').textContent = t.hero.ctaDemo;
-            document.querySelector('.cta-pricing-text').textContent = t.hero.ctaPricing;
+            const heroTitle = document.querySelector('.hero-title');
+            const heroDesc = document.querySelector('.hero-description');
+            const ctaDemo = document.querySelector('.cta-demo-text');
+            const ctaPricing = document.querySelector('.cta-pricing-text');
+            
+            if (heroTitle) heroTitle.textContent = t.hero.title;
+            if (heroDesc) heroDesc.textContent = t.hero.description;
+            if (ctaDemo) ctaDemo.textContent = t.hero.ctaDemo;
+            if (ctaPricing) ctaPricing.textContent = t.hero.ctaPricing;
+            console.log('Hero section updated');
             
             // Update features section
-            document.querySelector('.features-title').textContent = t.features.title;
-            document.querySelector('.features-subtitle').textContent = t.features.subtitle;
+            const featuresTitle = document.querySelector('.features-title');
+            const featuresSubtitle = document.querySelector('.features-subtitle');
+            if (featuresTitle) featuresTitle.textContent = t.features.title;
+            if (featuresSubtitle) featuresSubtitle.textContent = t.features.subtitle;
+            console.log('Features section updated');
             
             // Update feature cards
-            document.querySelector('.feature-1-title').textContent = t.features.card1.title;
-            document.querySelector('.feature-1-desc').textContent = t.features.card1.desc;
-            document.querySelector('.feature-2-title').textContent = t.features.card2.title;
-            document.querySelector('.feature-2-desc').textContent = t.features.card2.desc;
-            document.querySelector('.feature-3-title').textContent = t.features.card3.title;
-            document.querySelector('.feature-3-desc').textContent = t.features.card3.desc;
+            const feature1Title = document.querySelector('.feature-1-title');
+            const feature1Desc = document.querySelector('.feature-1-desc');
+            const feature2Title = document.querySelector('.feature-2-title');
+            const feature2Desc = document.querySelector('.feature-2-desc');
+            const feature3Title = document.querySelector('.feature-3-title');
+            const feature3Desc = document.querySelector('.feature-3-desc');
+            
+            if (feature1Title) feature1Title.textContent = t.features.card1.title;
+            if (feature1Desc) feature1Desc.textContent = t.features.card1.desc;
+            if (feature2Title) feature2Title.textContent = t.features.card2.title;
+            if (feature2Desc) feature2Desc.textContent = t.features.card2.desc;
+            if (feature3Title) feature3Title.textContent = t.features.card3.title;
+            if (feature3Desc) feature3Desc.textContent = t.features.card3.desc;
+            console.log('Feature cards updated');
             
             // Update pricing section
-            document.querySelector('.pricing-title').textContent = t.pricing.title;
-            document.querySelector('.pricing-subtitle').textContent = t.pricing.subtitle;
+            const pricingTitle = document.querySelector('.pricing-title');
+            const pricingSubtitle = document.querySelector('.pricing-subtitle');
+            if (pricingTitle) pricingTitle.textContent = t.pricing.title;
+            if (pricingSubtitle) pricingSubtitle.textContent = t.pricing.subtitle;
+            console.log('Pricing section updated');
             
             // Update pricing cards
-            document.querySelector('.starter-name').textContent = t.pricing.starter.name;
-            document.querySelector('.starter-desc').textContent = t.pricing.starter.desc;
-            document.querySelector('.starter-cta').textContent = t.pricing.starter.cta;
+            const starterName = document.querySelector('.starter-name');
+            const starterDesc = document.querySelector('.starter-desc');
+            const starterCta = document.querySelector('.starter-cta');
             
-            document.querySelector('.growth-name').textContent = t.pricing.growth.name;
-            document.querySelector('.growth-desc').textContent = t.pricing.growth.desc;
-            document.querySelector('.growth-cta').textContent = t.pricing.growth.cta;
+            if (starterName) starterName.textContent = t.pricing.starter.name;
+            if (starterDesc) starterDesc.textContent = t.pricing.starter.desc;
+            if (starterCta) starterCta.textContent = t.pricing.starter.cta;
             
-            document.querySelector('.pro-name').textContent = t.pricing.pro.name;
-            document.querySelector('.pro-desc').textContent = t.pricing.pro.desc;
-            document.querySelector('.pro-cta').textContent = t.pricing.pro.cta;
+            const growthName = document.querySelector('.growth-name');
+            const growthDesc = document.querySelector('.growth-desc');
+            const growthCta = document.querySelector('.growth-cta');
+            
+            if (growthName) growthName.textContent = t.pricing.growth.name;
+            if (growthDesc) growthDesc.textContent = t.pricing.growth.desc;
+            if (growthCta) growthCta.textContent = t.pricing.growth.cta;
+            
+            const proName = document.querySelector('.pro-name');
+            const proDesc = document.querySelector('.pro-desc');
+            const proCta = document.querySelector('.pro-cta');
+            
+            if (proName) proName.textContent = t.pricing.pro.name;
+            if (proDesc) proDesc.textContent = t.pricing.pro.desc;
+            if (proCta) proCta.textContent = t.pricing.pro.cta;
+            console.log('Pricing cards updated');
             
             // Update pricing features
             const starterFeatures = document.querySelectorAll('.starter-feature-1, .starter-feature-2, .starter-feature-3, .starter-feature-4');
             starterFeatures.forEach((el, index) => {
-                el.textContent = t.pricing.starter.features[index];
+                if (el && t.pricing.starter.features[index]) {
+                    el.textContent = t.pricing.starter.features[index];
+                }
             });
             
             const growthFeatures = document.querySelectorAll('.growth-feature-1, .growth-feature-2, .growth-feature-3, .growth-feature-4, .growth-feature-5');
             growthFeatures.forEach((el, index) => {
-                el.textContent = t.pricing.growth.features[index];
+                if (el && t.pricing.growth.features[index]) {
+                    el.textContent = t.pricing.growth.features[index];
+                }
             });
             
             const proFeatures = document.querySelectorAll('.pro-feature-1, .pro-feature-2, .pro-feature-3, .pro-feature-4, .pro-feature-5');
             proFeatures.forEach((el, index) => {
-                el.textContent = t.pricing.pro.features[index];
+                if (el && t.pricing.pro.features[index]) {
+                    el.textContent = t.pricing.pro.features[index];
+                }
             });
+            console.log('Pricing features updated');
             
-            // Update new sections
-            document.querySelector('.problems-title').textContent = t.problems.title;
-            document.querySelector('.problems-subtitle').textContent = t.problems.subtitle;
+            // Update success stories
+            const successTitle = document.querySelector('.success-title');
+            const successSubtitle = document.querySelector('.success-subtitle');
+            if (successTitle) successTitle.textContent = t.success.title;
+            if (successSubtitle) successSubtitle.textContent = t.success.subtitle;
+            console.log('Success stories updated');
             
-            document.querySelector('.serve-title').textContent = t.serve.title;
-            document.querySelector('.serve-subtitle').textContent = t.serve.subtitle;
+            // Update FAQ
+            const faqTitle = document.querySelector('.faq-title');
+            const faqSubtitle = document.querySelector('.faq-subtitle');
+            if (faqTitle) faqTitle.textContent = t.faq.title;
+            if (faqSubtitle) faqSubtitle.textContent = t.faq.subtitle;
+            console.log('FAQ updated');
             
-            document.querySelector('.success-title').textContent = t.success.title;
-            document.querySelector('.success-subtitle').textContent = t.success.subtitle;
-            
-            document.querySelector('.faq-title').textContent = t.faq.title;
-            document.querySelector('.faq-subtitle').textContent = t.faq.subtitle;
+            // Update footer
+            const footerCopyright = document.querySelector('.footer-copyright');
+            if (footerCopyright) footerCopyright.textContent = `© 2025 VOXIA. All rights reserved.`;
+            console.log('Footer updated');
             
             // Update mobile menu
             const mobileNavLinks = document.querySelectorAll('#mobile-menu .nav-link');
-            mobileNavLinks[0].textContent = t.nav.fitur;
-            mobileNavLinks[1].textContent = t.nav.harga;
-            mobileNavLinks[2].textContent = t.nav.kontak;
+            if (mobileNavLinks.length >= 3) {
+                mobileNavLinks[0].textContent = t.nav.fitur;
+                mobileNavLinks[1].textContent = t.nav.harga;
+                mobileNavLinks[2].textContent = t.nav.kontak;
+                console.log('Mobile menu updated');
+            }
             
             // Save preference
             localStorage.setItem('voxia-language', lang);
+            console.log('Language set to:', lang);
         }
 
         function toggleFAQ(id) {
