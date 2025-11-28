@@ -1695,6 +1695,201 @@
                         hidePromoModal();
                     }
                 });
+
+    <!-- Footer -->
+    <footer id="kontak" class="bg-slate-900 dark:bg-black">
+        <div class="container mx-auto px-6 py-12">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold text-cyan-400">VOXIA</h3>
+                    <p class="mt-2 text-slate-400">Platform otomasi customer service dan manajemen pelanggan berbasis AI
+                        untuk UKM.</p>
+                </div>
+                <div>
+                    <h4 class="font-semibold text-lg text-white">Tautan</h4>
+                    <ul class="mt-4 space-y-2">
+                        <li><a href="https://wa.me/6285183079558?text=Halo%20Tim%20VOXIA%2C%20bagaimana%20cara%20menjadwalkan%20demo%3F"
+                                target="_blank" rel="noopener noreferrer"
+                                class="text-slate-400 hover:text-white flex items-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-2" viewBox="0 0 24 24"
+                                    fill="currentColor">
+                                    <path
+                                        d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01s-.521.074-.792.372c-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.626.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.289.173-1.413z" />
+                                </svg>
+                                +62 851-8307-9558
+                            </a></li>
+                        <li><a href="https://apply.voxia.id/" target="_blank" rel="noopener noreferrer"
+                                class="text-slate-400 hover:text-white flex items-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-2" fill="none"
+                                    viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M21 13.255A9.002 9.002 0 0112 21a9.002 9.002 0 01-9-9.745M21 13.255V21M12 21a9.002 9.002 0 01-9-9.745M12 21V3m0 0a9.002 9.002 0 019 9.255M12 3v9m9-9v9m0 0a9.002 9.002 0 01-9 9" />
+                                </svg>
+                                Karir
+                            </a></li>
+                        <li><a href="/privacy-policy.html" class="text-slate-400 hover:text-white">Kebijakan Privasi</a>
+                        </li>
+                        <li><a href="#" class="text-slate-400 hover:text-white">voxia.id</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold text-lg text-white">Alamat</h4>
+                    <p class="mt-2 text-slate-400">PT. Ekuitas Media Investama<br>Jakarta, Indonesia</p>
+                </div>
+            </div>
+            <div
+                class="mt-12 border-t border-slate-800 dark:border-slate-700 pt-6 text-center text-slate-500 dark:text-slate-400 text-sm">
+                &copy; <span id="current-year"></span> PT. Ekuitas Media Investama. All Rights Reserved.
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // --- App Scripts ---
+
+        // 1. Mobile menu toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Close mobile menu on link click
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // 2. Dynamic year for footer
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+
+        // 3. Change header background on scroll
+        const header = document.getElementById('header');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                header.classList.remove('bg-transparent');
+                header.classList.add('bg-white/80', 'dark:bg-slate-900/80', 'backdrop-blur-lg', 'shadow-lg');
+            } else {
+                header.classList.add('bg-transparent');
+                header.classList.remove('bg-white/80', 'dark:bg-slate-900/80', 'backdrop-blur-lg', 'shadow-lg');
+            }
+        });
+
+
+        // 5. FAQ Accordion
+        const accordionItems = document.querySelectorAll('.faq-item');
+        accordionItems.forEach((item) => {
+            const question = item.querySelector('.faq-question');
+            const answer = item.querySelector('.faq-answer');
+            const chevron = item.querySelector('.faq-chevron');
+
+            question.addEventListener('click', () => {
+                const isOpen = item.classList.contains('open');
+
+                // Close all other accordion items
+                accordionItems.forEach(otherItem => {
+                    if (otherItem !== item) {
+                        otherItem.classList.remove('open');
+                        otherItem.querySelector('.faq-answer').style.maxHeight = '0px';
+                        otherItem.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
+                        otherItem.querySelector('.faq-chevron').classList.remove('rotate-180');
+                    }
+                });
+
+                // Toggle the clicked item
+                if (isOpen) {
+                    item.classList.remove('open');
+                    answer.style.maxHeight = '0px';
+                    question.setAttribute('aria-expanded', 'false');
+                    chevron.classList.remove('rotate-180');
+                } else {
+                    item.classList.add('open');
+                    answer.style.maxHeight = answer.scrollHeight + 'px';
+                    question.setAttribute('aria-expanded', 'true');
+                    chevron.classList.add('rotate-180');
+                }
+            });
+        });
+
+        // 6. Testimonial Slider
+        const testimonialSlider = document.getElementById('testimonial-slider');
+        const prevBtn = document.getElementById('prev-testimonial');
+        const nextBtn = document.getElementById('next-testimonial');
+        let currentIndex = 0;
+        const totalSlides = testimonialSlider.children.length;
+        const slidesToShow = window.innerWidth >= 1024 ? 3 : window.innerWidth >= 768 ? 2 : 1;
+        const maxIndex = totalSlides - slidesToShow;
+
+        function updateSlider() {
+            const translateX = -currentIndex * (100 / slidesToShow);
+            testimonialSlider.style.transform = `translateX(${translateX}%)`;
+        }
+
+        function nextSlide() {
+            currentIndex = (currentIndex + 1) > maxIndex ? 0 : currentIndex + 1;
+            updateSlider();
+        }
+
+        function prevSlide() {
+            currentIndex = (currentIndex - 1) < 0 ? maxIndex : currentIndex - 1;
+            updateSlider();
+        }
+
+        nextBtn.addEventListener('click', nextSlide);
+        prevBtn.addEventListener('click', prevSlide);
+
+        // Auto-slide every 5 seconds
+        setInterval(nextSlide, 5000);
+
+        // Update on window resize
+        window.addEventListener('resize', () => {
+            const newSlidesToShow = window.innerWidth >= 1024 ? 3 : window.innerWidth >= 768 ? 2 : 1;
+            if (newSlidesToShow !== slidesToShow) {
+                location.reload(); // Simple reload for demo, in production use proper resize handling
+            }
+        });
+
+        // 7. Promo Pop-up Modal
+        // Function to show the modal
+        function showPromoModal() {
+            const promoModal = document.getElementById('promo-modal');
+            if (promoModal && !sessionStorage.getItem('promoModalShown')) {
+                promoModal.classList.remove('hidden');
+                promoModal.classList.add('flex'); // Use flex to center the content
+                sessionStorage.setItem('promoModalShown', 'true');
+            }
+        }
+
+        // Function to hide the modal
+        function hidePromoModal() {
+            const promoModal = document.getElementById('promo-modal');
+            if (promoModal) {
+                promoModal.classList.add('hidden');
+                promoModal.classList.remove('flex');
+            }
+        }
+
+        // Show modal on page load (after a short delay for better UX)
+        window.addEventListener('load', () => {
+            setTimeout(showPromoModal, 1000); // Show after 1 second
+
+            // Setup event listeners after DOM is definitely ready
+            const closeModalBtn = document.getElementById('close-modal-btn');
+            const promoModal = document.getElementById('promo-modal');
+            const promoModalContent = promoModal ? promoModal.querySelector('div:first-child') : null;
+
+            if (closeModalBtn) {
+                closeModalBtn.addEventListener('click', hidePromoModal);
+            }
+
+            if (promoModal && promoModalContent) {
+                // Close modal when clicking outside the content
+                promoModal.addEventListener('click', (event) => {
+                    if (!promoModalContent.contains(event.target)) {
+                        hidePromoModal();
+                    }
+                });
             }
         });
 
@@ -1733,9 +1928,125 @@
     <script type="module">
         import Chatbot from "https://cdn.jsdelivr.net/npm/flowise-embed/dist/web.js"
         Chatbot.init({
-            chatflowid: "a0bcd9b4-0dff-49a5-8a69-0f0fd34f351e",
+            chatflowid: "91e9c803-5169-4db9-8207-3c0915d71c5f",
             apiHost: "https://aig.voxia.id",
-        })
+            chatflowConfig: {
+                // topK: 2
+            },
+            observersConfig: {
+                // (optional) Allows you to execute code in parent based upon signal observations within the chatbot.
+                // The userinput field submitted to bot ("" when reset by bot)
+                observeUserInput: (userInput) => {
+                    console.log({ userInput });
+                },
+                // The bot message stack has changed
+                observeMessages: (messages) => {
+                    console.log({ messages });
+                },
+                // The bot loading signal changed
+                observeLoading: (loading) => {
+                    console.log({ loading });
+                },
+            },
+            theme: {
+                button: {
+                    backgroundColor: "#3B81F6",
+                    right: 20,
+                    bottom: 20,
+                    size: 48, // small | medium | large | number
+                    dragAndDrop: true,
+                    iconColor: "white",
+                    customIconSrc: "https://raw.githubusercontent.com/walkxcode/dashboard-icons/main/svg/google-messages.svg",
+                    autoWindowOpen: {
+                        autoOpen: true, //parameter to control automatic window opening
+                        openDelay: 2, // Optional parameter for delay time in seconds
+                        autoOpenOnMobile: false, //parameter to control automatic window opening in mobile
+                    },
+                },
+                tooltip: {
+                    showTooltip: true,
+                    tooltipMessage: "Halo! 👋",
+                    tooltipBackgroundColor: "black",
+                    tooltipTextColor: "white",
+                    tooltipFontSize: 16,
+                },
+                disclaimer: {
+                    title: "Disclaimer",
+                    message: "Dengan menggunakan chatbot ini, Anda menyetujui <a target='_blank' href='https://flowiseai.com/terms'>Syarat & Ketentuan</a>",
+                    textColor: "black",
+                    buttonColor: "#3b82f6",
+                    buttonText: "Mulai Chat",
+                    buttonTextColor: "white",
+                    blurredBackgroundColor: "rgba(0, 0, 0, 0.4)", //The color of the blurred background that overlays the chat interface
+                    backgroundColor: "white",
+                    denyButtonText: "Batal",
+                    denyButtonBgColor: "#ef4444",
+                },
+                form: {
+                    backgroundColor: "white",
+                    textColor: "black",
+                },
+                customCSS: ``, // Add custom CSS styles. Use !important to override default styles
+                chatWindow: {
+                    showTitle: true,
+                    showAgentMessages: true,
+                    title: "VOXIA Asisten",
+                    titleAvatarSrc: "https://raw.githubusercontent.com/walkxcode/dashboard-icons/main/svg/google-messages.svg",
+                    titleBackgroundColor: "#3B81F6",
+                    titleTextColor: "#ffffff",
+                    welcomeMessage: "Halo! Ada yang bisa saya bantu mengenai VOXIA?",
+                    errorMessage: "Maaf, terjadi kesalahan.",
+                    backgroundColor: "#ffffff",
+                    backgroundImage: "enter image path or link", // If set, this will overlap the background color of the chat window.
+                    height: 700,
+                    width: 400,
+                    fontSize: 16,
+                    starterPrompts: ["Apa itu VOXIA?", "Bagaimana cara berlangganan?"], // It overrides the starter prompts set by the chat flow passed
+                    starterPromptFontSize: 15,
+                    clearChatOnReload: false, // If set to true, the chat will be cleared when the page reloads
+                    sourceDocsTitle: "Sumber:",
+                    renderHTML: true,
+                    botMessage: {
+                        backgroundColor: "#f7f8ff",
+                        textColor: "#303235",
+                        showAvatar: true,
+                        avatarSrc: "https://raw.githubusercontent.com/zahidkhawaja/langchain-chat-nextjs/main/public/parroticon.png",
+                    },
+                    userMessage: {
+                        backgroundColor: "#3B81F6",
+                        textColor: "#ffffff",
+                        showAvatar: true,
+                        avatarSrc: "https://raw.githubusercontent.com/zahidkhawaja/langchain-chat-nextjs/main/public/usericon.png",
+                    },
+                    textInput: {
+                        placeholder: "Ketik pertanyaan Anda",
+                        backgroundColor: "#ffffff",
+                        textColor: "#303235",
+                        sendButtonColor: "#3B81F6",
+                        maxChars: 50,
+                        maxCharsWarningMessage: "Anda melebihi batas karakter. Harap masukkan kurang dari 50 karakter.",
+                        autoFocus: true, // If not used, autofocus is disabled on mobile and enabled on desktop. true enables it on both, false disables it on both.
+                        sendMessageSound: true,
+                        // sendSoundLocation: "send_message.mp3", // If this is not used, the default sound effect will be played if sendSoundMessage is true.
+                        receiveMessageSound: true,
+                        // receiveSoundLocation: "receive_message.mp3", // If this is not used, the default sound effect will be played if receiveSoundMessage is true.
+                    },
+                    feedback: {
+                        color: "#303235",
+                    },
+                    dateTimeToggle: {
+                        date: true,
+                        time: true,
+                    },
+                    footer: {
+                        textColor: "#303235",
+                        text: "Ditenagai oleh",
+                        company: "VOXIA",
+                        companyLink: "https://voxia.id",
+                    },
+                },
+            },
+        });
     </script>
 
 </body>
