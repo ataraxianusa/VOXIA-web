@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VOXIA - Solusi WhatsApp Bisnis</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        .lang-btn {
+            transition: all 0.3s ease;
+        }
+        
+        .lang-btn.active {
+            background-color: white;
+            color: #1e293b;
+        }
+        
+        .lang-btn:not(.active) {
+            background-color: transparent;
+            color: white;
+        }
+        
+        .lang-btn:not(.active):hover {
+            background-color: rgba(255,255,255,0.2);
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Header -->
+    <header class="fixed top-0 w-full bg-white/95 backdrop-blur-sm shadow-sm z-50">
+        <nav class="container mx-auto px-6 py-4">
+            <div class="flex justify-between items-center">
+                <!-- Logo -->
+                <div class="flex items-center space-x-2">
+                    <div class="w-10 h-10 bg-cyan-500 rounded-lg flex items-center justify-center">
+                        <span class="text-white font-bold text-xl">V</span>
+                    </div>
+                    <span class="text-2xl font-bold text-gray-800">VOXIA</span>
+                </div>
+                
+                <!-- Desktop Navigation -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#features" class="nav-link text-gray-600 hover:text-cyan-600 transition-colors">Fitur</a>
+                    <a href="#pricing" class="nav-link text-gray-600 hover:text-cyan-600 transition-colors">Harga</a>
+                    <a href="#contact" class="nav-link text-gray-600 hover:text-cyan-600 transition-colors">Kontak</a>
+                    
+                    <!-- Language Toggle -->
+                    <div class="flex items-center space-x-2 bg-gray-100 rounded-lg p-1">
+                        <button onclick="setLanguage('id')" id="lang-id" class="lang-btn active px-3 py-1 rounded-md text-sm font-medium">
+                            🇮🇩 ID
+                        </button>
+                        <button onclick="setLanguage('en')" id="lang-en" class="lang-btn px-3 py-1 rounded-md text-sm font-medium">
+                            🇬🇧 EN
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Mobile Menu Button -->
+                <button onclick="toggleMobileMenu()" class="md:hidden text-gray-600">
+                    <i class="fas fa-bars text-xl"></i>
+                </button>
+            </div>
+            
+            <!-- Mobile Menu -->
+            <div id="mobile-menu" class="hidden md:hidden mt-4 pb-4">
+                <div class="flex flex-col space-y-3">
+                    <a href="#features" class="nav-link text-gray-600 hover:text-cyan-600 transition-colors">Fitur</a>
+                    <a href="#pricing" class="nav-link text-gray-600 hover:text-cyan-600 transition-colors">Harga</a>
+                    <a href="#contact" class="nav-link text-gray-600 hover:text-cyan-600 transition-colors">Kontak</a>
+                    
+                    <!-- Mobile Language Toggle -->
+                    <div class="flex items-center space-x-2 bg-gray-100 rounded-lg p-1">
+                        <button onclick="setLanguage('id')" id="lang-id-mobile" class="lang-btn active px-3 py-1 rounded-md text-sm font-medium">
+                            🇮🇩 ID
+                        </button>
+                        <button onclick="setLanguage('en')" id="lang-en-mobile" class="lang-btn px-3 py-1 rounded-md text-sm font-medium">
+                            🇬🇧 EN
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-gradient pt-32 pb-20 text-white" style="background: linear-gradient(135deg, #06b6d4 0%, #0891b2 50%, #0e7490 100%);">
+        <div class="container mx-auto px-6 text-center">
+            <h1 class="text-4xl md:text-6xl font-bold mb-6">
+                <span class="hero-title">Ubah Setiap Percakapan WhatsApp Menjadi Peluang</span>
+            </h1>
+            <p class="hero-description text-xl md:text-2xl mb-8 max-w-3xl mx-auto opacity-90">
+                Solusi cerdas untuk mengotomatisasi WhatsApp bisnis Anda. Kelola pelanggan, kirim pesan massal, dan pantau performa dengan mudah.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="https://app.apollo.io/#/meet/voxia/15-min" 
+                   target="_blank" 
+                   class="cta-demo bg-white text-cyan-600 px-8 py-4 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
+                    <i class="fas fa-calendar-alt mr-2"></i>
+                    <span class="cta-demo-text">Jadwalkan Demo Gratis</span>
+                </a>
+                <a href="#pricing" class="cta-pricing border-2 border-white text-white px-8 py-4 rounded-lg font-semibold hover:bg-white hover:text-cyan-600 transition-colors">
+                    <i class="fas fa-tag mr-2"></i>
+                    <span class="cta-pricing-text">Lihat Harga</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="features-title text-3xl md:text-4xl font-bold text-gray-800 mb-4">Fitur Unggulan</h2>
+                <p class="features-subtitle text-xl text-gray-600 max-w-2xl mx-auto">Solusi lengkap untuk mengoptimalkan komunikasi WhatsApp bisnis Anda</p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-gray-50 p-8 rounded-xl hover:shadow-lg transition-shadow">
+                    <div class="w-12 h-12 bg-cyan-100 rounded-lg flex items-center justify-center mb-6">
+                        <i class="fas fa-robot text-cyan-600 text-xl"></i>
+                    </div>
+                    <h3 class="feature-1-title text-xl font-semibold text-gray-800 mb-3">Otomatisasi Cerdas</h3>
+                    <p class="feature-1-desc text-gray-600">Chatbot AI yang memahami bahasa Indonesia dan merespons pelanggan 24/7</p>
+                </div>
+                
+                <div class="bg-gray-50 p-8 rounded-xl hover:shadow-lg transition-shadow">
+                    <div class="w-12 h-12 bg-cyan-100 rounded-lg flex items-center justify-center mb-6">
+                        <i class="fas fa-users text-cyan-600 text-xl"></i>
+                    </div>
+                    <h3 class="feature-2-title text-xl font-semibold text-gray-800 mb-3">Manajemen Kontak</h3>
+                    <p class="feature-2-desc text-gray-600">Kelola database pelanggan dengan segmentasi dan tagging otomatis</p>
+                </div>
+                
+                <div class="bg-gray-50 p-8 rounded-xl hover:shadow-lg transition-shadow">
+                    <div class="w-12 h-12 bg-cyan-100 rounded-lg flex items-center justify-center mb-6">
+                        <i class="fas fa-chart-line text-cyan-600 text-xl"></i>
+                    </div>
+                    <h3 class="feature-3-title text-xl font-semibold text-gray-800 mb-3">Analitik Performa</h3>
+                    <p class="feature-3-desc text-gray-600">Dashboard real-time untuk memantau performa kampanye WhatsApp Anda</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="pricing-title text-3xl md:text-4xl font-bold text-gray-800 mb-4">Paket Harga</h2>
+                <p class="pricing-subtitle text-xl text-gray-600 max-w-2xl mx-auto">Pilih solusi yang sesuai dengan kebutuhan bisnis Anda</p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+                <!-- Starter Plan -->
+                <div class="bg-white p-8 rounded-xl border border-gray-200 hover:shadow-lg transition-shadow">
+                    <h3 class="starter-name text-2xl font-bold text-gray-800 mb-4">Starter</h3>
+                    <p class="starter-desc text-gray-600 mb-6">Solusi dasar untuk UMKM yang ingin memulai otomatisasi WhatsApp</p>
+                    <ul class="space-y-3 mb-8">
+                        <li class="flex items-center"><i class="fas fa-check text-green-500 mr-3"></i><span class="starter-feature-1">Hingga 1.000 kontak</span></li>
+                        <li class="flex items-center"><i class="fas fa-check text-green-500 mr-3"></i><span class="starter-feature-2">100 pesan/hari</span></li>
+                        <li class="flex items-center"><i class="fas fa-check text-green-500 mr-3"></i><span class="starter-feature-3">Otomatisasi dasar</span></li>
+                        <li class="flex items-center"><i class="fas fa-check text-green-500 mr-3"></i><span class="starter-feature-4">Support email</span></li>
+                    </ul>
+                    <a href="https://app.apollo.io/#/meet/voxia/15-min" 
+                       target="_blank" 
+                       class="block w-full bg-cyan-600 text-white py-3 rounded-lg font-semibold hover:bg-cyan-700 transition-colors text-center">
+                        <span class="starter-cta">Hubungi Sales</span>
+                    </a>
+                </div>
+                
+                <!-- Growth Plan -->
+                <div class="bg-cyan-600 text-white p-8 rounded-xl transform scale-105 hover:shadow-lg transition-shadow">
+                    <div class="bg-yellow-400 text-gray-800 text-sm font-semibold px-3 py-1 rounded-full inline-block mb-4">POPULER</div>
+                    <h3 class="growth-name text-2xl font-bold mb-4">Growth</h3>
+                    <p class="growth-desc opacity-90 mb-6">Solusi komprehensif untuk bisnis yang sedang berkembang pesat</p>
+                    <ul class="space-y-3 mb-8">
+                        <li class="flex items-center"><i class="fas fa-check text-white mr-3"></i><span class="growth-feature-1">Hingga 5.000 kontak</span></li>
+                        <li class="flex items-center"><i class="fas fa-check text-white mr-3"></i><span class="growth-feature-2">500 pesan/hari</span></li>
+                        <li class="flex items-center"><i class="fas fa-check text-white mr-3"></i><span class="growth-feature-3">Otomatisasi lanjutan</span></li>
+                        <li class="flex items-center"><i class="fas fa-check text-white mr-3"></i><span class="growth-feature-4">Multi-agent support</span></li>
+                        <li class="flex items-center"><i class="fas fa-check text-white mr-3"></i><span class="growth-feature-5">Integrasi CRM</span></li>
+                    </ul>
+                    <a href="https://app.apollo.io/#/meet/voxia/15-min" 
+                       target="_blank" 
+                       class="block w-full bg-white text-cyan-600 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors text-center">
+                        <span class="growth-cta">Jadwalkan Demo</span>
+                    </a>
+                </div>
+                
+                <!-- Pro Plan -->
+                <div class="bg-white p-8 rounded-xl border border-gray-200 hover:shadow-lg transition-shadow">
+                    <h3 class="pro-name text-2xl font-bold text-gray-800 mb-4">Pro</h3>
+                    <p class="pro-desc text-gray-600 mb-6">Solusi enterprise untuk kebutuhan bisnis skala besar</p>
+                    <ul class="space-y-3 mb-8">
+                        <li class="flex items-center"><i class="fas fa-check text-green-500 mr-3"></i><span class="pro-feature-1">Kontak tak terbatas</span></li>
+                        <li class="flex items-center"><i class="fas fa-check text-green-500 mr-3"></i><span class="pro-feature-2">Pesan tak terbatas</span></li>
+                        <li class="flex items-center"><i class="fas fa-check text-green-500 mr-3"></i><span class="pro-feature-3">API akses penuh</span></li>
+                        <li class="flex items-center"><i class="fas fa-check text-green-500 mr-3"></i><span class="pro-feature-4">Dedicated server</span></li>
+                        <li class="flex items-center"><i class="fas fa-check text-green-500 mr-3"></i><span class="pro-feature-5">Account manager</span></li>
+                    </ul>
+                    <a href="https://app.apollo.io/#/meet/voxia/15-min" 
+                       target="_blank" 
+                       class="block w-full bg-cyan-600 text-white py-3 rounded-lg font-semibold hover:bg-cyan-700 transition-colors text-center">
+                        <span class="pro-cta">Hubungi Sales</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="flex items-center space-x-2 mb-4 md:mb-0">
+                    <div class="w-8 h-8 bg-cyan-500 rounded-lg flex items-center justify-center">
+                        <span class="text-white font-bold">V</span>
+                    </div>
+                    <span class="text-xl font-bold">VOXIA</span>
+                </div>
+                <p class="footer-copyright text-gray-400">© 2025 VOXIA. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Hidden Form for Apollo -->
+    <form style="display: none;">
+        <input type="email" name="email" placeholder="Hidden email for Apollo">
+    </form>
+
+    <!-- JavaScript -->
+    <script>
+        console.log('JavaScript loaded');
+        
+        // Translation Data
+        const translations = {
+            id: {
+                nav: {
+                    fitur: 'Fitur',
+                    harga: 'Harga',
+                    kontak: 'Kontak'
+                },
+                hero: {
+                    title: 'Ubah Setiap Percakapan WhatsApp Menjadi Peluang',
+                    description: 'Solusi cerdas untuk mengotomatisasi WhatsApp bisnis Anda. Kelola pelanggan, kirim pesan massal, dan pantau performa dengan mudah.',
+                    ctaDemo: 'Jadwalkan Demo Gratis',
+                    ctaPricing: 'Lihat Harga'
+                },
+                features: {
+                    title: 'Fitur Unggulan',
+                    subtitle: 'Solusi lengkap untuk mengoptimalkan komunikasi WhatsApp bisnis Anda',
+                    card1: {
+                        title: 'Otomatisasi Cerdas',
+                        desc: 'Chatbot AI yang memahami bahasa Indonesia dan merespons pelanggan 24/7'
+                    },
+                    card2: {
+                        title: 'Manajemen Kontak',
+                        desc: 'Kelola database pelanggan dengan segmentasi dan tagging otomatis'
+                    },
+                    card3: {
+                        title: 'Analitik Performa',
+                        desc: 'Dashboard real-time untuk memantau performa kampanye WhatsApp Anda'
+                    }
+                },
+                pricing: {
+                    title: 'Paket Harga',
+                    subtitle: 'Pilih solusi yang sesuai dengan kebutuhan bisnis Anda',
+                    starter: {
+                        name: 'Starter',
+                        desc: 'Solusi dasar untuk UMKM yang ingin memulai otomatisasi WhatsApp',
+                        features: ['Hingga 1.000 kontak', '100 pesan/hari', 'Otomatisasi dasar', 'Support email'],
+                        cta: 'Hubungi Sales'
+                    },
+                    growth: {
+                        name: 'Growth',
+                        desc: 'Solusi komprehensif untuk bisnis yang sedang berkembang pesat',
+                        features: ['Hingga 5.000 kontak', '500 pesan/hari', 'Otomatisasi lanjutan', 'Multi-agent support', 'Integrasi CRM'],
+                        cta: 'Jadwalkan Demo'
+                    },
+                    pro: {
+                        name: 'Pro',
+                        desc: 'Solusi enterprise untuk kebutuhan bisnis skala besar',
+                        features: ['Kontak tak terbatas', 'Pesan tak terbatas', 'API akses penuh', 'Dedicated server', 'Account manager'],
+                        cta: 'Hubungi Sales'
+                    }
+                }
+            },
+            en: {
+                nav: {
+                    fitur: 'Features',
+                    harga: 'Pricing',
+                    kontak: 'Contact'
+                },
+                hero: {
+                    title: 'Transform Every WhatsApp Conversation into Opportunity',
+                    description: 'Smart solution to automate your business WhatsApp. Manage customers, send bulk messages, and monitor performance easily.',
+                    ctaDemo: 'Schedule Free Demo',
+                    ctaPricing: 'View Pricing'
+                },
+                features: {
+                    title: 'Premium Features',
+                    subtitle: 'Complete solution to optimize your business WhatsApp communication',
+                    card1: {
+                        title: 'Smart Automation',
+                        desc: 'AI chatbot that understands Indonesian and responds to customers 24/7'
+                    },
+                    card2: {
+                        title: 'Contact Management',
+                        desc: 'Manage customer database with automatic segmentation and tagging'
+                    },
+                    card3: {
+                        title: 'Performance Analytics',
+                        desc: 'Real-time dashboard to monitor your WhatsApp campaign performance'
+                    }
+                },
+                pricing: {
+                    title: 'Pricing Plans',
+                    subtitle: 'Choose solution that fits your business needs',
+                    starter: {
+                        name: 'Starter',
+                        desc: 'Basic solution for SMEs starting WhatsApp automation',
+                        features: ['Up to 1,000 contacts', '100 messages/day', 'Basic automation', 'Email support'],
+                        cta: 'Contact Sales'
+                    },
+                    growth: {
+                        name: 'Growth',
+                        desc: 'Comprehensive solution for rapidly growing businesses',
+                        features: ['Up to 5,000 contacts', '500 messages/day', 'Advanced automation', 'Multi-agent support', 'CRM integration'],
+                        cta: 'Schedule Demo'
+                    },
+                    pro: {
+                        name: 'Pro',
+                        desc: 'Enterprise solution for large-scale business needs',
+                        features: ['Unlimited contacts', 'Unlimited messages', 'Full API access', 'Dedicated server', 'Account manager'],
+                        cta: 'Contact Sales'
+                    }
+                }
+            }
+        };
+
+        let currentLanguage = 'id';
+
+        function setLanguage(lang) {
+            console.log('=== setLanguage called with:', lang);
+            currentLanguage = lang;
+            const t = translations[lang];
+            console.log('Translation data:', t);
+            
+            try {
+                // Update button states
+                console.log('Updating button states...');
+                document.querySelectorAll('.lang-btn').forEach(btn => {
+                    btn.classList.remove('active');
+                });
+                document.getElementById(`lang-${lang}`).classList.add('active');
+                document.getElementById(`lang-${lang}-mobile`).classList.add('active');
+                console.log('Button states updated');
+                
+                // Update navigation
+                console.log('Updating navigation...');
+                const navLinks = document.querySelectorAll('.nav-link');
+                if (navLinks.length >= 3) {
+                    navLinks[0].textContent = t.nav.fitur;
+                    navLinks[1].textContent = t.nav.harga;
+                    navLinks[2].textContent = t.nav.kontak;
+                    console.log('Navigation updated to:', t.nav);
+                }
+                
+                // Update hero section
+                console.log('Updating hero section...');
+                const heroTitle = document.querySelector('.hero-title');
+                const heroDesc = document.querySelector('.hero-description');
+                const ctaDemo = document.querySelector('.cta-demo-text');
+                const ctaPricing = document.querySelector('.cta-pricing-text');
+                
+                if (heroTitle) {
+                    heroTitle.textContent = t.hero.title;
+                    console.log('Hero title updated to:', t.hero.title);
+                }
+                if (heroDesc) {
+                    heroDesc.textContent = t.hero.description;
+                    console.log('Hero description updated');
+                }
+                if (ctaDemo) {
+                    ctaDemo.textContent = t.hero.ctaDemo;
+                    console.log('CTA Demo updated');
+                }
+                if (ctaPricing) {
+                    ctaPricing.textContent = t.hero.ctaPricing;
+                    console.log('CTA Pricing updated');
+                }
+                
+                // Update features section
+                console.log('Updating features section...');
+                const featuresTitle = document.querySelector('.features-title');
+                const featuresSubtitle = document.querySelector('.features-subtitle');
+                
+                if (featuresTitle) {
+                    featuresTitle.textContent = t.features.title;
+                    console.log('Features title updated');
+                }
+                if (featuresSubtitle) {
+                    featuresSubtitle.textContent = t.features.subtitle;
+                    console.log('Features subtitle updated');
+                }
+                
+                // Update feature cards
+                console.log('Updating feature cards...');
+                const feature1Title = document.querySelector('.feature-1-title');
+                const feature1Desc = document.querySelector('.feature-1-desc');
+                const feature2Title = document.querySelector('.feature-2-title');
+                const feature2Desc = document.querySelector('.feature-2-desc');
+                const feature3Title = document.querySelector('.feature-3-title');
+                const feature3Desc = document.querySelector('.feature-3-desc');
+                
+                if (feature1Title) feature1Title.textContent = t.features.card1.title;
+                if (feature1Desc) feature1Desc.textContent = t.features.card1.desc;
+                if (feature2Title) feature2Title.textContent = t.features.card2.title;
+                if (feature2Desc) feature2Desc.textContent = t.features.card2.desc;
+                if (feature3Title) feature3Title.textContent = t.features.card3.title;
+                if (feature3Desc) feature3Desc.textContent = t.features.card3.desc;
+                console.log('Feature cards updated');
+                
+                // Update pricing section
+                console.log('Updating pricing section...');
+                const pricingTitle = document.querySelector('.pricing-title');
+                const pricingSubtitle = document.querySelector('.pricing-subtitle');
+                
+                if (pricingTitle) {
+                    pricingTitle.textContent = t.pricing.title;
+                    console.log('Pricing title updated');
+                }
+                if (pricingSubtitle) {
+                    pricingSubtitle.textContent = t.pricing.subtitle;
+                    console.log('Pricing subtitle updated');
+                }
+                
+                // Update pricing cards
+                console.log('Updating pricing cards...');
+                const starterName = document.querySelector('.starter-name');
+                const starterDesc = document.querySelector('.starter-desc');
+                const starterCta = document.querySelector('.starter-cta');
+                
+                if (starterName) starterName.textContent = t.pricing.starter.name;
+                if (starterDesc) starterDesc.textContent = t.pricing.starter.desc;
+                if (starterCta) starterCta.textContent = t.pricing.starter.cta;
+                
+                const growthName = document.querySelector('.growth-name');
+                const growthDesc = document.querySelector('.growth-desc');
+                const growthCta = document.querySelector('.growth-cta');
+                
+                if (growthName) growthName.textContent = t.pricing.growth.name;
+                if (growthDesc) growthDesc.textContent = t.pricing.growth.desc;
+                if (growthCta) growthCta.textContent = t.pricing.growth.cta;
+                
+                const proName = document.querySelector('.pro-name');
+                const proDesc = document.querySelector('.pro-desc');
+                const proCta = document.querySelector('.pro-cta');
+                
+                if (proName) proName.textContent = t.pricing.pro.name;
+                if (proDesc) proDesc.textContent = t.pricing.pro.desc;
+                if (proCta) proCta.textContent = t.pricing.pro.cta;
+                console.log('Pricing cards updated');
+                
+                // Update pricing features
+                console.log('Updating pricing features...');
+                const starterFeatures = document.querySelectorAll('.starter-feature-1, .starter-feature-2, .starter-feature-3, .starter-feature-4');
+                starterFeatures.forEach((el, index) => {
+                    if (el && t.pricing.starter.features[index]) {
+                        el.textContent = t.pricing.starter.features[index];
+                    }
+                });
+                
+                const growthFeatures = document.querySelectorAll('.growth-feature-1, .growth-feature-2, .growth-feature-3, .growth-feature-4, .growth-feature-5');
+                growthFeatures.forEach((el, index) => {
+                    if (el && t.pricing.growth.features[index]) {
+                        el.textContent = t.pricing.growth.features[index];
+                    }
+                });
+                
+                const proFeatures = document.querySelectorAll('.pro-feature-1, .pro-feature-2, .pro-feature-3, .pro-feature-4, .pro-feature-5');
+                proFeatures.forEach((el, index) => {
+                    if (el && t.pricing.pro.features[index]) {
+                        el.textContent = t.pricing.pro.features[index];
+                    }
+                });
+                console.log('Pricing features updated');
+                
+                // Update footer
+                console.log('Updating footer...');
+                const footerCopyright = document.querySelector('.footer-copyright');
+                if (footerCopyright) {
+                    footerCopyright.textContent = `© 2025 VOXIA. All rights reserved.`;
+                    console.log('Footer updated');
+                }
+                
+                // Update mobile menu
+                console.log('Updating mobile menu...');
+                const mobileNavLinks = document.querySelectorAll('#mobile-menu .nav-link');
+                if (mobileNavLinks.length >= 3) {
+                    mobileNavLinks[0].textContent = t.nav.fitur;
+                    mobileNavLinks[1].textContent = t.nav.harga;
+                    mobileNavLinks[2].textContent = t.nav.kontak;
+                    console.log('Mobile menu updated');
+                }
+                
+                // Save preference
+                localStorage.setItem('voxia-language', lang);
+                console.log('Language set to:', lang);
+                console.log('=== Language update completed successfully ===');
+                
+            } catch (error) {
+                console.error('Error in setLanguage:', error);
+            }
+        }
+
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        }
+
+        // Initialize language on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('DOM Content Loaded');
+            const savedLang = localStorage.getItem('voxia-language') || 'id';
+            console.log('Setting initial language to:', savedLang);
+            setLanguage(savedLang);
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+
+    <!-- Apollo Scripts -->
+    <script>
+        function initApollo(){var n=Math.random().toString(36).substring(7),o=document.createElement("script");
+        o.src="https://assets.apollo.io/micro/website-tracker/tracker.iife.js?nocache="+n,o.async=!0,o.defer=!0,
+        o.onload=function(){window.trackingFunctions.onLoad({appId:"6929458548d2fd001da468b1"})},
+        document.head.appendChild(o)}initApollo();
+    </script>
+    
+    <script>(function initApolloInbound(){var TIMEOUT_MS=15000;var timeoutId;var style=document.createElement('style');style.id='apollo-form-prehide-css';style.textContent='form:has(input[type="email" i]),form:has(input[name="email" i]),.hs-form-iframe{position:relative!important}form:has(input[type="email" i])::before,form:has(input[name="email" i])::before,.hs-form-iframe::before{content:\'\';position:absolute;inset:0;display:flex;align-items:center;justify-content:center;width:50px;height:50px;margin:auto;border:2.5px solid #e1e1e1;border-top:2.5px solid #9ea3a6;border-radius:50%;animation:spin 1s linear infinite;background-color:transparent;pointer-events:auto;z-index:999999;opacity:1}form:has(input[type="email" i]) *,form:has(input[name="email" i]) *,.hs-form-iframe *{opacity:0!important;user-select:none!important;pointer-events:none!important}@keyframes spin{0%{transform:rotate(0deg)}100%{transform:rotate(360deg)}}';(document.head || document.documentElement).appendChild(style);function cleanup(){var styleEl=document.getElementById('apollo-form-prehide-css');if(styleEl)styleEl.remove();if(timeoutId)clearTimeout(timeoutId);}timeoutId=setTimeout(function(){console.warn('[Apollo] Form enrichment timeout after 5s - revealing forms. Check network and console for errors.');cleanup();},TIMEOUT_MS);var nocache=Math.random().toString(36).substring(7);var script=document.createElement('script');script.src='https://assets.apollo.io/js/apollo-inbound.js?nocache=' + nocache;script.defer=true;script.onerror=function(){console.error('[Apollo] Failed to load form enrichment script');cleanup();};script.onload=function(){try{window.ApolloInbound.formEnrichment.init({appId: '692950e7591a8e001d6b8822',onReady: function(){cleanup();},onError: function(err){console.error('[Apollo] Form enrichment init error:',err);cleanup();}});}catch(err){console.error('[Apollo] Error initializing form enrichment:',err);cleanup();}};document.head.appendChild(script);})();</script>
+</body>
+</html>
