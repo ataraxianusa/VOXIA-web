@@ -473,7 +473,7 @@
                         class="hero-subtitle block mt-2 md:mt-4 text-2xl md:text-3xl lg:text-4xl font-semibold text-slate-200 tracking-wide">Ubah
                         Setiap Percakapan di WhatsApp Menjadi Peluang</span>
                 </h1>
-                <p class="mt-8 max-w-4xl mx-auto text-lg md:text-xl text-slate-300 leading-relaxed">
+                <p class="hero-description mt-8 max-w-4xl mx-auto text-lg md:text-xl text-slate-300 leading-relaxed">
                     Kami bukan sekadar software. Voxia adalah sistem cerdas yang bekerja di balik layar untuk memastikan
                     setiap interaksi pelanggan di WhatsApp berjalan lancar, terorganisir, dan menghasilkan. Biarkan kami
                     yang mengurus kompleksitas, Anda yang menikmati pertumbuhannya.
@@ -1670,18 +1670,26 @@
             const t = translations[currentLanguage];
             
             // Navigation
-            document.querySelector('.nav-fitur').textContent = t.nav.fitur;
-            document.querySelector('.nav-solusi').textContent = t.nav.solusi;
-            document.querySelector('.nav-paket').textContent = t.nav.paket;
-            document.querySelector('.nav-kontak').textContent = t.nav.kontak;
+            const navFitur = document.querySelector('.nav-fitur');
+            if (navFitur) navFitur.textContent = t.nav.fitur;
             
-            // Hero section
-            const heroTitle = document.querySelector('.hero-title');
-            if (heroTitle) {
-                heroTitle.innerHTML = `${t.hero.title}<span class="block mt-2 md:mt-4 text-2xl md:text-3xl lg:text-4xl font-semibold text-slate-200 tracking-wide">${t.hero.subtitle}</span>`;
+            const navSolusi = document.querySelector('.nav-solusi');
+            if (navSolusi) navSolusi.textContent = t.nav.solusi;
+            
+            const navPaket = document.querySelector('.nav-paket');
+            if (navPaket) navPaket.textContent = t.nav.paket;
+            
+            const navKontak = document.querySelector('.nav-kontak');
+            if (navKontak) navKontak.textContent = t.nav.kontak;
+            
+            // Hero section - update subtitle
+            const heroSubtitle = document.querySelector('.hero-subtitle');
+            if (heroSubtitle) {
+                heroSubtitle.textContent = t.hero.subtitle;
             }
             
-            const heroDesc = document.querySelector('.hero-subtitle');
+            // Hero description
+            const heroDesc = document.querySelector('.hero-description');
             if (heroDesc) {
                 heroDesc.textContent = t.hero.description;
             }
@@ -1689,14 +1697,11 @@
             // CTA buttons
             const cta1 = document.querySelector('.hero-cta a:first-child');
             if (cta1) {
-                cta1.innerHTML = `
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-3" fill="none" viewBox="0 0 24 24"
-                        stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                            d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
-                    </svg>
-                    ${t.hero.cta1}
-                `;
+                // Keep the SVG and update text
+                const svg = cta1.querySelector('svg');
+                cta1.innerHTML = '';
+                cta1.appendChild(svg);
+                cta1.insertAdjacentHTML('beforeend', t.hero.cta1);
             }
             
             const cta2 = document.querySelector('.hero-cta a:last-child');
