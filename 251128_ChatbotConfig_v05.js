@@ -62,7 +62,7 @@ Chatbot.init({
         chatWindow: {
             showTitle: true,
             showAgentMessages: true,
-            title: "VOXIA Asisten",
+            title: "VOXIA agent",
             titleAvatarSrc: "https://avatars.githubusercontent.com/u/240184483?s=200&v=4",
             titleBackgroundColor: "#3B81F6",
             titleTextColor: "#ffffff",
