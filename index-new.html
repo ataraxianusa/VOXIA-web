@@ -1,88 +1,91 @@
 <!DOCTYPE html>
 <html lang="id">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>VOXIA - Solusi WhatsApp Bisnis | WhatsApp Business Solution</title>
-    <meta name="description" content="VOXIA adalah sistem cerdas untuk mengotomatisasi WhatsApp bisnis Anda. Kelola pelanggan, kirim pesan massal, dan pantau performa dengan mudah.">
+    <meta name="description"
+        content="VOXIA adalah sistem cerdas untuk mengotomatisasi WhatsApp bisnis Anda. Kelola pelanggan, kirim pesan massal, dan pantau performa dengan mudah.">
     <meta name="keywords" content="WhatsApp bisnis, WhatsApp API, otomatisasi WhatsApp, chatbot WhatsApp, CRM WhatsApp">
     <meta name="author" content="VOXIA">
-    
+
     <!-- Open Graph Meta Tags -->
     <meta property="og:title" content="VOXIA - Solusi WhatsApp Bisnis">
     <meta property="og:description" content="Sistem cerdas untuk mengotomatisasi WhatsApp bisnis Anda">
     <meta property="og:image" content="https://voxia.id/og-image.jpg">
     <meta property="og:url" content="https://voxia.id">
     <meta property="og:type" content="website">
-    
+
     <!-- Twitter Card Meta Tags -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="VOXIA - Solusi WhatsApp Bisnis">
     <meta name="twitter:description" content="Sistem cerdas untuk mengotomatisasi WhatsApp bisnis Anda">
     <meta name="twitter:image" content="https://voxia.id/og-image.jpg">
-    
+
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
     <link rel="icon" type="image/png" href="favicon.png">
     <link rel="apple-touch-icon" href="favicon.png">
-    
+
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
-    
+
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
+
     <!-- Custom Styles -->
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
-        
+
         * {
             font-family: 'Inter', sans-serif;
         }
-        
+
         .gradient-bg {
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
         }
-        
+
         .hero-gradient {
             background: linear-gradient(135deg, #06b6d4 0%, #0891b2 50%, #0e7490 100%);
         }
-        
+
         .text-gradient {
             background: linear-gradient(135deg, #06b6d4 0%, #0891b2 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
         }
-        
+
         .card-hover {
             transition: all 0.3s ease;
         }
-        
+
         .card-hover:hover {
             transform: translateY(-5px);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
         }
-        
+
         .lang-btn {
             transition: all 0.3s ease;
         }
-        
+
         .lang-btn.active {
             background-color: white;
             color: #1e293b;
         }
-        
+
         .lang-btn:not(.active) {
             background-color: transparent;
             color: white;
         }
-        
+
         .lang-btn:not(.active):hover {
-            background-color: rgba(255,255,255,0.2);
+            background-color: rgba(255, 255, 255, 0.2);
         }
     </style>
 </head>
+
 <body class="bg-gray-50">
     <!-- Header -->
     <header class="fixed top-0 w-full bg-white/95 backdrop-blur-sm shadow-sm z-50">
@@ -95,47 +98,10 @@
                     </div>
                     <span class="text-2xl font-bold text-gray-800">VOXIA</span>
                 </div>
-                
-                <!-- Desktop Navigation -->
-                <div class="hidden md:flex items-center space-x-8">
-                    <a href="#features" class="nav-link text-gray-600 hover:text-cyan-600 transition-colors">Fitur</a>
-                    <a href="#pricing" class="nav-link text-gray-600 hover:text-cyan-600 transition-colors">Harga</a>
-                    <a href="#contact" class="nav-link text-gray-600 hover:text-cyan-600 transition-colors">Kontak</a>
-                    
-                    <!-- Language Toggle -->
-                    <div class="flex items-center space-x-2 bg-gray-100 rounded-lg p-1">
-                        <button onclick="setLanguage('id')" id="lang-id" class="lang-btn active px-3 py-1 rounded-md text-sm font-medium">
-                            🇮🇩 ID
-                        </button>
-                        <button onclick="setLanguage('en')" id="lang-en" class="lang-btn px-3 py-1 rounded-md text-sm font-medium">
-                            🇬🇧 EN
-                        </button>
-                    </div>
-                </div>
-                
-                <!-- Mobile Menu Button -->
-                <button onclick="toggleMobileMenu()" class="md:hidden text-gray-600">
-                    <i class="fas fa-bars text-xl"></i>
+
                 </button>
             </div>
-            
-            <!-- Mobile Menu -->
-            <div id="mobile-menu" class="hidden md:hidden mt-4 pb-4">
-                <div class="flex flex-col space-y-3">
-                    <a href="#features" class="nav-link text-gray-600 hover:text-cyan-600 transition-colors">Fitur</a>
-                    <a href="#pricing" class="nav-link text-gray-600 hover:text-cyan-600 transition-colors">Harga</a>
-                    <a href="#contact" class="nav-link text-gray-600 hover:text-cyan-600 transition-colors">Kontak</a>
-                    
-                    <!-- Mobile Language Toggle -->
-                    <div class="flex items-center space-x-2 bg-gray-100 rounded-lg p-1">
-                        <button onclick="setLanguage('id')" id="lang-id-mobile" class="lang-btn active px-3 py-1 rounded-md text-sm font-medium">
-                            🇮🇩 ID
-                        </button>
-                        <button onclick="setLanguage('en')" id="lang-en-mobile" class="lang-btn px-3 py-1 rounded-md text-sm font-medium">
-                            🇬🇧 EN
-                        </button>
-                    </div>
-                </div>
+            </div>
             </div>
         </nav>
     </header>
@@ -147,16 +113,17 @@
                 <span class="hero-title">Ubah Setiap Percakapan WhatsApp Menjadi Peluang</span>
             </h1>
             <p class="hero-description text-xl md:text-2xl mb-8 max-w-3xl mx-auto opacity-90">
-                Solusi cerdas untuk mengotomatisasi WhatsApp bisnis Anda. Kelola pelanggan, kirim pesan massal, dan pantau performa dengan mudah.
+                Solusi cerdas untuk mengotomatisasi WhatsApp bisnis Anda. Kelola pelanggan, kirim pesan massal, dan
+                pantau performa dengan mudah.
             </p>
             <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                <a href="https://app.apollo.io/#/meet/voxia/15-min" 
-                   target="_blank" 
-                   class="cta-demo bg-white text-cyan-600 px-8 py-4 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
+                <a href="https://app.apollo.io/#/meet/voxia/15-min" target="_blank"
+                    class="cta-demo bg-white text-cyan-600 px-8 py-4 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
                     <i class="fas fa-calendar-alt mr-2"></i>
                     <span class="cta-demo-text">Jadwalkan Demo Gratis</span>
                 </a>
-                <a href="#pricing" class="cta-pricing border-2 border-white text-white px-8 py-4 rounded-lg font-semibold hover:bg-white hover:text-cyan-600 transition-colors">
+                <a href="#pricing"
+                    class="cta-pricing border-2 border-white text-white px-8 py-4 rounded-lg font-semibold hover:bg-white hover:text-cyan-600 transition-colors">
                     <i class="fas fa-tag mr-2"></i>
                     <span class="cta-pricing-text">Lihat Harga</span>
                 </a>
@@ -169,32 +136,36 @@
         <div class="container mx-auto px-6">
             <div class="text-center mb-16">
                 <h2 class="features-title text-3xl md:text-4xl font-bold text-gray-800 mb-4">Fitur Unggulan</h2>
-                <p class="features-subtitle text-xl text-gray-600 max-w-2xl mx-auto">Solusi lengkap untuk mengoptimalkan komunikasi WhatsApp bisnis Anda</p>
+                <p class="features-subtitle text-xl text-gray-600 max-w-2xl mx-auto">Solusi lengkap untuk mengoptimalkan
+                    komunikasi WhatsApp bisnis Anda</p>
             </div>
-            
+
             <div class="grid md:grid-cols-3 gap-8">
                 <div class="card-hover bg-gray-50 p-8 rounded-xl">
                     <div class="w-12 h-12 bg-cyan-100 rounded-lg flex items-center justify-center mb-6">
                         <i class="fas fa-robot text-cyan-600 text-xl"></i>
                     </div>
                     <h3 class="feature-1-title text-xl font-semibold text-gray-800 mb-3">Otomatisasi Cerdas</h3>
-                    <p class="feature-1-desc text-gray-600">Chatbot AI yang memahami bahasa Indonesia dan merespons pelanggan 24/7</p>
+                    <p class="feature-1-desc text-gray-600">Chatbot AI yang memahami bahasa Indonesia dan merespons
+                        pelanggan 24/7</p>
                 </div>
-                
+
                 <div class="card-hover bg-gray-50 p-8 rounded-xl">
                     <div class="w-12 h-12 bg-cyan-100 rounded-lg flex items-center justify-center mb-6">
                         <i class="fas fa-users text-cyan-600 text-xl"></i>
                     </div>
                     <h3 class="feature-2-title text-xl font-semibold text-gray-800 mb-3">Manajemen Kontak</h3>
-                    <p class="feature-2-desc text-gray-600">Kelola database pelanggan dengan segmentasi dan tagging otomatis</p>
+                    <p class="feature-2-desc text-gray-600">Kelola database pelanggan dengan segmentasi dan tagging
+                        otomatis</p>
                 </div>
-                
+
                 <div class="card-hover bg-gray-50 p-8 rounded-xl">
                     <div class="w-12 h-12 bg-cyan-100 rounded-lg flex items-center justify-center mb-6">
                         <i class="fas fa-chart-line text-cyan-600 text-xl"></i>
                     </div>
                     <h3 class="feature-3-title text-xl font-semibold text-gray-800 mb-3">Analitik Performa</h3>
-                    <p class="feature-3-desc text-gray-600">Dashboard real-time untuk memantau performa kampanye WhatsApp Anda</p>
+                    <p class="feature-3-desc text-gray-600">Dashboard real-time untuk memantau performa kampanye
+                        WhatsApp Anda</p>
                 </div>
             </div>
         </div>
@@ -205,60 +176,76 @@
         <div class="container mx-auto px-6">
             <div class="text-center mb-16">
                 <h2 class="pricing-title text-3xl md:text-4xl font-bold text-gray-800 mb-4">Paket Harga</h2>
-                <p class="pricing-subtitle text-xl text-gray-600 max-w-2xl mx-auto">Pilih solusi yang sesuai dengan kebutuhan bisnis Anda</p>
+                <p class="pricing-subtitle text-xl text-gray-600 max-w-2xl mx-auto">Pilih solusi yang sesuai dengan
+                    kebutuhan bisnis Anda</p>
             </div>
-            
+
             <div class="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
                 <!-- Starter Plan -->
                 <div class="card-hover bg-white p-8 rounded-xl border border-gray-200">
                     <h3 class="starter-name text-2xl font-bold text-gray-800 mb-4">Starter</h3>
-                    <p class="starter-desc text-gray-600 mb-6">Solusi dasar untuk UMKM yang ingin memulai otomatisasi WhatsApp</p>
+                    <p class="starter-desc text-gray-600 mb-6">Solusi dasar untuk UMKM yang ingin memulai otomatisasi
+                        WhatsApp</p>
                     <ul class="space-y-3 mb-8">
-                        <li class="flex items-center"><i class="fas fa-check text-green-500 mr-3"></i><span class="starter-feature-1">Hingga 1.000 kontak</span></li>
-                        <li class="flex items-center"><i class="fas fa-check text-green-500 mr-3"></i><span class="starter-feature-2">100 pesan/hari</span></li>
-                        <li class="flex items-center"><i class="fas fa-check text-green-500 mr-3"></i><span class="starter-feature-3">Otomatisasi dasar</span></li>
-                        <li class="flex items-center"><i class="fas fa-check text-green-500 mr-3"></i><span class="starter-feature-4">Support email</span></li>
+                        <li class="flex items-center"><i class="fas fa-check text-green-500 mr-3"></i><span
+                                class="starter-feature-1">Hingga 1.000 kontak</span></li>
+                        <li class="flex items-center"><i class="fas fa-check text-green-500 mr-3"></i><span
+                                class="starter-feature-2">100 pesan/hari</span></li>
+                        <li class="flex items-center"><i class="fas fa-check text-green-500 mr-3"></i><span
+                                class="starter-feature-3">Otomatisasi dasar</span></li>
+                        <li class="flex items-center"><i class="fas fa-check text-green-500 mr-3"></i><span
+                                class="starter-feature-4">Support email</span></li>
                     </ul>
-                    <a href="https://app.apollo.io/#/meet/voxia/15-min" 
-                       target="_blank" 
-                       class="block w-full bg-cyan-600 text-white py-3 rounded-lg font-semibold hover:bg-cyan-700 transition-colors text-center">
+                    <a href="https://app.apollo.io/#/meet/voxia/15-min" target="_blank"
+                        class="block w-full bg-cyan-600 text-white py-3 rounded-lg font-semibold hover:bg-cyan-700 transition-colors text-center">
                         <span class="starter-cta">Hubungi Sales</span>
                     </a>
                 </div>
-                
+
                 <!-- Growth Plan -->
                 <div class="card-hover bg-cyan-600 text-white p-8 rounded-xl transform scale-105">
-                    <div class="bg-yellow-400 text-gray-800 text-sm font-semibold px-3 py-1 rounded-full inline-block mb-4">POPULER</div>
+                    <div
+                        class="bg-yellow-400 text-gray-800 text-sm font-semibold px-3 py-1 rounded-full inline-block mb-4">
+                        POPULER</div>
                     <h3 class="growth-name text-2xl font-bold mb-4">Growth</h3>
-                    <p class="growth-desc opacity-90 mb-6">Solusi komprehensif untuk bisnis yang sedang berkembang pesat</p>
+                    <p class="growth-desc opacity-90 mb-6">Solusi komprehensif untuk bisnis yang sedang berkembang pesat
+                    </p>
                     <ul class="space-y-3 mb-8">
-                        <li class="flex items-center"><i class="fas fa-check text-white mr-3"></i><span class="growth-feature-1">Hingga 5.000 kontak</span></li>
-                        <li class="flex items-center"><i class="fas fa-check text-white mr-3"></i><span class="growth-feature-2">500 pesan/hari</span></li>
-                        <li class="flex items-center"><i class="fas fa-check text-white mr-3"></i><span class="growth-feature-3">Otomatisasi lanjutan</span></li>
-                        <li class="flex items-center"><i class="fas fa-check text-white mr-3"></i><span class="growth-feature-4">Multi-agent support</span></li>
-                        <li class="flex items-center"><i class="fas fa-check text-white mr-3"></i><span class="growth-feature-5">Integrasi CRM</span></li>
+                        <li class="flex items-center"><i class="fas fa-check text-white mr-3"></i><span
+                                class="growth-feature-1">Hingga 5.000 kontak</span></li>
+                        <li class="flex items-center"><i class="fas fa-check text-white mr-3"></i><span
+                                class="growth-feature-2">500 pesan/hari</span></li>
+                        <li class="flex items-center"><i class="fas fa-check text-white mr-3"></i><span
+                                class="growth-feature-3">Otomatisasi lanjutan</span></li>
+                        <li class="flex items-center"><i class="fas fa-check text-white mr-3"></i><span
+                                class="growth-feature-4">Multi-agent support</span></li>
+                        <li class="flex items-center"><i class="fas fa-check text-white mr-3"></i><span
+                                class="growth-feature-5">Integrasi CRM</span></li>
                     </ul>
-                    <a href="https://app.apollo.io/#/meet/voxia/15-min" 
-                       target="_blank" 
-                       class="block w-full bg-white text-cyan-600 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors text-center">
+                    <a href="https://app.apollo.io/#/meet/voxia/15-min" target="_blank"
+                        class="block w-full bg-white text-cyan-600 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors text-center">
                         <span class="growth-cta">Jadwalkan Demo</span>
                     </a>
                 </div>
-                
+
                 <!-- Pro Plan -->
                 <div class="card-hover bg-white p-8 rounded-xl border border-gray-200">
                     <h3 class="pro-name text-2xl font-bold text-gray-800 mb-4">Pro</h3>
                     <p class="pro-desc text-gray-600 mb-6">Solusi enterprise untuk kebutuhan bisnis skala besar</p>
                     <ul class="space-y-3 mb-8">
-                        <li class="flex items-center"><i class="fas fa-check text-green-500 mr-3"></i><span class="pro-feature-1">Kontak tak terbatas</span></li>
-                        <li class="flex items-center"><i class="fas fa-check text-green-500 mr-3"></i><span class="pro-feature-2">Pesan tak terbatas</span></li>
-                        <li class="flex items-center"><i class="fas fa-check text-green-500 mr-3"></i><span class="pro-feature-3">API akses penuh</span></li>
-                        <li class="flex items-center"><i class="fas fa-check text-green-500 mr-3"></i><span class="pro-feature-4">Dedicated server</span></li>
-                        <li class="flex items-center"><i class="fas fa-check text-green-500 mr-3"></i><span class="pro-feature-5">Account manager</span></li>
+                        <li class="flex items-center"><i class="fas fa-check text-green-500 mr-3"></i><span
+                                class="pro-feature-1">Kontak tak terbatas</span></li>
+                        <li class="flex items-center"><i class="fas fa-check text-green-500 mr-3"></i><span
+                                class="pro-feature-2">Pesan tak terbatas</span></li>
+                        <li class="flex items-center"><i class="fas fa-check text-green-500 mr-3"></i><span
+                                class="pro-feature-3">API akses penuh</span></li>
+                        <li class="flex items-center"><i class="fas fa-check text-green-500 mr-3"></i><span
+                                class="pro-feature-4">Dedicated server</span></li>
+                        <li class="flex items-center"><i class="fas fa-check text-green-500 mr-3"></i><span
+                                class="pro-feature-5">Account manager</span></li>
                     </ul>
-                    <a href="https://app.apollo.io/#/meet/voxia/15-min" 
-                       target="_blank" 
-                       class="block w-full bg-cyan-600 text-white py-3 rounded-lg font-semibold hover:bg-cyan-700 transition-colors text-center">
+                    <a href="https://app.apollo.io/#/meet/voxia/15-min" target="_blank"
+                        class="block w-full bg-cyan-600 text-white py-3 rounded-lg font-semibold hover:bg-cyan-700 transition-colors text-center">
                         <span class="pro-cta">Hubungi Sales</span>
                     </a>
                 </div>
@@ -270,44 +257,52 @@
     <section id="success" class="py-20 bg-white">
         <div class="container mx-auto px-6">
             <div class="text-center mb-16">
-                <h2 class="success-title text-3xl md:text-4xl font-bold text-gray-800 mb-4">Kisah Sukses Pelanggan Kami</h2>
-                <p class="success-subtitle text-xl text-gray-600 max-w-2xl mx-auto">Lihat bagaimana bisnis seperti Anda berkembang dengan VOXIA</p>
+                <h2 class="success-title text-3xl md:text-4xl font-bold text-gray-800 mb-4">Kisah Sukses Pelanggan Kami
+                </h2>
+                <p class="success-subtitle text-xl text-gray-600 max-w-2xl mx-auto">Lihat bagaimana bisnis seperti Anda
+                    berkembang dengan VOXIA</p>
             </div>
-            
+
             <div class="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
                 <div class="bg-gray-50 p-6 rounded-xl">
                     <div class="flex items-center mb-4">
-                        <img src="https://picsum.photos/seed/customer1/50/50.jpg" alt="Customer" class="w-12 h-12 rounded-full mr-3">
+                        <img src="https://picsum.photos/seed/customer1/50/50.jpg" alt="Customer"
+                            class="w-12 h-12 rounded-full mr-3">
                         <div>
                             <h4 class="font-semibold text-gray-800">Budi Santoso</h4>
                             <p class="text-sm text-gray-600">Owner, TokoSehat</p>
                         </div>
                     </div>
-                    <p class="text-gray-600 italic">"VOXIA meningkatkan respon kami 300% dan menghemat 20 jam/minggu untuk customer service."</p>
+                    <p class="text-gray-600 italic">"VOXIA meningkatkan respon kami 300% dan menghemat 20 jam/minggu
+                        untuk customer service."</p>
                     <div class="mt-4 text-cyan-600 font-semibold">↑ 300% Respon Rate</div>
                 </div>
-                
+
                 <div class="bg-gray-50 p-6 rounded-xl">
                     <div class="flex items-center mb-4">
-                        <img src="https://picsum.photos/seed/customer2/50/50.jpg" alt="Customer" class="w-12 h-12 rounded-full mr-3">
+                        <img src="https://picsum.photos/seed/customer2/50/50.jpg" alt="Customer"
+                            class="w-12 h-12 rounded-full mr-3">
                         <div>
                             <h4 class="font-semibold text-gray-800">Sarah Wijaya</h4>
                             <p class="text-sm text-gray-600">CEO, EduTech Pro</p>
                         </div>
                     </div>
-                    <p class="text-gray-600 italic">"Sistem otomatisasi VOXIA memungkinkan kami melayani 10x lebih banyak siswa."</p>
+                    <p class="text-gray-600 italic">"Sistem otomatisasi VOXIA memungkinkan kami melayani 10x lebih
+                        banyak siswa."</p>
                     <div class="mt-4 text-cyan-600 font-semibold">↑ 10x Kapasitas Layanan</div>
                 </div>
-                
+
                 <div class="bg-gray-50 p-6 rounded-xl">
                     <div class="flex items-center mb-4">
-                        <img src="https://picsum.photos/seed/customer3/50/50.jpg" alt="Customer" class="w-12 h-12 rounded-full mr-3">
+                        <img src="https://picsum.photos/seed/customer3/50/50.jpg" alt="Customer"
+                            class="w-12 h-12 rounded-full mr-3">
                         <div>
                             <h4 class="font-semibold text-gray-800">Dr. Ahmad Rahman</h4>
                             <p class="text-sm text-gray-600">Director, Klinik Sehat</p>
                         </div>
                     </div>
-                    <p class="text-gray-600 italic">"Pasien kami lebih puas dengan reminder otomatis dan respon cepat 24/7."</p>
+                    <p class="text-gray-600 italic">"Pasien kami lebih puas dengan reminder otomatis dan respon cepat
+                        24/7."</p>
                     <div class="mt-4 text-cyan-600 font-semibold">↑ 95% Kepuasan Pasien</div>
                 </div>
             </div>
@@ -318,10 +313,12 @@
     <section id="faq" class="py-20 bg-gray-50">
         <div class="container mx-auto px-6">
             <div class="text-center mb-16">
-                <h2 class="faq-title text-3xl md:text-4xl font-bold text-gray-800 mb-4">Pertanyaan yang Sering Diajukan</h2>
-                <p class="faq-subtitle text-xl text-gray-600 max-w-2xl mx-auto">Jawaban untuk pertanyaan umum tentang VOXIA</p>
+                <h2 class="faq-title text-3xl md:text-4xl font-bold text-gray-800 mb-4">Pertanyaan yang Sering Diajukan
+                </h2>
+                <p class="faq-subtitle text-xl text-gray-600 max-w-2xl mx-auto">Jawaban untuk pertanyaan umum tentang
+                    VOXIA</p>
             </div>
-            
+
             <div class="max-w-3xl mx-auto space-y-4">
                 <div class="bg-white p-6 rounded-lg border border-gray-200">
                     <button onclick="toggleFAQ(1)" class="w-full text-left flex justify-between items-center">
@@ -329,27 +326,30 @@
                         <i class="fas fa-chevron-down text-gray-600 transition-transform" id="faq-icon-1"></i>
                     </button>
                     <div id="faq-content-1" class="hidden mt-4 text-gray-600">
-                        <p>Ya, VOXIA memiliki paket Starter yang dirancang khusus untuk UMKM dengan fitur dasar dan harga terjangkau.</p>
+                        <p>Ya, VOXIA memiliki paket Starter yang dirancang khusus untuk UMKM dengan fitur dasar dan
+                            harga terjangkau.</p>
                     </div>
                 </div>
-                
+
                 <div class="bg-white p-6 rounded-lg border border-gray-200">
                     <button onclick="toggleFAQ(2)" class="w-full text-left flex justify-between items-center">
                         <h3 class="text-lg font-semibold text-gray-800">Bagaimana dengan keamanan data pelanggan?</h3>
                         <i class="fas fa-chevron-down text-gray-600 transition-transform" id="faq-icon-2"></i>
                     </button>
                     <div id="faq-content-2" class="hidden mt-4 text-gray-600">
-                        <p>VOXIA menggunakan enkripsi end-to-end dan compliance dengan regulasi data privasi untuk melindungi informasi pelanggan Anda.</p>
+                        <p>VOXIA menggunakan enkripsi end-to-end dan compliance dengan regulasi data privasi untuk
+                            melindungi informasi pelanggan Anda.</p>
                     </div>
                 </div>
-                
+
                 <div class="bg-white p-6 rounded-lg border border-gray-200">
                     <button onclick="toggleFAQ(3)" class="w-full text-left flex justify-between items-center">
                         <h3 class="text-lg font-semibold text-gray-800">Berapa lama proses setup?</h3>
                         <i class="fas fa-chevron-down text-gray-600 transition-transform" id="faq-icon-3"></i>
                     </button>
                     <div id="faq-content-3" class="hidden mt-4 text-gray-600">
-                        <p>Setup awal biasanya memakan waktu 1-2 hari kerja. Tim kami akan membantu proses integrasi dan training.</p>
+                        <p>Setup awal biasanya memakan waktu 1-2 hari kerja. Tim kami akan membantu proses integrasi dan
+                            training.</p>
                     </div>
                 </div>
             </div>
@@ -367,9 +367,10 @@
                         </div>
                         <span class="text-xl font-bold">VOXIA</span>
                     </div>
-                    <p class="text-gray-400">Solusi WhatsApp bisnis terpercaya untuk mengotomatisasi komunikasi pelanggan.</p>
+                    <p class="text-gray-400">Solusi WhatsApp bisnis terpercaya untuk mengotomatisasi komunikasi
+                        pelanggan.</p>
                 </div>
-                
+
                 <div>
                     <h4 class="font-semibold mb-4">Produk</h4>
                     <ul class="space-y-2 text-gray-400">
@@ -378,7 +379,7 @@
                         <li><a href="#serve" class="hover:text-white transition-colors">Industri</a></li>
                     </ul>
                 </div>
-                
+
                 <div>
                     <h4 class="font-semibold mb-4">Perusahaan</h4>
                     <ul class="space-y-2 text-gray-400">
@@ -387,7 +388,7 @@
                         <li><a href="#contact" class="hover:text-white transition-colors">Kontak</a></li>
                     </ul>
                 </div>
-                
+
                 <div>
                     <h4 class="font-semibold mb-4">Hubungi Kami</h4>
                     <ul class="space-y-2 text-gray-400">
@@ -397,7 +398,7 @@
                     </ul>
                 </div>
             </div>
-            
+
             <div class="border-t border-gray-800 pt-8">
                 <div class="flex flex-col md:flex-row justify-between items-center">
                     <p class="footer-copyright text-gray-400">© 2025 VOXIA. All rights reserved.</p>
@@ -562,14 +563,14 @@
             currentLanguage = lang;
             const t = translations[lang];
             console.log('Translation data loaded:', t);
-            
+
             // Update button states
             document.querySelectorAll('.lang-btn').forEach(btn => {
                 btn.classList.remove('active');
             });
             document.getElementById(`lang-${lang}`).classList.add('active');
             document.getElementById(`lang-${lang}-mobile`).classList.add('active');
-            
+
             // Update navigation
             const navLinks = document.querySelectorAll('.nav-link');
             if (navLinks.length >= 3) {
@@ -578,26 +579,26 @@
                 navLinks[2].textContent = t.nav.kontak;
                 console.log('Navigation updated');
             }
-            
+
             // Update hero section
             const heroTitle = document.querySelector('.hero-title');
             const heroDesc = document.querySelector('.hero-description');
             const ctaDemo = document.querySelector('.cta-demo-text');
             const ctaPricing = document.querySelector('.cta-pricing-text');
-            
+
             if (heroTitle) heroTitle.textContent = t.hero.title;
             if (heroDesc) heroDesc.textContent = t.hero.description;
             if (ctaDemo) ctaDemo.textContent = t.hero.ctaDemo;
             if (ctaPricing) ctaPricing.textContent = t.hero.ctaPricing;
             console.log('Hero section updated');
-            
+
             // Update features section
             const featuresTitle = document.querySelector('.features-title');
             const featuresSubtitle = document.querySelector('.features-subtitle');
             if (featuresTitle) featuresTitle.textContent = t.features.title;
             if (featuresSubtitle) featuresSubtitle.textContent = t.features.subtitle;
             console.log('Features section updated');
-            
+
             // Update feature cards
             const feature1Title = document.querySelector('.feature-1-title');
             const feature1Desc = document.querySelector('.feature-1-desc');
@@ -605,7 +606,7 @@
             const feature2Desc = document.querySelector('.feature-2-desc');
             const feature3Title = document.querySelector('.feature-3-title');
             const feature3Desc = document.querySelector('.feature-3-desc');
-            
+
             if (feature1Title) feature1Title.textContent = t.features.card1.title;
             if (feature1Desc) feature1Desc.textContent = t.features.card1.desc;
             if (feature2Title) feature2Title.textContent = t.features.card2.title;
@@ -613,40 +614,40 @@
             if (feature3Title) feature3Title.textContent = t.features.card3.title;
             if (feature3Desc) feature3Desc.textContent = t.features.card3.desc;
             console.log('Feature cards updated');
-            
+
             // Update pricing section
             const pricingTitle = document.querySelector('.pricing-title');
             const pricingSubtitle = document.querySelector('.pricing-subtitle');
             if (pricingTitle) pricingTitle.textContent = t.pricing.title;
             if (pricingSubtitle) pricingSubtitle.textContent = t.pricing.subtitle;
             console.log('Pricing section updated');
-            
+
             // Update pricing cards
             const starterName = document.querySelector('.starter-name');
             const starterDesc = document.querySelector('.starter-desc');
             const starterCta = document.querySelector('.starter-cta');
-            
+
             if (starterName) starterName.textContent = t.pricing.starter.name;
             if (starterDesc) starterDesc.textContent = t.pricing.starter.desc;
             if (starterCta) starterCta.textContent = t.pricing.starter.cta;
-            
+
             const growthName = document.querySelector('.growth-name');
             const growthDesc = document.querySelector('.growth-desc');
             const growthCta = document.querySelector('.growth-cta');
-            
+
             if (growthName) growthName.textContent = t.pricing.growth.name;
             if (growthDesc) growthDesc.textContent = t.pricing.growth.desc;
             if (growthCta) growthCta.textContent = t.pricing.growth.cta;
-            
+
             const proName = document.querySelector('.pro-name');
             const proDesc = document.querySelector('.pro-desc');
             const proCta = document.querySelector('.pro-cta');
-            
+
             if (proName) proName.textContent = t.pricing.pro.name;
             if (proDesc) proDesc.textContent = t.pricing.pro.desc;
             if (proCta) proCta.textContent = t.pricing.pro.cta;
             console.log('Pricing cards updated');
-            
+
             // Update pricing features
             const starterFeatures = document.querySelectorAll('.starter-feature-1, .starter-feature-2, .starter-feature-3, .starter-feature-4');
             starterFeatures.forEach((el, index) => {
@@ -654,14 +655,14 @@
                     el.textContent = t.pricing.starter.features[index];
                 }
             });
-            
+
             const growthFeatures = document.querySelectorAll('.growth-feature-1, .growth-feature-2, .growth-feature-3, .growth-feature-4, .growth-feature-5');
             growthFeatures.forEach((el, index) => {
                 if (el && t.pricing.growth.features[index]) {
                     el.textContent = t.pricing.growth.features[index];
                 }
             });
-            
+
             const proFeatures = document.querySelectorAll('.pro-feature-1, .pro-feature-2, .pro-feature-3, .pro-feature-4, .pro-feature-5');
             proFeatures.forEach((el, index) => {
                 if (el && t.pricing.pro.features[index]) {
@@ -669,26 +670,26 @@
                 }
             });
             console.log('Pricing features updated');
-            
+
             // Update success stories
             const successTitle = document.querySelector('.success-title');
             const successSubtitle = document.querySelector('.success-subtitle');
             if (successTitle) successTitle.textContent = t.success.title;
             if (successSubtitle) successSubtitle.textContent = t.success.subtitle;
             console.log('Success stories updated');
-            
+
             // Update FAQ
             const faqTitle = document.querySelector('.faq-title');
             const faqSubtitle = document.querySelector('.faq-subtitle');
             if (faqTitle) faqTitle.textContent = t.faq.title;
             if (faqSubtitle) faqSubtitle.textContent = t.faq.subtitle;
             console.log('FAQ updated');
-            
+
             // Update footer
             const footerCopyright = document.querySelector('.footer-copyright');
             if (footerCopyright) footerCopyright.textContent = `© 2025 VOXIA. All rights reserved.`;
             console.log('Footer updated');
-            
+
             // Update mobile menu
             const mobileNavLinks = document.querySelectorAll('#mobile-menu .nav-link');
             if (mobileNavLinks.length >= 3) {
@@ -697,7 +698,7 @@
                 mobileNavLinks[2].textContent = t.nav.kontak;
                 console.log('Mobile menu updated');
             }
-            
+
             // Save preference
             localStorage.setItem('voxia-language', lang);
             console.log('Language set to:', lang);
@@ -706,7 +707,7 @@
         function toggleFAQ(id) {
             const content = document.getElementById(`faq-content-${id}`);
             const icon = document.getElementById(`faq-icon-${id}`);
-            
+
             content.classList.toggle('hidden');
             icon.classList.toggle('rotate-180');
         }
@@ -717,7 +718,7 @@
         }
 
         // Initialize language on page load
-        document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('DOMContentLoaded', function () {
             const savedLang = localStorage.getItem('voxia-language') || 'id';
             setLanguage(savedLang);
         });
@@ -739,12 +740,15 @@
 
     <!-- Apollo Scripts -->
     <script>
-        function initApollo(){var n=Math.random().toString(36).substring(7),o=document.createElement("script");
-        o.src="https://assets.apollo.io/micro/website-tracker/tracker.iife.js?nocache="+n,o.async=!0,o.defer=!0,
-        o.onload=function(){window.trackingFunctions.onLoad({appId:"6929458548d2fd001da468b1"})},
-        document.head.appendChild(o)}initApollo();
+        function initApollo() {
+            var n = Math.random().toString(36).substring(7), o = document.createElement("script");
+            o.src = "https://assets.apollo.io/micro/website-tracker/tracker.iife.js?nocache=" + n, o.async = !0, o.defer = !0,
+                o.onload = function () { window.trackingFunctions.onLoad({ appId: "6929458548d2fd001da468b1" }) },
+                document.head.appendChild(o)
+        } initApollo();
     </script>
-    
-    <script>(function initApolloInbound(){var TIMEOUT_MS=15000;var timeoutId;var style=document.createElement('style');style.id='apollo-form-prehide-css';style.textContent='form:has(input[type="email" i]),form:has(input[name="email" i]),.hs-form-iframe{position:relative!important}form:has(input[type="email" i])::before,form:has(input[name="email" i])::before,.hs-form-iframe::before{content:\'\';position:absolute;inset:0;display:flex;align-items:center;justify-content:center;width:50px;height:50px;margin:auto;border:2.5px solid #e1e1e1;border-top:2.5px solid #9ea3a6;border-radius:50%;animation:spin 1s linear infinite;background-color:transparent;pointer-events:auto;z-index:999999;opacity:1}form:has(input[type="email" i]) *,form:has(input[name="email" i]) *,.hs-form-iframe *{opacity:0!important;user-select:none!important;pointer-events:none!important}@keyframes spin{0%{transform:rotate(0deg)}100%{transform:rotate(360deg)}}';(document.head || document.documentElement).appendChild(style);function cleanup(){var styleEl=document.getElementById('apollo-form-prehide-css');if(styleEl)styleEl.remove();if(timeoutId)clearTimeout(timeoutId);}timeoutId=setTimeout(function(){console.warn('[Apollo] Form enrichment timeout after 5s - revealing forms. Check network and console for errors.');cleanup();},TIMEOUT_MS);var nocache=Math.random().toString(36).substring(7);var script=document.createElement('script');script.src='https://assets.apollo.io/js/apollo-inbound.js?nocache=' + nocache;script.defer=true;script.onerror=function(){console.error('[Apollo] Failed to load form enrichment script');cleanup();};script.onload=function(){try{window.ApolloInbound.formEnrichment.init({appId: '692950e7591a8e001d6b8822',onReady: function(){cleanup();},onError: function(err){console.error('[Apollo] Form enrichment init error:',err);cleanup();}});}catch(err){console.error('[Apollo] Error initializing form enrichment:',err);cleanup();}};document.head.appendChild(script);})();</script>
+
+    <script>(function initApolloInbound() { var TIMEOUT_MS = 15000; var timeoutId; var style = document.createElement('style'); style.id = 'apollo-form-prehide-css'; style.textContent = 'form:has(input[type="email" i]),form:has(input[name="email" i]),.hs-form-iframe{position:relative!important}form:has(input[type="email" i])::before,form:has(input[name="email" i])::before,.hs-form-iframe::before{content:\'\';position:absolute;inset:0;display:flex;align-items:center;justify-content:center;width:50px;height:50px;margin:auto;border:2.5px solid #e1e1e1;border-top:2.5px solid #9ea3a6;border-radius:50%;animation:spin 1s linear infinite;background-color:transparent;pointer-events:auto;z-index:999999;opacity:1}form:has(input[type="email" i]) *,form:has(input[name="email" i]) *,.hs-form-iframe *{opacity:0!important;user-select:none!important;pointer-events:none!important}@keyframes spin{0%{transform:rotate(0deg)}100%{transform:rotate(360deg)}}'; (document.head || document.documentElement).appendChild(style); function cleanup() { var styleEl = document.getElementById('apollo-form-prehide-css'); if (styleEl) styleEl.remove(); if (timeoutId) clearTimeout(timeoutId); } timeoutId = setTimeout(function () { console.warn('[Apollo] Form enrichment timeout after 5s - revealing forms. Check network and console for errors.'); cleanup(); }, TIMEOUT_MS); var nocache = Math.random().toString(36).substring(7); var script = document.createElement('script'); script.src = 'https://assets.apollo.io/js/apollo-inbound.js?nocache=' + nocache; script.defer = true; script.onerror = function () { console.error('[Apollo] Failed to load form enrichment script'); cleanup(); }; script.onload = function () { try { window.ApolloInbound.formEnrichment.init({ appId: '692950e7591a8e001d6b8822', onReady: function () { cleanup(); }, onError: function (err) { console.error('[Apollo] Form enrichment init error:', err); cleanup(); } }); } catch (err) { console.error('[Apollo] Error initializing form enrichment:', err); cleanup(); } }; document.head.appendChild(script); })();</script>
 </body>
+
 </html>
