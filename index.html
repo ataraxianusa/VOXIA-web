@@ -5,10 +5,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description"
-        content="VOXIA adalah Platform AI Customer Service & CRM untuk UKM. Otomatisasi WhatsApp bisnis Anda dengan AI Chatbot 24/7, manajemen pelanggan terpadu, dan broadcast marketing yang efektif.">
+        content="VOXIA adalah Platform AI Terpadu untuk Transformasi Digital Indonesia. Solusi comprehensive untuk Customer Service, EdTech, Government RAG, dan Vocational Training dengan certification blockchain.">
     <meta name="keywords"
-        content="AI Customer Service, CRM UKM, WhatsApp Business API, Chatbot AI Indonesia, Otomatisasi WhatsApp, Customer Service Otomatis, VOXIA, Aplikasi CRM WhatsApp">
-    <title>VOXIA - Platform AI Customer Service & CRM untuk UKM</title>
+        content="Platform AI Indonesia, Solusi AI Terpadu, Customer Service AI, Education Platform, Government RAG, Blockchain Certification, Adaptive Learning, Digital Transformation Indonesia, VOXIA, invezthink">
+    <title>VOXIA - Solusi AI Terpadu untuk Transformasi Digital Indonesia</title>
     <link rel="shortcut icon" href="/favicon.png" type="image/x-icon">
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon.png">
     <link rel="icon" type="image/svg+xml" sizes="32x32" href="/favicon.svg?v=1">
@@ -43,6 +43,166 @@
             display: flex;
             align-items: center;
             justify-content: center;
+        }
+
+        /* --- Scroll Animations --- */
+        .fade-in-section {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+
+        .fade-in-section.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .slide-in-left {
+            opacity: 0;
+            transform: translateX(-50px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+
+        .slide-in-left.is-visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .slide-in-right {
+            opacity: 0;
+            transform: translateX(50px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+
+        .slide-in-right.is-visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .scale-in {
+            opacity: 0;
+            transform: scale(0.9);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+
+        .scale-in.is-visible {
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        /* --- Interactive Counter --- */
+        .counter {
+            font-variant-numeric: tabular-nums;
+        }
+
+        .counter-container {
+            transition: transform 0.3s ease-out;
+        }
+
+        .counter-container:hover {
+            transform: translateY(-2px);
+        }
+
+        /* --- Enhanced Hover Effects --- */
+        .solution-card {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .solution-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .tech-card {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .tech-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: left 0.5s ease-out;
+        }
+
+        .tech-card:hover::before {
+            left: 100%;
+        }
+
+        /* --- Smooth Scroll --- */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* --- Progress Bar --- */
+        .progress-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 3px;
+            background: linear-gradient(90deg, #06b6d4, #0891b2);
+            z-index: 1001;
+            transition: width 0.2s ease-out;
+        }
+
+        /* --- Floating Action Button --- */
+        .fab-container {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            z-index: 999;
+        }
+
+        .fab {
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #0891b2, #06b6d4);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 12px rgba(8, 145, 178, 0.4);
+            cursor: pointer;
+            transition: all 0.3s ease-out;
+        }
+
+        .fab:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 20px rgba(8, 145, 178, 0.5);
+        }
+
+        .fab.hidden {
+            transform: scale(0);
+            opacity: 0;
+        }
+
+        /* Comparison Section Styles */
+        .comparison-btn {
+            background: #e2e8f0;
+            color: #475569;
+        }
+
+        .comparison-btn:hover {
+            background: #cbd5e1;
+        }
+
+        .comparison-btn.active {
+            background: linear-gradient(135deg, #0891b2, #06b6d4);
+            color: white;
+            transform: scale(1.05);
+        }
+
+        .comparison-panel {
+            display: block;
+        }
+
+        .comparison-panel.hidden {
+            display: none;
         }
 
         .aurora-effect {
@@ -402,6 +562,138 @@
                 right: 1rem;
                 bottom: 1rem;
             }
+
+            /* Mobile Navigation Optimization */
+            #header {
+                padding: 0.5rem 0;
+            }
+
+            .title-voxia {
+                font-size: clamp(2.5rem, 15vw, 8rem);
+            }
+
+            .hero-subtitle {
+                font-size: clamp(1.25rem, 5vw, 1.5rem);
+            }
+
+            /* Mobile Solution Cards */
+            .solution-card {
+                transform: none !important;
+                margin-bottom: 1rem;
+            }
+
+            /* Mobile Technology Cards */
+            .tech-card {
+                margin-bottom: 1.5rem;
+            }
+
+            /* Mobile Demo Sections */
+            #demo .grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            /* Mobile Comparison Table */
+            #comparison .grid {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+
+            /* Mobile Case Studies */
+            #studi-kasus .grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            /* Mobile Contact Form */
+            #kontak .grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            /* Mobile Footer */
+            footer .grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+                text-align: center;
+            }
+
+            /* Mobile Stats Grid */
+            .counter-container {
+                margin-bottom: 1rem;
+            }
+
+            /* Mobile CTA Buttons */
+            .hero-cta {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .hero-cta a {
+                width: 100%;
+                justify-content: center;
+            }
+
+            /* Mobile Comparison Buttons */
+            .comparison-btn {
+                font-size: 0.875rem;
+                padding: 0.5rem 1rem;
+            }
+
+            /* Mobile Interactive Elements */
+            .fab-container {
+                bottom: 1rem;
+                right: 1rem;
+            }
+
+            .fab {
+                width: 48px;
+                height: 48px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            /* Ultra-small mobile optimizations */
+            .container {
+                padding-left: 1rem;
+                padding-right: 1rem;
+            }
+
+            .hero-description {
+                font-size: 1rem;
+                line-height: 1.6;
+            }
+
+            /* Mobile tech card adjustments */
+            .tech-card {
+                padding: 1rem;
+            }
+
+            .tech-card .grid {
+                grid-template-columns: 1fr;
+            }
+
+            /* Mobile form adjustments */
+            input, textarea, select {
+                font-size: 16px; /* Prevents zoom on iOS */
+            }
+
+            /* Mobile navigation improvements */
+            #mobile-menu {
+                max-height: calc(100vh - 80px);
+                overflow-y: auto;
+            }
+        }
+
+        /* Performance optimizations */
+        .will-change-transform {
+            will-change: transform;
+        }
+
+        .gpu-accelerated {
+            transform: translateZ(0);
+            backface-visibility: hidden;
+            perspective: 1000px;
         }
     </style>
     <script type="importmap">
@@ -424,8 +716,11 @@
 
 <body class="bg-slate-50 text-slate-800 dark:bg-slate-900 dark:text-slate-300 transition-colors duration-300">
 
+    <!-- Progress Bar -->
+    <div class="progress-bar" id="progress-bar" style="width: 0%"></div>
+
     <!-- Header / Navigasi -->
-    <header id="header" class="bg-transparent fixed top-0 left-0 right-0 z-50 transition-all duration-300">
+    <header id="header" class="bg-transparent fixed top-0 left-0 right-0 z-50 transition-all duration-300 backdrop-blur-sm">
         <div class="container mx-auto px-6 py-3 flex justify-between items-center">
             <a href="#" class="flex items-center gap-2 text-2xl font-bold text-white">
                 <span
@@ -433,15 +728,78 @@
                 <span class="font-extrabold tracking-tight">OXIA</span>
             </a>
             <div class="flex items-center">
-                <nav class="hidden md:flex space-x-8 items-center mr-4">
-                    <a href="#fitur"
-                        class="nav-fitur text-slate-300 hover:text-white transition-colors duration-200 hover:scale-105 transform transition-transform duration-500 ease-in-out">Fitur</a>
-                    <a href="#solusi"
-                        class="nav-solusi text-slate-300 hover:text-white transition-colors duration-200 hover:scale-105 transform transition-transform duration-500 ease-in-out">Solusi</a>
-                    <a href="#harga"
-                        class="nav-paket text-slate-300 hover:text-white transition-colors duration-200 hover:scale-105 transform transition-transform duration-500 ease-in-out">Paket</a>
+                <nav class="hidden md:flex space-x-6 items-center mr-4">
+                    <!-- Beranda -->
+                    <a href="#"
+                        class="text-slate-300 hover:text-white transition-colors duration-200 hover:scale-105 transform transition-transform duration-500 ease-in-out">Beranda</a>
+                    
+                    <!-- Solusi AI Dropdown -->
+                    <div class="relative group">
+                        <button class="text-slate-300 hover:text-white transition-colors duration-200 flex items-center gap-1">
+                            Solusi AI
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                            </svg>
+                        </button>
+                        <div class="absolute top-full left-0 mt-2 w-64 bg-slate-800/95 backdrop-blur-sm rounded-lg shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+                            <a href="#solusi-customer-service" class="block px-4 py-3 hover:bg-slate-700/50 text-slate-200 hover:text-white transition-colors">
+                                <div class="font-semibold">AI Customer Service</div>
+                                <div class="text-sm text-slate-400">Otomatisasi layanan pelanggan</div>
+                            </a>
+                            <a href="#solusi-education" class="block px-4 py-3 hover:bg-slate-700/50 text-slate-200 hover:text-white transition-colors">
+                                <div class="font-semibold">AI Education</div>
+                                <div class="text-sm text-slate-400">Platform edukasi keuangan</div>
+                            </a>
+                            <a href="#solusi-government" class="block px-4 py-3 hover:bg-slate-700/50 text-slate-200 hover:text-white transition-colors">
+                                <div class="font-semibold">Government RAG</div>
+                                <div class="text-sm text-slate-400">Solusi AI untuk pemerintah</div>
+                            </a>
+                            <a href="#solusi-vocational" class="block px-4 py-3 hover:bg-slate-700/50 text-slate-200 hover:text-white transition-colors">
+                                <div class="font-semibold">Vocational Training</div>
+                                <div class="text-sm text-slate-400">Pelatihan kerja adaptif AI</div>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Produk Dropdown -->
+                    <div class="relative group">
+                        <button class="text-slate-300 hover:text-white transition-colors duration-200 flex items-center gap-1">
+                            Produk
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                            </svg>
+                        </button>
+                        <div class="absolute top-full left-0 mt-2 w-64 bg-slate-800/95 backdrop-blur-sm rounded-lg shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+                            <a href="#produk-voxia" class="block px-4 py-3 hover:bg-slate-700/50 text-slate-200 hover:text-white transition-colors">
+                                <div class="font-semibold">VOXIA Platform</div>
+                                <div class="text-sm text-slate-400">AI Customer Service</div>
+                            </a>
+                            <a href="#produk-invezthink" class="block px-4 py-3 hover:bg-slate-700/50 text-slate-200 hover:text-white transition-colors">
+                                <div class="font-semibold">InvezThink</div>
+                                <div class="text-sm text-slate-400">Edukasi Keuangan AI</div>
+                            </a>
+                            <a href="#produk-rag" class="block px-4 py-3 hover:bg-slate-700/50 text-slate-200 hover:text-white transition-colors">
+                                <div class="font-semibold">RAG Platform</div>
+                                <div class="text-sm text-slate-400">Document Intelligence</div>
+                            </a>
+                            <a href="#produk-adaptive" class="block px-4 py-3 hover:bg-slate-700/50 text-slate-200 hover:text-white transition-colors">
+                                <div class="font-semibold">Adaptive Learning</div>
+                                <div class="text-sm text-slate-400">Platform pelatihan AI</div>
+                            </a>
+                        </div>
+                    </div>
+
+                    <a href="#teknologi"
+                        class="text-slate-300 hover:text-white transition-colors duration-200 hover:scale-105 transform transition-transform duration-500 ease-in-out">Teknologi</a>
+                    
+                    <a href="#studi-kasus"
+                        class="text-slate-300 hover:text-white transition-colors duration-200 hover:scale-105 transform transition-transform duration-500 ease-in-out">Studi Kasus</a>
+                    
+                    <a href="#tentang"
+                        class="text-slate-300 hover:text-white transition-colors duration-200 hover:scale-105 transform transition-transform duration-500 ease-in-out">Tentang</a>
+                    
                     <a href="#kontak"
-                        class="nav-kontak text-slate-300 hover:text-white transition-colors duration-200 hover:scale-105 transform transition-transform duration-500 ease-in-out">Kontak</a>
+                        class="text-slate-300 hover:text-white transition-colors duration-200 hover:scale-105 transform transition-transform duration-500 ease-in-out">Kontak</a>
                 </nav>
 
                 <!-- Language Toggle -->
@@ -470,15 +828,26 @@
         </div>
         <!-- Mobile Menu -->
         <div id="mobile-menu" class="hidden md:hidden bg-slate-800/80 backdrop-blur-lg border-t border-slate-700">
-            <a href="#fitur"
-                class="block py-3 px-6 text-slate-300 hover:bg-slate-700 transition-colors duration-200">Fitur</a>
-            <a href="#solusi"
-                class="block py-3 px-6 text-slate-300 hover:bg-slate-700 transition-colors duration-200">Solusi</a>
-            <a href="#harga"
-                class="block py-3 px-6 text-slate-300 hover:bg-slate-700 transition-colors duration-200">Paket</a>
+            <a href="#"
+                class="block py-3 px-6 text-slate-300 hover:bg-slate-700 transition-colors duration-200">Beranda</a>
+            <a href="#solusi-customer-service"
+                class="block py-3 px-6 text-slate-300 hover:bg-slate-700 transition-colors duration-200">AI Customer Service</a>
+            <a href="#solusi-education"
+                class="block py-3 px-6 text-slate-300 hover:bg-slate-700 transition-colors duration-200">AI Education</a>
+            <a href="#solusi-government"
+                class="block py-3 px-6 text-slate-300 hover:bg-slate-700 transition-colors duration-200">Government RAG</a>
+            <a href="#solusi-vocational"
+                class="block py-3 px-6 text-slate-300 hover:bg-slate-700 transition-colors duration-200">Vocational Training</a>
+            <a href="#produk-voxia"
+                class="block py-3 px-6 text-slate-300 hover:bg-slate-700 transition-colors duration-200">Produk</a>
+            <a href="#teknologi"
+                class="block py-3 px-6 text-slate-300 hover:bg-slate-700 transition-colors duration-200">Teknologi</a>
+            <a href="#studi-kasus"
+                class="block py-3 px-6 text-slate-300 hover:bg-slate-700 transition-colors duration-200">Studi Kasus</a>
+            <a href="#tentang"
+                class="block py-3 px-6 text-slate-300 hover:bg-slate-700 transition-colors duration-200">Tentang</a>
             <a href="#kontak"
                 class="block py-3 px-6 text-slate-300 hover:bg-slate-700 transition-colors duration-200">Kontak</a>
-
         </div>
     </header>
 
@@ -492,13 +861,12 @@
                     <span
                         class="title-voxia block font-black tracking-tighter bg-clip-text text-transparent bg-gradient-to-r from-cyan-300 to-sky-500">VOXIA</span>
                     <span
-                        class="hero-subtitle block mt-2 md:mt-4 text-2xl md:text-3xl lg:text-4xl font-semibold text-slate-200 tracking-wide">Ubah
-                        Setiap Percakapan di WhatsApp Menjadi Peluang</span>
+                        class="hero-subtitle block mt-2 md:mt-4 text-2xl md:text-3xl lg:text-4xl font-semibold text-slate-200 tracking-wide">Solusi AI Terpadu untuk Transformasi Digital Indonesia</span>
                 </h1>
                 <p class="hero-description mt-8 max-w-4xl mx-auto text-lg md:text-xl text-slate-300 leading-relaxed">
-                    Kami bukan sekadar software. Voxia adalah sistem cerdas yang bekerja di balik layar untuk memastikan
-                    setiap interaksi pelanggan di WhatsApp berjalan lancar, terorganisir, dan menghasilkan. Biarkan kami
-                    yang mengurus kompleksitas, Anda yang menikmati pertumbuhannya.
+                    Kami menghadirkan ekosistem AI komprehensif untuk Indonesia. Dari customer service automation hingga platform edukasi keuangan, 
+                    solusi RAG untuk pemerintah, hingga pelatihan kerja berbasis AI dengan sertifikasi blockchain. 
+                    Satu platform, unlimited possibilities.
                 </p>
                 <div class="hero-cta mt-10 flex flex-col sm:flex-row justify-center items-center gap-4">
                     <a href="https://app.apollo.io/#/meet/voxia/15-min" target="_blank" rel="noopener noreferrer"
@@ -508,11 +876,11 @@
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                 d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
                         </svg>
-                        Jadwalkan Demo Gratis
+                        Konsultasi Solusi AI
                     </a>
-                    <a href="#harga"
+                    <a href="#solusi-customer-service"
                         class="w-full sm:w-auto bg-slate-700/50 text-slate-200 font-semibold py-4 px-10 rounded-lg hover:bg-slate-600/50 backdrop-blur-sm transition-all">
-                        Lihat Paket
+                        Jelajahi Solusi
                     </a>
                 </div>
 
@@ -531,36 +899,183 @@
             </div>
         </section>
 
-        <!-- Features Section -->
-        <section id="fitur" class="py-20 lg:py-24">
+        <!-- Solutions Overview Section -->
+        <section id="solusi" class="py-20 lg:py-24">
             <div class="container mx-auto px-6">
                 <div class="text-center mb-16">
-                    <h2 class="text-3xl lg:text-4xl font-bold text-slate-900 dark:text-white">Fitur Utama VOXIA</h2>
-                    <p class="mt-4 text-lg text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">Semua yang Anda
-                        butuhkan untuk mengotomatiskan layanan pelanggan dan bertumbuh lebih cepat.</p>
+                    <h2 class="text-3xl lg:text-4xl font-bold text-slate-900 dark:text-white">Solusi AI Komprehensif</h2>
+                    <p class="mt-4 text-lg text-slate-600 dark:text-slate-400 max-w-3xl mx-auto">Platform terpadu untuk transformasi digital di berbagai sektor. 
+                    Dari customer service hingga edukasi, solusi pemerintah hingga pelatihan kerja, semua dalam satu ekosistem AI.</p>
                 </div>
-                <div class="space-y-8">
-                    <!-- Main Feature -->
-                    <div
-                        class="bg-white dark:bg-slate-800 p-8 rounded-xl shadow-lg hover:shadow-2xl hover:shadow-cyan-500/30 dark:shadow-slate-950/50 transition-all duration-300 transform hover:scale-105 flex flex-col md:flex-row items-center gap-8 border-b-4 border-cyan-500">
-                        <div
-                            class="bg-cyan-100 text-cyan-600 dark:bg-cyan-900/50 dark:text-cyan-400 rounded-lg w-16 h-16 flex-shrink-0 flex items-center justify-center">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24"
-                                stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                    <!-- AI Customer Service Solution -->
+                    <div id="solusi-customer-service" class="bg-white dark:bg-slate-800 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 p-8 border border-slate-200 dark:border-slate-700">
+                        <div class="flex items-center gap-4 mb-6">
+                            <div class="bg-cyan-100 text-cyan-600 dark:bg-cyan-900/50 dark:text-cyan-400 rounded-lg w-16 h-16 flex-shrink-0 flex items-center justify-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
+                                </svg>
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-2xl dark:text-white">AI Customer Service</h3>
+                                <p class="text-cyan-600 dark:text-cyan-400 font-semibold">Platform VOXIA</p>
+                            </div>
+                        </div>
+                        <p class="text-slate-600 dark:text-slate-400 mb-6">Otomatisasi customer service dengan AI cerdas berbahasa Indonesia. Multi-channel support, personalization, dan analytics dashboard untuk transformasi layanan pelanggan.</p>
+                        <div class="space-y-3">
+                            <div class="flex items-center gap-2">
+                                <svg class="w-5 h-5 text-green-500" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                                </svg>
+                                <span class="text-sm text-slate-700 dark:text-slate-300">Chatbot 24/7 Bahasa Indonesia</span>
+                            </div>
+                            <div class="flex items-center gap-2">
+                                <svg class="w-5 h-5 text-green-500" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                                </svg>
+                                <span class="text-sm text-slate-700 dark:text-slate-300">Multi-channel Integration</span>
+                            </div>
+                            <div class="flex items-center gap-2">
+                                <svg class="w-5 h-5 text-green-500" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                                </svg>
+                                <span class="text-sm text-slate-700 dark:text-slate-300">Analytics & CRM Integration</span>
+                            </div>
+                        </div>
+                        <a href="#kontak" class="mt-6 inline-flex items-center text-cyan-600 dark:text-cyan-400 font-semibold hover:text-cyan-700 transition-colors">
+                            Pelajari Lebih Lanjut 
+                            <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
                             </svg>
-                        </div>
-                        <div>
-                            <h3 class="font-bold text-2xl mb-2 dark:text-white">AI Chatbot 24/7</h3>
-                            <p class="text-slate-600 dark:text-slate-400 text-lg">Jantung dari VOXIA. Biarkan AI kami
-                                bekerja merespon pertanyaan umum pelanggan secara instan, kapan saja, sehingga Anda
-                                tidak akan pernah kehilangan calon pembeli.</p>
-                        </div>
+                        </a>
                     </div>
 
-                    <!-- Other Features Grid -->
-                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 pt-8">
+                    <!-- AI Education Solution -->
+                    <div id="solusi-education" class="bg-white dark:bg-slate-800 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 p-8 border border-slate-200 dark:border-slate-700">
+                        <div class="flex items-center gap-4 mb-6">
+                            <div class="bg-orange-100 text-orange-600 dark:bg-orange-900/50 dark:text-orange-400 rounded-lg w-16 h-16 flex-shrink-0 flex items-center justify-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+                                </svg>
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-2xl dark:text-white">AI Education</h3>
+                                <p class="text-orange-600 dark:text-orange-400 font-semibold">Platform InvezThink</p>
+                            </div>
+                        </div>
+                        <p class="text-slate-600 dark:text-slate-400 mb-6">Platform edukasi keuangan dengan AI personal coaching. Pembelajaran adaptif untuk literasi keuangan, investment simulation, dan financial planning tools.</p>
+                        <div class="space-y-3">
+                            <div class="flex items-center gap-2">
+                                <svg class="w-5 h-5 text-green-500" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                                </svg>
+                                <span class="text-sm text-slate-700 dark:text-slate-300">Personalized Learning Paths</span>
+                            </div>
+                            <div class="flex items-center gap-2">
+                                <svg class="w-5 h-5 text-green-500" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                                </svg>
+                                <span class="text-sm text-slate-700 dark:text-slate-300">AI Financial Coach</span>
+                            </div>
+                            <div class="flex items-center gap-2">
+                                <svg class="w-5 h-5 text-green-500" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                                </svg>
+                                <span class="text-sm text-slate-700 dark:text-slate-300">Investment Simulation</span>
+                            </div>
+                        </div>
+                        <a href="https://app.invezthink.com" target="_blank" class="mt-6 inline-flex items-center text-orange-600 dark:text-orange-400 font-semibold hover:text-orange-700 transition-colors">
+                            Coba Platform 
+                            <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                            </svg>
+                        </a>
+                    </div>
+
+                    <!-- Government RAG Solution -->
+                    <div id="solusi-government" class="bg-white dark:bg-slate-800 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 p-8 border border-slate-200 dark:border-slate-700">
+                        <div class="flex items-center gap-4 mb-6">
+                            <div class="bg-blue-100 text-blue-600 dark:bg-blue-900/50 dark:text-blue-400 rounded-lg w-16 h-16 flex-shrink-0 flex items-center justify-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+                                </svg>
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-2xl dark:text-white">Government RAG</h3>
+                                <p class="text-blue-600 dark:text-blue-400 font-semibold">Document Intelligence</p>
+                            </div>
+                        </div>
+                        <p class="text-slate-600 dark:text-slate-400 mb-6">Solusi RAG (Retrieval-Augmented Generation) untuk sektor publik. Dokumen intelligence, policy analysis, dan citizen service automation dengan data privacy terjamin.</p>
+                        <div class="space-y-3">
+                            <div class="flex items-center gap-2">
+                                <svg class="w-5 h-5 text-green-500" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                                </svg>
+                                <span class="text-sm text-slate-700 dark:text-slate-300">Document Q&A System</span>
+                            </div>
+                            <div class="flex items-center gap-2">
+                                <svg class="w-5 h-5 text-green-500" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                                </svg>
+                                <span class="text-sm text-slate-700 dark:text-slate-300">Policy Analysis AI</span>
+                            </div>
+                            <div class="flex items-center gap-2">
+                                <svg class="w-5 h-5 text-green-500" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                                </svg>
+                                <span class="text-sm text-slate-700 dark:text-slate-300">Compliance & Security</span>
+                            </div>
+                        </div>
+                        <a href="#kontak" class="mt-6 inline-flex items-center text-blue-600 dark:text-blue-400 font-semibold hover:text-blue-700 transition-colors">
+                            Hubungi Tim Government 
+                            <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                            </svg>
+                        </a>
+                    </div>
+
+                    <!-- Vocational Training Solution -->
+                    <div id="solusi-vocational" class="bg-white dark:bg-slate-800 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 p-8 border border-slate-200 dark:border-slate-700">
+                        <div class="flex items-center gap-4 mb-6">
+                            <div class="bg-purple-100 text-purple-600 dark:bg-purple-900/50 dark:text-purple-400 rounded-lg w-16 h-16 flex-shrink-0 flex items-center justify-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+                                </svg>
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-2xl dark:text-white">Vocational Training</h3>
+                                <p class="text-purple-600 dark:text-purple-400 font-semibold">Adaptive Learning AI</p>
+                            </div>
+                        </div>
+                        <p class="text-slate-600 dark:text-slate-400 mb-6">Platform pelatihan kerja adaptif dengan AI. Personalized curriculum, real-time skill assessment, dan blockchain certification untuk credential verification.</p>
+                        <div class="space-y-3">
+                            <div class="flex items-center gap-2">
+                                <svg class="w-5 h-5 text-green-500" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                                </svg>
+                                <span class="text-sm text-slate-700 dark:text-slate-300">Adaptive Curriculum</span>
+                            </div>
+                            <div class="flex items-center gap-2">
+                                <svg class="w-5 h-5 text-green-500" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                                </svg>
+                                <span class="text-sm text-slate-700 dark:text-slate-300">AI Skill Assessment</span>
+                            </div>
+                            <div class="flex items-center gap-2">
+                                <svg class="w-5 h-5 text-green-500" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                                </svg>
+                                <span class="text-sm text-slate-700 dark:text-slate-300">Blockchain Certification</span>
+                            </div>
+                        </div>
+                        <a href="#kontak" class="mt-6 inline-flex items-center text-purple-600 dark:text-purple-400 font-semibold hover:text-purple-700 transition-colors">
+                            Partnership Info 
+                            <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
                         <div
                             class="bg-white dark:bg-slate-800 p-6 rounded-xl shadow-md hover:shadow-xl hover:shadow-cyan-500/20 dark:shadow-slate-950/50 transition-all duration-300 transform hover:scale-105 hover:bg-cyan-50/50 dark:hover:bg-cyan-900/20">
                             <div
@@ -650,16 +1165,275 @@
             </div>
         </section>
 
-        <!-- Problems & Solutions Section -->
-        <section id="solusi" class="py-20 lg:py-24 bg-slate-100 dark:bg-slate-950">
+        <!-- Technology Showcase Section -->
+        <section id="teknologi" class="py-20 lg:py-24 bg-slate-100 dark:bg-slate-950">
             <div class="container mx-auto px-6">
                 <div class="text-center mb-16">
-                    <h2 class="text-3xl lg:text-4xl font-bold text-slate-900 dark:text-white">Dari Masalah Menjadi
-                        Peluang</h2>
-                    <p class="mt-4 text-lg text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">Lihat bagaimana VOXIA
-                        mengubah tantangan harian UKM menjadi kesempatan untuk bertumbuh.</p>
+                    <h2 class="text-3xl lg:text-4xl font-bold text-slate-900 dark:text-white">Teknologi AI Kami</h2>
+                    <p class="mt-4 text-lg text-slate-600 dark:text-slate-400 max-w-3xl mx-auto">
+                        Infrastructure AI terdepan dengan spesialisasi Bahasa Indonesia. Dari Natural Language Processing hingga 
+                        blockchain integration, kami menghadirkan solusi teknologi yang scalable dan enterprise-grade.
+                    </p>
                 </div>
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- AI Core Capabilities -->
+                <div class="mb-16">
+                    <div class="flex items-center justify-between mb-8">
+                        <h3 class="text-2xl font-bold text-slate-900 dark:text-white">Core AI Capabilities</h3>
+                        <div class="h-1px bg-gradient-to-r from-cyan-500 to-blue-500 flex-1 ml-8"></div>
+                    </div>
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                        <!-- NLP Excellence -->
+                        <div class="bg-white dark:bg-slate-800 rounded-xl shadow-lg p-8 border border-slate-200 dark:border-slate-700 hover:shadow-xl transition-all duration-300">
+                            <div class="flex items-center gap-4 mb-6">
+                                <div class="bg-gradient-to-br from-cyan-500 to-blue-600 text-white rounded-lg w-14 h-14 flex-shrink-0 flex items-center justify-center">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                                    </svg>
+                                </div>
+                                <div>
+                                    <h4 class="text-xl font-bold text-slate-900 dark:text-white">Natural Language Processing</h4>
+                                    <p class="text-cyan-600 dark:text-cyan-400 text-sm font-semibold">Bahasa Indonesia Specialization</p>
+                                </div>
+                            </div>
+                            <p class="text-slate-600 dark:text-slate-400 mb-6">Advanced NLP engine dengan deep understanding Bahasa Indonesia, slang detection, context awareness, dan multi-dialect support untuk komunikasi natural.</p>
+                            <div class="space-y-2 mb-6">
+                                <div class="flex items-center justify-between">
+                                    <span class="text-sm text-slate-600 dark:text-slate-400">Bahasa Indonesia Accuracy</span>
+                                    <span class="text-sm font-bold text-green-600">98.5%</span>
+                                </div>
+                                <div class="w-full bg-slate-200 dark:bg-slate-700 rounded-full h-2">
+                                    <div class="bg-gradient-to-r from-cyan-500 to-blue-500 h-2 rounded-full" style="width: 98.5%"></div>
+                                </div>
+                            </div>
+                            <ul class="space-y-2">
+                                <li class="flex items-center gap-2 text-sm text-slate-600 dark:text-slate-400">
+                                    <svg class="w-4 h-4 text-green-500" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                                    </svg>
+                                    Contextual Understanding
+                                </li>
+                                <li class="flex items-center gap-2 text-sm text-slate-600 dark:text-slate-400">
+                                    <svg class="w-4 h-4 text-green-500" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="equality" />
+                                    </svg>
+                                    Slang & Colloquial Processing
+                                </li>
+                                <li class="flex items-center gap-2 text-sm text-slate-600 dark:text-slate-400">
+                                    <svg class="w-4 h-4 text-green-500" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                                    </svg>
+                                    Multi-dialect Support
+                                </li>
+                            </ul>
+                        </div>
+
+                        <!-- Machine Learning Models -->
+                        <div class="bg-white dark:bg-slate-800 rounded-xl shadow-lg p-8 border border-slate-200 dark:border-slate-700 hover:shadow-xl transition-all duration-300">
+                            <div class="flex items-center gap-4 mb-6">
+                                <div class="bg-gradient-to-br from-purple-500 to-pink-600 text-white rounded-lg w-14 h-14 flex-shrink-0 flex items-center justify-center">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+                                    </svg>
+                                </div>
+                                <div>
+                                    <h4 class="text-xl font-bold text-slate-900 dark:text-white">Machine Learning Models</h4>
+                                    <p class="text-purple-600 dark:text-purple-400 text-sm font-semibold">Custom-trained AI Models</p>
+                                </div>
+                            </div>
+                            <p class="text-slate-600 dark:text-slate-400 mb-6">Model ML yang dikustomisasi untuk setiap use case dengan continuous learning capabilities. Transfer learning dari pre-trained models untuk optimal performance.</p>
+                            <div class="space-y-2 mb-6">
+                                <div class="flex items-center justify-between">
+                                    <span class="text-sm text-slate-600 dark:text-slate-400">Model Accuracy</span>
+                                    <span class="text-sm font-bold text-purple-600">96.8%</span>
+                                </div>
+                                <div class="w-full bg-slate-200 dark:bg-slate-700 rounded-full h-2">
+                                    <div class="bg-gradient-to-r from-purple-500 to-pink-500 h-2 rounded-full" style="width: 96.8%"></div>
+                                </div>
+                            </div>
+                            <ul class="space-y-2">
+                                <li class="flex items-center gap-2 text-sm text-slate-600 dark:text-slate-400">
+                                    <svg class="w-4 h-4 text-green-500" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                                    </svg>
+                                    Deep Learning Architecture
+                                </li>
+                                <li class="flex items-center gap-2 text-sm text-slate-600 dark:text-slate-400">
+                                    <svg class="w-4 h-4 text-green-500" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                                    </svg>
+                                    Continuous Learning Pipeline
+                                </li>
+                                <li class="flex items-center gap-2 text-sm text-slate-600 dark:text-slate-400">
+                                    <svg class="w-4 h-4 text-green-500" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                                    </svg>
+                                    Real-time Model Updates
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Advanced Technologies -->
+                <div>
+                    <div class="flex items-center justify-between mb-8">
+                        <h3 class="text-2xl font-bold text-slate-900 dark:text-white">Advanced Technologies</h3>
+                        <div class="h-1px bg-gradient-to-r from-purple-500 to-pink-500 flex-1 ml-8"></div>
+                    </div>
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                        <!-- RAG Technology -->
+                        <div class="bg-white dark:bg-slate-800 rounded-xl shadow-lg p-8 border border-slate-200 dark:border-slate-700 hover:shadow-xl transition-all duration-300">
+                            <div class="flex items-center gap-4 mb-6">
+                                <div class="bg-gradient-to-br from-blue-500 to-indigo-600 text-white rounded-lg w-14 h-14 flex-shrink-0 flex items-center justify-center">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                                    </svg>
+                                </div>
+                                <div>
+                                    <h4 class="text-xl font-bold text-slate-900 dark:text-white">RAG (Retrieval-Augmented Generation)</h4>
+                                    <p class="text-blue-600 dark:text-blue-400 text-sm font-semibold">Document Intelligence</p>
+                                </div>
+                            </div>
+                            <p class="text-slate-600 dark:text-slate-400 mb-6">Advanced RAG architecture untuk document Q&A, policy analysis, dan knowledge synthesis dengan source verification dan real-time information retrieval.</p>
+                            <div class="mb-6">
+                                <div class="grid grid-cols-3 gap-4 text-center">
+                                    <div class="bg-blue-50 dark:bg-blue-900/20 rounded-lg p-3">
+                                        <div class="text-2xl font-bold text-blue-600 dark:text-blue-400">10M+</div>
+                                        <div class="text-xs text-slate-600 dark:text-slate-400">Documents Processed</div>
+                                    </div>
+                                    <div class="bg-indigo-50 dark:bg-indigo-900/20 rounded-lg p-3">
+                                        <div class="text-2xl font-bold text-indigo-600 dark:text-indigo-400">0.3s</div>
+                                        <div class="text-xs text-slate-600 dark:text-slate-400">Response Time</div>
+                                    </div>
+                                    <div class="bg-purple-50 dark:bg-purple-900/20 rounded-lg p-3">
+                                        <div class="text-2xl font-bold text-purple-600 dark:text-purple-400">99.9%</div>
+                                        <div class="text-xs text-slate-600 dark:text-slate-400">Source Accuracy</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <ul class="space-y-2">
+                                <li class="flex items-center gap-2 text-sm text-slate-600 dark:text-slate-400">
+                                    <svg class="w-4 h-4 text-green-500" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                                    </svg>
+                                    Multi-format Document Support
+                                </li>
+                                <li class="flex items-center gap-2 text-sm text-slate-600 dark:text-slate-400">
+                                    <svg class="w-4 h-4 text-green-500" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                                    </svg>
+                                    Source Citation & Verification
+                                </li>
+                                <li class="flex items-center gap-2 text-sm text-slate-600 dark:text-slate-400">
+                                    <svg class="w-4 h-4 text-green-500" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                                    </svg>
+                                    Knowledge Graph Integration
+                                </li>
+                            </ul>
+                        </div>
+
+                        <!-- Blockchain Integration -->
+                        <div class="bg-white dark:bg-slate-800 rounded-xl shadow-lg p-8 border border-slate-200 dark:border-slate-700 hover:shadow-xl transition-all duration-300">
+                            <div class="flex items-center gap-4 mb-6">
+                                <div class="bg-gradient-to-br from-green-500 to-teal-600 text-white rounded-lg w-14 h-14 flex-shrink-0 flex items-center justify-center">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                    </svg>
+                                </div>
+                                <div>
+                                    <h4 class="text-xl font-bold text-slate-900 dark:text-white">Blockchain Certification</h4>
+                                    <p class="text-green-600 dark:text-green-400 text-sm font-semibold">Tamper-proof Credentials</p>
+                                </div>
+                            </div>
+                            <p class="text-slate-600 dark:text-slate-400 mb-6">Enterprise-grade blockchain untuk certificate verification, credential management, dan audit trail dengan smart contract capabilities.</p>
+                            <div class="mb-6">
+                                <div class="grid grid-cols-3 gap-4 text-center">
+                                    <div class="bg-green-50 dark:bg-green-900/20 rounded-lg p-3">
+                                        <div class="text-2xl font-bold text-green-600 dark:text-green-400">100K+</div>
+                                        <div class="text-xs text-slate-600 dark:text-slate-400">Certificates Issued</div>
+                                    </div>
+                                    <div class="bg-teal-50 dark:bg-teal-900/20 rounded-lg p-3">
+                                        <div class="text-2xl font-bold text-teal-600 dark:text-teal-400">2s</div>
+                                        <div class="text-xs text-slate-600 dark:text-slate-400">Verification Time</div>
+                                    </div>
+                                    <div class="bg-emerald-50 dark:bg-emerald-900/20 rounded-lg p-3">
+                                        <div class="text-2xl font-bold text-emerald-600 dark:text-emerald-400">99.99%</div>
+                                        <div class="text-xs text-slate-600 dark:text-slate-400">Uptime</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <ul class="space-y-2">
+                                <li class="flex items-center gap-2 text-sm text-slate-600 dark:text-slate-400">
+                                    <svg class="w-4 h-4 text-green-500" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                                    </svg>
+                                    Smart Contract Integration
+                                </li>
+                                <li class="flex items-center gap-2 text-sm text-slate-600 dark:text-slate-400">
+                                    <svg class="w-4 h-4 text-green-500" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                                    </svg>
+                                    Digital Identity Management
+                                </li>
+                                <li class="flex items-center gap-2 text-sm text-slate-600 dark:text-slate-400">
+                                    <svg class="w-4 h-4 text-green-500" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                                    </svg>
+                                    Immutable Audit Trail
+                                </li>
+                            </ul>
+                        </div>
+
+                        <!-- Adaptive Learning -->
+                        <div class="bg-white dark:bg-slate-800 rounded-xl shadow-lg p-8 border border-slate-200 dark:border-slate-700 hover:shadow-xl transition-all duration-300 lg:col-span-2">
+                            <div class="flex items-center gap-4 mb-6">
+                                <div class="bg-gradient-to-br from-orange-500 to-red-600 text-white rounded-lg w-14 h-14 flex-shrink-0 flex items-center justify-center">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4" />
+                                    </svg>
+                                </div>
+                                <div>
+                                    <h4 class="text-xl font-bold text-slate-900 dark:text-white">Adaptive Learning Engine</h4>
+                                    <p class="text-orange-600 dark:text-orange-400 text-sm font-semibold">Personalized Education Platform</p>
+                                </div>
+                            </div>
+                            <p class="text-slate-600 dark:text-slate-400 mb-6">AI-driven adaptive learning system yang dynamically adjusts content difficulty, learning paths, dan assessment methods berdasarkan individual learning patterns.</p>
+                            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
+                                <div class="text-center">
+                                    <div class="text-3xl font-bold text-orange-600 dark:text-orange-400 mb-2">87%</div>
+                                    <div class="text-sm text-slate-600 dark:text-slate-400">Learning Improvement</div>
+                                </div>
+                                <div class="text-center">
+                                    <div class="text-3xl font-bold text-red-600 dark:text-red-400 mb-2">15x</div>
+                                    <div class="text-sm text-slate-600 dark:text-slate-400">Faster Skill Mastery</div>
+                                </div>
+                                <div class="text-center">
+                                    <div class="text-3xl font-bold text-pink-600 dark:text-pink-400 mb-2">92%</div>
+                                    <div class="text-sm text-slate-600 dark:text-slate-400">Student Engagement</div>
+                                </div>
+                            </div>
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                <div class="bg-orange-50 dark:bg-orange-900/20 rounded-lg p-4">
+                                    <h5 class="font-semibold text-slate-900 dark:text-white mb-2">Personalization Features</h5>
+                                    <ul class="space-y-1 text-sm text-slate-600 dark:text-slate-400">
+                                        <li>• Dynamic Content Adjustment</li>
+                                        <li>• Learning Style Adaptation</li>
+                                        <li>• Real-time Performance Tracking</li>
+                                    </ul>
+                                </div>
+                                <div class="bg-red-50 dark:bg-red-900/20 rounded-lg p-4">
+                                    <h5 class="font-semibold text-slate-900 dark:text-white mb-2">Assessment System</h5>
+                                    <ul class="space-y-1 text-sm text-slate-600 dark:text-slate-400">
+                                        <li>• AI-powered Skill Evaluation</li>
+                                        <li>• Progressive Difficulty Scaling</li>
+                                        <li>• Personalized Feedback Loop</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
                     <!-- Card 1 -->
                     <div
                         class="bg-white dark:bg-slate-800 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 flex flex-col p-6 border border-slate-200 dark:border-slate-700">
@@ -995,333 +1769,325 @@
             </div>
         </section>
 
-        <!-- Ideal Customer Profile (ICP) Section -->
-        <section id="icp" class="py-20 lg:py-24">
+
+
+        <!-- Solution Comparison Section -->
+        <section id="comparison" class="py-20 lg:py-24 bg-slate-100 dark:bg-slate-950">
             <div class="container mx-auto px-6">
                 <div class="text-center mb-16">
-                    <h2 class="text-3xl lg:text-4xl font-bold text-slate-900 dark:text-white">Siapa yang Kami Layani
-                    </h2>
-                    <p class="mt-4 text-lg text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">Kami fokus membantu UKM
-                        di berbagai sektor untuk bertumbuh.</p>
+                    <h2 class="text-3xl lg:text-4xl font-bold text-slate-900 dark:text-white">Temukan Solusi yang Tepat</h2>
+                    <p class="mt-4 text-lg text-slate-600 dark:text-slate-400 max-w-3xl mx-auto">
+                        Bandingkan solusi AI kami dan temukan yang paling sesuai dengan kebutuhan organisasi Anda.
+                    </p>
                 </div>
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                    <div
-                        class="bg-white dark:bg-slate-800 p-8 rounded-xl shadow-lg hover:shadow-xl hover:shadow-cyan-500/30 dark:shadow-slate-950/50 border-t-4 border-cyan-500 transition-all duration-300 transform hover:scale-105 hover:bg-cyan-50/30 dark:hover:bg-cyan-900/20">
-                        <div class="flex items-center gap-3 mb-4">
-                            <div
-                                class="bg-cyan-100 text-cyan-600 dark:bg-cyan-900/50 dark:text-cyan-400 rounded-lg w-12 h-12 flex items-center justify-center transition-all duration-300 hover:scale-110">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
-                                    stroke="currentColor" stroke-width="2">
-                                    <path stroke-linecap="round" stroke-linejoin="round"
-                                        d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
-                                </svg>
-                            </div>
-                            <h3 class="text-2xl font-bold dark:text-white">Kuliner</h3>
-                        </div>
-                        <p class="text-slate-600 dark:text-slate-400 font-semibold mb-3 text-lg">Permasalahan Umum:</p>
-                        <ul class="space-y-3 text-slate-600 dark:text-slate-400">
-                            <li class="flex items-start gap-2"><svg class="w-5 h-5 text-cyan-500 mt-0.5 flex-shrink-0"
-                                    fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                        d="M5 13l4 4L19 7"></path>
-                                </svg><span>Volume chat order tinggi</span></li>
-                            <li class="flex items-start gap-2"><svg class="w-5 h-5 text-cyan-500 mt-0.5 flex-shrink-0"
-                                    fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                        d="M5 13l4 4L19 7"></path>
-                                </svg><span>Info menu/stok sering ditanyakan</span></li>
-                            <li class="flex items-start gap-2"><svg class="w-5 h-5 text-cyan-500 mt-0.5 flex-shrink-0"
-                                    fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                        d="M5 13l4 4L19 7"></path>
-                                </svg><span>Reservasi manual rawan error</span></li>
-                        </ul>
+
+                <div class="bg-white dark:bg-slate-800 rounded-xl shadow-lg p-8">
+                    <!-- Comparison Toggle -->
+                    <div class="flex flex-wrap justify-center gap-2 mb-8">
+                        <button onclick="showComparison('customer-service')" class="comparison-btn active px-4 py-2 rounded-lg font-medium transition-all" data-type="customer-service">
+                            AI Customer Service
+                        </button>
+                        <button onclick="showComparison('education')" class="comparison-btn px-4 py-2 rounded-lg font-medium transition-all" data-type="education">
+                            AI Education
+                        </button>
+                        <button onclick="showComparison('government')" class="comparison-btn px-4 py-2 rounded-lg font-medium transition-all" data-type="government">
+                            Government RAG
+                        </button>
+                        <button onclick="showComparison('vocational')" class="comparison-btn px-4 py-2 rounded-lg font-medium transition-all" data-type="vocational">
+                            Vocational Training
+                        </button>
                     </div>
-                    <div
-                        class="bg-white dark:bg-slate-800 p-8 rounded-xl shadow-lg hover:shadow-xl hover:shadow-cyan-500/30 dark:shadow-slate-950/50 border-t-4 border-cyan-500 transition-all duration-300 transform hover:scale-105 hover:bg-cyan-50/30 dark:hover:bg-cyan-900/20">
-                        <div class="flex items-center gap-3 mb-4">
-                            <div
-                                class="bg-cyan-100 text-cyan-600 dark:bg-cyan-900/50 dark:text-cyan-400 rounded-lg w-12 h-12 flex items-center justify-center transition-all duration-300 hover:scale-110">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
-                                    stroke="currentColor" stroke-width="2">
-                                    <path stroke-linecap="round" stroke-linejoin="round"
-                                        d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
-                                </svg>
+
+                    <!-- Comparison Content -->
+                    <div id="comparison-content">
+                        <!-- Customer Service Comparison -->
+                        <div id="customer-service-comparison" class="comparison-panel">
+                            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                                <div class="text-center">
+                                    <h4 class="font-bold text-lg mb-4">Starter</h4>
+                                    <div class="text-3xl font-bold text-cyan-600 mb-2">Rp 5JT/Bulan</div>
+                                    <ul class="text-sm text-left space-y-2 mb-6">
+                                        <li class="flex items-center gap-2">
+                                            <svg class="w-4 h-4 text-green-500" fill="currentColor" viewBox="0 0 20 20">
+                                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                                            </svg>
+                                            Hingga 1,000 chats/bulan
+                                        </li>
+                                        <li class="flex items-center gap-2">
+                                            <svg class="w-4 h-4 text-green-500" fill="currentColor" viewBox="0 0 20 20">
+                                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                                            </svg>
+                                            Basic AI chatbot
+                                        </li>
+                                        <li class="flex items-center gap-2">
+                                            <svg class="w-4 h-4 text-green-500" fill="currentColor" viewBox="0 0 20 20">
+                                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                                            </svg>
+                                            Email support
+                                        </li>
+                                    </ul>
+                                    <button class="w-full bg-slate-200 text-slate-700 py-2 rounded-lg hover:bg-slate-300 transition-colors">
+                                        Pilih Starter
+                                    </button>
+                                </div>
+                                <div class="text-center border-2 border-cyan-500 rounded-lg p-4 relative">
+                                    <div class="absolute -top-3 left-1/2 -translate-x-1/2 bg-cyan-500 text-white px-3 py-1 rounded-full text-sm">
+                                        Most Popular
+                                    </div>
+                                    <h4 class="font-bold text-lg mb-4">Growth</h4>
+                                    <div class="text-3xl font-bold text-cyan-600 mb-2">Rp 15JT/Bulan</div>
+                                    <ul class="text-sm text-left space-y-2 mb-6">
+                                        <li class="flex items-center gap-2">
+                                            <svg class="w-4 h-4 text-green-500" fill="currentColor" viewBox="0 0 20 20">
+                                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                                            </svg>
+                                            Hingga 10,000 chats/bulan
+                                        </li>
+                                        <li class="flex items-center gap-2">
+                                            <svg class="w-4 h-4 text-green-500" fill="currentColor" viewBox="0 0 20 20">
+                                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                                            </svg>
+                                            Advanced AI personalization
+                                        </li>
+                                        <li class="flex items-center gap-2">
+                                            <svg class="w-4 h-4 text-green-500" fill="currentColor" viewBox="0 0 20 20">
+                                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                                            </svg>
+                                            Multi-channel integration
+                                        </li>
+                                        <li class="flex items-center gap-2">
+                                            <svg class="w-4 h-4 text-green-500" fill="currentColor" viewBox="0 0 20 20">
+                                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                                            </svg>
+                                            Priority support
+                                        </li>
+                                    </ul>
+                                    <button class="w-full bg-cyan-600 text-white py-2 rounded-lg hover:bg-cyan-700 transition-colors">
+                                        Pilih Growth
+                                    </button>
+                                </div>
+                                <div class="text-center">
+                                    <h4 class="font-bold text-lg mb-4">Enterprise</h4>
+                                    <div class="text-3xl font-bold text-cyan-600 mb-2">Custom</div>
+                                    <ul class="text-sm text-left space-y-2 mb-6">
+                                        <li class="flex items-center gap-2">
+                                            <svg class="w-4 h-4 text-green-500" fill="currentColor" viewBox="0 0 20 20">
+                                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                                            </svg>
+                                            Unlimited chats
+                                        </li>
+                                        <li class="flex items-center gap-2">
+                                            <svg class="w-4 h-4 text-green-500" fill="currentColor" viewBox="0 0 20 20">
+                                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                                            </svg>
+                                            Custom AI training
+                                        </li>
+                                        <li class="flex items-center gap-2">
+                                            <svg class="w-4 h-4 text-green-500" fill="currentColor" viewBox="0 0 20 20">
+                                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                                            </svg>
+                                            Dedicated account manager
+                                        </li>
+                                        <li class="flex items-center gap-2">
+                                            <svg class="w-4 h-4 text-green-500" fill="currentColor" viewBox="0 0 20 20">
+                                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                                            </svg>
+                                            24/7 phone support
+                                        </li>
+                                    </ul>
+                                    <button class="w-full bg-slate-800 text-white py-2 rounded-lg hover:bg-slate-900 transition-colors">
+                                        Hubungi Sales
+                                    </button>
+                                </div>
                             </div>
-                            <h3 class="text-2xl font-bold dark:text-white">Fashion</h3>
                         </div>
-                        <p class="text-slate-600 dark:text-slate-400 font-semibold mb-3 text-lg">Permasalahan Umum:</p>
-                        <ul class="space-y-3 text-slate-600 dark:text-slate-400">
-                            <li class="flex items-start gap-2"><svg class="w-5 h-5 text-cyan-500 mt-0.5 flex-shrink-0"
-                                    fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                        d="M5 13l4 4L19 7"></path>
-                                </svg><span>Pertanyaan produk & status order membanjiri</span></li>
-                            <li class="flex items-start gap-2"><svg class="w-5 h-5 text-cyan-500 mt-0.5 flex-shrink-0"
-                                    fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                        d="M5 13l4 4L19 7"></path>
-                                </svg><span>Data pelanggan tercerai-berai</span></li>
-                            <li class="flex items-start gap-2"><svg class="w-5 h-5 text-cyan-500 mt-0.5 flex-shrink-0"
-                                    fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                        d="M5 13l4 4L19 7"></path>
-                                </svg><span>Kesulitan follow-up pelanggan lama</span></li>
-                        </ul>
-                    </div>
-                    <div
-                        class="bg-white dark:bg-slate-800 p-8 rounded-xl shadow-lg hover:shadow-xl hover:shadow-cyan-500/30 dark:shadow-slate-950/50 border-t-4 border-cyan-500 transition-all duration-300 transform hover:scale-105 hover:bg-cyan-50/30 dark:hover:bg-cyan-900/20">
-                        <div class="flex items-center gap-3 mb-4">
-                            <div
-                                class="bg-cyan-100 text-cyan-600 dark:bg-cyan-900/50 dark:text-cyan-400 rounded-lg w-12 h-12 flex items-center justify-center transition-all duration-300 hover:scale-110">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
-                                    stroke="currentColor" stroke-width="2">
-                                    <path stroke-linecap="round" stroke-linejoin="round"
-                                        d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
-                                    <path stroke-linecap="round" stroke-linejoin="round"
-                                        d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
-                                </svg>
-                            </div>
-                            <h3 class="text-2xl font-bold dark:text-white">Jasa</h3>
-                        </div>
-                        <p class="text-slate-600 dark:text-slate-400 font-semibold mb-3 text-lg">Permasalahan Umum:</p>
-                        <ul class="space-y-3 text-slate-600 dark:text-slate-400">
-                            <li class="flex items-start gap-2"><svg class="w-5 h-5 text-cyan-500 mt-0.5 flex-shrink-0"
-                                    fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                        d="M5 13l4 4L19 7"></path>
-                                </svg><span>Manajemen booking tumpang tindih</span></li>
-                            <li class="flex items-start gap-2"><svg class="w-5 h-5 text-cyan-500 mt-0.5 flex-shrink-0"
-                                    fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                        d="M5 13l4 4L19 7"></path>
-                                </svg><span>Data pelanggan tidak terintegrasi</span></li>
-                            <li class="flex items-start gap-2"><svg class="w-5 h-5 text-cyan-500 mt-0.5 flex-shrink-0"
-                                    fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                        d="M5 13l4 4L19 7"></path>
-                                </svg><span>Pengingat manual memakan waktu</span></li>
-                        </ul>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Testimonials Section -->
-        <section id="testimonials" class="py-20 lg:py-24 bg-slate-100 dark:bg-slate-950">
+        <!-- Case Studies Section -->
+        <section id="studi-kasus" class="py-20 lg:py-24">
             <div class="container mx-auto px-6">
                 <div class="text-center mb-16">
-                    <h2 class="text-3xl lg:text-4xl font-bold text-slate-900 dark:text-white">Kisah Sukses Pelanggan
-                        Kami</h2>
-                    <p class="mt-4 text-lg text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">Jangan hanya percaya
-                        kata kami. Lihat apa yang dikatakan para pemilik bisnis seperti Anda.</p>
+                    <h2 class="text-3xl lg:text-4xl font-bold text-slate-900 dark:text-white">Studi Kasus & Keberhasilan</h2>
+                    <p class="mt-4 text-lg text-slate-600 dark:text-slate-400 max-w-3xl mx-auto">
+                        Lihat bagaimana solusi AI kami menghasilkan transformasi nyata di berbagai sektor. 
+                        Dari peningkatan efisiensi hingga pertumbuhan revenue yang signifikan.
+                    </p>
                 </div>
-                <div class="relative overflow-hidden">
-                    <div id="testimonial-slider" class="flex transition-transform duration-500 ease-in-out">
-                        <!-- Testimonial 1 -->
-                        <div class="flex-shrink-0 w-full md:w-1/2 lg:w-1/3 px-4">
-                            <div
-                                class="bg-white dark:bg-slate-800 p-8 rounded-xl shadow-lg hover:shadow-xl hover:shadow-cyan-500/20 dark:shadow-slate-950/50 transition-all duration-300 transform hover:scale-105 hover:bg-cyan-50/50 dark:hover:bg-cyan-900/20 flex flex-col h-full">
-                                <div class="flex-grow">
-                                    <svg class="w-10 h-10 text-cyan-500 dark:text-cyan-400 mb-4" fill="currentColor"
-                                        viewBox="0 0 32 32" aria-hidden="true">
-                                        <path d="M9.333 8h-4.666v16h4.666v-16zM27.333 8h-4.666v16h4.666v-16z"></path>
-                                        <path
-                                            d="M22.667 8h-4.667c-1.333 0-2.667 1.333-2.667 2.667v10.667c0 1.333 1.333 2.667 2.667 2.667h4.667v-16zM4.667 8h-4.667c-1.333 0-2.667 1.333-2.667 2.667v10.667c0 1.333 1.333 2.667 2.667 2.667h4.667v-16z">
-                                        </path>
-                                    </svg>
-                                    <p class="text-slate-600 dark:text-slate-400 italic text-lg leading-relaxed">"Sejak
-                                        pakai VOXIA, orderan kopi susu kami jadi lebih teratur. Nggak ada lagi pesanan
-                                        yang kelewat karena chatbot-nya handle semua pertanyaan dasar. Tim kami jadi
-                                        bisa fokus meracik kopi terbaik."</p>
-                                </div>
-                                <div class="flex items-center mt-6">
-                                    <img class="w-14 h-14 rounded-full object-cover"
-                                        src="https://i.pravatar.cc/150?u=budi" alt="Foto Budi Santoso">
-                                    <div class="ml-4">
-                                        <p class="font-bold text-slate-800 dark:text-white">Budi Santoso</p>
-                                        <p class="text-sm text-slate-500 dark:text-slate-400">Owner, Kopi Senja</p>
-                                    </div>
-                                </div>
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                    <!-- Customer Service Success Story -->
+                    <div class="bg-white dark:bg-slate-800 rounded-xl shadow-lg p-8 border border-slate-200 dark:border-slate-700 hover:shadow-xl transition-all duration-300">
+                        <div class="flex items-center gap-4 mb-6">
+                            <div class="bg-cyan-100 text-cyan-600 dark:bg-cyan-900/50 dark:text-cyan-400 rounded-lg w-14 h-14 flex-shrink-0 flex items-center justify-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
+                                </svg>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold text-slate-900 dark:text-white">E-commerce Platform</h3>
+                                <p class="text-cyan-600 dark:text-cyan-400 text-sm font-semibold">AI Customer Service</p>
                             </div>
                         </div>
-                        <!-- Testimonial 2 -->
-                        <div class="flex-shrink-0 w-full md:w-1/2 lg:w-1/3 px-4">
-                            <div
-                                class="bg-white dark:bg-slate-800 p-8 rounded-xl shadow-lg hover:shadow-xl hover:shadow-cyan-500/20 dark:shadow-slate-950/50 transition-all duration-300 transform hover:scale-105 hover:bg-cyan-50/50 dark:hover:bg-cyan-900/20 flex flex-col h-full">
-                                <div class="flex-grow">
-                                    <svg class="w-10 h-10 text-cyan-500 dark:text-cyan-400 mb-4" fill="currentColor"
-                                        viewBox="0 0 32 32" aria-hidden="true">
-                                        <path d="M9.333 8h-4.666v16h4.666v-16zM27.333 8h-4.666v16h4.666v-16z"></path>
-                                        <path
-                                            d="M22.667 8h-4.667c-1.333 0-2.667 1.333-2.667 2.667v10.667c0 1.333 1.333 2.667 2.667 2.667h4.667v-16zM4.667 8h-4.667c-1.333 0-2.667 1.333-2.667 2.667v10.667c0 1.333 1.333 2.667 2.667 2.667h4.667v-16z">
-                                        </path>
-                                    </svg>
-                                    <p class="text-slate-600 dark:text-slate-400 italic text-lg leading-relaxed">"VOXIA
-                                        benar-benar mengubah cara kami mengelola pelanggan. Fitur manajemen pelanggannya
-                                        membantu kami mengingat preferensi customer, dan broadcast promo jadi sangat
-                                        efektif. Penjualan naik 30% bulan lalu!"</p>
+                        <div class="mb-6">
+                            <div class="grid grid-cols-2 gap-4 mb-4">
+                                <div class="text-center">
+                                    <div class="text-2xl font-bold text-green-600">+45%</div>
+                                    <div class="text-sm text-slate-600 dark:text-slate-400">Response Efficiency</div>
                                 </div>
-                                <div class="flex items-center mt-6">
-                                    <img class="w-14 h-14 rounded-full object-cover"
-                                        src="https://i.pravatar.cc/150?u=siti" alt="Foto Siti Aminah">
-                                    <div class="ml-4">
-                                        <p class="font-bold text-slate-800 dark:text-white">Siti Aminah</p>
-                                        <p class="text-sm text-slate-500 dark:text-slate-400">Founder, Gaya Hijab</p>
-                                    </div>
+                                <div class="text-center">
+                                    <div class="text-2xl font-bold text-blue-600">24/7</div>
+                                    <div class="text-sm text-slate-600 dark:text-slate-400">Service Availability</div>
                                 </div>
+                            </div>
+                            <div class="w-full bg-slate-200 dark:bg-slate-700 rounded-full h-2">
+                                <div class="bg-gradient-to-r from-green-500 to-blue-500 h-2 rounded-full" style="width: 95%"></div>
+                            </div>
+                            <div class="flex justify-between mt-2">
+                                <span class="text-xs text-slate-600 dark:text-slate-400">Customer Satisfaction</span>
+                                <span class="text-xs font-bold text-green-600">95%</span>
                             </div>
                         </div>
-                        <!-- Testimonial 3 -->
-                        <div class="flex-shrink-0 w-full md:w-1/2 lg:w-1/3 px-4">
-                            <div
-                                class="bg-white dark:bg-slate-800 p-8 rounded-xl shadow-lg hover:shadow-xl hover:shadow-cyan-500/20 dark:shadow-slate-950/50 transition-all duration-300 transform hover:scale-105 hover:bg-cyan-50/50 dark:hover:bg-cyan-900/20 flex flex-col h-full">
-                                <div class="flex-grow">
-                                    <svg class="w-10 h-10 text-cyan-500 dark:text-cyan-400 mb-4" fill="currentColor"
-                                        viewBox="0 0 32 32" aria-hidden="true">
-                                        <path d="M9.333 8h-4.666v16h4.666v-16zM27.333 8h-4.666v16h4.666v-16z"></path>
-                                        <path
-                                            d="M22.667 8h-4.667c-1.333 0-2.667 1.333-2.667 2.667v10.667c0 1.333 1.333 2.667 2.667 2.667h4.667v-16zM4.667 8h-4.667c-1.333 0-2.667 1.333-2.667 2.667v10.667c0 1.333 1.333 2.667 2.667 2.667h4.667v-16z">
-                                        </path>
-                                    </svg>
-                                    <p class="text-slate-600 dark:text-slate-400 italic text-lg leading-relaxed">"Sistem
-                                        booking otomatisnya adalah penyelamat. Dulu sering double-booking, sekarang
-                                        semua jadwal rapi. Pelanggan juga suka karena dapat reminder H-1. Angka no-show
-                                        turun drastis."</p>
-                                </div>
-                                <div class="flex items-center mt-6">
-                                    <img class="w-14 h-14 rounded-full object-cover"
-                                        src="https://i.pravatar.cc/150?u=agus" alt="Foto Agus Wijaya">
-                                    <div class="ml-4">
-                                        <p class="font-bold text-slate-800 dark:text-white">Agus Wijaya</p>
-                                        <p class="text-sm text-slate-500 dark:text-slate-400">Manager, Glow Salon</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Testimonial 4 -->
-                        <div class="flex-shrink-0 w-full md:w-1/2 lg:w-1/3 px-4">
-                            <div
-                                class="bg-white dark:bg-slate-800 p-8 rounded-xl shadow-lg hover:shadow-xl hover:shadow-cyan-500/20 dark:shadow-slate-950/50 transition-all duration-300 transform hover:scale-105 hover:bg-cyan-50/50 dark:hover:bg-cyan-900/20 flex flex-col h-full">
-                                <div class="flex-grow">
-                                    <svg class="w-10 h-10 text-cyan-500 dark:text-cyan-400 mb-4" fill="currentColor"
-                                        viewBox="0 0 32 32" aria-hidden="true">
-                                        <path d="M9.333 8h-4.666v16h4.666v-16zM27.333 8h-4.666v16h4.666v-16z"></path>
-                                        <path
-                                            d="M22.667 8h-4.667c-1.333 0-2.667 1.333-2.667 2.667v10.667c0 1.333 1.333 2.667 2.667 2.667h4.667v-16zM4.667 8h-4.667c-1.333 0-2.667 1.333-2.667 2.667v10.667c0 1.333 1.333 2.667 2.667 2.667h4.667v-16z">
-                                        </path>
-                                    </svg>
-                                    <p class="text-slate-600 dark:text-slate-400 italic text-lg leading-relaxed">"Dengan
-                                        VOXIA, bisnis laundry kami jadi lebih efisien. Chatbot handle semua inquiry
-                                        tentang layanan dan harga, sementara sistem booking otomatis mengatur jadwal
-                                        pickup dan delivery. Kepuasan pelanggan meningkat signifikan!"</p>
-                                </div>
-                                <div class="flex items-center mt-6">
-                                    <img class="w-14 h-14 rounded-full object-cover"
-                                        src="https://i.pravatar.cc/150?u=rina" alt="Foto Rina Sari">
-                                    <div class="ml-4">
-                                        <p class="font-bold text-slate-800 dark:text-white">Rina Sari</p>
-                                        <p class="text-sm text-slate-500 dark:text-slate-400">Owner, Laundry Cepat</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Testimonial 5 -->
-                        <div class="flex-shrink-0 w-full md:w-1/2 lg:w-1/3 px-4">
-                            <div
-                                class="bg-white dark:bg-slate-800 p-8 rounded-xl shadow-lg hover:shadow-xl hover:shadow-cyan-500/20 dark:shadow-slate-950/50 transition-all duration-300 transform hover:scale-105 hover:bg-cyan-50/50 dark:hover:bg-cyan-900/20 flex flex-col h-full">
-                                <div class="flex-grow">
-                                    <svg class="w-10 h-10 text-cyan-500 dark:text-cyan-400 mb-4" fill="currentColor"
-                                        viewBox="0 0 32 32" aria-hidden="true">
-                                        <path d="M9.333 8h-4.666v16h4.666v-16zM27.333 8h-4.666v16h4.666v-16z"></path>
-                                        <path
-                                            d="M22.667 8h-4.667c-1.333 0-2.667 1.333-2.667 2.667v10.667c0 1.333 1.333 2.667 2.667 2.667h4.667v-16zM4.667 8h-4.667c-1.333 0-2.667 1.333-2.667 2.667v10.667c0 1.333 1.333 2.667 2.667 2.667h4.667v-16z">
-                                        </path>
-                                    </svg>
-                                    <p class="text-slate-600 dark:text-slate-400 italic text-lg leading-relaxed">"VOXIA
-                                        membantu toko elektronik saya mengatasi tantangan manajemen inventori. AI
-                                        chatbot menjawab pertanyaan produk real-time, dan fitur retargeting otomatis
-                                        membuat pelanggan kembali. Omzet naik 25% dalam 3 bulan!"</p>
-                                </div>
-                                <div class="flex items-center mt-6">
-                                    <img class="w-14 h-14 rounded-full object-cover"
-                                        src="https://i.pravatar.cc/150?u=doni" alt="Foto Doni Pratama">
-                                    <div class="ml-4">
-                                        <p class="font-bold text-slate-800 dark:text-white">Doni Pratama</p>
-                                        <p class="text-sm text-slate-500 dark:text-slate-400">Owner, Elektronik Murah
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
+                        <p class="text-slate-600 dark:text-slate-400 text-sm mb-4">
+                            Platform e-commerce leading di Indonesia berhasil mengotomatiskan 80% customer inquiries dengan AI chatbot berbahasa Indonesia, mengurangi response time dari 5 menit menjadi 15 detik.
+                        </p>
+                        <div class="flex items-center gap-2 text-sm text-cyan-600 dark:text-cyan-400">
+                            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                            </svg>
+                            <span>Baca Case Study Lengkap</span>
                         </div>
                     </div>
-                    <!-- Slider Controls -->
-                    <div class="flex justify-center mt-8 space-x-2">
-                        <button id="prev-testimonial"
-                            class="bg-cyan-500 hover:bg-cyan-600 text-white p-2 rounded-full transition-colors duration-300">
-                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M15 19l-7-7 7-7"></path>
+
+                    <!-- Education Platform Success -->
+                    <div class="bg-white dark:bg-slate-800 rounded-xl shadow-lg p-8 border border-slate-200 dark:border-slate-700 hover:shadow-xl transition-all duration-300">
+                        <div class="flex items-center gap-4 mb-6">
+                            <div class="bg-orange-100 text-orange-600 dark:bg-orange-900/50 dark:text-orange-400 rounded-lg w-14 h-14 flex-shrink-0 flex items-center justify-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+                                </svg>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold text-slate-900 dark:text-white">InvezThink Platform</h3>
+                                <p class="text-orange-600 dark:text-orange-400 text-sm font-semibold">Financial Education</p>
+                            </div>
+                        </div>
+                        <div class="mb-6">
+                            <div class="grid grid-cols-2 gap-4 mb-4">
+                                <div class="text-center">
+                                    <div class="text-2xl font-bold text-orange-600">10K+</div>
+                                    <div class="text-sm text-slate-600 dark:text-slate-400">Active Users</div>
+                                </div>
+                                <div class="text-center">
+                                    <div class="text-2xl font-bold text-purple-600">87%</div>
+                                    <div class="text-sm text-slate-600 dark:text-slate-400">Completion Rate</div>
+                                </div>
+                            </div>
+                            <div class="w-full bg-slate-200 dark:bg-slate-700 rounded-full h-2">
+                                <div class="bg-gradient-to-r from-orange-500 to-purple-500 h-2 rounded-full" style="width: 87%"></div>
+                            </div>
+                            <div class="flex justify-between mt-2">
+                                <span class="text-xs text-slate-600 dark:text-slate-400">Learning Effectiveness</span>
+                                <span class="text-xs font-bold text-orange-600">87%</span>
+                            </div>
+                        </div>
+                        <p class="text-slate-600 dark:text-slate-400 text-sm mb-4">
+                            Platform edukasi keuangan dengan AI adaptive learning berhasil meningkatkan financial literacy score pengguna rata-rata 45% melalui personalized learning paths dan real-time coaching.
+                        </p>
+                        <div class="flex items-center gap-2 text-sm text-orange-600 dark:text-orange-400">
+                            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
                             </svg>
-                        </button>
-                        <button id="next-testimonial"
-                            class="bg-cyan-500 hover:bg-cyan-600 text-white p-2 rounded-full transition-colors duration-300">
-                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7">
-                                </path>
+                            <span>Explore Platform</span>
+                        </div>
+                    </div>
+
+                    <!-- Government RAG Success -->
+                    <div class="bg-white dark:bg-slate-800 rounded-xl shadow-lg p-8 border border-slate-200 dark:border-slate-700 hover:shadow-xl transition-all duration-300">
+                        <div class="flex items-center gap-4 mb-6">
+                            <div class="bg-blue-100 text-blue-600 dark:bg-blue-900/50 dark:text-blue-400 rounded-lg w-14 h-14 flex-shrink-0 flex items-center justify-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+                                </svg>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold text-slate-900 dark:text-white">Government Ministry</h3>
+                                <p class="text-blue-600 dark:text-blue-400 text-sm font-semibold">RAG Document System</p>
+                            </div>
+                        </div>
+                        <div class="mb-6">
+                            <div class="grid grid-cols-2 gap-4 mb-4">
+                                <div class="text-center">
+                                    <div class="text-2xl font-bold text-blue-600">2M+</div>
+                                    <div class="text-sm text-slate-600 dark:text-slate-400">Documents Indexed</div>
+                                </div>
+                                <div class="text-center">
+                                    <div class="text-2xl font-bold text-indigo-600">0.8s</div>
+                                    <div class="text-sm text-slate-600 dark:text-slate-400">Avg Response Time</div>
+                                </div>
+                            </div>
+                            <div class="w-full bg-slate-200 dark:bg-slate-700 rounded-full h-2">
+                                <div class="bg-gradient-to-r from-blue-500 to-indigo-500 h-2 rounded-full" style="width: 99%"></div>
+                            </div>
+                            <div class="flex justify-between mt-2">
+                                <span class="text-xs text-slate-600 dark:text-slate-400">Answer Accuracy</span>
+                                <span class="text-xs font-bold text-blue-600">99%</span>
+                            </div>
+                        </div>
+                        <p class="text-slate-600 dark:text-slate-400 text-sm mb-4">
+                            Kementerian mengimplementasikan RAG system untuk policy analysis dan citizen service, berhasil memproses 50K+ pertanyaan per bulan dengan 99% accuracy dan 85% reduction in manual document search time.
+                        </p>
+                        <div class="flex items-center gap-2 text-sm text-blue-600 dark:text-blue-400">
+                            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
                             </svg>
-                        </button>
+                            <span>Government Solutions</span>
+                        </div>
+                    </div>
+                </div>
+        <!-- CTA Section -->
+        <section id="tentang" class="py-20 lg:py-24 bg-gradient-to-br from-slate-900 to-slate-800 text-white">
+            <div class="container mx-auto px-6">
+                <div class="max-w-4xl mx-auto text-center">
+                    <h2 class="text-3xl lg:text-4xl font-bold mb-6">Transformasi Digital Dimulai Di Sini</h2>
+                    <p class="text-xl text-slate-300 mb-8 leading-relaxed">
+                        Bergabunglah dengan ribuan organisasi yang telah mempercayai transformasi digital mereka kepada VOXIA. 
+                        Dari customer service automation hingga platform edukasi berbasis AI, kami siap membantu Indonesia menjadi lebih cerdas dan efisien.
+                    </p>
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-8 mb-12">
+                        <div class="text-center counter-container">
+                            <div class="text-3xl font-bold text-cyan-400 mb-2 counter" data-target="500000" data-suffix="K+">500K+</div>
+                            <div class="text-sm text-slate-400">Users Served</div>
+                        </div>
+                        <div class="text-center counter-container">
+                            <div class="text-3xl font-bold text-orange-400 mb-2 counter" data-target="50" data-suffix="+">50+</div>
+                            <div class="text-sm text-slate-400">Enterprise Clients</div>
+                        </div>
+                        <div class="text-center counter-container">
+                            <div class="text-3xl font-bold text-blue-400 mb-2 counter" data-target="15" data-suffix="+">15+</div>
+                            <div class="text-sm text-slate-400">Government Projects</div>
+                        </div>
+                        <div class="text-center counter-container">
+                            <div class="text-3xl font-bold text-purple-400 mb-2 counter" data-target="99.9" data-suffix="%">99.9%</div>
+                            <div class="text-sm text-slate-400">Uptime SLA</div>
+                        </div>
+                    </div>
+                    <div class="flex flex-col sm:flex-row justify-center items-center gap-4">
+                        <a href="#kontak" class="bg-cyan-600 text-white font-bold py-4 px-10 rounded-lg shadow-lg hover:bg-cyan-500 transition-all transform hover:scale-105">
+                            Mulai Konsultasi Gratis
+                        </a>
+                        <a href="https://app.invezthink.com" target="_blank" class="bg-slate-700/50 text-white font-semibold py-4 px-10 rounded-lg hover:bg-slate-600/50 backdrop-blur-sm transition-all">
+                            Coba Platform Demo
+                        </a>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- FAQ Section -->
-        <section id="faq" class="py-20 lg:py-24">
-            <div class="container mx-auto px-6">
-                <div class="text-center mb-16 max-w-3xl mx-auto">
-                    <h2 class="text-3xl lg:text-4xl font-bold text-slate-900 dark:text-white">Pertanyaan yang Sering
-                        Diajukan</h2>
-                    <p class="mt-4 text-lg text-slate-600 dark:text-slate-400">Menemukan jawaban cepat untuk pertanyaan
-                        umum tentang VOXIA.</p>
-                </div>
-                <div class="max-w-4xl mx-auto space-y-4">
-                    <!-- FAQ Item 1 -->
-                    <div
-                        class="faq-item bg-white dark:bg-slate-800 rounded-xl shadow-md overflow-hidden transition-all duration-300 border border-slate-200 dark:border-slate-700">
-                        <button
-                            class="faq-question w-full flex justify-between items-center text-left p-6 hover:bg-slate-50 dark:hover:bg-slate-700/50"
-                            aria-expanded="false">
-                            <span class="flex items-center gap-4">
-                                <span
-                                    class="flex-shrink-0 w-10 h-10 rounded-lg bg-cyan-100 dark:bg-cyan-900/50 text-cyan-600 dark:text-cyan-400 flex items-center justify-center">
-                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none"
-                                        viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
-                                        <path stroke-linecap="round" stroke-linejoin="round"
-                                            d="M8.25 3v1.5M4.5 8.25H21M18.75 3v1.5M16.5 21V8.25a2.25 2.25 0 00-2.25-2.25H9.75A2.25 2.25 0 007.5 8.25v12.75m9 0V8.25a2.25 2.25 0 00-2.25-2.25H9.75a2.25 2.25 0 00-2.25 2.25v12.75m9 0h1.5a2.25 2.25 0 002.25-2.25V6.75a2.25 2.25 0 00-2.25-2.25H3.75A2.25 2.25 0 001.5 6.75v12a2.25 2.25 0 002.25 2.25h1.5m9 0h-9">
-                                        </path>
-                                    </svg>
-                                </span>
-                                <span class="text-lg font-semibold text-slate-800 dark:text-white">Apa itu VOXIA dan
-                                    bagaimana cara kerjanya?</span>
-                            </span>
-                            <span class="faq-chevron transition-transform duration-300">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-slate-500" fill="none"
-                                    viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                                    <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"></path>
-                                </svg>
-                            </span>
-                        </button>
-                        <div class="faq-answer"
-                            style="max-height: 0px; overflow: hidden; transition: max-height 0.5s ease-in-out;">
-                            <div class="p-6 pt-0 text-slate-600 dark:text-slate-400">
-                                VOXIA adalah sistem cerdas yang mengubah setiap percakapan di WhatsApp menjadi peluang
-                                bisnis yang terorganisir dan menghasilkan. AI kami secara otomatis menjawab pertanyaan
-                                umum pelanggan, mengelola data kontak, dan menangani penjadwalan, sehingga Anda bisa
-                                fokus mengembangkan bisnis.
-                            </div>
-                        </div>
-                    </div>
+        <!-- Contact Section -->
+
+        <!-- Contact Section -->
 
                     <!-- FAQ Item 2 -->
                     <div
@@ -1573,515 +2339,399 @@
         </section>
     </main>
 
-    <!-- Footer -->
-    <footer id="kontak" class="bg-slate-900 dark:bg-black">
-        <div class="container mx-auto px-6 py-12">
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div>
-                    <h3 class="text-xl font-bold text-cyan-400">VOXIA</h3>
-                    <p class="mt-2 text-slate-400">Platform otomasi customer service dan manajemen pelanggan berbasis AI
-                        untuk UKM.</p>
-                </div>
-                <div>
-                    <h4 class="font-semibold text-lg text-white">Tautan</h4>
-                    <ul class="mt-4 space-y-2">
-                        <li><a href="https://wa.me/6285183079558?text=Halo%20Tim%20VOXIA%2C%20bagaimana%20cara%20menjadwalkan%20demo%3F"
-                                target="_blank" rel="noopener noreferrer"
-                                class="text-slate-400 hover:text-white flex items-center">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-2" viewBox="0 0 24 24"
-                                    fill="currentColor">
-                                    <path
-                                        d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01s-.521.074-.792.372c-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.626.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.289.173-1.413z" />
-                                </svg>
-                                +62 851-8307-9558
-                            </a></li>
-                        <li><a href="https://apply.voxia.id/" target="_blank" rel="noopener noreferrer"
-                                class="text-slate-400 hover:text-white flex items-center">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-2" fill="none"
-                                    viewBox="0 0 24 24" stroke="currentColor">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                        d="M21 13.255A9.002 9.002 0 0112 21a9.002 9.002 0 01-9-9.745M21 13.255V21M12 21a9.002 9.002 0 01-9-9.745M12 21V3m0 0a9.002 9.002 0 019 9.255M12 3v9m9-9v9m0 0a9.002 9.002 0 01-9 9" />
-                                </svg>
-                                Karir
-                            </a></li>
-                        <li><a href="/privacy-policy.html" class="text-slate-400 hover:text-white">Kebijakan Privasi</a>
-                        </li>
-                        <li><a href="#" class="text-slate-400 hover:text-white">voxia.id</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h4 class="font-semibold text-lg text-white">Alamat</h4>
-                    <p class="mt-2 text-slate-400">PT. Ekuitas Media Investama<br>Jakarta, Indonesia</p>
+        <!-- Contact Section -->
+        <section id="kontak" class="py-20 lg:py-24 bg-slate-100 dark:bg-slate-950">
+            <div class="container mx-auto px-6">
+                <div class="max-w-6xl mx-auto">
+                    <div class="text-center mb-16">
+                        <h2 class="text-3xl lg:text-4xl font-bold text-slate-900 dark:text-white">Hubungi Tim Kami</h2>
+                        <p class="mt-4 text-lg text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">
+                            Konsultasi gratis dengan AI experts kami. Temukan solusi tepat untuk transformasi digital organisasi Anda.
+                        </p>
+                    </div>
+
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                        <!-- Contact Form -->
+                        <div class="bg-white dark:bg-slate-800 p-8 rounded-xl shadow-lg">
+                            <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-6">Kirim Pesan</h3>
+                            <form class="space-y-4">
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                    <div>
+                                        <label class="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2">Nama Lengkap</label>
+                                        <input type="text" class="w-full px-4 py-3 border border-slate-300 dark:border-slate-600 rounded-lg focus:ring-2 focus:ring-cyan-500 focus:border-transparent dark:bg-slate-700 dark:text-white" placeholder="John Doe">
+                                    </div>
+                                    <div>
+                                        <label class="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2">Email</label>
+                                        <input type="email" class="w-full px-4 py-3 border border-slate-300 dark:border-slate-600 rounded-lg focus:ring-2 focus:ring-cyan-500 focus:border-transparent dark:bg-slate-700 dark:text-white" placeholder="john@example.com">
+                                    </div>
+                                </div>
+                                
+                                <div>
+                                    <label class="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2">Organisasi</label>
+                                    <input type="text" class="w-full px-4 py-3 border border-slate-300 dark:border-slate-600 rounded-lg focus:ring-2 focus:ring-cyan-500 focus:border-transparent dark:bg-slate-700 dark:text-white" placeholder="PT. Contoh Indonesia">
+                                </div>
+
+                                <div>
+                                    <label class="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2">Solusi yang diminati</label>
+                                    <select class="w-full px-4 py-3 border border-slate-300 dark:border-slate-600 rounded-lg focus:ring-2 focus:ring-cyan-500 focus:border-transparent dark:bg-slate-700 dark:text-white">
+                                        <option>Pilih Solusi AI</option>
+                                        <option>AI Customer Service</option>
+                                        <option>AI Education Platform</option>
+                                        <option>Government RAG Solutions</option>
+                                        <option>Vocational Training Platform</option>
+                                        <option>Custom AI Solutions</option>
+                                    </select>
+                                </div>
+
+                                <div>
+                                    <label class="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2">Pesan</label>
+                                    <textarea rows="4" class="w-full px-4 py-3 border border-slate-300 dark:border-slate-600 rounded-lg focus:ring-2 focus:ring-cyan-500 focus:border-transparent dark:bg-slate-700 dark:text-white" placeholder="Jelaskan kebutuhan Anda..."></textarea>
+                                </div>
+
+                                <button type="submit" class="w-full bg-cyan-600 text-white font-bold py-4 px-10 rounded-lg shadow-lg hover:bg-cyan-500 transition-all transform hover:scale-105">
+                                    Kirim Pesan
+                                </button>
+                            </form>
+                        </div>
+
+                        <!-- Contact Info & Quick Actions -->
+                        <div class="space-y-8">
+                            <!-- Quick Contact Cards -->
+                            <div class="bg-white dark:bg-slate-800 p-8 rounded-xl shadow-lg">
+                                <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-6">Cepat Terhubung</h3>
+                                <div class="space-y-4">
+                                    <a href="https://app.apollo.io/#/meet/voxia/15-min" target="_blank" class="flex items-center gap-4 p-4 bg-cyan-50 dark:bg-cyan-900/20 rounded-lg hover:bg-cyan-100 dark:hover:bg-cyan-900/30 transition-colors">
+                                        <div class="bg-cyan-600 text-white rounded-lg w-12 h-12 flex items-center justify-center">
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                                            </svg>
+                                        </div>
+                                        <div>
+                                            <div class="font-semibold text-slate-900 dark:text-white">Jadwalkan Demo</div>
+                                            <div class="text-sm text-slate-600 dark:text-slate-400">Konsultasi 15 menit dengan tim kami</div>
+                                        </div>
+                                    </a>
+
+                                    <a href="https://wa.me/6285183079558?text=Halo%20Tim%20VOXIA%2C%20saya%20tertarik%20dengan%20solusi%20AI%20Anda" target="_blank" class="flex items-center gap-4 p-4 bg-green-50 dark:bg-green-900/20 rounded-lg hover:bg-green-100 dark:hover:bg-green-900/30 transition-colors">
+                                        <div class="bg-green-600 text-white rounded-lg w-12 h-12 flex items-center justify-center">
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+                                                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+                                            </svg>
+                                        </div>
+                                        <div>
+                                            <div class="font-semibold text-slate-900 dark:text-white">WhatsApp Business</div>
+                                            <div class="text-sm text-slate-600 dark:text-slate-400">+62 851-8307-9558</div>
+                                        </div>
+                                    </a>
+
+                                    <div class="flex items-center gap-4 p-4 bg-purple-50 dark:bg-purple-900/20 rounded-lg">
+                                        <div class="bg-purple-600 text-white rounded-lg w-12 h-12 flex items-center justify-center">
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                                            </svg>
+                                        </div>
+                                        <div>
+                                            <div class="font-semibold text-slate-900 dark:text-white">Email</div>
+                                            <div class="text-sm text-slate-600 dark:text-slate-400">contact@voxia.id</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Office Location -->
+                            <div class="bg-white dark:bg-slate-800 p-8 rounded-xl shadow-lg">
+                                <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-4">Kantor Pusat</h3>
+                                <div class="space-y-3">
+                                    <div class="flex items-start gap-3">
+                                        <svg class="w-5 h-5 text-cyan-600 dark:text-cyan-400 mt-1" fill="currentColor" viewBox="0 0 20 20">
+                                            <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd" />
+                                        </svg>
+                                        <div>
+                                            <div class="font-semibold text-slate-900 dark:text-white">PT. Ekuitas Media Investama</div>
+                                            <div class="text-sm text-slate-600 dark:text-slate-400">Jakarta, Indonesia</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div
-                class="mt-12 border-t border-slate-800 dark:border-slate-700 pt-6 text-center text-slate-500 dark:text-slate-400 text-sm">
-                &copy; <span id="current-year"></span> PT. Ekuitas Media Investama. All Rights Reserved.
+        </section>
+
+        <!-- Footer -->
+        <footer class="bg-slate-900 text-white py-12">
+            <div class="container mx-auto px-6">
+                <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                    <!-- Company Info -->
+                    <div class="col-span-1 md:col-span-2">
+                        <div class="flex items-center gap-2 mb-4">
+                            <span class="inline-block bg-cyan-400 text-white font-black text-3xl px-2 py-1 rounded border-2 border-cyan-300">V</span>
+                            <span class="font-extrabold text-2xl tracking-tight">OXIA</span>
+                        </div>
+                        <p class="text-slate-400 mb-4 max-w-md">
+                            Platform AI terpadu untuk transformasi digital Indonesia. Solusi comprehensive untuk customer service, education, government, dan vocational training.
+                        </p>
+                        <div class="flex space-x-4">
+                            <a href="#" class="text-slate-400 hover:text-cyan-400 transition-colors">
+                                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                                </svg>
+                            </a>
+                            <a href="#" class="text-slate-400 hover:text-cyan-400 transition-colors">
+                                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/>
+                                </svg>
+                            </a>
+                            <a href="#" class="text-slate-400 hover:text-cyan-400 transition-colors">
+                                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Solutions -->
+                    <div>
+                        <h4 class="font-bold text-lg mb-4">Solusi AI</h4>
+                        <ul class="space-y-2">
+                            <li><a href="#solusi-customer-service" class="text-slate-400 hover:text-cyan-400 transition-colors">AI Customer Service</a></li>
+                            <li><a href="#solusi-education" class="text-slate-400 hover:text-cyan-400 transition-colors">AI Education</a></li>
+                            <li><a href="#solusi-government" class="text-slate-400 hover:text-cyan-400 transition-colors">Government RAG</a></li>
+                            <li><a href="#solusi-vocational" class="text-slate-400 hover:text-cyan-400 transition-colors">Vocational Training</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- Company -->
+                    <div>
+                        <h4 class="font-bold text-lg mb-4">Perusahaan</h4>
+                        <ul class="space-y-2">
+                            <li><a href="#tentang" class="text-slate-400 hover:text-cyan-400 transition-colors">Tentang Kami</a></li>
+                            <li><a href="#studi-kasus" class="text-slate-400 hover:text-cyan-400 transition-colors">Studi Kasus</a></li>
+                            <li><a href="/privacy-policy.html" class="text-slate-400 hover:text-cyan-400 transition-colors">Kebijakan Privasi</a></li>
+                            <li><a href="#kontak" class="text-slate-400 hover:text-cyan-400 transition-colors">Kontak</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="border-t border-slate-800 mt-8 pt-8 text-center text-slate-400">
+                    <p>&copy; 2026 PT. Ekuitas Media Investama. All rights reserved.</p>
+                </div>
             </div>
-        </div>
-    </footer>
+        </footer>
 
-    <script>
-        // --- Translation System ---
-        const translations = {
-            id: {
-                nav: {
-                    fitur: 'Fitur',
-                    solusi: 'Solusi',
-                    paket: 'Paket',
-                    kontak: 'Kontak'
-                },
-                hero: {
-                    title: 'Ubah',
-                    subtitle: 'Setiap Percakapan di WhatsApp Menjadi Peluang',
-                    description: 'Kami bukan sekadar software. Voxia adalah sistem cerdas yang bekerja di balik layar untuk memastikan setiap interaksi pelanggan di WhatsApp berjalan lancar, terorganisir, dan menghasilkan. Biarkan kami yang mengurus kompleksitas, Anda yang menikmati pertumbuhannya.',
-                    cta1: 'Jadwalkan Demo Gratis',
-                    cta2: 'Lihat Paket'
-                }
-            },
-            en: {
-                nav: {
-                    fitur: 'Features',
-                    solusi: 'Solutions',
-                    paket: 'Pricing',
-                    kontak: 'Contact'
-                },
-                hero: {
-                    title: 'Transform',
-                    subtitle: 'Every WhatsApp Conversation into Opportunity',
-                    description: 'We\'re not just software. Voxia is an intelligent system working behind the scenes to ensure every customer interaction on WhatsApp runs smoothly, organized, and generates results. Let us handle the complexity while you enjoy the growth.',
-                    cta1: 'Schedule Free Demo',
-                    cta2: 'View Plans'
-                }
-            }
-        };
-
-        // Language Management
-        let currentLanguage = 'id';
-
-        function setLanguage(lang) {
-            console.log('setLanguage called with:', lang);
-
-            if (lang === 'en') {
-                window.location.href = 'index-new.html';
-                return;
-            }
-
-            currentLanguage = lang;
-
-            // Update button styles
-            document.querySelectorAll('.lang-btn').forEach(btn => {
-                btn.classList.remove('bg-white', 'text-slate-800');
-                btn.classList.add('text-white', 'hover:bg-white/20');
-            });
-
-            const activeBtn = document.getElementById(`lang-${lang}`);
-            if (activeBtn) {
-                activeBtn.classList.remove('text-white', 'hover:bg-white/20');
-                activeBtn.classList.add('bg-white', 'text-slate-800');
-            }
-
-            // Update content
-            updateContent();
-
-            // Save preference
-            localStorage.setItem('voxia-language', lang);
-
-            // Update URL
-            const url = new URL(window.location);
-            url.searchParams.set('lang', lang);
-            window.history.replaceState({}, '', url);
-        }
-
-        function updateContent() {
-            console.log('updateContent called, currentLanguage:', currentLanguage);
-            const t = translations[currentLanguage];
-            console.log('Translation data:', t);
-
-            // Navigation
-            const navFitur = document.querySelector('.nav-fitur');
-            console.log('navFitur element:', navFitur);
-            if (navFitur) {
-                navFitur.textContent = t.nav.fitur;
-                console.log('Updated navFitur to:', t.nav.fitur);
-            }
-
-            const navSolusi = document.querySelector('.nav-solusi');
-            console.log('navSolusi element:', navSolusi);
-            if (navSolusi) {
-                navSolusi.textContent = t.nav.solusi;
-                console.log('Updated navSolusi to:', t.nav.solusi);
-            }
-
-            const navPaket = document.querySelector('.nav-paket');
-            console.log('navPaket element:', navPaket);
-            if (navPaket) {
-                navPaket.textContent = t.nav.paket;
-                console.log('Updated navPaket to:', t.nav.paket);
-            }
-
-            const navKontak = document.querySelector('.nav-kontak');
-            console.log('navKontak element:', navKontak);
-            if (navKontak) {
-                navKontak.textContent = t.nav.kontak;
-                console.log('Updated navKontak to:', t.nav.kontak);
-            }
-
-            // Hero section - update subtitle
-            const heroSubtitle = document.querySelector('.hero-subtitle');
-            console.log('heroSubtitle element:', heroSubtitle);
-            if (heroSubtitle) {
-                heroSubtitle.textContent = t.hero.subtitle;
-                console.log('Updated heroSubtitle to:', t.hero.subtitle);
-            }
-
-            // Hero description
-            const heroDesc = document.querySelector('.hero-description');
-            console.log('heroDesc element:', heroDesc);
-            if (heroDesc) {
-                heroDesc.textContent = t.hero.description;
-                console.log('Updated heroDesc to:', t.hero.description);
-            }
-
-            // CTA buttons
-            const cta1 = document.querySelector('.hero-cta a:first-child');
-            console.log('cta1 element:', cta1);
-            if (cta1) {
-                // Keep the SVG and update text
-                const svg = cta1.querySelector('svg');
-                cta1.innerHTML = '';
-                cta1.appendChild(svg);
-                cta1.insertAdjacentHTML('beforeend', t.hero.cta1);
-                console.log('Updated cta1 to:', t.hero.cta1);
-            }
-
-            const cta2 = document.querySelector('.hero-cta a:last-child');
-            console.log('cta2 element:', cta2);
-            if (cta2) {
-                cta2.textContent = t.hero.cta2;
-                console.log('Updated cta2 to:', t.hero.cta2);
-            }
-        }
-
-        // Initialize language on page load
-        document.addEventListener('DOMContentLoaded', function () {
-            // Check URL parameter first
-            const urlParams = new URLSearchParams(window.location.search);
-            const urlLang = urlParams.get('lang');
-
-            // Then check localStorage
-            const savedLang = localStorage.getItem('voxia-language');
-
-            // Set language (URL > localStorage > default)
-            const lang = urlLang || savedLang || 'id';
-            setLanguage(lang);
-        });
-
-        // --- App Scripts ---
-
-        // 1. Mobile menu toggle
-        const mobileMenuButton = document.getElementById('mobile-menu-button');
-        const mobileMenu = document.getElementById('mobile-menu');
-        mobileMenuButton.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
-        });
-
-        // Close mobile menu on link click
-        document.querySelectorAll('#mobile-menu a').forEach(link => {
-            link.addEventListener('click', () => {
-                mobileMenu.classList.add('hidden');
-            });
-        });
-
-        // 2. Dynamic year for footer
-        document.getElementById('current-year').textContent = new Date().getFullYear();
-
-        // 3. Change header background on scroll
-        const header = document.getElementById('header');
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 50) {
-                header.classList.remove('bg-transparent');
-                header.classList.add('bg-white/80', 'dark:bg-slate-900/80', 'backdrop-blur-lg', 'shadow-lg');
-            } else {
-                header.classList.add('bg-transparent');
-                header.classList.remove('bg-white/80', 'dark:bg-slate-900/80', 'backdrop-blur-lg', 'shadow-lg');
-            }
-        });
-
-
-        // 5. FAQ Accordion
-        const accordionItems = document.querySelectorAll('.faq-item');
-        accordionItems.forEach((item) => {
-            const question = item.querySelector('.faq-question');
-            const answer = item.querySelector('.faq-answer');
-            const chevron = item.querySelector('.faq-chevron');
-
-            question.addEventListener('click', () => {
-                const isOpen = item.classList.contains('open');
-
-                // Close all other accordion items
-                accordionItems.forEach(otherItem => {
-                    if (otherItem !== item) {
-                        otherItem.classList.remove('open');
-                        otherItem.querySelector('.faq-answer').style.maxHeight = '0px';
-                        otherItem.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
-                        otherItem.querySelector('.faq-chevron').classList.remove('rotate-180');
-                    }
-                });
-
-                // Toggle the clicked item
-                if (isOpen) {
-                    item.classList.remove('open');
-                    answer.style.maxHeight = '0px';
-                    question.setAttribute('aria-expanded', 'false');
-                    chevron.classList.remove('rotate-180');
-                } else {
-                    item.classList.add('open');
-                    answer.style.maxHeight = answer.scrollHeight + 'px';
-                    question.setAttribute('aria-expanded', 'true');
-                    chevron.classList.add('rotate-180');
-                }
-            });
-        });
-
-        // 6. Testimonial Slider
-        const testimonialSlider = document.getElementById('testimonial-slider');
-        const prevBtn = document.getElementById('prev-testimonial');
-        const nextBtn = document.getElementById('next-testimonial');
-        let currentIndex = 0;
-        const totalSlides = testimonialSlider.children.length;
-        const slidesToShow = window.innerWidth >= 1024 ? 3 : window.innerWidth >= 768 ? 2 : 1;
-        const maxIndex = totalSlides - slidesToShow;
-
-        function updateSlider() {
-            const translateX = -currentIndex * (100 / slidesToShow);
-            testimonialSlider.style.transform = `translateX(${translateX}%)`;
-        }
-
-        function nextSlide() {
-            currentIndex = (currentIndex + 1) > maxIndex ? 0 : currentIndex + 1;
-            updateSlider();
-        }
-
-        function prevSlide() {
-            currentIndex = (currentIndex - 1) < 0 ? maxIndex : currentIndex - 1;
-            updateSlider();
-        }
-
-        nextBtn.addEventListener('click', nextSlide);
-        prevBtn.addEventListener('click', prevSlide);
-
-        // Auto-slide every 5 seconds
-        setInterval(nextSlide, 5000);
-
-        // Update on window resize
-        window.addEventListener('resize', () => {
-            const newSlidesToShow = window.innerWidth >= 1024 ? 3 : window.innerWidth >= 768 ? 2 : 1;
-            if (newSlidesToShow !== slidesToShow) {
-                location.reload(); // Simple reload for demo, in production use proper resize handling
-            }
-        });
-
-        // 7. Promo Pop-up Modal
-        // Function to show modal
-        function showPromoModal() {
-            const promoModal = document.getElementById('promo-modal');
-            if (promoModal && !sessionStorage.getItem('promoModalShown')) {
-                promoModal.classList.remove('hidden');
-                promoModal.classList.add('flex'); // Use flex to center content
-                sessionStorage.setItem('promoModalShown', 'true');
-            }
-        }
-
-        // Function to hide modal
-        function hidePromoModal() {
-            const promoModal = document.getElementById('promo-modal');
-            if (promoModal) {
-                promoModal.classList.add('hidden');
-                promoModal.classList.remove('flex');
-            }
-        }
-
-        // Setup event listeners immediately when DOM is ready
-        document.addEventListener('DOMContentLoaded', () => {
-            const closeModalBtn = document.getElementById('close-modal-btn');
-            const promoModal = document.getElementById('promo-modal');
-            const promoModalContent = promoModal ? promoModal.querySelector('div:first-child') : null;
-
-            if (closeModalBtn) {
-                closeModalBtn.addEventListener('click', hidePromoModal);
-            }
-
-            if (promoModal && promoModalContent) {
-                // Close modal when clicking outside content
-                promoModal.addEventListener('click', (event) => {
-                    if (!promoModalContent.contains(event.target)) {
-                        hidePromoModal();
-                    }
-                });
-            }
-        });
-
-        // Show modal on page load (after a short delay for better UX)
-        window.addEventListener('load', () => {
-            setTimeout(showPromoModal, 2000); // Show after 2 seconds
-        });
-
-    </script>
-
-
-
-    <!-- Promo Pop-up Modal -->
-    <div id="promo-modal" class="fixed inset-0 z-[1001] hidden items-center justify-center bg-black bg-opacity-75 p-4">
-        <div class="relative w-full max-w-md rounded-lg bg-white p-8 text-center shadow-xl dark:bg-slate-800">
-            <button id="close-modal-btn"
-                class="absolute right-3 top-3 text-slate-500 hover:text-slate-700 dark:text-slate-400 dark:hover:text-slate-200">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
-                    stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
-                </svg>
-            </button>
-            <h3 class="mb-4 text-2xl font-bold text-slate-900 dark:text-white">Dapatkan VOXIA GRATIS!</h3>
-            <p class="mb-6 text-lg text-slate-600 dark:text-slate-400">Ikuti program seleksi kami dan dapatkan akses
-                penuh VOXIA tanpa biaya.</p>
-            <a href="https://forms.gle/PffzCGogPbfdUA9S8" target="_blank" rel="noopener noreferrer"
-                class="cta-glow inline-flex items-center justify-center rounded-lg bg-cyan-600 px-8 py-3 font-bold text-white shadow-lg transition-all hover:bg-cyan-500">
-                Daftar Sekarang
-                <svg xmlns="http://www.w3.org/2000/svg" class="ml-2 h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
-                    <path fill-rule="evenodd"
-                        d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z"
-                        clip-rule="evenodd" />
-                </svg>
-            </a>
+    <!-- Floating Action Button -->
+    <div class="fab-container">
+        <div class="fab hidden">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18" />
+            </svg>
         </div>
     </div>
-    <!-- End Promo Pop-up Modal -->
 
-    <!-- Chatbot Container -->
-    <div id="chat-widget-container"></div>
-    <script type="module" src="/index.tsx"></script>
+    <!-- Interactive JavaScript -->
+    <script>
+        // 8. Scroll Animations & Interactive Elements
+        // Header scroll effect
+        let lastScrollTop = 0;
+        const header = document.getElementById('header');
+        const progressBar = document.getElementById('progress-bar');
+        const fab = document.querySelector('.fab');
 
-    <script type="module">
-        import Chatbot from "https://cdn.jsdelivr.net/npm/flowise-embed/dist/web.js"
-        Chatbot.init({
-            chatflowid: "a0bcd9b4-0dff-49a5-8a69-0f0fd34f351e",
-            apiHost: "https://aig.voxia.id",
-            chatflowConfig: {
-                // topK: 2
-            },
-            observersConfig: {
-                // (optional) Allows you to execute code in parent based upon signal observations within the chatbot.
-                // The userinput field submitted to bot ("" when reset by bot)
-                observeUserInput: (userInput) => {
-                    console.log({ userInput });
-                },
-                // The bot message stack has changed
-                observeMessages: (messages) => {
-                    console.log({ messages });
-                },
-                // The bot loading signal changed
-                observeLoading: (loading) => {
-                    console.log({ loading });
-                },
-            },
-            theme: {
-                button: {
-                    backgroundColor: "transparent",
-                    right: 20,
-                    bottom: 20,
-                    size: 80, // small | medium | large | number
-                    dragAndDrop: true,
-                    iconColor: "white",
-                    customIconSrc: "https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg",
-                    autoWindowOpen: {
-                        autoOpen: false, //parameter to control automatic window opening
-                        openDelay: 2, // Optional parameter for delay time in seconds
-                        autoOpenOnMobile: false, //parameter to control automatic window opening in mobile
-                    },
-                },
-                tooltip: {
-                    showTooltip: true,
-                    tooltipMessage: "Halo! 👋",
-                    tooltipBackgroundColor: "black",
-                    tooltipTextColor: "white",
-                    tooltipFontSize: 16,
-                },
-                disclaimer: {
-                    title: "Disclaimer",
-                    message: "Dengan menggunakan chatbot ini, Anda menyetujui <a target='_blank' href='https://voxia.id/privacy-policy.html'>Syarat & Ketentuan</a>",
-                    textColor: "black",
-                    buttonColor: "#3b82f6",
-                    buttonText: "Mulai Chat",
-                    buttonTextColor: "white",
-                    blurredBackgroundColor: "rgba(0, 0, 0, 0.4)", //The color of the blurred background that overlays the chat interface
-                    backgroundColor: "white",
-                    denyButtonText: "Batal",
-                    denyButtonBgColor: "#ef4444",
-                },
-                form: {
-                    backgroundColor: "white",
-                    textColor: "black",
-                },
-                customCSS: ``, // Add custom CSS styles. Use !important to override default styles
-                chatWindow: {
-                    showTitle: true,
-                    showAgentMessages: true,
-                    title: "VOXIA agent",
-                    titleAvatarSrc: "https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg",
-                    titleBackgroundColor: "#25D366",
-                    titleTextColor: "#ffffff",
-                    welcomeMessage: "Ada yang bisa saya bantu mengenai VOXIA?",
-                    errorMessage: "Maaf, terjadi kesalahan.",
-                    backgroundColor: "#ffffff",
-                    backgroundImage: "enter image path or link", // If set, this will overlap the background color of the chat window.
-                    height: 700,
-                    width: 400,
-                    fontSize: 16,
-                    starterPrompts: ["Apa itu VOXIA?", "Bagaimana cara berlangganan?"], // It overrides the starter prompts set by the chat flow passed
-                    starterPromptFontSize: 15,
-                    clearChatOnReload: false, // If set to true, the chat will be cleared when the page reloads
-                    sourceDocsTitle: "Sumber:",
-                    renderHTML: true,
-                    botMessage: {
-                        backgroundColor: "#f7f8ff",
-                        textColor: "#303235",
-                        showAvatar: true,
-                        avatarSrc: "https://avatars.githubusercontent.com/u/240184483?s=200&v=4",
-                    },
-                    userMessage: {
-                        backgroundColor: "transparent",
-                        textColor: "#ffffff",
-                        showAvatar: true,
-                        avatarSrc: "https://raw.githubusercontent.com/zahidkhawaja/langchain-chat-nextjs/main/public/usericon.png",
-                    },
-                    textInput: {
-                        placeholder: "Ketik pertanyaan Anda",
-                        backgroundColor: "#ffffff",
-                        textColor: "#303235",
-                        sendButtonColor: "#3B81F6",
-                        maxChars: 50,
-                        maxCharsWarningMessage: "Anda melebihi batas karakter. Harap masukkan kurang dari 50 karakter.",
-                        autoFocus: true, // If not used, autofocus is disabled on mobile and enabled on desktop. true enables it on both, false disables it on both.
-                        sendMessageSound: true,
-                        // sendSoundLocation: "send_message.mp3", // If this is not used, the default sound effect will be played if sendSoundMessage is true.
-                        receiveMessageSound: true,
-                        // receiveSoundLocation: "receive_message.mp3", // If this is not used, the default sound effect will be played if receiveSoundMessage is true.
-                    },
-                    feedback: {
-                        color: "#303235",
-                    },
-                    dateTimeToggle: {
-                        date: true,
-                        time: true,
-                    },
-                    footer: {
-                        textColor: "#303235",
-                        text: "Powered by",
-                        company: "VOXIA",
-                        companyLink: "https://voxia.id",
-                    },
-                },
-            },
+        window.addEventListener('scroll', () => {
+            const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            
+            // Header background
+            if (scrollTop > 50) {
+                header.classList.add('bg-slate-900/95', 'shadow-lg');
+                header.classList.remove('bg-transparent');
+            } else {
+                header.classList.add('bg-transparent');
+                header.classList.remove('bg-slate-900/95', 'shadow-lg');
+            }
+
+            // Header hide/show on scroll
+            if (scrollTop > lastScrollTop && scrollTop > 100) {
+                header.style.transform = 'translateY(-100%)';
+            } else {
+                header.style.transform = 'translateY(0)';
+            }
+            lastScrollTop = scrollTop;
+
+            // Progress bar
+            const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const scrolled = (winScroll / height) * 100;
+            if (progressBar) progressBar.style.width = scrolled + '%';
+
+            // FAB show/hide
+            if (fab) {
+                if (scrollTop > 500) {
+                    fab.classList.remove('hidden');
+                } else {
+                    fab.classList.add('hidden');
+                }
+            }
+        });
+
+        // Intersection Observer for scroll animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('is-visible');
+                    
+                    // Start counter animation if it's a counter element
+                    if (entry.target.classList.contains('counter')) {
+                        animateCounter(entry.target);
+                    }
+                }
+            });
+        }, observerOptions);
+
+        // Counter animation function
+        function animateCounter(element) {
+            const target = parseInt(element.dataset.target);
+            const duration = 2000; // 2 seconds
+            const step = target / (duration / 16); // 60 FPS
+            let current = 0;
+
+            const timer = setInterval(() => {
+                current += step;
+                if (current >= target) {
+                    current = target;
+                    clearInterval(timer);
+                }
+                element.textContent = Math.floor(current).toLocaleString() + (element.dataset.suffix || '');
+            }, 16);
+        }
+
+        // Add animation classes and initialize
+        document.addEventListener('DOMContentLoaded', () => {
+            // Add classes to solution cards
+            document.querySelectorAll('#solusi .grid > div').forEach((el, index) => {
+                el.classList.add('fade-in-section');
+                el.style.transitionDelay = `${index * 0.1}s`;
+                observer.observe(el);
+            });
+
+            // Add classes to technology cards
+            document.querySelectorAll('#teknologi .bg-white, #teknologi .bg-white\\/dark\\:bg-slate-800').forEach((el, index) => {
+                el.classList.add('scale-in');
+                el.style.transitionDelay = `${index * 0.1}s`;
+                observer.observe(el);
+            });
+
+            // Add classes to case studies
+            document.querySelectorAll('#studi-kasus .grid > div').forEach((el, index) => {
+                el.classList.add('slide-in-left');
+                el.style.transitionDelay = `${index * 0.1}s`;
+                observer.observe(el);
+            });
+
+            // Initialize counters with data attributes
+            document.querySelectorAll('[data-target]').forEach(el => {
+                el.classList.add('counter');
+                observer.observe(el);
+            });
+
+            // Add data attributes to existing counters
+            document.querySelectorAll('.text-2xl, .text-3xl').forEach(el => {
+                const text = el.textContent;
+                const number = parseInt(text.replace(/[^0-9]/g, ''));
+                if (!isNaN(number) && number > 0) {
+                    el.dataset.target = number;
+                    el.dataset.suffix = text.replace(/[0-9]/g, '').replace(/\s/g, '');
+                    el.classList.add('counter');
+                    observer.observe(el);
+                }
+            });
+        });
+
+        // Smooth scroll for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+
+
+        // Floating Action Button (Back to Top)
+        if (fab) {
+            fab.addEventListener('click', () => {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+        }
+
+        // Form submission handler
+        document.querySelectorAll('form').forEach(form => {
+            form.addEventListener('submit', (e) => {
+                e.preventDefault();
+                
+                // Create success message
+                const successMsg = document.createElement('div');
+                successMsg.className = 'fixed top-20 right-4 bg-green-500 text-white px-6 py-3 rounded-lg shadow-lg z-50';
+                successMsg.textContent = 'Pesan Anda telah terkirim! Tim kami akan segera menghubungi Anda.';
+                document.body.appendChild(successMsg);
+
+                // Remove message after 3 seconds
+                setTimeout(() => {
+                    successMsg.remove();
+                }, 3000);
+
+                // Reset form
+                form.reset();
+            });
+        });
+
+        // Comparison functionality
+        function showComparison(type) {
+            // Update button states
+            document.querySelectorAll('.comparison-btn').forEach(btn => {
+                btn.classList.remove('active');
+                if (btn.dataset.type === type) {
+                    btn.classList.add('active');
+                }
+            });
+
+            // Here you would typically load different comparison content
+            // For now, we'll just show/hide the same panel
+            const panel = document.getElementById('customer-service-comparison');
+            if (panel) {
+                panel.classList.remove('hidden');
+                
+                // Add fade-in animation
+                panel.style.opacity = '0';
+                panel.style.transform = 'translateY(20px)';
+                
+                setTimeout(() => {
+                    panel.style.transition = 'opacity 0.3s ease-out, transform 0.3s ease-out';
+                    panel.style.opacity = '1';
+                    panel.style.transform = 'translateY(0)';
+                }, 100);
+            }
+        }
+
+        // Initialize comparison buttons
+        document.querySelectorAll('.comparison-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                showComparison(btn.dataset.type);
+            });
         });
     </script>
 
