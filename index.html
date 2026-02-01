@@ -4,10 +4,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Prevent language parameter injection -->
+    <script>
+        // Remove language parameters from URL
+        if (window.location.search.includes('lang=')) {
+            const cleanUrl = window.location.origin + window.location.pathname;
+            window.history.replaceState({}, '', cleanUrl);
+        }
+    </script>
+    
     <meta name="description"
         content="VOXIA adalah Platform AI Terpadu untuk Transformasi Digital Indonesia. Solusi comprehensive untuk Customer Service, EdTech, Government RAG, dan Vocational Training dengan certification blockchain.">
     <meta name="keywords"
         content="Platform AI Indonesia, Solusi AI Terpadu, Customer Service AI, Education Platform, Government RAG, Blockchain Certification, Adaptive Learning, Digital Transformation Indonesia, VOXIA, invezthink">
+    <link rel="canonical" href="https://voxia.id">
     <title>VOXIA - Solusi AI Terpadu untuk Transformasi Digital Indonesia</title>
     <link rel="shortcut icon" href="/favicon.png" type="image/x-icon">
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon.png">
